@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: >-
+  If you use Wireless ML Data Hub in research, please cite the catalogue and
+  the original dataset sources relevant to your work.
+title: "Wireless ML Data Hub"
+type: dataset
+authors:
+  - family-names: "Etiabi"
+    given-names: "Yaya"
+license: "CC-BY-4.0"
+abstract: >-
+  A curated, task-oriented catalogue of datasets and supporting resources for
+  machine learning research in wireless communications.
+keywords:
+  - wireless communications
+  - machine learning
+  - datasets
+  - 6G
+  - localization
+  - wireless sensing
+  - radio SLAM

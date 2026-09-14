@@ -1,0 +1,39 @@
+Wireless ML Data Hub — Licensing
+================================
+
+This repository contains software/tooling and a curated research catalogue.
+They are licensed separately as described below.
+
+1. Software and tooling — Apache License 2.0
+--------------------------------------------
+Unless a file states otherwise, the software and tooling in this repository,
+including scripts, tests, schemas, CI configuration, and Python project
+configuration, are licensed under the Apache License, Version 2.0.
+
+Full license text: LICENSES/Apache-2.0.txt
+SPDX identifier: Apache-2.0
+
+2. Catalogue metadata and documentation — CC BY 4.0
+----------------------------------------------------
+Unless a file states otherwise, the original curated catalogue metadata and
+project documentation in this repository, including data/, catalog/,
+dist/catalog.json, README.md, CONTRIBUTING.md, and docs/, are licensed under
+the Creative Commons Attribution 4.0 International license.
+
+Full license text: LICENSES/CC-BY-4.0.txt
+SPDX identifier: CC-BY-4.0
+
+For attribution of catalogue material, credit Wireless ML Data Hub and its
+identified author(s); CITATION.cff provides the current citation metadata.
+
+3. Third-party datasets and external resources
+----------------------------------------------
+The licenses above apply only to material contributed to this repository.
+They do not grant rights to, relicense, or supersede the terms of any
+third-party dataset, paper, software package, website, benchmark, or external
+resource referenced by the catalogue. Users must follow the license, access
+conditions, citation requirements, and other terms specified by each original
+provider.
+
+Where a file or directory contains an explicit license notice that conflicts
+with this summary, that more specific notice controls for that material.

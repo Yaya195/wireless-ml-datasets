@@ -149,6 +149,17 @@ Cross-cutting paradigms such as LLMs and foundation models belong under `data/co
 
 A supporting resource may link to an existing wireless task only when the relationship is explicitly evidenced. Do not use a collection or resource record to bypass the Dataset↔Task evidence rules.
 
+## Contribution licensing
+
+By submitting a contribution, you agree that your contribution may be distributed under the license that applies to the material you modify:
+
+- software, schemas, tests, CI, and repository tooling are licensed under Apache-2.0;
+- original catalogue metadata and project documentation are licensed under CC BY 4.0.
+
+Do not copy third-party dataset contents, paper text, figures, or other material into this repository unless you have the rights to do so. Catalogue records should summarize and link to authoritative sources. The repository licenses do not alter the licenses or terms of the underlying datasets and external resources.
+
+See [`LICENSE`](LICENSE) for the licensing map and full license texts.
+
 ## Generated files
 
 Do **not** manually edit:
