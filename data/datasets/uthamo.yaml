@@ -1,0 +1,113 @@
+id: uthamo
+name: UTHAMO
+aliases:
+- 'UTHAMO: A Multi-Modal Wi-Fi CSI-Based Hand Motion Dataset'
+identity:
+  canonical_url: https://doi.org/10.21227/QJFG-S580
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/QJFG-S580
+status: verified
+resource_type: dataset
+description: A multimodal hand-motion dataset providing Wi-Fi CSI, video trajectories, and IMU measurements for
+  four gestures performed by six participants under multiple body orientations.
+released:
+  year: 2025
+  notes: Released on IEEE DataPort in June 2025.
+origin:
+  type: measurement
+  notes: Commodity Wi-Fi CSI collected in a static indoor office together with synchronized auxiliary modalities.
+modalities:
+- wifi-csi
+- imu
+- camera
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations:
+- mimo
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 2.4 GHz Wi-Fi
+    center_ghz: 2.4
+    min_ghz: null
+    max_ghz: null
+  notes: Published experiments use a 2.4 GHz Raspberry Pi transmitter and multi-antenna Wi-Fi receiver.
+environments:
+- indoor
+- office
+mobility:
+  type: not-applicable
+  notes: Hand gesture motion is the sensing target.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- gesture-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: 6
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Four hand gestures with repeated trials and multiple body orientations.
+access:
+  status: registration
+  url: https://doi.org/10.21227/QJFG-S580
+  notes: IEEE DataPort dataset; account access may be required.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A dataset-specific license was not confirmed from the verified project page.
+official_resources:
+  homepage: https://dorf.navidhasanzadeh.com/
+  repository: null
+  documentation: https://dorf.navidhasanzadeh.com/
+  loader: null
+references:
+- id: project
+  type: official-page
+  title: DoRF / UTHAMO Project
+  url: https://dorf.navidhasanzadeh.com/
+  doi: null
+  notes: null
+- id: dataport
+  type: data-host
+  title: 'UTHAMO: A Multi-Modal Wi-Fi CSI-Based Hand Motion Dataset'
+  url: https://doi.org/10.21227/QJFG-S580
+  doi: 10.21227/QJFG-S580
+  notes: null
+tasks:
+- task: gesture-recognition
+  scope: Recognize four hand gestures from commodity Wi-Fi CSI under participant and orientation variation.
+  inputs:
+  - wifi-csi
+  targets:
+  - gesture-label
+  evidence:
+  - project
+  - dataport
+  notes: null
+  context:
+    environments:
+    - indoor
+    - office
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The release is multimodal, but the catalogue task mapping records the explicitly demonstrated Wi-Fi CSI
+    gesture-recognition use.
+  evidence:
+  - project
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

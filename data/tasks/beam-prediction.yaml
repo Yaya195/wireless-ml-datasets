@@ -1,0 +1,20 @@
+id: beam-prediction
+name: Beam Prediction
+category: beam-management
+description: Predict suitable current or future transmit or receive beams from wireless, positional, sensory, or
+  multimodal observations.
+aliases: []
+status: active
+related_tasks:
+- beam-selection
+- beam-tracking
+- blockage-prediction
+notes: null
+comparison_fields:
+- inputs
+- targets
+- origin
+- frequency-regimes
+- mobility
+- environments
+- access

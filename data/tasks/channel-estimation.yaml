@@ -1,0 +1,11 @@
+id: channel-estimation
+name: "Channel Estimation"
+category: channel-csi
+description: >-
+  Estimate the wireless channel or its parameters from received observations, pilots, or other measurements.
+aliases: []
+status: active
+related_tasks:
+  - channel-prediction
+  - channel-extrapolation
+notes: null

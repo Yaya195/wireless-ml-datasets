@@ -1,0 +1,98 @@
+id: nist-ran-anomalous-state
+name: NIST Radio Access Network Anomalous State Detection Dataset
+aliases: []
+identity:
+  canonical_url: https://data.nist.gov/od/id/mds2-3430
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: Raw and derived multilayer measurements from a COTS LTE RAN collected in baseline and deliberately anomalous
+  operating states for anomalous-state detection research.
+released:
+  year: 2025
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- network-kpi
+technologies:
+- lte
+generation_contexts:
+- 4g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- laboratory
+mobility:
+  type: not-reported
+  notes: null
+temporal_structure: sequence
+formats:
+- csv
+- xlsx
+ground_truth:
+- anomaly-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: null
+access:
+  status: open
+  url: https://data.nist.gov/od/id/mds2-3430
+  notes: Public NIST data release with tranche ZIP files and documentation.
+license:
+  status: known
+  name: NIST Public Data License
+  url: https://www.nist.gov/open/license
+  notes: null
+official_resources:
+  homepage: https://data.nist.gov/od/id/mds2-3430
+  repository: null
+  documentation: https://catalog.data.gov/dataset/radio-access-network-anomalous-state-detection-dataset
+  loader: null
+references:
+- id: nist-record
+  type: data-host
+  title: Radio Access Network Anomalous State Detection Dataset
+  url: https://data.nist.gov/od/id/mds2-3430
+  doi: null
+  notes: null
+- id: jnca-paper
+  type: paper
+  title: 'Anomalous state detection in radio access networks: A proof-of-concept'
+  url: https://doi.org/10.1016/j.jnca.2024.103979
+  doi: 10.1016/j.jnca.2024.103979
+  notes: null
+tasks:
+- task: network-anomaly-detection
+  scope: Detect anomalous LTE RAN operating states from multilayer network measurements.
+  inputs:
+  - network-kpi
+  targets:
+  - anomaly-label
+  evidence:
+  - nist-record
+  - jnca-paper
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: not-reported
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

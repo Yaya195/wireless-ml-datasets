@@ -1,0 +1,31 @@
+version: "0.1"
+categories:
+  - id: channel-csi
+    name: Channel & CSI
+    order: 10
+    description: Wireless tasks centered on channel acquisition, representation, prediction, and feedback.
+
+  - id: beam-management
+    name: Beam Management
+    order: 20
+    description: Wireless tasks concerned with beam selection, prediction, tracking, and link blockage.
+
+  - id: localization-mapping
+    name: Localization & Mapping
+    order: 30
+    description: Wireless positioning, cooperative localization, radio mapping, and radio-based SLAM tasks.
+
+  - id: signal-intelligence
+    name: Signal Intelligence
+    order: 40
+    description: Wireless signal understanding, identification, sensing of spectrum occupancy, and interference characterization.
+
+  - id: wireless-sensing
+    name: Wireless Sensing
+    order: 50
+    description: Tasks that infer human, physiological, or environmental states from wireless measurements.
+
+  - id: network-intelligence
+    name: Network Intelligence
+    order: 60
+    description: Data-driven prediction, diagnosis, and control tasks at network and RAN level.

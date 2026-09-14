@@ -1,0 +1,133 @@
+id: dichasus
+name: DICHASUS
+aliases:
+- DICHASUS Massive MIMO CSI Dataset Collection
+identity:
+  canonical_url: https://dichasus.inue.uni-stuttgart.de/
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: A collection of real, phase-coherent massive-MIMO CSI measurements with position ground truth across
+  indoor, outdoor, colocated, and distributed-antenna scenarios.
+released:
+  year: 2021
+  notes: The public collection began with 2021 releases and has continued to grow with later measurement campaigns.
+origin:
+  type: measurement
+  notes: Collected with the University of Stuttgart DICHASUS distributed channel-sounding platform.
+modalities:
+- channel-matrix
+- position
+technologies: []
+generation_contexts: []
+radio_configurations:
+- mimo
+- massive-mimo
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: Carrier frequency and bandwidth vary by measurement campaign; individual dataset pages provide exact values.
+environments:
+- indoor
+- outdoor
+- campus
+- industrial
+mobility:
+  type: mixed
+  notes: The collection contains mobile robot/transmitter trajectories as well as static measurement segments.
+temporal_structure: mixed
+formats:
+- tfrecords
+ground_truth:
+- position
+- snr
+- timestamp
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The collection contains multiple independently DOI-identified measurement campaigns and continues to evolve.
+access:
+  status: open
+  url: https://dichasus.inue.uni-stuttgart.de/
+  notes: Individual measurement files are linked from the collection pages and archived through DaRUS.
+license:
+  status: varies
+  name: null
+  url: null
+  notes: Licensing should be checked on the individual DOI/DaRUS record for the selected DICHASUS dataset.
+official_resources:
+  homepage: https://dichasus.inue.uni-stuttgart.de/
+  repository: null
+  documentation: https://dichasus.inue.uni-stuttgart.de/tutorials/
+  loader: null
+references:
+- id: official-collection
+  type: official-page
+  title: DICHASUS Massive MIMO CSI Dataset Collection
+  url: https://dichasus.inue.uni-stuttgart.de/
+  doi: null
+  notes: null
+- id: positioning-tutorial
+  type: documentation
+  title: DICHASUS Positioning Tutorial
+  url: https://dichasus.inue.uni-stuttgart.de/tutorials/tutorial/positioning/
+  doi: null
+  notes: Demonstrates CSI-based positioning with the dichasus-015x measurement dataset.
+- id: channel-charting-tutorial
+  type: documentation
+  title: DICHASUS Dissimilarity Metric-Based Channel Charting
+  url: https://dichasus.inue.uni-stuttgart.de/tutorials/tutorial/dissimilarity-metric-channelcharting/
+  doi: null
+  notes: Demonstrates channel charting on measured DICHASUS CSI.
+tasks:
+- task: localization
+  scope: CSI-based positioning is demonstrated on indoor position-tagged DICHASUS measurements.
+  inputs:
+  - channel-matrix
+  targets:
+  - position
+  evidence:
+  - positioning-tutorial
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+- task: channel-charting
+  scope: Measured CSI is used to learn radio-geometric low-dimensional charts; position labels support evaluation.
+  inputs:
+  - channel-matrix
+  targets: []
+  evidence:
+  - channel-charting-tutorial
+  notes: Position labels are geometric reference/evaluation information for the learned chart; position is not an
+    intrinsic channel-charting output.
+  context:
+    environments:
+    - indoor
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+  evaluation_reference:
+  - position
+caveats:
+- text: DICHASUS is a collection of separate measurement campaigns; scenario-specific frequency, antenna geometry,
+    and ground-truth quality must be checked before comparing results across campaigns.
+  evidence:
+  - official-collection
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: true

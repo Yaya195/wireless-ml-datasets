@@ -1,0 +1,103 @@
+id: bs-breath
+name: BS-Breath
+aliases:
+- Respiration Sensing with Cell-free Massive MIMO
+identity:
+  canonical_url: https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/AYJUHX
+  version: '1.0'
+  external_ids:
+  - scheme: doi
+    value: 10.48804/AYJUHX
+status: verified
+resource_type: dataset
+description: An open respiration-sensing dataset collected with a 64-antenna cell-free massive-MIMO testbed, providing
+  uplink CSI at 3.51 GHz for 10 subjects with synchronized motion-capture respiration ground truth.
+released:
+  year: 2026
+  notes: 'KU Leuven RDR publication date: 4 September 2026.'
+origin:
+  type: measurement
+  notes: Real uplink CSI measurements with synchronized MoCap ground-truth breathing signals.
+modalities:
+- channel-matrix
+technologies: []
+generation_contexts: []
+radio_configurations:
+- massive-mimo
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 3.51 GHz
+    center_ghz: 3.51
+    min_ghz: null
+    max_ghz: null
+  notes: null
+environments:
+- indoor
+- laboratory
+mobility:
+  type: not-applicable
+  notes: Controlled breathing is the sensing target.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- respiratory-motion
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: 10
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 11.7
+  notes: Ten subjects perform controlled breathing; the public archive is approximately 11.7 GB.
+access:
+  status: open
+  url: https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/AYJUHX
+  notes: The dataset is publicly downloadable from KU Leuven RDR.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A license value was not confirmed in the verified public record; no license is inferred.
+official_resources:
+  homepage: https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/AYJUHX
+  repository: null
+  documentation: https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/AYJUHX
+  loader: null
+references:
+- id: rdr-record
+  type: data-host
+  title: Respiration Sensing with Cell-free Massive MIMO
+  url: https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/AYJUHX
+  doi: 10.48804/AYJUHX
+  notes: null
+tasks:
+- task: vital-sign-sensing
+  scope: Recover or estimate respiratory motion from uplink massive-MIMO CSI.
+  inputs:
+  - channel-matrix
+  targets:
+  - respiratory-motion
+  evidence:
+  - rdr-record
+  notes: null
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The initial public release focuses on controlled breathing in a laboratory massive-MIMO setup; broader activity
+    and deployment conditions are not implied.
+  evidence:
+  - rdr-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

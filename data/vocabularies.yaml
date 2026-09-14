@@ -1,0 +1,272 @@
+version: '0.9'
+modalities:
+- id: iq
+  name: I/Q samples
+- id: channel-matrix
+  name: Channel matrix
+- id: path-parameters
+  name: Path parameters
+- id: wifi-rssi
+  name: Wi-Fi RSSI
+- id: rss
+  name: RSS
+- id: snr
+  name: SNR / signal-quality measurements
+- id: wifi-csi
+  name: Wi-Fi CSI
+- id: position
+  name: Position
+- id: scene-geometry
+  name: Scene geometry
+- id: camera
+  name: Camera
+- id: lidar
+  name: LiDAR
+- id: radar
+  name: Radar
+- id: beam-power
+  name: Beam power
+- id: cir
+  name: Channel impulse response
+- id: spectrum
+  name: Spectrum
+- id: network-kpi
+  name: Network KPI
+- id: traffic
+  name: Traffic
+- id: mobility-trace
+  name: Mobility trace
+- id: packet-trace
+  name: Packet trace
+- id: radio-map
+  name: Radio map
+- id: range
+  name: Range measurements
+- id: imu
+  name: IMU
+- id: odometry
+  name: Odometry
+- id: geomagnetic
+  name: Geomagnetic field
+- id: gnss
+  name: GNSS observations
+- id: text
+  name: Text / natural language
+technologies:
+- id: wifi
+  name: Wi-Fi
+- id: ble
+  name: BLE
+- id: uwb
+  name: UWB
+- id: rfid
+  name: RFID
+- id: lte
+  name: LTE
+- id: 5g-nr
+  name: 5G NR
+- id: 6g
+  name: 6G
+- id: lorawan
+  name: LoRaWAN
+- id: zigbee
+  name: Zigbee
+- id: c-v2x
+  name: C-V2X
+- id: nr-v2x
+  name: NR-V2X
+- id: ieee-80211p
+  name: IEEE 802.11p
+generation_contexts:
+- id: 4g
+  name: 4G
+- id: 5g
+  name: 5G
+- id: 6g
+  name: 6G
+radio_configurations:
+- id: siso
+  name: SISO
+- id: mimo
+  name: MIMO
+- id: massive-mimo
+  name: Massive MIMO
+- id: phased-array
+  name: Phased array
+frequency_regimes:
+- id: sub-ghz
+  name: Sub-GHz
+- id: sub-6-ghz
+  name: Sub-6 GHz
+- id: mmwave
+  name: mmWave
+- id: sub-thz
+  name: Sub-THz
+- id: thz
+  name: THz
+environments:
+- id: indoor
+  name: Indoor
+- id: outdoor
+  name: Outdoor
+- id: urban
+  name: Urban
+- id: suburban
+  name: Suburban
+- id: rural
+  name: Rural
+- id: campus
+  name: Campus
+- id: office
+  name: Office
+- id: laboratory
+  name: Laboratory
+- id: industrial
+  name: Industrial
+- id: residential
+  name: Residential
+- id: vehicular
+  name: Vehicular
+- id: aerial
+  name: Aerial
+- id: parking-lot
+  name: Parking lot
+- id: not-applicable
+  name: Not applicable
+- id: unknown
+  name: Unknown
+ground_truth:
+- id: position
+  name: Position
+- id: orientation
+  name: Orientation / heading
+- id: velocity
+  name: Velocity
+- id: navigation-action
+  name: Navigation action / motion decision
+- id: floor
+  name: Floor
+- id: building
+  name: Building
+- id: beam-index
+  name: Beam index
+- id: beam-power
+  name: Beam power
+- id: blockage-status
+  name: Blockage status
+- id: modulation-label
+  name: Modulation label
+- id: gesture-label
+  name: Gesture label
+- id: snr
+  name: SNR
+- id: device-id
+  name: Device ID
+- id: user-id
+  name: User ID
+- id: timestamp
+  name: Timestamp
+- id: channel
+  name: Channel
+- id: path-parameters
+  name: Path parameters
+- id: radio-map
+  name: Radio map
+- id: scene-geometry
+  name: Scene / environment geometry
+- id: spectrum-occupancy
+  name: Spectrum occupancy
+- id: activity-label
+  name: Activity label
+- id: respiratory-motion
+  name: Respiratory motion
+- id: application-label
+  name: Application label
+- id: signal-class
+  name: Signal class
+- id: presence-label
+  name: Presence label
+- id: pose
+  name: Pose / keypoints
+- id: handover-event
+  name: Handover event
+- id: anomaly-label
+  name: Anomaly label
+- id: interference-label
+  name: Interference label
+- id: power-allocation
+  name: Power allocation
+- id: traffic-volume
+  name: Traffic volume
+origins:
+- id: measurement
+  name: Measurement
+- id: ray-tracing
+  name: Ray tracing
+- id: simulation
+  name: Simulation
+- id: synthetic
+  name: Synthetic
+- id: hybrid
+  name: Hybrid
+- id: unknown
+  name: Unknown
+access_statuses:
+- id: open
+  name: Open
+- id: registration
+  name: Registration required
+- id: request
+  name: Available on request
+- id: restricted
+  name: Restricted
+- id: unavailable
+  name: Unavailable
+- id: unknown
+  name: Unknown
+metadata_statuses:
+- id: verified
+  name: Verified
+- id: partially-verified
+  name: Partially verified
+- id: needs-review
+  name: Needs review
+- id: deprecated
+  name: Deprecated
+resource_types:
+- id: dataset
+  name: Dataset
+- id: dataset-family
+  name: Dataset family
+- id: dataset-collection
+  name: Dataset collection
+mobility_types:
+- id: static
+  name: Static
+- id: mobile
+  name: Mobile
+- id: mixed
+  name: Mixed
+- id: configurable
+  name: Configurable
+- id: not-applicable
+  name: Not applicable
+- id: not-reported
+  name: Not reported
+- id: unknown
+  name: Unknown
+temporal_structures:
+- id: snapshot
+  name: Snapshot
+- id: sequence
+  name: Sequence
+- id: trajectory
+  name: Trajectory
+- id: mixed
+  name: Mixed
+- id: configurable
+  name: Configurable
+- id: not-applicable
+  name: Not applicable
+- id: unknown
+  name: Unknown

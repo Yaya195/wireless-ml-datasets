@@ -1,0 +1,266 @@
+id: raymobtime
+name: Raymobtime
+aliases:
+- RayMobTime
+identity:
+  canonical_url: https://raymobtime.lasseufpa.org/
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: A collection of time-consistent ray-tracing datasets with mobility, channel data, and optional RGB/LiDAR
+  modalities for beam management, blockage, channel prediction, and localization research.
+released:
+  year: 2018
+  notes: The first Raymobtime scenarios were published in 2018; the collection has since expanded with multimodal,
+    V2V, indoor, and beam-tracking scenarios.
+origin:
+  type: ray-tracing
+  notes: Wireless channels are generated with Remcom Wireless InSite over dynamic 3D scenarios with mobility modeled
+    using SUMO and related tools.
+modalities:
+- channel-matrix
+- path-parameters
+- camera
+- lidar
+- position
+- mobility-trace
+technologies:
+- 6g
+generation_contexts:
+- 5g
+- 6g
+radio_configurations:
+- mimo
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  - mmwave
+  bands:
+  - label: 2.8 GHz
+    center_ghz: 2.8
+    min_ghz: null
+    max_ghz: null
+  - label: 5 GHz
+    center_ghz: 5.0
+    min_ghz: null
+    max_ghz: null
+  - label: 28 GHz
+    center_ghz: 28.0
+    min_ghz: null
+    max_ghz: null
+  - label: 60 GHz
+    center_ghz: 60.0
+    min_ghz: null
+    max_ghz: null
+  notes: Frequency is scenario-dependent; the public scenario catalogue includes sub-6 GHz and mmWave configurations.
+environments:
+- indoor
+- outdoor
+- urban
+- vehicular
+mobility:
+  type: mixed
+  notes: The collection includes fixed and mobile receivers, V2I/V2V scenarios, pedestrians, vehicles, and indoor
+    configurations.
+temporal_structure: sequence
+formats:
+- hdf5
+- npz
+- png
+- csv
+- json
+ground_truth:
+- position
+- beam-index
+- blockage-status
+- channel
+- path-parameters
+- timestamp
+scale:
+  samples: null
+  sequences: null
+  scenarios: 21
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The current public scenario catalogue enumerates 21 numbered scenarios with different frequencies, mobility
+    patterns, and modalities.
+access:
+  status: open
+  url: https://raymobtime.lasseufpa.org/scenarios/
+  notes: Scenario pages provide dataset download links and citation guidance.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The public scenario pages describe citation and usage rules, but no collection-wide standard dataset license
+    was confirmed during verification.
+official_resources:
+  homepage: https://raymobtime.lasseufpa.org/
+  repository: null
+  documentation: https://raymobtime.lasseufpa.org/scenarios/
+  loader: null
+references:
+- id: official-raymobtime
+  type: official-page
+  title: Raymobtime
+  url: https://raymobtime.lasseufpa.org/
+  doi: null
+  notes: null
+- id: scenario-catalogue
+  type: documentation
+  title: Raymobtime datasets and scenarios
+  url: https://raymobtime.lasseufpa.org/scenarios/
+  doi: null
+  notes: null
+- id: publications
+  type: documentation
+  title: Raymobtime publications by scenario and application
+  url: https://raymobtime.lasseufpa.org/publications/
+  doi: null
+  notes: null
+tasks:
+- task: beam-selection
+  scope: Multiple Raymobtime scenarios are explicitly released for ML-based beam selection.
+  inputs:
+  - channel-matrix
+  targets:
+  - beam-index
+  evidence:
+  - scenario-catalogue
+  - publications
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - urban
+    - vehicular
+    mobility: mixed
+    frequency_regimes:
+    - sub-6-ghz
+    - mmwave
+- task: beam-prediction
+  scope: The project explicitly lists beam prediction as a core use case, including multimodal scenarios.
+  inputs:
+  - camera
+  targets:
+  - beam-index
+  evidence:
+  - official-raymobtime
+  - scenario-catalogue
+  notes: Available input modalities are scenario-dependent; multimodal releases add camera and LiDAR alongside radio
+    data.
+  context:
+    environments:
+    - outdoor
+    - urban
+    - vehicular
+    mobility: mobile
+    frequency_regimes:
+    - mmwave
+- task: beam-tracking
+  scope: Dedicated sequential mmWave V2I scenarios are released for beam tracking.
+  inputs:
+  - channel-matrix
+  targets:
+  - beam-index
+  evidence:
+  - scenario-catalogue
+  - publications
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - urban
+    - vehicular
+    mobility: mobile
+    frequency_regimes:
+    - mmwave
+- task: blockage-prediction
+  scope: Raymobtime explicitly lists future blockage prediction as a supported use case for dynamic multimodal scenarios.
+  inputs:
+  - camera
+  - lidar
+  targets:
+  - blockage-status
+  evidence:
+  - official-raymobtime
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - urban
+    - vehicular
+    mobility: mobile
+    frequency_regimes:
+    - mmwave
+- task: channel-prediction
+  scope: Time-consistent channel sequences are provided for prediction of future channel state.
+  inputs:
+  - channel-matrix
+  targets:
+  - channel
+  evidence:
+  - official-raymobtime
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - urban
+    - vehicular
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+    - mmwave
+- task: localization
+  scope: The project lists UE localization and position prediction among its core use cases and provides aligned
+    channel/position data.
+  inputs:
+  - channel-matrix
+  targets:
+  - position
+  evidence:
+  - official-raymobtime
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - urban
+    - vehicular
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+    - mmwave
+- task: mobility-prediction
+  scope: Predict future UE positions from temporally consistent mobility and position sequences.
+  inputs:
+  - position
+  - mobility-trace
+  targets:
+  - position
+  evidence:
+  - official-raymobtime
+  notes: The official project lists UE localization and position prediction as a core use case.
+  context:
+    environments:
+    - outdoor
+    - urban
+    - vehicular
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+    - mmwave
+caveats:
+- text: Raymobtime is a heterogeneous scenario collection; not every scenario contains every modality or supports
+    every listed task, so task-specific scenario selection is essential.
+  evidence:
+  - scenario-catalogue
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: true

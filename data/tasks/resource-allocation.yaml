@@ -1,0 +1,19 @@
+id: resource-allocation
+name: Resource Allocation
+category: network-intelligence
+description: Allocate wireless communication resources such as spectrum, time, power, or spatial resources using
+  observed network state.
+aliases:
+- radio resource allocation
+status: active
+related_tasks:
+- user-scheduling
+- power-control
+notes: null
+comparison_fields:
+- inputs
+- origin
+- environments
+- mobility
+- temporal-structure
+- access

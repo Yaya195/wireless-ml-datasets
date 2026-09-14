@@ -1,0 +1,11 @@
+id: spectrum-sensing
+name: "Spectrum Sensing"
+category: signal-intelligence
+description: >-
+  Detect and characterize spectrum occupancy or transmission activity in one or more frequency bands from wireless observations.
+aliases:
+  - "spectrum occupancy detection"
+status: active
+related_tasks:
+  - interference-classification
+notes: null

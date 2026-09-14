@@ -1,0 +1,11 @@
+id: interference-classification
+name: "Interference Classification"
+category: signal-intelligence
+description: >-
+  Detect or classify interference sources, interference types, or interference conditions affecting wireless communication.
+aliases:
+  - "interference identification"
+status: active
+related_tasks:
+  - spectrum-sensing
+notes: null

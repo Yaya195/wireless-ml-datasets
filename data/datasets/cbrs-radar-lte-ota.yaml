@@ -1,0 +1,111 @@
+id: cbrs-radar-lte-ota
+name: Real-world Radar and LTE Signals in the CBRS Band
+aliases:
+- Real-world Radar and LTE Signals Dataset Collected Over-the-air in Shared CBRS Band
+identity:
+  canonical_url: https://doi.org/10.21227/ZDG0-7242
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/ZDG0-7242
+status: verified
+resource_type: dataset
+description: A real over-the-air CBRS coexistence dataset containing LTE and radar signals under overlapping and
+  non-overlapping conditions for machine-learning-based RF signal detection.
+released:
+  year: 2022
+  notes: Published on IEEE DataPort in 2022 and documented in the 2023 IEEE Communications Magazine special issue.
+origin:
+  type: measurement
+  notes: Over-the-air LTE/radar captures from an experimental RF setup.
+modalities:
+- iq
+technologies:
+- lte
+generation_contexts:
+- 4g
+- 5g
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 3.5 GHz CBRS band
+    center_ghz: 3.5
+    min_ghz: null
+    max_ghz: null
+  notes: The resource targets shared operation in the CBRS band.
+environments:
+- laboratory
+mobility:
+  type: not-applicable
+  notes: Controlled RF coexistence experiments.
+temporal_structure: sequence
+formats:
+- sigmf
+ground_truth:
+- signal-class
+scale:
+  samples: 5640
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 55.5
+  notes: The official project page describes 5,640 40-ms samples with LTE/radar coexistence variations.
+access:
+  status: open
+  url: https://genesys-lab.org/CBRS
+  notes: GENESYS provides the dataset download from its project page.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A dataset-specific license was not confirmed on the project page.
+official_resources:
+  homepage: https://genesys-lab.org/CBRS
+  repository: null
+  documentation: https://genesys-lab.org/CBRS
+  loader: null
+references:
+- id: project
+  type: official-page
+  title: Real-world Radar and LTE Signals Dataset Collected Over-the-air in Shared CBRS Band
+  url: https://genesys-lab.org/CBRS
+  doi: null
+  notes: null
+- id: dataport
+  type: data-host
+  title: Real-world Radar and LTE Signals Dataset Collected Over-the-air in Shared CBRS Band
+  url: https://doi.org/10.21227/ZDG0-7242
+  doi: 10.21227/ZDG0-7242
+  notes: null
+tasks:
+- task: signal-classification
+  scope: Detect/classify co-existing LTE and radar RF conditions from real over-the-air CBRS I/Q observations.
+  inputs:
+  - iq
+  targets:
+  - signal-class
+  evidence:
+  - project
+  - dataport
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The corpus is collected in controlled coexistence experiments and should not be treated as a complete field
+    survey of CBRS activity.
+  evidence:
+  - project
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

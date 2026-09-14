@@ -1,0 +1,121 @@
+id: spotlight-open-ran
+name: SpotLight Open RAN Anomaly Dataset
+aliases:
+- SpotLight Dataset
+identity:
+  canonical_url: https://github.com/netsys-edinburgh/SpotLight
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A labeled Open RAN anomaly-detection dataset collected from an enterprise-grade indoor 5G testbed,
+  with radio, platform, and network KPIs under baseline and controlled anomalous operating conditions.
+released:
+  year: 2024
+  notes: Released with the ACM MobiCom 2024 SpotLight work.
+origin:
+  type: measurement
+  notes: Real 5G Open RAN KPI measurements collected while controlled platform, network, radio, and mixed anomalies
+    were deliberately injected.
+modalities:
+- network-kpi
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The public dataset description does not expose one catalogue-wide carrier value.
+environments:
+- indoor
+- office
+mobility:
+  type: not-reported
+  notes: Traffic scenarios vary in UE count, but UE mobility is not the central published dataset dimension.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- anomaly-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Traffic scenarios include 1/5 UEs running TCP, UDP, video, file download, ping, or HTTP, plus a 7-UE ping
+    scenario.
+access:
+  status: open
+  url: https://github.com/netsys-edinburgh/SpotLight
+  notes: The public repository provides the schema, samples, labels, and a link to the full dataset.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No explicit dataset license was confirmed in the public dataset repository.
+official_resources:
+  homepage: https://github.com/netsys-edinburgh/SpotLight
+  repository: https://github.com/netsys-edinburgh/SpotLight
+  documentation: https://github.com/netsys-edinburgh/SpotLight
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: SpotLight Dataset
+  url: https://github.com/netsys-edinburgh/SpotLight
+  doi: null
+  notes: null
+- id: mobicom-paper
+  type: paper
+  title: 'SpotLight: Accurate, Explainable and Efficient Anomaly Detection for Open RAN'
+  url: https://doi.org/10.1145/3636534.364938
+  doi: 10.1145/3636534.364938
+  notes: null
+tasks:
+- task: network-anomaly-detection
+  scope: Detect anomalous Open RAN operating periods from radio, platform, and network KPI streams.
+  inputs:
+  - network-kpi
+  targets:
+  - anomaly-label
+  evidence:
+  - official-repo
+  - mobicom-paper
+  notes: Labels cover platform, fronthaul/network, radio, and mixed anomaly scenarios.
+  context:
+    environments:
+    - indoor
+    - office
+    mobility: not-reported
+    frequency_regimes: []
+- task: network-fault-diagnosis
+  scope: Localize Open-RAN performance failures to the responsible KPI/component set after anomaly detection.
+  inputs:
+  - network-kpi
+  targets:
+  - anomaly-label
+  evidence:
+  - mobicom-paper
+  notes: SpotLight explicitly includes an explainability/root-cause phase that identifies a minimal set of KPIs
+    responsible for an anomaly; labels cover platform, network/fronthaul, radio, and mixed injected failures.
+  context:
+    environments:
+    - indoor
+    - office
+    mobility: not-reported
+    frequency_regimes: []
+caveats:
+- text: Anomalies are deliberately injected to mimic real operating failures and interference; the resource is therefore
+    measured testbed data under controlled fault creation, not an observational field-failure corpus.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,130 @@
+id: ra-cd-wifi-navigation
+name: 'RA-CD: Robot-Aided Wi-Fi Localization and Navigation Dataset'
+aliases:
+- Robot-Aided Collected Dataset
+- RA-CD
+identity:
+  canonical_url: https://github.com/MUST-AI-Lab/RA-HDL
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A real robot-collected Wi-Fi RSSI dataset from an obstacle-containing indoor grid, with labeled and unlabeled
+  fingerprints used in a published hybrid-learning framework for both indoor localization and action-based navigation.
+released:
+  year: 2023
+  notes: Released with the Sensors 2023 RA-HDL study.
+origin:
+  type: measurement
+  notes: An Ackerman robot automatically collected RSSI values from seven Wi-Fi routers across a 17 × 6 m grid with obstacles.
+modalities:
+- wifi-rssi
+- position
+- scene-geometry
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: The paper identifies Wi-Fi RSSI measurements but does not make a catalogue-level frequency band claim in the curated
+    metadata.
+environments:
+- indoor
+mobility:
+  type: static
+  notes: RSSI fingerprints are collected repeatedly at passable grid positions by a robot following a predefined collection
+    path.
+temporal_structure: snapshot
+formats:
+- csv
+ground_truth:
+- position
+- scene-geometry
+scale:
+  samples: 7920
+  sequences: null
+  scenarios: 1
+  participants: null
+  devices: null
+  sites: 1
+  duration_hours: null
+  size_gb: null
+  notes: The paper reports 1,584 labeled fingerprints and 6,336 unlabeled fingerprints collected from seven Wi-Fi routers.
+access:
+  status: open
+  url: https://github.com/MUST-AI-Lab/RA-HDL
+  notes: The public repository contains labeled and unlabeled Wi-Fi CSV files.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A repository-level dataset license was not confirmed.
+official_resources:
+  homepage: https://github.com/MUST-AI-Lab/RA-HDL
+  repository: https://github.com/MUST-AI-Lab/RA-HDL
+  documentation: https://www.mdpi.com/1424-8220/23/14/6320
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: RA-HDL — public data repository
+  url: https://github.com/MUST-AI-Lab/RA-HDL
+  doi: null
+  notes: Contains the labeled and unlabeled Wi-Fi fingerprint CSV files used by the study.
+- id: paper
+  type: paper
+  title: 'Wi-Fi-Based Indoor Localization and Navigation: A Robot-Aided Hybrid Deep Learning Approach'
+  url: https://doi.org/10.3390/s23146320
+  doi: 10.3390/s23146320
+  notes: The peer-reviewed paper explicitly uses RA-CD for separate localization and navigation models, with the navigation
+    formulation learning motion actions in an obstacle-containing grid.
+tasks:
+- task: localization
+  scope: Estimate the robot/grid location from measured Wi-Fi RSSI fingerprints.
+  inputs:
+  - wifi-rssi
+  targets:
+  - position
+  evidence:
+  - official-repo
+  - paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: static
+    frequency_regimes:
+    - sub-6-ghz
+- task: radio-assisted-navigation
+  scope: Select motion actions in an obstacle-containing indoor grid using Wi-Fi-derived state/location information to guide
+    the agent toward a target.
+  inputs:
+  - wifi-rssi
+  - position
+  - scene-geometry
+  targets:
+  - navigation-action
+  evidence:
+  - paper
+  notes: 'This is direct navigation evidence rather than a navigation-by-title inference: the paper trains and evaluates a
+    distinct action model for the navigation task using RA-CD.'
+  context:
+    environments:
+    - indoor
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The public files contain RSSI fingerprints and grid labels; navigation actions are learned within the paper’s MDP/action-model
+    formulation rather than supplied as per-sample supervised action labels.
+  evidence:
+  - paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: false

@@ -1,0 +1,109 @@
+id: ucsb-wifi-gym-activity
+name: WiFi CSI Dataset of Common Physical Exercises
+aliases:
+- WiFi Gym Activity Dataset
+identity:
+  canonical_url: https://web.ece.ucsb.edu/mostofi-lab/WiFiGymActivityDataset.html
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A measured Wi-Fi CSI human-activity dataset with 300 activity periods from 10 participants performing
+  10 physical exercises across three indoor environments.
+released:
+  year: 2020
+  notes: Released with the ACM IMWUT 2020 study on RF sensing without RF training measurements.
+origin:
+  type: measurement
+  notes: Real CSI captured with three Intel 5300-based Wi-Fi transmitter/receiver pairs.
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations:
+- mimo
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 5.18 GHz / 5.22 GHz
+    center_ghz: null
+    min_ghz: 5.18
+    max_ghz: 5.22
+  notes: The associated experiments use Wi-Fi channels 36 and 44 at 5.18 and 5.22 GHz.
+environments:
+- indoor
+- laboratory
+mobility:
+  type: not-applicable
+  notes: Human exercise motion is the sensing target.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- activity-label
+scale:
+  samples: 300
+  sequences: null
+  scenarios: 3
+  participants: 10
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Ten participants perform ten activities in three environments, yielding 300 activity periods.
+access:
+  status: request
+  url: https://web.ece.ucsb.edu/mostofi-lab/WiFiGymActivityDataset.html
+  notes: Users request access by email with affiliation and intended use.
+license:
+  status: known
+  name: CC BY-NC 4.0
+  url: https://creativecommons.org/licenses/by-nc/4.0/
+  notes: The official dataset page states Creative Commons Attribution-NonCommercial 4.0 International.
+official_resources:
+  homepage: https://web.ece.ucsb.edu/mostofi-lab/WiFiGymActivityDataset.html
+  repository: null
+  documentation: https://web.ece.ucsb.edu/mostofi-lab/WiFiGymActivityDataset.html
+  loader: null
+references:
+- id: official-page
+  type: official-page
+  title: WiFi CSI Dataset of Common Physical Exercises
+  url: https://web.ece.ucsb.edu/mostofi-lab/WiFiGymActivityDataset.html
+  doi: null
+  notes: null
+- id: imwut-paper
+  type: paper
+  title: Teaching RF to Sense without RF Training Measurements
+  url: https://doi.org/10.1145/3432224
+  doi: 10.1145/3432224
+  notes: null
+tasks:
+- task: human-activity-recognition
+  scope: Classify ten physical exercises from real Wi-Fi CSI measurements.
+  inputs:
+  - wifi-csi
+  targets:
+  - activity-label
+  evidence:
+  - official-page
+  - imwut-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The dataset contains only 10 participants and three environments and is distributed by request rather than
+    direct public download.
+  evidence:
+  - official-page
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,95 @@
+id: uci-ble-rssi-localization
+name: BLE RSSI Dataset for Indoor Localization and Navigation
+aliases: []
+identity:
+  canonical_url: https://archive.ics.uci.edu/dataset/435/ble%2Brssi%2Bdataset%2Bfor%2Bindoor%2Blocalization%2Band%2Bnavigation
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.24432/C54G80
+status: verified
+resource_type: dataset
+description: BLE iBeacon RSSI measurements collected in an operational university library, with labeled location observations
+  and additional unlabeled measurements for indoor localization/navigation research.
+released:
+  year: 2017
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- rss
+technologies:
+- ble
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+mobility:
+  type: static
+  notes: null
+temporal_structure: sequence
+formats:
+- csv
+ground_truth:
+- position
+- timestamp
+scale:
+  samples: 6611
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: 1,420 labeled and 5,191 unlabeled instances; 13 iBeacon RSSI features.
+access:
+  status: open
+  url: https://archive.ics.uci.edu/dataset/435/ble%2Brssi%2Bdataset%2Bfor%2Bindoor%2Blocalization%2Band%2Bnavigation
+  notes: Directly downloadable from UCI.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://archive.ics.uci.edu/dataset/435/ble%2Brssi%2Bdataset%2Bfor%2Bindoor%2Blocalization%2Band%2Bnavigation
+  repository: null
+  documentation: https://archive.ics.uci.edu/dataset/435/ble%2Brssi%2Bdataset%2Bfor%2Bindoor%2Blocalization%2Band%2Bnavigation
+  loader: https://archive.ics.uci.edu/dataset/435/ble%2Brssi%2Bdataset%2Bfor%2Bindoor%2Blocalization%2Band%2Bnavigation
+references:
+- id: uci
+  type: data-host
+  title: BLE RSSI Dataset for Indoor localization and Navigation
+  url: https://archive.ics.uci.edu/dataset/435/ble%2Brssi%2Bdataset%2Bfor%2Bindoor%2Blocalization%2Band%2Bnavigation
+  doi: 10.24432/C54G80
+  notes: null
+tasks:
+- task: localization
+  scope: Infer indoor location labels from RSSI readings of 13 BLE iBeacons.
+  inputs:
+  - rss
+  targets:
+  - position
+  evidence:
+  - uci
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: static
+    frequency_regimes: []
+caveats:
+- text: The labeled target is a discrete grid/location identifier rather than continuous metric coordinates.
+  evidence:
+  - uci
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

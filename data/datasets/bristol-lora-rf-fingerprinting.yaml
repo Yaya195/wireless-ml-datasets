@@ -1,0 +1,114 @@
+id: bristol-lora-rf-fingerprinting
+name: LoRa Sensor RF Fingerprinting Dataset
+aliases:
+- LoRa sensor data sets for RF finger printing via Self-Organizing Feature Maps
+identity:
+  canonical_url: https://doi.org/10.21227/63KX-SR47
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/63KX-SR47
+  - scheme: other
+    value: 10.5523/bris.3u4rzcddg047028q6snonqtnd9
+status: verified
+resource_type: dataset
+description: A public RF-fingerprinting dataset of LoRa sensor transmissions, including raw I/Q data and derived
+  self-organizing-feature-map representations for device authentication.
+released:
+  year: 2022
+  notes: Released through IEEE DataPort in 2022 with an open University of Bristol mirror.
+origin:
+  type: measurement
+  notes: Real LoRa sensor RF captures used for device-authentication experiments.
+modalities:
+- iq
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes:
+  - sub-ghz
+  bands: []
+  notes: The dataset concerns LoRa sensor links; exact collection carrier is left to the release documentation.
+environments:
+- laboratory
+mobility:
+  type: static
+  notes: Controlled device-authentication measurements.
+temporal_structure: sequence
+formats:
+- mat
+- png
+ground_truth:
+- device-id
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: 6
+  sites: null
+  duration_hours: null
+  size_gb: 0.064
+  notes: The Bristol mirror contains raw LoRa I/Q data plus derived SOFM images for six transmitters.
+access:
+  status: open
+  url: https://data.bris.ac.uk/data/dataset/3u4rzcddg047028q6snonqtnd9
+  notes: Open University of Bristol mirror of the dataset accompanying the IEEE work.
+license:
+  status: known
+  name: Non-Commercial Government Licence for public sector information
+  url: https://data.bris.ac.uk/data/dataset/3u4rzcddg047028q6snonqtnd9
+  notes: The Bristol mirror states this license; the IEEE DataPort copy is also described by Bristol as CC BY 4.0.
+official_resources:
+  homepage: https://research-information.bris.ac.uk/en/datasets/lora-sensor-data-sets-for-rf-finger-printing-via-self-organizing-/
+  repository: null
+  documentation: https://research-information.bris.ac.uk/en/publications/iot-device-authentication-using-self-organizing-feature-map-data-/
+  loader: null
+references:
+- id: dataport-metadata
+  type: official-page
+  title: LoRa sensor data sets for RF finger printing via Self-Organizing Feature Maps
+  url: https://research-information.bris.ac.uk/en/datasets/lora-sensor-data-sets-for-rf-finger-printing-via-self-organizing-/
+  doi: 10.21227/63KX-SR47
+  notes: null
+- id: bristol-data
+  type: data-host
+  title: Nair et al. IoT Device Authentication CommsMag dataset
+  url: https://data.bris.ac.uk/data/dataset/3u4rzcddg047028q6snonqtnd9
+  doi: 10.5523/bris.3u4rzcddg047028q6snonqtnd9
+  notes: null
+- id: paper
+  type: paper
+  title: IoT Device Authentication Using Self-Organizing Feature Map Data Sets
+  url: https://doi.org/10.1109/MCOM.002.2200705
+  doi: 10.1109/MCOM.002.2200705
+  notes: null
+tasks:
+- task: rf-fingerprinting
+  scope: Identify/authenticate LoRa sensor devices from device-specific RF fingerprints.
+  inputs:
+  - iq
+  targets:
+  - device-id
+  evidence:
+  - dataport-metadata
+  - bristol-data
+  - paper
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: static
+    frequency_regimes:
+    - sub-ghz
+caveats:
+- text: The public mirror includes both raw I/Q and post-processed SOFM representations; experiments should state
+    which representation is used.
+  evidence:
+  - bristol-data
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,108 @@
+id: kth-cell-free-downlink-power-allocation
+name: KTH Learning-Based Downlink Power Allocation Datasets
+aliases:
+- Datasets associated with Learning-Based Downlink Power Allocation in Cell-Free Massive MIMO Systems
+identity:
+  canonical_url: https://zenodo.org/records/7524622
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.7524622
+status: verified
+resource_type: dataset
+description: A KTH cell-free massive-MIMO dataset containing large-scale fading inputs and labeled locally optimal
+  downlink power coefficients for sum-spectral-efficiency and proportional-fairness objectives under MR and RZF
+  precoding.
+released:
+  year: 2023
+  notes: The Zenodo record was published in January 2023.
+origin:
+  type: simulation
+  notes: The released arrays were generated for the simulation setup used in the associated IEEE TWC study.
+modalities:
+- channel-matrix
+- position
+technologies: []
+generation_contexts: []
+radio_configurations:
+- massive-mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: No single catalogue-wide carrier value is recorded here.
+environments:
+- unknown
+mobility:
+  type: not-applicable
+  notes: The resource contains independently generated network setups.
+temporal_structure: snapshot
+formats:
+- npy
+ground_truth:
+- power-allocation
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 4.7
+  notes: The release includes large-scale fading inputs, AP locations, optimized power labels, and spectral-efficiency
+    outputs.
+access:
+  status: open
+  url: https://zenodo.org/records/7524622
+  notes: The dataset arrays are publicly downloadable from Zenodo.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No explicit dataset license was confirmed from the verified Zenodo metadata.
+official_resources:
+  homepage: https://zenodo.org/records/7524622
+  repository: null
+  documentation: https://zenodo.org/records/7524622
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: Datasets associated with Learning-Based Downlink Power Allocation in Cell-Free Massive MIMO Systems
+  url: https://zenodo.org/records/7524622
+  doi: 10.5281/zenodo.7524622
+  notes: null
+- id: twc-paper
+  type: paper
+  title: Learning-Based Downlink Power Allocation in Cell-Free Massive MIMO Systems
+  url: https://doi.org/10.1109/TWC.2022.3213840
+  doi: 10.1109/TWC.2022.3213840
+  notes: null
+tasks:
+- task: power-control
+  scope: Predict downlink power coefficients from large-scale fading for sum-SE or proportional-fairness optimization
+    with MR/RZF precoding.
+  inputs:
+  - channel-matrix
+  targets:
+  - power-allocation
+  evidence:
+  - zenodo-record
+  - twc-paper
+  notes: null
+  context:
+    environments:
+    - unknown
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: The labels are optimization-derived solutions under the associated simulated system model; they are not
+    measured transmit-power decisions from a deployed network.
+  evidence:
+  - zenodo-record
+  - twc-paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,12 @@
+id: signal-classification
+name: "Signal Classification"
+category: signal-intelligence
+description: >-
+  Assign received wireless signals to predefined signal, protocol, waveform, or emitter-related classes beyond modulation recognition alone.
+aliases:
+  - "RF signal classification"
+status: active
+related_tasks:
+  - modulation-recognition
+  - rf-fingerprinting
+notes: null

@@ -1,0 +1,107 @@
+id: imuwifine
+name: IMUWiFine
+aliases:
+- 'IMUWiFine: End-to-End Sequential Indoor Localization'
+identity:
+  canonical_url: https://huggingface.co/datasets/issai/IMUWiFine
+  version: null
+  external_ids:
+  - scheme: huggingface
+    value: issai/IMUWiFine
+status: verified
+resource_type: dataset
+description: A large sequential indoor-localization dataset combining smartphone IMU measurements with Wi-Fi RSSI
+  over 120 trajectories and three floors of Nazarbayev University's C4 building.
+released:
+  year: 2022
+  notes: Released with the 2022 IEEE/SICE SII paper and maintained on Hugging Face.
+origin:
+  type: measurement
+  notes: Real smartphone inertial and Wi-Fi RSSI measurements collected along indoor trajectories.
+modalities:
+- imu
+- wifi-rssi
+- position
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The public card does not expose one collection-wide Wi-Fi carrier value.
+environments:
+- indoor
+- campus
+mobility:
+  type: mobile
+  notes: Pedestrian trajectory collection.
+temporal_structure: trajectory
+formats: []
+ground_truth:
+- position
+- floor
+scale:
+  samples: 5400000
+  sequences: 120
+  scenarios: null
+  participants: null
+  devices: null
+  sites: 1
+  duration_hours: 10.4
+  size_gb: 30.6
+  notes: About 14.2 km of trajectories over more than 9,000 m² across three floors.
+access:
+  status: open
+  url: https://huggingface.co/datasets/issai/IMUWiFine
+  notes: Public Hugging Face dataset.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://huggingface.co/datasets/issai/IMUWiFine
+  repository: https://github.com/IS2AI/IMUWiFine
+  documentation: https://huggingface.co/datasets/issai/IMUWiFine/blob/main/README.md
+  loader: https://huggingface.co/datasets/issai/IMUWiFine
+references:
+- id: hf-card
+  type: data-host
+  title: IMUWiFine
+  url: https://huggingface.co/datasets/issai/IMUWiFine
+  doi: null
+  notes: null
+- id: paper
+  type: paper
+  title: End-to-End Sequential Indoor Localization Using Smartphone Inertial Sensors and WiFi
+  url: https://doi.org/10.1109/SII52469.2022.9708854
+  doi: 10.1109/SII52469.2022.9708854
+  notes: null
+tasks:
+- task: localization
+  scope: Estimate sequential indoor position from jointly observed smartphone IMU and Wi-Fi RSSI.
+  inputs:
+  - imu
+  - wifi-rssi
+  targets:
+  - position
+  evidence:
+  - hf-card
+  - paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - campus
+    mobility: mobile
+    frequency_regimes: []
+caveats:
+- text: The resource covers one building; transfer to unseen buildings must be evaluated separately.
+  evidence:
+  - hf-card
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

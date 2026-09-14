@@ -1,0 +1,19 @@
+id: user-scheduling
+name: User Scheduling
+category: network-intelligence
+description: Select and schedule users, links, or transmissions over wireless resources based on current or predicted
+  network state.
+aliases:
+- wireless scheduling
+status: active
+related_tasks:
+- resource-allocation
+notes: null
+comparison_fields:
+- inputs
+- origin
+- frequency-regimes
+- environments
+- mobility
+- temporal-structure
+- access

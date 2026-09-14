@@ -1,0 +1,104 @@
+id: widar3
+name: Widar3.0
+aliases:
+- Widar 3.0
+identity:
+  canonical_url: https://tns.thss.tsinghua.edu.cn/widar3.0/
+  version: '3.0'
+  external_ids: []
+status: partially-verified
+resource_type: dataset
+description: A large real-world Wi-Fi CSI gesture dataset designed for cross-domain gesture recognition across changes
+  in environment, user location, orientation, and user identity.
+released:
+  year: 2019
+  notes: Introduced at ACM MobiSys 2019; later extended journal publication appeared in IEEE TPAMI.
+origin:
+  type: measurement
+  notes: Collected using commodity Wi-Fi hardware in real environments.
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  bands: []
+  notes: Carrier-frequency metadata was not recorded in this initial catalogue entry.
+  regimes: []
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: The primary research task is gesture sensing; mobility here is not treated as user trajectory mobility.
+temporal_structure: sequence
+formats:
+- various
+ground_truth:
+- gesture-label
+- user-id
+scale:
+  samples: 258575
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: 143.67
+  size_gb: 325
+  notes: Project slides report 258,575 gesture instances, 8,620 minutes, 75 domains, and about 325 GB.
+access:
+  status: open
+  url: https://tns.thss.tsinghua.edu.cn/widar3.0/
+  notes: The official project page publishes the dataset; link availability should be monitored periodically.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A clear dataset license was not identified in the sources checked for this initial entry.
+official_resources:
+  homepage: https://tns.thss.tsinghua.edu.cn/widar3.0/
+  repository: null
+  documentation: https://tns.thss.tsinghua.edu.cn/widar3.0/
+  loader: null
+references:
+- id: official-project
+  type: official-page
+  title: Widar3.0 project and dataset
+  url: https://tns.thss.tsinghua.edu.cn/widar3.0/
+  doi: null
+  notes: null
+- id: mobisys-paper
+  type: paper
+  title: Zero-Effort Cross-Domain Gesture Recognition with Wi-Fi
+  url: https://tns.thss.tsinghua.edu.cn/widar3.0/data/MobiSys19_Widar3.0_paper.pdf
+  doi: null
+  notes: null
+- id: tpami-paper
+  type: paper
+  title: 'Widar3.0: Zero-Effort Cross-Domain Gesture Recognition With Wi-Fi'
+  url: https://doi.org/10.1109/TPAMI.2021.3105387
+  doi: 10.1109/TPAMI.2021.3105387
+  notes: null
+tasks:
+- task: gesture-recognition
+  scope: Cross-domain Wi-Fi gesture recognition across environment, location, orientation, and user factors.
+  inputs:
+  - wifi-csi
+  targets:
+  - gesture-label
+  evidence:
+  - mobisys-paper
+  - tpami-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: Marked partially verified because license and some radio/hardware metadata still need confirmation.
+featured: true

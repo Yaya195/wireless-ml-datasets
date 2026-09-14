@@ -1,0 +1,10 @@
+id: vital-sign-sensing
+name: "Vital Sign Sensing"
+category: wireless-sensing
+description: >-
+  Estimate physiological signals such as respiration or heart activity from wireless sensing measurements.
+aliases:
+  - "vital sign monitoring"
+status: active
+related_tasks: []
+notes: null

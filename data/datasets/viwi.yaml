@@ -1,0 +1,175 @@
+id: viwi
+name: ViWi
+aliases:
+- ViWi Dataset
+identity:
+  canonical_url: https://www.viwi-dataset.net/
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-family
+description: A vision-aided wireless dataset framework and scenario family combining rendered RGB/LiDAR context
+  with ray-traced mmWave wireless data for beam and blockage research.
+released:
+  year: 2019
+  notes: The original ViWi framework was released in 2019; later versions and the ViWi-BT challenge added scenarios
+    and sequential beam-tracking data.
+origin:
+  type: ray-tracing
+  notes: Wireless channels are produced from virtual scenarios with Remcom Wireless InSite; visual and scene modalities
+    are rendered from the same environments.
+modalities:
+- channel-matrix
+- camera
+- lidar
+- position
+- scene-geometry
+technologies:
+- 6g
+generation_contexts:
+- 5g
+- 6g
+radio_configurations:
+- mimo
+- phased-array
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  - mmwave
+  bands:
+  - label: 28 GHz
+    center_ghz: 28.0
+    min_ghz: null
+    max_ghz: null
+  notes: Core ViWi scenarios include 28 GHz mmWave links; some published ViWi applications combine visual data with
+    sub-6 GHz channels.
+environments:
+- outdoor
+- urban
+- vehicular
+mobility:
+  type: mobile
+  notes: Public scenarios model moving cars/users over defined trajectories.
+temporal_structure: sequence
+formats:
+- mat
+- csv
+- h5
+- png
+ground_truth:
+- beam-index
+- blockage-status
+- position
+- channel
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: ViWi provides multiple scenario families and versioned generation packages rather than one fixed sample
+    count.
+access:
+  status: open
+  url: https://www.viwi-dataset.net/scenarios.html
+  notes: Scenario source data and generation packages are linked from the official ViWi site; historical competition
+    packages may have had separate registration workflows.
+license:
+  status: known
+  name: CC BY-NC-SA 4.0
+  url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  notes: The official ViWi site states that the dataset is licensed under Creative Commons Attribution-NonCommercial-ShareAlike
+    4.0 International.
+official_resources:
+  homepage: https://www.viwi-dataset.net/
+  repository: null
+  documentation: https://www.viwi-dataset.net/scenarios.html
+  loader: null
+references:
+- id: official-viwi
+  type: official-page
+  title: 'ViWi: A Deep Learning Dataset Framework for Vision-Aided Wireless Communications'
+  url: https://www.viwi-dataset.net/
+  doi: null
+  notes: null
+- id: viwi-applications
+  type: documentation
+  title: ViWi applications on vision-aided wireless communications
+  url: https://www.viwi-dataset.net/applications.html
+  doi: null
+  notes: null
+- id: viwi-bt
+  type: challenge
+  title: ViWi Vision-Aided Millimeter Wave Beam Tracking Competition
+  url: https://www.viwi-dataset.net/viwi-bt.html
+  doi: null
+  notes: null
+tasks:
+- task: beam-prediction
+  scope: ViWi applications use visual observations, optionally with wireless context, to predict mmWave beams.
+  inputs:
+  - camera
+  targets:
+  - beam-index
+  evidence:
+  - viwi-applications
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - urban
+    - vehicular
+    mobility: mobile
+    frequency_regimes:
+    - mmwave
+- task: blockage-prediction
+  scope: ViWi supports vision-aided future blockage prediction using image sequences and, in some formulations,
+    sub-6 GHz channel information.
+  inputs:
+  - camera
+  - channel-matrix
+  targets:
+  - blockage-status
+  evidence:
+  - viwi-applications
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - urban
+    - vehicular
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+    - mmwave
+- task: beam-tracking
+  scope: The ViWi-BT dataset uses sequences of observed RGB images and beam indices to predict future mmWave beams.
+  inputs:
+  - camera
+  targets:
+  - beam-index
+  evidence:
+  - viwi-bt
+  notes: Historical ViWi-BT development data were distributed as MAT, CSV, and H5 packages.
+  context:
+    environments:
+    - outdoor
+    - urban
+    - vehicular
+    mobility: mobile
+    frequency_regimes:
+    - mmwave
+caveats:
+- text: ViWi is a scenario-generation framework/family rather than one immutable dataset; exact modalities and labels
+    depend on the selected scenario, version, and generated configuration.
+  evidence:
+  - official-viwi
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: true

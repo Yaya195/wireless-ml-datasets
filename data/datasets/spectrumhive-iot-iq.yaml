@@ -1,0 +1,125 @@
+id: spectrumhive-iot-iq
+name: spectrumHive IoT I/Q Dataset
+aliases: []
+identity:
+  canonical_url: https://github.com/WirelessLabUSV/spectrumHiveDatasets/blob/main/spectrumHive_IoT_Dataset_IQstream.md
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A synthetic wireless I/Q dataset with 120,000 frames spanning QPSK, DBPSK, GFSK, QAM, LoRa CSS spreading
+  factors, and noise, generated for AI-based spectrum sensing and modulation/signal classification research.
+released:
+  year: 2025
+  notes: Released alongside 2025 AI-based spectrum-sensing work.
+origin:
+  type: synthetic
+  notes: Generated communication waveforms with Rician fading, clock offsets, and controlled SNR variation.
+modalities:
+- iq
+technologies:
+- lorawan
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-applicable
+  regimes: []
+  bands: []
+  notes: Complex-baseband frames are generated independently of one fixed RF carrier.
+environments:
+- not-applicable
+mobility:
+  type: not-applicable
+  notes: null
+temporal_structure: sequence
+formats:
+- mat
+ground_truth:
+- modulation-label
+- signal-class
+- snr
+scale:
+  samples: 120000
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: 120,000 frames, 4,096 complex samples per frame, SNR from -5 to 30 dB.
+access:
+  status: open
+  url: https://github.com/WirelessLabUSV/spectrumHiveDatasets/blob/main/spectrumHive_IoT_Dataset_IQstream.md
+  notes: The official repository page provides the download link and format description.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No dataset-specific license was confirmed from the verified repository page.
+official_resources:
+  homepage: https://github.com/WirelessLabUSV/spectrumHiveDatasets
+  repository: https://github.com/WirelessLabUSV/spectrumHiveDatasets
+  documentation: https://github.com/WirelessLabUSV/spectrumHiveDatasets/blob/main/spectrumHive_IoT_Dataset_IQstream.md
+  loader: null
+references:
+- id: official-page
+  type: repository
+  title: spectrumHive IoT Dataset IQstream
+  url: https://github.com/WirelessLabUSV/spectrumHiveDatasets/blob/main/spectrumHive_IoT_Dataset_IQstream.md
+  doi: null
+  notes: null
+tasks:
+- task: modulation-recognition
+  scope: Recognize digital/LoRa modulation classes from complex I/Q frames across SNR variation.
+  inputs:
+  - iq
+  targets:
+  - modulation-label
+  evidence:
+  - official-page
+  notes: null
+  context:
+    environments:
+    - not-applicable
+    mobility: not-applicable
+    frequency_regimes: []
+- task: signal-classification
+  scope: Classify wireless signal type versus noise and among multiple communication waveform classes.
+  inputs:
+  - iq
+  targets:
+  - signal-class
+  evidence:
+  - official-page
+  notes: The dataset is explicitly released for AI-based spectrum-sensing applications and includes a noise class
+    alongside 11 signal classes.
+  context:
+    environments:
+    - not-applicable
+    mobility: not-applicable
+    frequency_regimes: []
+- task: spectrum-sensing
+  scope: AI-based sensing of signal presence/type from complex I/Q frames spanning wireless waveforms and a noise
+    class.
+  inputs:
+  - iq
+  targets:
+  - signal-class
+  evidence:
+  - official-page
+  notes: The official release is explicitly described as a dataset for AI-based spectrum-sensing applications; it
+    provides noise plus 11 waveform classes rather than a time-frequency occupancy mask.
+  context:
+    environments:
+    - not-applicable
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: The data are synthetic complex-baseband frames with modeled fading/clock offsets, not over-the-air captures.
+  evidence:
+  - official-page
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

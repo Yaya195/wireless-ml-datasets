@@ -1,0 +1,12 @@
+id: presence-detection
+name: "Presence Detection"
+category: wireless-sensing
+description: >-
+  Detect whether one or more people or relevant targets are present in an environment using wireless sensing measurements.
+aliases:
+  - "occupancy detection"
+status: active
+related_tasks:
+  - device-free-localization
+  - human-activity-recognition
+notes: null

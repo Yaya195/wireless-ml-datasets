@@ -1,0 +1,105 @@
+id: massive-mimo-csi-nextgen
+name: Massive MIMO CSI Dataset for Next-Generation Networks
+aliases: []
+identity:
+  canonical_url: https://zenodo.org/records/14555910
+  version: v1
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.14555910
+status: verified
+resource_type: dataset
+description: A simulated massive-MIMO CSI dataset with stationary, high-speed mobility, and urban-macro scenarios,
+  including 3GPP-based channel profiles with noise and Doppler effects for CSI prediction and related AI/ML studies.
+released:
+  year: 2024
+  notes: Version v1 was published on 25 December 2024.
+origin:
+  type: simulation
+  notes: 3GPP-based simulated massive-MIMO channels with noise and Doppler.
+modalities:
+- channel-matrix
+technologies:
+- 6g
+generation_contexts:
+- 5g
+- 6g
+radio_configurations:
+- massive-mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- urban
+- unknown
+mobility:
+  type: mixed
+  notes: Includes stationary and high-speed mobility scenarios.
+temporal_structure: sequence
+formats:
+- mat
+ground_truth:
+- channel
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 1.5
+  notes: Single MAT archive of approximately 1.5 GB.
+access:
+  status: open
+  url: https://zenodo.org/records/14555910
+  notes: Public Zenodo download.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The dataset record does not expose a confirmed license value.
+official_resources:
+  homepage: https://zenodo.org/records/14555910
+  repository: https://github.com/ocatak/MassiveMIMO-CSI-Dataset
+  documentation: https://github.com/ocatak/MassiveMIMO-CSI-Dataset
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: Massive MIMO Channel State Information (CSI) Dataset for Next-Generation Networks Research
+  url: https://zenodo.org/records/14555910
+  doi: 10.5281/zenodo.14555910
+  notes: null
+- id: official-repo
+  type: repository
+  title: MassiveMIMO-CSI-Dataset
+  url: https://github.com/ocatak/MassiveMIMO-CSI-Dataset
+  doi: null
+  notes: Official repository explicitly describes the dataset as a resource for researchers in 5G/6G networks.
+tasks:
+- task: channel-prediction
+  scope: Predict future massive-MIMO CSI across stationary, high-speed mobility, and urban-macro channel conditions.
+  inputs:
+  - channel-matrix
+  targets:
+  - channel
+  evidence:
+  - zenodo-record
+  notes: The official dataset description explicitly lists CSI prediction as an intended use.
+  context:
+    environments:
+    - urban
+    - unknown
+    mobility: mixed
+    frequency_regimes: []
+caveats:
+- text: The resource is simulation-based; performance does not by itself establish transfer to measured channels.
+  evidence:
+  - zenodo-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

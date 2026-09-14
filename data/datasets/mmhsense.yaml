@@ -1,0 +1,160 @@
+id: mmhsense
+name: mmHSense
+aliases:
+- Multi-Modal and Distributed mmWave ISAC Datasets for Human Sensing
+identity:
+  canonical_url: https://ieee-dataport.org/documents/mmwavexr-multi-modal-and-distributed-mmwave-isac-datasets-human-sensing
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: A collection of six open labeled mmWave ISAC datasets spanning gesture recognition, skeletal pose estimation,
+  localization, and gait/person identification with CSI, beam-SNR, and related mmWave sensing features.
+released:
+  year: 2025
+  notes: The IEEE DataPort dataset publication is indexed in 2025; the peer-reviewed IEEE Access descriptor appeared
+    in 2026.
+origin:
+  type: measurement
+  notes: Measured bi-static and multi-static mmWave wireless sensing datasets collected with Wi-Fi and 5G-class
+    hardware.
+modalities:
+- channel-matrix
+- beam-power
+technologies:
+- wifi
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations:
+- phased-array
+frequency:
+  status: varies
+  regimes:
+  - mmwave
+  bands:
+  - label: 60 GHz (Wi-Fi subsets)
+    center_ghz: 60.0
+    min_ghz: null
+    max_ghz: null
+  notes: The collection includes 60 GHz Wi-Fi sensing and a separate 5G mmWave gesture subset; exact settings vary
+    by sub-dataset.
+environments:
+- indoor
+- laboratory
+mobility:
+  type: not-applicable
+  notes: Human motion/pose is the sensing subject rather than wireless-node mobility.
+temporal_structure: sequence
+formats:
+- pth
+ground_truth:
+- gesture-label
+- pose
+- position
+scale:
+  samples: null
+  sequences: null
+  scenarios: 6
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The collection comprises mmWGesture, 5GmmGesture, mmWPose, DISAC-mmVRPose, mmW-Loc, and mmW-GaitID.
+access:
+  status: registration
+  url: https://ieee-dataport.org/documents/mmwavexr-multi-modal-and-distributed-mmwave-isac-datasets-human-sensing
+  notes: The authors distribute the dataset through IEEE DataPort; the public code repository links the download.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: The official project repository states CC BY 4.0 for the released resource.
+official_resources:
+  homepage: https://github.com/nisarnabeel/Multi-Modal-and-Distributed-mmWave-ISAC-Datasets-for-Human-Sensing
+  repository: https://github.com/nisarnabeel/Multi-Modal-and-Distributed-mmWave-ISAC-Datasets-for-Human-Sensing
+  documentation: https://github.com/nisarnabeel/Multi-Modal-and-Distributed-mmWave-ISAC-Datasets-for-Human-Sensing
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: mmHSense official code and dataset guide
+  url: https://github.com/nisarnabeel/Multi-Modal-and-Distributed-mmWave-ISAC-Datasets-for-Human-Sensing
+  doi: null
+  notes: null
+- id: dataport
+  type: data-host
+  title: 'mmWavexR: Multi-Modal and Distributed mmWave ISAC Datasets for Human Sensing'
+  url: https://ieee-dataport.org/documents/mmwavexr-multi-modal-and-distributed-mmwave-isac-datasets-human-sensing
+  doi: null
+  notes: null
+- id: access-paper
+  type: paper
+  title: 'mmHSense: Multi-Modal and Distributed mmWave ISAC Datasets for Human Sensing'
+  url: https://doi.org/10.1109/ACCESS.2026.3691174
+  doi: 10.1109/ACCESS.2026.3691174
+  notes: null
+tasks:
+- task: gesture-recognition
+  scope: Recognize human gestures from mmWave Wi-Fi or 5G sensing features.
+  inputs:
+  - channel-matrix
+  - beam-power
+  targets:
+  - gesture-label
+  evidence:
+  - official-repo
+  - access-paper
+  notes: The collection includes both mmWGesture and 5GmmGesture.
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes:
+    - mmwave
+- task: pose-estimation
+  scope: Estimate skeletal human pose from mmWave CSI/sensing features.
+  inputs:
+  - channel-matrix
+  targets:
+  - pose
+  evidence:
+  - official-repo
+  - access-paper
+  notes: Supported by mmWPose and DISAC-mmVRPose.
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes:
+    - mmwave
+- task: localization
+  scope: Estimate discrete human/location states using the mmW-Loc sensing subset.
+  inputs:
+  - beam-power
+  targets:
+  - position
+  evidence:
+  - official-repo
+  - access-paper
+  notes: The mmW-Loc release supports localization with optional background subtraction.
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes:
+    - mmwave
+caveats:
+- text: 'mmHSense is a heterogeneous collection: signal feature, hardware, geometry, labels, subjects, and sampling
+    configuration differ by sub-dataset.'
+  evidence:
+  - official-repo
+  - access-paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

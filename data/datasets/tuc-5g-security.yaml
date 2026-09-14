@@ -1,0 +1,97 @@
+id: tuc-5g-security
+name: 5G Security and Resource Allocation Dataset
+aliases: []
+identity:
+  canonical_url: https://github.com/DLTeamTUC/5GDatasets
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A public collection of 5G security captures and ML-ready tables covering control-plane and data-plane flooding,
+  replay, fuzzing and related attack scenarios generated with Open5GS, OpenAirInterface and Amarisoft environments.
+released:
+  year: 2025
+  notes: null
+origin:
+  type: hybrid
+  notes: null
+modalities:
+- packet-trace
+- network-kpi
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- laboratory
+mobility:
+  type: not-reported
+  notes: null
+temporal_structure: sequence
+formats:
+- pcap
+- csv
+ground_truth:
+- anomaly-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: null
+access:
+  status: open
+  url: https://github.com/DLTeamTUC/5GDatasets
+  notes: PCAP and CSV data are distributed directly in the public repository.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: null
+official_resources:
+  homepage: https://github.com/DLTeamTUC/5GDatasets
+  repository: https://github.com/DLTeamTUC/5GDatasets
+  documentation: https://github.com/DLTeamTUC/5GDatasets
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: 5G Security and Resource Allocation Dataset
+  url: https://github.com/DLTeamTUC/5GDatasets
+  doi: null
+  notes: null
+tasks:
+- task: network-anomaly-detection
+  scope: Detect malicious 5G network states and attack traffic from packet traces, logs, and derived CSV features.
+  inputs:
+  - packet-trace
+  - network-kpi
+  targets:
+  - anomaly-label
+  evidence:
+  - official-repo
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: not-reported
+    frequency_regimes: []
+caveats:
+- text: Only the security/anomaly part is mapped here; the repository title also mentions resource allocation, but that does
+    not by itself establish a catalogue resource-allocation task mapping.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

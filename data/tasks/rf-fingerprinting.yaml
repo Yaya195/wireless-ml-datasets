@@ -1,0 +1,12 @@
+id: rf-fingerprinting
+name: "RF Fingerprinting"
+category: signal-intelligence
+description: >-
+  Identify or authenticate wireless transmitters or devices using distinctive characteristics present in their emitted radio signals.
+aliases:
+  - "radio-frequency fingerprinting"
+  - "specific emitter identification"
+status: active
+related_tasks:
+  - signal-classification
+notes: null

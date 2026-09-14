@@ -1,0 +1,25 @@
+id: zenodo
+name: Zenodo
+resource_kind: data-portal
+description: A general-purpose research repository operated in the CERN/OpenAIRE ecosystem
+  for sharing and preserving datasets, software, publications, and other citable research
+  outputs.
+provider: CERN / OpenAIRE
+url: https://zenodo.org/
+wireless_relevance: general
+access: mixed
+collections: []
+search_guidance: Search exact wireless task terms, dataset titles, DOI fragments,
+  authors, or project names; verify that a record contains reusable data rather than
+  only supplementary figures or code.
+task_links: []
+references:
+- id: official
+  title: Zenodo — Get Started
+  url: https://help.zenodo.org/docs/get-started/
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

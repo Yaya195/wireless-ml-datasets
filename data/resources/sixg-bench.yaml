@@ -1,0 +1,30 @@
+id: sixg-bench
+name: 6G-Bench
+resource_kind: benchmark-dataset
+description: An open benchmark for evaluating semantic-communication and network-level
+  reasoning capabilities of foundation models in AI-native 6G settings.
+provider: 6G-Bench authors
+url: https://github.com/maferrag/6G-Bench
+wireless_relevance: wireless-specific
+access: open
+collections:
+- llm-foundation-model-resources
+search_guidance: Use for foundation-model reasoning over AI-native 6G concepts; the
+  project also distributes the validated benchmark data.
+task_links: []
+references:
+- id: official
+  title: 6G-Bench — Official Repository
+  url: https://github.com/maferrag/6G-Bench
+  doi: null
+  notes: null
+- id: paper
+  title: '6G-Bench: An Open Benchmark for Semantic Communication and Network-Level
+    Reasoning with Foundation Models in AI-Native 6G Networks'
+  url: https://doi.org/10.1109/OJCOMS.2026.3680457
+  doi: 10.1109/OJCOMS.2026.3680457
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,35 @@
+id: oranbench
+name: ORANBench
+resource_kind: benchmark-dataset
+description: A streamlined 1,500-question benchmark derived from ORAN-Bench-13K for
+  evaluating LLM knowledge and reasoning over Open RAN specifications at multiple
+  difficulty levels.
+provider: NextG Lab / ORANSight authors
+url: https://huggingface.co/datasets/prnshv/ORANBench
+wireless_relevance: telecom-specific
+access: open
+collections:
+- llm-foundation-model-resources
+search_guidance: Use for O-RAN specification reasoning; the full ORAN-Bench-13K source
+  benchmark is linked from the dataset card.
+task_links: []
+references:
+- id: official
+  title: ORANBench — Hugging Face Dataset
+  url: https://huggingface.co/datasets/prnshv/ORANBench
+  doi: null
+  notes: null
+- id: full
+  title: ORAN-Bench-13K — Official Repository
+  url: https://github.com/prnshv/ORAN-Bench-13K
+  doi: null
+  notes: null
+- id: paper
+  title: 'ORANSight-2.0: Foundational LLMs for O-RAN'
+  url: https://doi.org/10.1109/TMLCN.2025.3592658
+  doi: 10.1109/TMLCN.2025.3592658
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,98 @@
+id: ntu-fi-har
+name: NTU-Fi HAR
+aliases: []
+identity:
+  canonical_url: https://data.mendeley.com/datasets/dzvgyxkx2f/1
+  version: '1'
+  external_ids:
+  - scheme: doi
+    value: 10.17632/dzvgyxkx2f.1
+status: verified
+resource_type: dataset
+description: High-resolution Atheros Wi-Fi CSI activity-recognition data released through the SenseFi benchmark, with six
+  activity classes collected across three layouts.
+released:
+  year: 2023
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations:
+- mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: null
+temporal_structure: sequence
+formats: []
+ground_truth:
+- activity-label
+scale:
+  samples: 1200
+  sequences: null
+  scenarios: 3
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: SenseFi reports 936 training and 264 testing samples, six classes, 114 subcarriers, and three collection layouts.
+access:
+  status: open
+  url: https://data.mendeley.com/datasets/dzvgyxkx2f/1
+  notes: Processed datasets are publicly distributed with the SenseFi Mendeley release.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://data.mendeley.com/datasets/dzvgyxkx2f/1
+  repository: https://github.com/xyanchen/WiFi-CSI-Sensing-Benchmark
+  documentation: https://doi.org/10.1016/j.patter.2023.100703
+  loader: null
+references:
+- id: mendeley
+  type: data-host
+  title: 'SenseFi: A Library and Benchmark on Deep Learning Empowered WiFi Human Sensing'
+  url: https://data.mendeley.com/datasets/dzvgyxkx2f/1
+  doi: 10.17632/dzvgyxkx2f.1
+  notes: null
+- id: sensefi
+  type: paper
+  title: 'SenseFi: A library and benchmark on deep-learning-empowered WiFi human sensing'
+  url: https://doi.org/10.1016/j.patter.2023.100703
+  doi: 10.1016/j.patter.2023.100703
+  notes: null
+tasks:
+- task: human-activity-recognition
+  scope: Classify six indoor activities from high-resolution Atheros Wi-Fi CSI.
+  inputs:
+  - wifi-csi
+  targets:
+  - activity-label
+  evidence:
+  - mendeley
+  - sensefi
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

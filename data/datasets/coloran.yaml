@@ -1,0 +1,116 @@
+id: coloran
+name: ColO-RAN Dataset
+aliases: []
+identity:
+  canonical_url: https://github.com/wineslab/colosseum-oran-coloran-dataset
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: Colosseum O-RAN measurements for ML-based closed-loop control with seven base stations, 42 UEs, three network
+  slices, three scheduling policies, and many per-slice RBG allocations.
+released:
+  year: 2021
+  notes: null
+origin:
+  type: hybrid
+  notes: null
+modalities:
+- network-kpi
+- traffic
+technologies:
+- lte
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- laboratory
+mobility:
+  type: static
+  notes: null
+temporal_structure: sequence
+formats:
+- csv
+ground_truth: []
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: 42
+  sites: 7
+  duration_hours: null
+  size_gb: null
+  notes: Seven BSs, 42 UEs, three slices and multiple scheduling/RBG configurations are documented by the release.
+access:
+  status: open
+  url: https://github.com/wineslab/colosseum-oran-coloran-dataset
+  notes: Public GitHub dataset repository.
+license:
+  status: known
+  name: GNU GPL v3
+  url: https://www.gnu.org/licenses/gpl-3.0.html
+  notes: null
+official_resources:
+  homepage: https://github.com/wineslab/colosseum-oran-coloran-dataset
+  repository: https://github.com/wineslab/colosseum-oran-coloran-dataset
+  documentation: https://github.com/wineslab/colosseum-oran-coloran-dataset
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: Colosseum O-RAN ColORAN Dataset
+  url: https://github.com/wineslab/colosseum-oran-coloran-dataset
+  doi: null
+  notes: null
+- id: coloran-paper
+  type: paper
+  title: 'ColO-RAN: Developing Machine Learning-based xApps for Open RAN Closed-loop Control on Programmable Experimental
+    Platforms'
+  url: https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=ColO-RAN
+  doi: null
+  notes: null
+tasks:
+- task: resource-allocation
+  scope: Learn closed-loop slice resource allocation from RAN measurements under alternative RBG allocations and scheduling
+    policies.
+  inputs:
+  - network-kpi
+  - traffic
+  targets: []
+  evidence:
+  - official-repo
+  - coloran-paper
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: static
+    frequency_regimes: []
+- task: user-scheduling
+  scope: Learn or evaluate scheduling-policy selection for network slices from current RAN state.
+  inputs:
+  - network-kpi
+  - traffic
+  targets: []
+  evidence:
+  - official-repo
+  - coloran-paper
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: static
+    frequency_regimes: []
+caveats:
+- text: The measurements come from the programmable Colosseum emulator/testbed rather than a commercial field deployment.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,110 @@
+id: electrosense-psd-spectrum
+name: ElectroSense PSD Spectrum Dataset
+aliases: []
+identity:
+  canonical_url: https://zenodo.org/records/7521246
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.7521246
+status: verified
+resource_type: dataset
+description: A crowdsensed PSD dataset built from six-hour full-spectrum sweeps at multiple ElectroSense sites,
+  with labeled licensed-band spectrum portions for wireless technology/signal classification.
+released:
+  year: 2023
+  notes: The Zenodo resource was created in 2023 for the INFOCOM 2023 work.
+origin:
+  type: measurement
+  notes: Real PSD measurements collected by distributed RTL-SDR ElectroSense sensors.
+modalities:
+- spectrum
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-ghz
+  - sub-6-ghz
+  bands:
+  - label: 24 MHz–1.7 GHz full sweep
+    center_ghz: null
+    min_ghz: 0.024
+    max_ghz: 1.7
+  notes: Each sensor sweeps 24 MHz to 1.7 GHz; labeled licensed-band portions are distributed.
+environments:
+- unknown
+mobility:
+  type: static
+  notes: Fixed crowdsensing sites perform repeated spectrum sweeps.
+temporal_structure: sequence
+formats:
+- npy
+ground_truth:
+- signal-class
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: 6.0
+  size_gb: 1.7
+  notes: Six hours of full-spectrum scan are collected per site; the distributed labeled archive is about 1.7 GB.
+access:
+  status: open
+  url: https://zenodo.org/records/7521246
+  notes: The labeled spectrum-band archive is directly downloadable from Zenodo.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The release includes a separate license file; the catalogue does not infer its terms without recording
+    them explicitly.
+official_resources:
+  homepage: https://zenodo.org/records/7521246
+  repository: null
+  documentation: https://zenodo.org/records/7521246
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: ElectroSense PSD Spectrum Dataset
+  url: https://zenodo.org/records/7521246
+  doi: 10.5281/zenodo.7521246
+  notes: null
+- id: infocom-paper
+  type: paper
+  title: A Framework for Wireless Technology Classification using Crowdsensing Platforms
+  url: https://doi.org/10.1109/INFOCOM53939.2023.10228867
+  doi: 10.1109/INFOCOM53939.2023.10228867
+  notes: null
+tasks:
+- task: signal-classification
+  scope: Classify licensed-band wireless technologies/signals from labeled PSD spectrum observations.
+  inputs:
+  - spectrum
+  targets:
+  - signal-class
+  evidence:
+  - zenodo-record
+  - infocom-paper
+  notes: null
+  context:
+    environments:
+    - unknown
+    mobility: static
+    frequency_regimes:
+    - sub-ghz
+    - sub-6-ghz
+caveats:
+- text: The release contains selected labeled licensed-band portions rather than uniformly labeled occupancy over
+    every scanned frequency.
+  evidence:
+  - zenodo-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,131 @@
+id: wimans
+name: WiMANS
+aliases:
+- WiMANS Multi-User Activity Sensing Dataset
+identity:
+  canonical_url: https://github.com/huangshk/WiMANS
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A multi-user Wi-Fi CSI sensing dataset with 11,286 synchronized three-second samples across 2.4/5 GHz,
+  zero to five concurrent users, and identity, location, and activity annotations.
+released:
+  year: 2024
+  notes: Released with the ECCV 2024 WiMANS work.
+origin:
+  type: measurement
+  notes: Real dual-band Wi-Fi CSI and synchronized reference video collected in multiple indoor environments.
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 2.4 GHz Wi-Fi
+    center_ghz: 2.4
+    min_ghz: null
+    max_ghz: null
+  - label: 5 GHz Wi-Fi
+    center_ghz: 5.0
+    min_ghz: null
+    max_ghz: null
+  notes: null
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: Concurrent human activities are the sensing target.
+temporal_structure: sequence
+formats:
+- mat
+- npy
+ground_truth:
+- activity-label
+- position
+scale:
+  samples: 11286
+  sequences: null
+  scenarios: null
+  participants: 5
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Each three-second sample contains 0–5 simultaneous users with identity, location, and activity annotations.
+access:
+  status: registration
+  url: https://www.kaggle.com/datasets/shuokanghuang/wimans
+  notes: The maintained repository directs users to Kaggle for dataset download.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No explicit dataset license was confirmed from the official project repository.
+official_resources:
+  homepage: https://github.com/huangshk/WiMANS
+  repository: https://github.com/huangshk/WiMANS
+  documentation: https://github.com/huangshk/WiMANS
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: WiMANS
+  url: https://github.com/huangshk/WiMANS
+  doi: null
+  notes: null
+- id: eccv-paper
+  type: paper
+  title: 'WiMANS: A Benchmark Dataset for WiFi-Based Multi-User Activity Sensing'
+  url: https://doi.org/10.1007/978-3-031-72946-1_5
+  doi: 10.1007/978-3-031-72946-1_5
+  notes: ECCV 2024 paper; benchmarks identity, location, and activity recognition from Wi-Fi CSI.
+tasks:
+- task: human-activity-recognition
+  scope: Recognize concurrent human activities from dual-band Wi-Fi CSI in multi-user indoor scenes.
+  inputs:
+  - wifi-csi
+  targets:
+  - activity-label
+  evidence:
+  - official-repo
+  notes: The official benchmark evaluates activity, identity, and location recognition; location is represented
+    separately as a device-free localization mapping.
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+- task: device-free-localization
+  scope: Recognize the discrete indoor location of one or more people from dual-band Wi-Fi CSI without requiring
+    them to carry a radio device.
+  inputs:
+  - wifi-csi
+  targets:
+  - position
+  evidence:
+  - official-repo
+  - eccv-paper
+  notes: WiMANS benchmarks a location task over five labeled locations (A–E) per environment; the target is categorical
+    location rather than continuous metric coordinates.
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: Samples may contain multiple users performing different activities simultaneously, so evaluation assumptions
+    differ from single-person HAR datasets.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

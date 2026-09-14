@@ -1,0 +1,106 @@
+id: csi-4cast
+name: CSI-4CAST
+aliases:
+- CSI-4CAST Channel State Information Forecasting Dataset
+identity:
+  canonical_url: https://huggingface.co/CSI-4CAST
+  version: null
+  external_ids:
+  - scheme: huggingface
+    value: CSI-4CAST
+status: verified
+resource_type: dataset-collection
+description: A large collection of pre-generated 3GPP TR 38.901 CSI forecasting datasets covering CDL-A–E models,
+  delay spreads, user speeds, TDD/FDD settings, and regular/generalization evaluation regimes.
+released:
+  year: 2025
+  notes: The public Hugging Face organization was populated in 2025 and maintained with the CSI-4CAST framework.
+origin:
+  type: simulation
+  notes: Generated from standardized 3GPP TR 38.901 channel models.
+modalities:
+- channel-matrix
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations:
+- mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: Frequency configuration is experiment-dependent across FDD/TDD datasets.
+environments:
+- unknown
+mobility:
+  type: configurable
+  notes: Dataset variants span user speeds from approximately 1 to 45 m/s.
+temporal_structure: sequence
+formats:
+- pt
+ground_truth:
+- channel
+scale:
+  samples: null
+  sequences: null
+  scenarios: 565
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The Hugging Face organization exposes hundreds of train/test/generalization dataset repositories.
+access:
+  status: open
+  url: https://huggingface.co/CSI-4CAST
+  notes: Public Hugging Face organization with selective or bulk download tooling.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No collection-wide license was confirmed from the verified organization page.
+official_resources:
+  homepage: https://huggingface.co/CSI-4CAST
+  repository: https://github.com/AI4OPT/CSI-4CAST
+  documentation: https://github.com/AI4OPT/CSI-4CAST/blob/main/z_artifacts/data/info.md
+  loader: null
+references:
+- id: hf-org
+  type: data-host
+  title: CSI-4CAST Organization
+  url: https://huggingface.co/CSI-4CAST
+  doi: null
+  notes: null
+- id: repo
+  type: repository
+  title: CSI-4CAST
+  url: https://github.com/AI4OPT/CSI-4CAST
+  doi: null
+  notes: null
+tasks:
+- task: channel-prediction
+  scope: Forecast future uplink/downlink CSI from historical CSI across channel models, delay spreads, speeds, and
+    generalization conditions.
+  inputs:
+  - channel-matrix
+  targets:
+  - channel
+  evidence:
+  - hf-org
+  - repo
+  notes: null
+  context:
+    environments:
+    - unknown
+    mobility: configurable
+    frequency_regimes: []
+caveats:
+- text: CSI-4CAST is a large generated collection split into many repositories; comparisons must report the exact
+    channel model, delay spread, speed, duplex setting, and regular/generalization split.
+  evidence:
+  - hf-org
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

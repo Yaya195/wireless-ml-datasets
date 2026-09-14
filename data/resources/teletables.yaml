@@ -1,0 +1,30 @@
+id: teletables
+name: TeleTables
+resource_kind: benchmark-dataset
+description: A telecom table-reasoning benchmark with 500 questions paired with 371
+  real tables extracted from 13 3GPP specifications and represented in structured
+  and visual formats.
+provider: NetOp Team, Huawei Paris Research Center
+url: https://huggingface.co/datasets/netop/TeleTables
+wireless_relevance: telecom-specific
+access: open
+collections:
+- llm-foundation-model-resources
+search_guidance: Use for standards-grounded table interpretation and multimodal telecom
+  reasoning.
+task_links: []
+references:
+- id: official
+  title: TeleTables — Hugging Face Dataset
+  url: https://huggingface.co/datasets/netop/TeleTables
+  doi: null
+  notes: null
+- id: paper
+  title: 'TeleTables: A Benchmark for Large Language Models in Telecom Table Interpretation'
+  url: https://arxiv.org/abs/2601.04202
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

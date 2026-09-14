@@ -1,0 +1,106 @@
+id: telelogs
+name: TeleLogs
+aliases:
+- TeleLogs 5G Root Cause Analysis Benchmark
+identity:
+  canonical_url: https://huggingface.co/datasets/netop/TeleLogs
+  version: null
+  external_ids:
+  - scheme: huggingface
+    value: netop/TeleLogs
+status: verified
+resource_type: dataset
+description: A synthetic 5G drive-test benchmark for root-cause analysis that combines user-plane KPIs, cell configuration parameters, mobility context, observed throughput degradation, and labels for eight network failure causes.
+released:
+  year: 2025
+  notes: Released by the Huawei Paris Research Center NetOp team with the TeleLogs root-cause-analysis benchmark.
+origin:
+  type: synthetic
+  notes: Network drive-test scenarios and faults are simulated using realistic 5G engineering parameters.
+modalities:
+- network-kpi
+- mobility-trace
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: A single catalogue-wide carrier configuration is not stated on the public dataset card.
+environments:
+- unknown
+mobility:
+  type: mobile
+  notes: Each scenario models a UE/test vehicle moving through a region served by multiple gNodeBs.
+temporal_structure: sequence
+formats:
+- json
+ground_truth:
+- anomaly-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 0.0148
+  notes: The benchmark defines eight root causes and provides training and test splits; the public card describes a gated dataset in the 1K–10K size category.
+access:
+  status: registration
+  url: https://huggingface.co/datasets/netop/TeleLogs
+  notes: Publicly discoverable on Hugging Face, but users must log in and accept the benchmark conditions before accessing the files.
+license:
+  status: known
+  name: MIT
+  url: https://opensource.org/license/mit/
+  notes: The official Hugging Face dataset card reports the MIT license.
+official_resources:
+  homepage: https://huggingface.co/datasets/netop/TeleLogs
+  repository: null
+  documentation: https://huggingface.co/datasets/netop/TeleLogs
+  loader: https://huggingface.co/datasets/netop/TeleLogs
+references:
+- id: hf-card
+  type: data-host
+  title: TeleLogs — Hugging Face Dataset
+  url: https://huggingface.co/datasets/netop/TeleLogs
+  doi: null
+  notes: Official dataset card describing the 5G drive-test simulation, KPIs, mobility context, and eight root causes.
+- id: paper
+  type: paper
+  title: Reasoning Language Models for Root Cause Analysis in 5G Wireless Networks
+  url: https://arxiv.org/abs/2507.21974
+  doi: null
+  notes: Associated TeleLogs benchmark paper.
+tasks:
+- task: network-fault-diagnosis
+  scope: Diagnose the cause of 5G downlink throughput degradation from network configuration, mobility, and user-plane measurements.
+  inputs:
+  - network-kpi
+  - mobility-trace
+  targets:
+  - anomaly-label
+  evidence:
+  - hf-card
+  - paper
+  notes: The benchmark explicitly defines eight labeled root causes including coverage, interference, mobility, handover, antenna, PCI, and resource-allocation failures.
+  context:
+    environments:
+    - unknown
+    mobility: mobile
+    frequency_regimes: []
+collections:
+- llm-foundation-model-resources
+caveats:
+- text: TeleLogs is a synthetic diagnostic benchmark rather than a field-failure corpus, and its gated access conditions ask users not to redistribute the benchmark publicly.
+  evidence:
+  - hf-card
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

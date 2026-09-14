@@ -1,0 +1,11 @@
+id: cooperative-localization
+name: "Cooperative Localization"
+category: localization-mapping
+description: >-
+  Estimate positions using measurements, information, or learned representations shared among multiple wireless nodes or agents.
+aliases:
+  - "collaborative localization"
+status: active
+related_tasks:
+  - localization
+notes: null

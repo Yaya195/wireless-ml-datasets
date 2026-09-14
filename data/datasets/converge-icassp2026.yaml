@@ -1,0 +1,161 @@
+id: converge-icassp2026
+name: CONVERGE ICASSP 2026 Multimodal 6G Dataset
+aliases:
+- CONVERGE Challenge Dataset
+identity:
+  canonical_url: https://zenodo.org/records/20849945
+  version: v1
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.20849945
+status: verified
+resource_type: dataset
+description: A real-world indoor multimodal dataset released for the ICASSP 2026 CONVERGE challenge, synchronizing RGB-D video with radio measurements for blockage prediction, UE localization, and future SRS channel prediction in a 6G-oriented mmWave testbed.
+released:
+  year: 2026
+  notes: Version v1 was published on Zenodo on 25 June 2026 after the ICASSP 2026 challenge.
+origin:
+  type: measurement
+  notes: Collected in the CONVERGE controlled indoor experimental chamber with synchronized visual and radio instrumentation.
+modalities:
+- camera
+- channel-matrix
+- network-kpi
+technologies:
+- 5g-nr
+- 6g
+generation_contexts:
+- 5g
+- 6g
+radio_configurations: []
+frequency:
+  status: known
+  bands: []
+  notes: The challenge uses a high-frequency indoor mmWave testbed with an FR2-capable gNB and UE; the released source does not state one catalogue-wide center frequency.
+  regimes:
+  - mmwave
+environments:
+- indoor
+- laboratory
+mobility:
+  type: configurable
+  notes: The chamber supports configurable UE mobility and programmable occlusions.
+temporal_structure: sequence
+formats:
+- zip
+- various
+ground_truth:
+- blockage-status
+- position
+- channel
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: 1
+  duration_hours: null
+  size_gb: 4.8
+  notes: Zenodo v1 distributes training and validation archives totaling approximately 4.8 GB.
+access:
+  status: open
+  url: https://zenodo.org/records/20849945
+  notes: Training and validation archives are directly downloadable from the Zenodo record.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The Zenodo record is openly downloadable, while the challenge page states that intellectual-property rights for the provided data and baseline code remain with the organizers; no standard dataset license was clearly displayed during verification.
+official_resources:
+  homepage: https://converge-project.eu/converge-icassp-2026-sp-grand-challenge/
+  repository: null
+  documentation: https://zenodo.org/records/20849945
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: 'CONVERGE Challenge Dataset: Multimodal Sensing for 6G Wireless Communications (ICASSP 2026)'
+  url: https://zenodo.org/records/20849945
+  doi: 10.5281/zenodo.20849945
+  notes: Official dataset record describing the synchronized RGB-D, E2, and SRS data and the three released challenge tasks.
+- id: challenge-page
+  type: challenge
+  title: 'CONVERGE Challenge: Multimodal Learning for 6G Wireless Communications'
+  url: https://converge-project.eu/converge-icassp-2026-sp-grand-challenge/
+  doi: null
+  notes: Official challenge page documenting the 6G positioning, indoor mmWave testbed, FR2-capable gNB/UE, and final task results.
+- id: icassp-paper
+  type: paper
+  title: 'CONVERGE Challenge: Multimodal Learning for 6G Wireless Communications'
+  url: https://www.eurecom.fr/publication/8684
+  doi: 10.1109/ICASSP55912.2026.11462925
+  notes: ICASSP 2026 challenge paper describing the released dataset and the three benchmark tasks.
+tasks:
+- task: blockage-prediction
+  scope: Predict future blockage state from synchronized visual and radio observations in the controlled indoor mmWave setup.
+  inputs:
+  - camera
+  - channel-matrix
+  targets:
+  - blockage-status
+  evidence:
+  - zenodo-record
+  - challenge-page
+  - icassp-paper
+  notes: The released annotations distinguish no, partial, and full blockage states.
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: configurable
+    frequency_regimes:
+    - mmwave
+- task: localization
+  scope: Estimate UE position from the synchronized multimodal observations used in the challenge localization track.
+  inputs:
+  - camera
+  - channel-matrix
+  targets:
+  - position
+  evidence:
+  - zenodo-record
+  - challenge-page
+  - icassp-paper
+  notes: The released Task 2 annotations provide UE translation coordinates and the challenge evaluates localization with position RMSE.
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: configurable
+    frequency_regimes:
+    - mmwave
+- task: channel-prediction
+  scope: Predict future SRS channel measurements from synchronized visual and radio observations.
+  inputs:
+  - camera
+  - channel-matrix
+  targets:
+  - channel
+  evidence:
+  - zenodo-record
+  - challenge-page
+  - icassp-paper
+  notes: The released challenge evaluates future SRS prediction; the originally advertised beam-prediction track is not mapped because it is not part of the released v1 task set/results.
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: configurable
+    frequency_regimes:
+    - mmwave
+caveats:
+- text: The official challenge page originally listed a beam-prediction track, but the released Zenodo v1 dataset and final ICASSP 2026 challenge results document three tasks only; beam prediction is therefore not mapped here.
+  evidence:
+  - zenodo-record
+  - challenge-page
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: Verified against the Zenodo dataset record, official CONVERGE challenge page, and ICASSP 2026 challenge paper.
+featured: false

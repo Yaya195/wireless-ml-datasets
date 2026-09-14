@@ -1,0 +1,109 @@
+id: spachos-rssi-localization
+name: RSSI Dataset for Indoor Localization Fingerprinting
+aliases: []
+identity:
+  canonical_url: https://github.com/pspachos/RSSI-Dataset-for-Indoor-Localization-Fingerprinting
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: Indoor fingerprinting RSSI measurements gathered with Zigbee, BLE, and
+  2.4-GHz Wi-Fi across three experimental room scenarios for comparing localization
+  technologies and algorithms.
+released:
+  year: 2020
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- rss
+- wifi-rssi
+- position
+technologies:
+- zigbee
+- ble
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 2.4 GHz Wi-Fi
+    center_ghz: 2.4
+    min_ghz: null
+    max_ghz: null
+  notes: null
+environments:
+- indoor
+mobility:
+  type: static
+  notes: null
+temporal_structure: snapshot
+formats: []
+ground_truth:
+- position
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: null
+access:
+  status: open
+  url: https://github.com/pspachos/RSSI-Dataset-for-Indoor-Localization-Fingerprinting
+  notes: Public GitHub repository; the dataset is also associated with an IEEE DataPort
+    release.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: null
+official_resources:
+  homepage: https://github.com/pspachos/RSSI-Dataset-for-Indoor-Localization-Fingerprinting
+  repository: https://github.com/pspachos/RSSI-Dataset-for-Indoor-Localization-Fingerprinting
+  documentation: https://github.com/pspachos/RSSI-Dataset-for-Indoor-Localization-Fingerprinting
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: RSSI Dataset for Indoor Localization Fingerprinting
+  url: https://github.com/pspachos/RSSI-Dataset-for-Indoor-Localization-Fingerprinting
+  doi: null
+  notes: null
+- id: iotj-paper
+  type: paper
+  title: Memoryless Techniques and Wireless Technologies for Indoor Localization With
+    the Internet of Things
+  url: https://doi.org/10.1109/JIOT.2020.2992651
+  doi: 10.1109/JIOT.2020.2992651
+  notes: null
+tasks:
+- task: localization
+  scope: Estimate indoor position from Zigbee, BLE, or Wi-Fi RSSI fingerprints.
+  inputs:
+  - rss
+  - wifi-rssi
+  targets:
+  - position
+  evidence:
+  - official-repo
+  - iotj-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: static
+    frequency_regimes:
+    - sub-6-ghz
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

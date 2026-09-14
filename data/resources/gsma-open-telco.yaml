@@ -1,0 +1,35 @@
+id: gsma-open-telco
+name: GSMA Open Telco Evaluations
+resource_kind: benchmark-suite
+description: An open-source GSMA-maintained evaluation suite that centralizes telecom-specific
+  LLM benchmarks including TeleQnA, TeleMath, TeleTables, TeleLogs, 3GPP, ORANBench,
+  srsRANBench, and 6G-Bench.
+provider: GSMA Open Telco
+url: https://github.com/gsma-labs/evals
+wireless_relevance: telecom-specific
+access: open
+collections:
+- llm-foundation-model-resources
+search_guidance: Use as a runnable benchmark suite when comparing telecom LLMs consistently
+  across multiple public evaluations.
+task_links: []
+references:
+- id: official
+  title: GSMA Open Telco Evaluations — Official Repository
+  url: https://github.com/gsma-labs/evals
+  doi: null
+  notes: null
+- id: list
+  title: GSMA Open Telco — List of Evaluations
+  url: https://github.com/gsma-labs/evals/blob/main/docs/eval-list.md
+  doi: null
+  notes: null
+- id: gsma
+  title: GSMA Open-Telco LLM Benchmarks
+  url: https://www.gsma.com/get-involved/gsma-foundry/gsma-open-telco-llm-benchmarks/
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

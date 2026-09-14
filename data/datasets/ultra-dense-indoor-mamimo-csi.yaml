@@ -1,0 +1,114 @@
+id: ultra-dense-indoor-mamimo-csi
+name: Ultra Dense Indoor MaMIMO CSI Dataset
+aliases:
+- Ultra-Dense Indoor Massive MIMO CSI Dataset
+identity:
+  canonical_url: https://ieee-dataport.org/open-access/ultra-dense-indoor-mamimo-csi-dataset
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/nr6k-8r78
+status: verified
+resource_type: dataset
+description: A measured ultra-dense indoor massive-MIMO CSI dataset from a 64-antenna KU Leuven testbed, with four
+  antenna-array topologies and high-precision 2D spatial labels over a 9 m² area.
+released:
+  year: 2021
+  notes: The IEEE DataPort dataset was released in 2021.
+origin:
+  type: measurement
+  notes: Real indoor CSI captured with automated high-precision spatial positioning.
+modalities:
+- channel-matrix
+- position
+technologies: []
+generation_contexts:
+- 5g
+radio_configurations:
+- massive-mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: No catalogue-wide carrier value is assigned without relying on a secondary description.
+environments:
+- indoor
+- laboratory
+mobility:
+  type: static
+  notes: The user position is swept over a dense spatial grid for static channel measurements.
+temporal_structure: snapshot
+formats: []
+ground_truth:
+- position
+scale:
+  samples: 1008016
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: 252,004 labeled CSI samples are reported for each of four measured array/topology conditions.
+access:
+  status: registration
+  url: https://ieee-dataport.org/open-access/ultra-dense-indoor-mamimo-csi-dataset
+  notes: Open-access IEEE DataPort resource; download requires an IEEE account.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No dataset-specific license was confirmed from the verified sources.
+official_resources:
+  homepage: https://www.esat.kuleuven.be/wavecorearenberg/research/NetworkedSystems/datasets
+  repository: https://github.com/sibrendebast/MaMIMO-CSI-positioning-using-CNNs
+  documentation: https://www.esat.kuleuven.be/wavecorearenberg/research/NetworkedSystems/datasets
+  loader: null
+references:
+- id: kuleuven-page
+  type: official-page
+  title: KU Leuven Networked Systems Datasets
+  url: https://www.esat.kuleuven.be/wavecorearenberg/research/NetworkedSystems/datasets
+  doi: null
+  notes: null
+- id: dataport
+  type: data-host
+  title: Ultra Dense Indoor MaMIMO CSI Dataset
+  url: https://ieee-dataport.org/open-access/ultra-dense-indoor-mamimo-csi-dataset
+  doi: 10.21227/nr6k-8r78
+  notes: null
+- id: positioning-repo
+  type: repository
+  title: MaMIMO CSI positioning using CNNs
+  url: https://github.com/sibrendebast/MaMIMO-CSI-positioning-using-CNNs
+  doi: null
+  notes: null
+tasks:
+- task: localization
+  scope: Estimate indoor 2D user position from measured massive-MIMO CSI under multiple array topologies.
+  inputs:
+  - channel-matrix
+  targets:
+  - position
+  evidence:
+  - kuleuven-page
+  - dataport
+  - positioning-repo
+  notes: null
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: static
+    frequency_regimes: []
+caveats:
+- text: The dense spatial labels come from one controlled indoor testbed; topology-specific and cross-site generalization
+    should be reported separately.
+  evidence:
+  - kuleuven-page
+  - dataport
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,117 @@
+id: unicorn-oran
+name: UNICORN O-RAN KPI Dataset
+aliases:
+- UNICORN
+identity:
+  canonical_url: https://doi.org/10.18738/T8/FJXA40
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.18738/T8/FJXA40
+status: verified
+resource_type: dataset
+description: A 5G/O-RAN network-traffic dataset containing 492 traces from six mobile applications, released as
+  packet captures/metadata and as time-varying RAN KPI traces after Colosseum processing.
+released:
+  year: 2025
+  notes: Released with the IEEE ICMLCN 2025 UNICORN work.
+origin:
+  type: hybrid
+  notes: Traffic is captured from real smartphone applications on a commercial 5G network, then replayed through
+    Colosseum to collect O-RAN/gNB KPIs.
+modalities:
+- packet-trace
+- network-kpi
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The released task is network/KPI classification rather than RF-frequency characterization.
+environments:
+- indoor
+- outdoor
+mobility:
+  type: mixed
+  notes: Data collection includes indoor stationary, outdoor stationary, and outdoor walking conditions.
+temporal_structure: sequence
+formats:
+- pcap
+- csv
+ground_truth:
+- application-label
+scale:
+  samples: null
+  sequences: 492
+  scenarios: 3
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: 492 traces cover six applications. The processed KPI representation contains 17 selected RAN KPIs per time
+    series.
+access:
+  status: open
+  url: https://www.genesys-lab.org/unicorn
+  notes: The official GENESYS page links the dataset DOI and public experiment code.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No explicit dataset license was confirmed on the official GENESYS release page during verification.
+official_resources:
+  homepage: https://www.genesys-lab.org/unicorn
+  repository: null
+  documentation: https://www.genesys-lab.org/unicorn
+  loader: null
+references:
+- id: official-unicorn
+  type: official-page
+  title: UNICORN KPI Dataset for Network Traffic Classification in O-RAN
+  url: https://www.genesys-lab.org/unicorn
+  doi: null
+  notes: null
+- id: dataset-doi
+  type: data-host
+  title: URLLC network traces collected for UNICORN
+  url: https://doi.org/10.18738/T8/FJXA40
+  doi: 10.18738/T8/FJXA40
+  notes: null
+- id: unicorn-paper
+  type: paper
+  title: 'UNICORN: URLLC Network Traffic Classification and OOD Detection for O-RAN'
+  url: https://genesys-lab.org/papers/Unicorn-genesys.pdf
+  doi: null
+  notes: null
+tasks:
+- task: traffic-classification
+  scope: Classify six mobile application classes from network traces or privacy-preserving RAN KPI sequences.
+  inputs:
+  - packet-trace
+  - network-kpi
+  targets:
+  - application-label
+  evidence:
+  - official-unicorn
+  - unicorn-paper
+  notes: The paper's primary KPI-based formulation uses 17 RAN KPIs and does not require user payload exposure.
+  context:
+    environments:
+    - indoor
+    - outdoor
+    mobility: mixed
+    frequency_regimes: []
+caveats:
+- text: UNICORN provides several processing stages (PCAP, reduced packet metadata, and Colosseum-derived KPI traces);
+    model inputs and privacy properties differ substantially across these representations.
+  evidence:
+  - official-unicorn
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

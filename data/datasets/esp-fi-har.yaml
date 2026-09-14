@@ -1,0 +1,98 @@
+id: esp-fi-har
+name: ESP-Fi HAR
+aliases: []
+identity:
+  canonical_url: https://github.com/AutoSmartGroup/ESP-Fi-HAR
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: Low-power Wi-Fi CSI HAR dataset collected with commodity ESP32 modules across four indoor environments, eight
+  participants, seven activities, and repeated trials.
+released:
+  year: 2026
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+- office
+- laboratory
+mobility:
+  type: not-applicable
+  notes: null
+temporal_structure: sequence
+formats:
+- mat
+ground_truth:
+- activity-label
+scale:
+  samples: 2240
+  sequences: null
+  scenarios: 4
+  participants: 8
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Four environments × eight participants × seven activities × ten trials = 2,240 samples.
+access:
+  status: open
+  url: https://github.com/AutoSmartGroup/ESP-Fi-HAR
+  notes: Dataset archive and benchmark code are public in the repository.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://github.com/AutoSmartGroup/ESP-Fi-HAR
+  repository: https://github.com/AutoSmartGroup/ESP-Fi-HAR
+  documentation: https://github.com/AutoSmartGroup/ESP-Fi-HAR
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: 'ESP-Fi HAR: A Low-Power WiFi CSI Dataset for Ad-Hoc IoT Human Activity Recognition'
+  url: https://github.com/AutoSmartGroup/ESP-Fi-HAR
+  doi: null
+  notes: null
+- id: adhoc-paper
+  type: paper
+  title: 'ESP-Fi HAR: A low-power WiFi CSI dataset for Ad-Hoc IoT human activity recognition'
+  url: https://doi.org/10.1016/j.adhoc.2026.104192
+  doi: 10.1016/j.adhoc.2026.104192
+  notes: null
+tasks:
+- task: human-activity-recognition
+  scope: Recognize seven human activities from ESP32 Wi-Fi CSI amplitude sequences.
+  inputs:
+  - wifi-csi
+  targets:
+  - activity-label
+  evidence:
+  - official-repo
+  - adhoc-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

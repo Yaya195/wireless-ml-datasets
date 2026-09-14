@@ -1,0 +1,19 @@
+id: modulation-recognition
+name: Modulation Recognition
+category: signal-intelligence
+description: Identify the modulation format of a received wireless signal from I/Q samples, spectra, or derived
+  signal representations.
+aliases:
+- automatic modulation classification
+- AMC
+status: active
+related_tasks:
+- signal-classification
+notes: null
+comparison_fields:
+- inputs
+- targets
+- origin
+- temporal-structure
+- scale-samples
+- access

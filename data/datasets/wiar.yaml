@@ -1,0 +1,99 @@
+id: wiar
+name: WiAR
+aliases: []
+identity:
+  canonical_url: https://github.com/linteresa/WiAR
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A public Wi-Fi activity-recognition dataset containing CSI/RSSI raw measurements for 16 activities performed
+  by ten volunteers across three indoor environments.
+released:
+  year: 2019
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- wifi-csi
+- wifi-rssi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations:
+- mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: null
+temporal_structure: sequence
+formats:
+- dat
+ground_truth:
+- activity-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: 3
+  participants: 10
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The paper documents 16 activities, ten volunteers and three indoor environments.
+access:
+  status: open
+  url: https://github.com/linteresa/WiAR
+  notes: Raw data and supporting code are publicly available in the repository.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: null
+official_resources:
+  homepage: https://github.com/linteresa/WiAR
+  repository: https://github.com/linteresa/WiAR
+  documentation: https://github.com/linteresa/WiAR
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: 'WiAR: WiFi-based activity recognition dataset'
+  url: https://github.com/linteresa/WiAR
+  doi: null
+  notes: null
+- id: access-paper
+  type: paper
+  title: 'WiAR: A Public Dataset for WiFi-Based Activity Recognition'
+  url: https://doi.org/10.1109/ACCESS.2019.2947024
+  doi: 10.1109/ACCESS.2019.2947024
+  notes: null
+tasks:
+- task: human-activity-recognition
+  scope: Recognize 16 coarse-grained activities and gestures from Wi-Fi signal measurements.
+  inputs:
+  - wifi-csi
+  - wifi-rssi
+  targets:
+  - activity-label
+  evidence:
+  - official-repo
+  - access-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

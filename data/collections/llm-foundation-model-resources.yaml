@@ -1,0 +1,9 @@
+id: llm-foundation-model-resources
+name: LLM & Foundation Model Resources
+description: Telecom- and wireless-specific datasets, evaluation benchmarks, and suites
+  for large language models and foundation models.
+status: active
+scope: Cross-cutting AI resources are grouped here without treating LLMs or foundation
+  models as wireless research tasks.
+notes: Task-mapped datasets remain in the core catalogue; evaluation-only or platform
+  resources are listed as supporting resources.

@@ -1,0 +1,108 @@
+id: nist-breathesmart-csi
+name: NIST Wi-Fi CSI Respiratory Motion Dataset
+aliases:
+- BreatheSmart CSI Data
+identity:
+  canonical_url: https://doi.org/10.18434/mds2-2963
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.18434/mds2-2963
+  - scheme: other
+    value: ark:/88434/mds2-2963
+status: verified
+resource_type: dataset
+description: Raw Wi-Fi CSI measurements collected with an anatomically correct breathing manikin for respiratory-motion
+  monitoring and algorithm evaluation.
+released:
+  year: 2023
+  notes: The NIST data record was first published in September 2023; the associated IEEE Access paper appeared in
+    2022.
+origin:
+  type: measurement
+  notes: Real Wi-Fi CSI frames were measured while an anatomically correct breathing manikin generated controlled
+    respiratory motion.
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The catalogue does not assign a frequency band without checking the experiment-specific README/settings.
+environments:
+- laboratory
+mobility:
+  type: not-applicable
+  notes: Respiratory motion is the sensing target; the experiment is not a UE-mobility dataset.
+temporal_structure: sequence
+formats:
+- csv
+ground_truth:
+- respiratory-motion
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The release is organized by figures from the associated publication and contains raw real/imaginary CSI
+    frame data.
+access:
+  status: open
+  url: https://doi.org/10.18434/mds2-2963
+  notes: NIST provides the raw-data ZIP and README publicly.
+license:
+  status: known
+  name: NIST Open License
+  url: https://www.nist.gov/open/license
+  notes: null
+official_resources:
+  homepage: https://data.nist.gov/od/id/mds2-2963
+  repository: null
+  documentation: https://catalog.data.gov/dataset/raw-data-used-to-investigate-the-use-of-wi-fi-signals-to-monitor-human-respiratory-motion
+  loader: null
+references:
+- id: nist-dataset
+  type: data-host
+  title: Raw data used to investigate the use of Wi-Fi signals to monitor human respiratory motion
+  url: https://doi.org/10.18434/mds2-2963
+  doi: 10.18434/mds2-2963
+  notes: null
+- id: breathesmart-paper
+  type: paper
+  title: 'Monitoring Respiratory Motion With Wi-Fi CSI: Characterizing Performance and the BreatheSmart Algorithm'
+  url: https://ieeexplore.ieee.org/document/9989347
+  doi: 10.1109/ACCESS.2022.3230003
+  notes: null
+tasks:
+- task: vital-sign-sensing
+  scope: Estimate or classify respiratory motion patterns from time-varying Wi-Fi CSI.
+  inputs:
+  - wifi-csi
+  targets:
+  - respiratory-motion
+  evidence:
+  - nist-dataset
+  - breathesmart-paper
+  notes: The released measurements come from a breathing manikin, not human study participants.
+  context:
+    environments:
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: The respiratory-motion data were collected from an anatomically correct breathing manikin; they should not
+    be described as a human-subject physiological dataset.
+  evidence:
+  - nist-dataset
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

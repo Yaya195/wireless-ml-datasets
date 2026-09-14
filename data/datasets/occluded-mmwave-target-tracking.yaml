@@ -1,0 +1,104 @@
+id: occluded-mmwave-target-tracking
+name: Occluded Indoor Target mmWave Tracking Dataset
+aliases:
+- Tracking the Occluded Indoor Target with Scattered Millimeter Wave Signal
+identity:
+  canonical_url: https://doi.org/10.21227/BCA8-3R93
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/BCA8-3R93
+status: verified
+resource_type: dataset
+description: A mmWave FMCW sensing dataset containing raw beat-frequency signals and camera-derived target-position
+  ground truth for locating and tracking humans under indoor non-line-of-sight occlusion.
+released:
+  year: 2024
+  notes: Made available on IEEE DataPort in May 2024.
+origin:
+  type: measurement
+  notes: Real TI IWR6843 mmWave measurements with synchronized Intel RealSense ground truth.
+modalities:
+- radar
+- position
+technologies: []
+generation_contexts: []
+radio_configurations:
+- phased-array
+frequency:
+  status: known
+  regimes:
+  - mmwave
+  bands: []
+  notes: Collected with a TI IWR6843 FMCW mmWave radar platform.
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: Human target motion is the sensing subject.
+temporal_structure: trajectory
+formats: []
+ground_truth:
+- position
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Raw, intermediate and CNN-ready representations plus processing/training scripts are released.
+access:
+  status: registration
+  url: https://doi.org/10.21227/BCA8-3R93
+  notes: IEEE DataPort dataset; account access may be required.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://research.aalto.fi/en/datasets/tracking-the-occluded-indoor-target-with-scattered-millimeter-wav/
+  repository: null
+  documentation: https://doi.org/10.1109/JSEN.2024.3447271
+  loader: null
+references:
+- id: aalto-data
+  type: official-page
+  title: Tracking the Occluded Indoor Target with Scattered Millimeter Wave Signal
+  url: https://research.aalto.fi/en/datasets/tracking-the-occluded-indoor-target-with-scattered-millimeter-wav/
+  doi: 10.21227/BCA8-3R93
+  notes: null
+- id: paper
+  type: paper
+  title: Tracking the Occluded Indoor Target With Scattered Millimeter Wave Signal
+  url: https://doi.org/10.1109/JSEN.2024.3447271
+  doi: 10.1109/JSEN.2024.3447271
+  notes: null
+tasks:
+- task: device-free-localization
+  scope: Estimate and track an occluded human target's indoor position from scattered mmWave FMCW signals.
+  inputs:
+  - radar
+  targets:
+  - position
+  evidence:
+  - aalto-data
+  - paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes:
+    - mmwave
+caveats:
+- text: The camera is used to provide ground truth; the wireless inference input is the mmWave sensing signal.
+  evidence:
+  - aalto-data
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

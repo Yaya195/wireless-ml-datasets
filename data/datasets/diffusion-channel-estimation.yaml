@@ -1,0 +1,97 @@
+id: diffusion-channel-estimation
+name: Diffusion-Based Channel Estimation Datasets
+aliases:
+- Diffusion_channel_est Dataset
+identity:
+  canonical_url: https://zenodo.org/records/20737830
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.20737830
+status: verified
+resource_type: dataset
+description: Training, evaluation, and testing channel datasets released for diffusion-based generative-prior MIMO
+  channel estimation, matching the public implementation and the associated IEEE Wireless Communications Letters
+  study.
+released:
+  year: 2026
+  notes: Published on Zenodo on 17 June 2026.
+origin:
+  type: simulation
+  notes: Channel tensors used by the associated MIMO channel-estimation study.
+modalities:
+- channel-matrix
+technologies: []
+generation_contexts: []
+radio_configurations:
+- mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- unknown
+mobility:
+  type: unknown
+  notes: null
+temporal_structure: snapshot
+formats:
+- npy
+ground_truth:
+- channel
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 2.9
+  notes: The compressed Zenodo archive is approximately 2.9 GB.
+access:
+  status: open
+  url: https://zenodo.org/records/20737830
+  notes: Public Zenodo download.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No explicit license was confirmed in the verified record.
+official_resources:
+  homepage: https://zenodo.org/records/20737830
+  repository: https://github.com/benediktfesl/Diffusion_channel_est
+  documentation: https://zenodo.org/records/20737830
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: 'Diffusion-Based Channel Estimation: Training, Evaluation, and Testing Datasets'
+  url: https://zenodo.org/records/20737830
+  doi: 10.5281/zenodo.20737830
+  notes: null
+tasks:
+- task: channel-estimation
+  scope: Train and evaluate learned generative priors for low-complexity MIMO channel estimation.
+  inputs:
+  - channel-matrix
+  targets:
+  - channel
+  evidence:
+  - zenodo-record
+  notes: null
+  context:
+    environments:
+    - unknown
+    mobility: unknown
+    frequency_regimes: []
+caveats:
+- text: The data are tied to the assumptions and generation setup of the associated channel-estimation study; they
+    are not over-the-air measurements.
+  evidence:
+  - zenodo-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

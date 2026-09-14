@@ -1,0 +1,22 @@
+id: radio-assisted-navigation
+name: Radio-Assisted Navigation
+category: localization-mapping
+description: Select routes, waypoints, motion actions, or navigation policies using wireless measurements or radio-derived
+  spatial information to guide an agent toward a destination.
+aliases:
+- wireless-assisted navigation
+- radio-aware navigation
+status: active
+related_tasks:
+- localization
+- radio-slam
+- radio-map-estimation
+notes: Localization or trajectory data alone does not establish this task. A verified mapping requires documented navigation,
+  path/waypoint selection, motion guidance, or action/policy use.
+comparison_fields:
+- inputs
+- targets
+- temporal-structure
+- environments
+- mobility
+- access

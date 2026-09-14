@@ -1,0 +1,109 @@
+id: wair-d
+name: WAIR-D
+aliases:
+- Wireless AI Research Dataset
+identity:
+  canonical_url: https://www.mobileai-dataset.com/html/default/yingwen/DateSet/1590994253188792322.html?index=1
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A large wireless-AI research dataset with channels and environmental information from 10,000 sparse
+  and 100 dense deployment environments selected from maps of more than 40 cities.
+released:
+  year: 2022
+  notes: Introduced in the 2022 WAIR-D paper and distributed through the MobileAI dataset portal.
+origin:
+  type: ray-tracing
+  notes: Wireless channels are generated over large numbers of realistic map-derived urban environments.
+modalities:
+- channel-matrix
+- scene-geometry
+- position
+- beam-power
+technologies: []
+generation_contexts: []
+radio_configurations:
+- massive-mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: Frequency/configuration varies with the dataset generation settings described by the authors.
+environments:
+- outdoor
+- urban
+mobility:
+  type: not-applicable
+  notes: The two published scenarios contain spatially deployed UEs rather than temporal mobility traces.
+temporal_structure: snapshot
+formats: []
+ground_truth:
+- channel
+- position
+- beam-power
+scale:
+  samples: null
+  sequences: null
+  scenarios: 10100
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Scenario 1 has 10,000 environments with sparse UEs; Scenario 2 has 100 dense environments drawn from 40+
+    cities.
+access:
+  status: open
+  url: https://www.mobileai-dataset.com/html/default/yingwen/DateSet/1590994253188792322.html?index=1
+  notes: The authors provide a public download portal.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A dataset-specific license was not confirmed from the verified sources.
+official_resources:
+  homepage: https://www.mobileai-dataset.com/html/default/yingwen/DateSet/1590994253188792322.html?index=1
+  repository: null
+  documentation: https://arxiv.org/abs/2212.02159
+  loader: null
+references:
+- id: paper
+  type: paper
+  title: 'WAIR-D: Wireless AI Research Dataset'
+  url: https://arxiv.org/abs/2212.02159
+  doi: 10.48550/arXiv.2212.02159
+  notes: null
+- id: download
+  type: data-host
+  title: WAIR-D download portal
+  url: https://www.mobileai-dataset.com/html/default/yingwen/DateSet/1590994253188792322.html?index=1
+  doi: null
+  notes: null
+tasks:
+- task: beam-prediction
+  scope: Predict unmeasured spatial beam quality from sparse wireless observations across diverse environments.
+  inputs:
+  - channel-matrix
+  - scene-geometry
+  - position
+  targets:
+  - beam-power
+  evidence:
+  - paper
+  notes: The original WAIR-D paper explicitly demonstrates spatial beam prediction.
+  context:
+    environments:
+    - outdoor
+    - urban
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: WAIR-D is generated rather than measured over-the-air; its key advantage is environmental diversity at large
+    scale.
+  evidence:
+  - paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

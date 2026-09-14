@@ -1,0 +1,113 @@
+id: glasgow-multiuser-presence-activity
+name: 5G-Enabled Multi-User Presence and Activity Dataset
+aliases: []
+identity:
+  canonical_url: https://researchdata.gla.ac.uk/1151/
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: Wireless CSI measurements collected with USRP X300/X310 devices for joint multi-user presence and activity detection,
+  organized into 16 classes representing subject counts and activities.
+released:
+  year: 2021
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- channel-matrix
+technologies: []
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: null
+temporal_structure: sequence
+formats:
+- csv
+- txt
+ground_truth:
+- presence-label
+- activity-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 0.843
+  notes: The University of Glasgow release is 843 MB and contains 16 presence/activity classes.
+access:
+  status: open
+  url: https://researchdata.gla.ac.uk/1151/
+  notes: Visible and downloadable to anyone from University of Glasgow Enlighten Research Data.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://researchdata.gla.ac.uk/1151/
+  repository: null
+  documentation: https://researchdata.gla.ac.uk/1151/
+  loader: null
+references:
+- id: glasgow
+  type: data-host
+  title: 5G-Enabled Contactless Multi-User Presence and Activity Detection for Independent Assisted Living
+  url: https://researchdata.gla.ac.uk/1151/
+  doi: 10.5525/gla.researchdata.1151
+  notes: null
+- id: sci-rep
+  type: paper
+  title: 5G-enabled contactless multi-user presence and activity detection for independent assisted living
+  url: https://doi.org/10.1038/s41598-021-96689-7
+  doi: 10.1038/s41598-021-96689-7
+  notes: null
+tasks:
+- task: presence-detection
+  scope: Detect multi-user presence states from wireless CSI.
+  inputs:
+  - channel-matrix
+  targets:
+  - presence-label
+  evidence:
+  - glasgow
+  - sci-rep
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes: []
+- task: human-activity-recognition
+  scope: Recognize activity states of one or more subjects from wireless CSI.
+  inputs:
+  - channel-matrix
+  targets:
+  - activity-label
+  evidence:
+  - glasgow
+  - sci-rep
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

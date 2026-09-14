@@ -1,0 +1,126 @@
+id: multimodal-rssi-industrial-navigation
+name: Multi-Technology RSSI Dataset for Indoor Positioning and Navigation
+aliases:
+- Multimodal RSSI Localization Dataset
+identity:
+  canonical_url: https://github.com/GiovanniPettorru/multimodal-RSSI-localization-dataset
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A measured Wi-Fi and BLE RSSI dataset collected by an autonomous industrial robot along repeated indoor trajectories,
+  with timestamped position, orientation, linear/angular velocity, anchor coordinates, and trajectory labels in an interference-prone
+  laboratory.
+released:
+  year: 2026
+  notes: Published in Future Generation Computer Systems in 2026; the public GitHub repository distributes the measurements.
+origin:
+  type: measurement
+  notes: Wi-Fi and BLE RSSI were collected in an industrial research laboratory while a MiR100 robot carried the target through
+    repeated predefined missions.
+modalities:
+- wifi-rssi
+- rss
+- position
+- scene-geometry
+technologies:
+- wifi
+- ble
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: The dataset combines commodity Wi-Fi and BLE RSSI measurements.
+environments:
+- indoor
+- laboratory
+- industrial
+mobility:
+  type: mixed
+  notes: The target repeatedly traverses three trajectories at about 0.1 m/s and the dataset intentionally retains stationary
+    pauses.
+temporal_structure: trajectory
+formats:
+- csv
+ground_truth:
+- position
+- orientation
+- velocity
+- timestamp
+- scene-geometry
+scale:
+  samples: 71576
+  sequences: 71
+  scenarios: 3
+  participants: null
+  devices: 30
+  sites: 1
+  duration_hours: null
+  size_gb: null
+  notes: The paper reports 71,576 RSSI measurements; trajectories A, B, and C were traversed 26, 24, and 21 times, respectively,
+    with 30 anchors/devices deployed across 17 positions.
+access:
+  status: open
+  url: https://github.com/GiovanniPettorru/multimodal-RSSI-localization-dataset
+  notes: CSV data are publicly distributed in the GitHub repository.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The paper describes the dataset as released under an open Creative Commons data license, but an exact dataset-license
+    identifier was not independently confirmed in the repository metadata.
+official_resources:
+  homepage: https://github.com/GiovanniPettorru/multimodal-RSSI-localization-dataset
+  repository: https://github.com/GiovanniPettorru/multimodal-RSSI-localization-dataset
+  documentation: https://doi.org/10.1016/j.future.2026.108634
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: Multi-Technology RSSI Dataset for Indoor Positioning and Navigation — repository
+  url: https://github.com/GiovanniPettorru/multimodal-RSSI-localization-dataset
+  doi: null
+  notes: Official public dataset repository with fields, anchor positions, trajectories, and data files.
+- id: paper
+  type: paper
+  title: A multimodal RSSI-based dataset for indoor navigation in interference-prone environments
+  url: https://doi.org/10.1016/j.future.2026.108634
+  doi: 10.1016/j.future.2026.108634
+  notes: The paper validates the data through fingerprinting-based positioning and describes the trajectory/kinematic annotations
+    as useful for positioning, tracking, and navigation research.
+tasks:
+- task: localization
+  scope: Indoor Wi-Fi/BLE RSSI positioning and hybrid fingerprinting under repeated trajectories and interference-prone industrial
+    conditions.
+  inputs:
+  - wifi-rssi
+  - rss
+  targets:
+  - position
+  evidence:
+  - official-repo
+  - paper
+  notes: The published proof of concept validates positioning/fingerprinting; the richer trajectory annotations also make
+    the resource useful for tracking/navigation research.
+  context:
+    environments:
+    - indoor
+    - laboratory
+    - industrial
+    mobility: mixed
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The resource is explicitly described as useful for navigation, but the published proof-of-concept benchmark validates
+    positioning rather than path/waypoint/action selection; it is therefore not mapped to radio-assisted-navigation in V1.
+  evidence:
+  - paper
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: false

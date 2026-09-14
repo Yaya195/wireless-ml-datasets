@@ -1,0 +1,24 @@
+id: crawdad-collection
+name: CRAWDAD Collection on IEEE DataPort
+resource_kind: dataset-collection
+description: The migrated Community Resource for Archiving Wireless Data at Dartmouth
+  collection, preserving a long-running archive of wireless-network measurement datasets
+  within IEEE DataPort.
+provider: CRAWDAD / IEEE DataPort
+url: https://www.crawdad.org/
+wireless_relevance: wireless-specific
+access: registration
+collections: []
+search_guidance: Use for historical and measurement-oriented wireless datasets; CRAWDAD
+  is now a collection inside IEEE DataPort rather than a separate active repository.
+task_links: []
+references:
+- id: official
+  title: CRAWDAD has moved to IEEE DataPort
+  url: https://www.crawdad.org/
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

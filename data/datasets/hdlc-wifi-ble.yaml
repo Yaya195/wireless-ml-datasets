@@ -1,0 +1,103 @@
+id: hdlc-wifi-ble
+name: Hybrid Wi-Fi and BLE Fingerprinting Dataset with Layout Change (HDLC)
+aliases: []
+identity:
+  canonical_url: https://zenodo.org/records/7306455
+  version: v1
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.7306455
+status: verified
+resource_type: dataset
+description: Hybrid Wi-Fi/BLE multi-floor fingerprinting data collected under multiple indoor layout configurations to study
+  localization robustness to environmental changes.
+released:
+  year: 2022
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- wifi-rssi
+- rss
+- position
+technologies:
+- wifi
+- ble
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+mobility:
+  type: static
+  notes: null
+temporal_structure: snapshot
+formats: []
+ground_truth:
+- position
+- floor
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 0.0075
+  notes: The Zenodo archive is approximately 7.5 MB.
+access:
+  status: open
+  url: https://zenodo.org/records/7306455
+  notes: Open Zenodo dataset.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: null
+official_resources:
+  homepage: https://zenodo.org/records/7306455
+  repository: null
+  documentation: https://doi.org/10.3390/data7110156
+  loader: null
+references:
+- id: zenodo
+  type: data-host
+  title: Hybrid Wi-Fi and BLE Fingerprinting Dataset for Multi-Floor Indoor Environments with Different Layouts
+  url: https://zenodo.org/records/7306455
+  doi: 10.5281/zenodo.7306455
+  notes: null
+- id: data-paper
+  type: paper
+  title: Hybrid Wi-Fi and BLE Fingerprinting Dataset for Multi-Floor Indoor Environments with Different Layouts
+  url: https://doi.org/10.3390/data7110156
+  doi: 10.3390/data7110156
+  notes: null
+tasks:
+- task: localization
+  scope: Estimate indoor position/floor from hybrid Wi-Fi and BLE fingerprints under layout changes.
+  inputs:
+  - wifi-rssi
+  - rss
+  targets:
+  - position
+  - floor
+  evidence:
+  - zenodo
+  - data-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: static
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

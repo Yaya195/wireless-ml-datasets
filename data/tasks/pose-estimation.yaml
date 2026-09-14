@@ -1,0 +1,11 @@
+id: pose-estimation
+name: "Pose Estimation"
+category: wireless-sensing
+description: >-
+  Estimate human body pose, keypoints, or posture from wireless sensing measurements.
+aliases:
+  - "wireless pose estimation"
+status: active
+related_tasks:
+  - human-activity-recognition
+notes: null

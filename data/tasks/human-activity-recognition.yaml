@@ -1,0 +1,12 @@
+id: human-activity-recognition
+name: "Human Activity Recognition"
+category: wireless-sensing
+description: >-
+  Infer human activities or activity classes from wireless measurements such as CSI, radar, RSS, or related radio observations.
+aliases:
+  - "HAR"
+status: active
+related_tasks:
+  - gesture-recognition
+  - presence-detection
+notes: null

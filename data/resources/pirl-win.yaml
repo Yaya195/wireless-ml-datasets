@@ -1,0 +1,31 @@
+id: pirl-win
+name: PIRL-WIN
+resource_kind: benchmark-framework
+description: An open-source wireless indoor-navigation research framework that augments AI Habitat/Gibson scenes with electromagnetic wireless simulation and evaluates physics-informed reinforcement-learning policies for zero-shot navigation toward a wireless transmitter.
+provider: PIRL-WIN authors
+url: https://github.com/Panshark/PIRL-WIN
+wireless_relevance: wireless-specific
+access: open
+collections: []
+search_guidance: Use when you need an executable radio-assisted-navigation benchmark/framework with wireless digital-twin simulation and navigation-policy evaluation rather than a standalone measured dataset.
+task_links:
+- task: radio-assisted-navigation
+  scope: Train and evaluate navigation policies that use wireless information to guide an agent toward a transmitter in previously unseen indoor environments.
+  evidence:
+  - official-repo
+  - icra-paper
+references:
+- id: official-repo
+  title: PIRL-WIN — official repository
+  url: https://github.com/Panshark/PIRL-WIN
+  doi: null
+  notes: Public source code, pretrained models, setup instructions, and evaluation workflow.
+- id: icra-paper
+  title: Zero-Shot Wireless Indoor Navigation through Physics-Informed Reinforcement Learning
+  url: https://doi.org/10.1109/ICRA57147.2024.10611229
+  doi: 10.1109/ICRA57147.2024.10611229
+  notes: Peer-reviewed ICRA 2024 paper evaluating wireless indoor navigation in a wireless digital twin built from AI Habitat scenes plus electromagnetic simulation.
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

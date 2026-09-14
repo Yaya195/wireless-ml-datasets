@@ -1,0 +1,106 @@
+id: telecom-italia-milan-cdr
+name: Telecom Italia Milan Telecommunications Activity Dataset
+aliases:
+- Milan Mobile Traffic Dataset
+- Telecommunications - SMS, Call, Internet - MI
+identity:
+  canonical_url: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EGZHFV
+  version: '1'
+  external_ids:
+  - scheme: dataverse
+    value: 10.7910/DVN/EGZHFV
+status: verified
+resource_type: dataset
+description: A city-scale cellular-activity dataset released through the Telecom Italia Big Data Challenge, with
+  10-minute SMS, call, and Internet activity aggregates over a 100×100 grid covering Milan for roughly two months.
+released:
+  year: 2015
+  notes: Harvard Dataverse cites Telecom Italia, 2015, Version 1.
+origin:
+  type: measurement
+  notes: Aggregated operational telecommunications activity from the Milan cellular network.
+modalities:
+- traffic
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-applicable
+  regimes: []
+  bands: []
+  notes: The resource contains spatial-temporal network activity aggregates, not PHY measurements.
+environments:
+- urban
+mobility:
+  type: not-applicable
+  notes: Mobility is not directly labeled; traffic is aggregated by city grid cell.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- traffic-volume
+scale:
+  samples: null
+  sequences: 62
+  scenarios: null
+  participants: null
+  devices: null
+  sites: 10000
+  duration_hours: null
+  size_gb: null
+  notes: Approximately 62 days at 10-minute resolution over a 100×100 spatial grid.
+access:
+  status: open
+  url: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EGZHFV
+  notes: The dataset is maintained in Harvard Dataverse.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: Reuse projects report an Open Database License, but the catalogue leaves license unconfirmed without relying
+    on a secondary source.
+official_resources:
+  homepage: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EGZHFV
+  repository: null
+  documentation: https://doi.org/10.1038/sdata.2015.55
+  loader: null
+references:
+- id: dataverse
+  type: data-host
+  title: Telecommunications - SMS, Call, Internet - MI
+  url: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EGZHFV
+  doi: 10.7910/DVN/EGZHFV
+  notes: null
+- id: descriptor
+  type: paper
+  title: A multi-source dataset of urban life in the city of Milan and the Province of Trentino
+  url: https://doi.org/10.1038/sdata.2015.55
+  doi: 10.1038/sdata.2015.55
+  notes: null
+tasks:
+- task: traffic-prediction
+  scope: Forecast future grid-level cellular Internet/telecommunications activity from historical spatial-temporal
+    traffic observations.
+  inputs:
+  - traffic
+  targets:
+  - traffic-volume
+  evidence:
+  - dataverse
+  - descriptor
+  notes: The resource is a spatio-temporal cellular-traffic series; the catalogue records the prediction task rather
+    than a particular forecasting model.
+  context:
+    environments:
+    - urban
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: Traffic values are aggregated activity indices over geographic grid cells and time intervals, not per-user
+    packet/flow traces.
+  evidence:
+  - dataverse
+  - descriptor
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

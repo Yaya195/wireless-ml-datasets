@@ -1,0 +1,97 @@
+id: bubbleran-persistent-interference
+name: BubbleRAN Persistent-Interference Anomaly Dataset
+aliases:
+- anomaly-detection-persistent-interference
+identity:
+  canonical_url: https://github.com/bubbleran/open-telco-datasets/tree/main/datasets/anomaly-detection-persistent-interference
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A controlled 5G-lab KPI dataset for anomaly detection, with approximately two hours of one-second RAN
+  observations and a binary persistent-interference anomaly label.
+released:
+  year: 2026
+  notes: Distributed through the actively maintained BubbleRAN Open Telco Datasets repository.
+origin:
+  type: measurement
+  notes: Measured 5G KPIs captured in controlled lab conditions with persistent interference.
+modalities:
+- network-kpi
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+- laboratory
+mobility:
+  type: not-reported
+  notes: null
+temporal_structure: sequence
+formats:
+- csv
+ground_truth:
+- anomaly-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: 2.0
+  size_gb: null
+  notes: Approximately two hours of one-second KPI observations according to the repository dataset index.
+access:
+  status: open
+  url: https://github.com/bubbleran/open-telco-datasets
+  notes: Dataset card, schema, raw CSV/download links, and samples are publicly hosted in the repository.
+license:
+  status: known
+  name: CC BY-SA 4.0
+  url: https://creativecommons.org/licenses/by-sa/4.0/
+  notes: The repository states CC BY-SA 4.0 unless an individual dataset card says otherwise.
+official_resources:
+  homepage: https://github.com/bubbleran/open-telco-datasets
+  repository: https://github.com/bubbleran/open-telco-datasets
+  documentation: https://github.com/bubbleran/open-telco-datasets
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: BubbleRAN Open Telco Datasets
+  url: https://github.com/bubbleran/open-telco-datasets
+  doi: null
+  notes: null
+tasks:
+- task: network-anomaly-detection
+  scope: Detect persistent-interference anomaly periods from one-second 5G RAN KPI sequences.
+  inputs:
+  - network-kpi
+  targets:
+  - anomaly-label
+  evidence:
+  - official-repo
+  notes: null
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: not-reported
+    frequency_regimes: []
+caveats:
+- text: The dataset covers a controlled persistent-interference anomaly use case rather than the full range of operational
+    5G faults/anomalies.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

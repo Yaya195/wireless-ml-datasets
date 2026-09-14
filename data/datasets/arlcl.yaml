@@ -1,0 +1,100 @@
+id: arlcl
+name: ARLCL
+aliases:
+- Anchor-free Ranging-Likelihood-based Cooperative Localization Dataset
+identity:
+  canonical_url: https://zenodo.org/records/7552462
+  version: '1.0'
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.7552462
+status: verified
+resource_type: dataset
+description: A BLE RSS cooperative-localization dataset containing tens of thousands of evaluation scenarios with
+  node ground truth and repeated resampling cases for anchor-free ranging-likelihood localization.
+released:
+  year: 2023
+  notes: Version 1.0 was published on 20 January 2023.
+origin:
+  type: measurement
+  notes: Real BLE RSS measurements collected with Raspberry Pi nodes in a lecture-room deployment.
+modalities:
+- rss
+- position
+technologies:
+- ble
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: null
+environments:
+- indoor
+- campus
+mobility:
+  type: static
+  notes: Each evaluated deployment uses fixed node positions.
+temporal_structure: snapshot
+formats: []
+ground_truth:
+- position
+scale:
+  samples: 68440
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: 21
+  sites: null
+  duration_hours: null
+  size_gb: 5.9
+  notes: 68,440 compressed evaluation files/scenarios; maximum setting uses 21 Raspberry Pis.
+access:
+  status: open
+  url: https://zenodo.org/records/7552462
+  notes: Public Zenodo download with optimizer code available separately.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No explicit dataset license was confirmed from the verified record.
+official_resources:
+  homepage: https://zenodo.org/records/7552462
+  repository: https://github.com/CDS-Bern/ARLCL-Optimizer
+  documentation: https://zenodo.org/records/7552462
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: 'ARLCL: Anchor-free Ranging-Likelihood-based Cooperative Localization'
+  url: https://zenodo.org/records/7552462
+  doi: 10.5281/zenodo.7552462
+  notes: null
+tasks:
+- task: cooperative-localization
+  scope: Estimate relative/absolute node positions cooperatively from inter-node BLE RSS measurements.
+  inputs:
+  - rss
+  targets:
+  - position
+  evidence:
+  - zenodo-record
+  notes: null
+  context:
+    environments:
+    - indoor
+    - campus
+    mobility: static
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The database-file structure is tightly coupled to the accompanying cooperative-localization optimizer/evaluation
+    workflow.
+  evidence:
+  - zenodo-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

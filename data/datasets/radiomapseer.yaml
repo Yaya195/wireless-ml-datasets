@@ -1,0 +1,144 @@
+id: radiomapseer
+name: RadioMapSeer
+aliases: []
+identity:
+  canonical_url: https://radiomapseer.github.io/
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A public collection of simulated urban pathloss/RSS and time-of-arrival radio maps paired with city
+  geometry and transmitter locations for radio-map learning and localization research.
+released:
+  year: 2020
+  notes: The original RadioMapSeer website release predates the 2022 dataset paper, which also documents later radio-map
+    extensions.
+origin:
+  type: simulation
+  notes: Radio maps are generated over realistic urban maps using propagation simulation methods including DPM and
+    intelligent ray tracing.
+modalities:
+- scene-geometry
+- radio-map
+- position
+- rss
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 5.9 GHz
+    center_ghz: 5.9
+    min_ghz: null
+    max_ghz: null
+  notes: The original RadioMapSeer dataset uses a 5.9 GHz carrier with 10 MHz bandwidth.
+environments:
+- outdoor
+- urban
+mobility:
+  type: not-applicable
+  notes: The core resource consists of static spatial radio maps rather than temporal trajectories.
+temporal_structure: snapshot
+formats:
+- png
+- json
+ground_truth:
+- radio-map
+- position
+scale:
+  samples: 56000
+  sequences: null
+  scenarios: 700
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 3.0
+  notes: The original RadioMapSeer release contains 700 urban maps with 80 transmitter locations per map (56,000
+    map-transmitter pairs).
+access:
+  status: open
+  url: https://radiomapseer.github.io/
+  notes: The original RadioMapSeer archive is linked directly from the official project page.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://radiomapseer.github.io/
+  repository: https://github.com/radiomapseer/radiomapseer.github.io
+  documentation: null
+  loader: null
+references:
+- id: official-radiomapseer
+  type: official-page
+  title: RadioMapSeer Dataset
+  url: https://radiomapseer.github.io/
+  doi: null
+  notes: null
+- id: dataset-paper
+  type: paper
+  title: Dataset of Pathloss and ToA Radio Maps With Localization Application
+  url: https://arxiv.org/abs/2212.11777
+  doi: 10.48550/arXiv.2212.11777
+  notes: null
+- id: locunet-paper
+  type: paper
+  title: 'Real-time Outdoor Localization Using Radio Maps: A Deep Learning Approach'
+  url: https://arxiv.org/abs/2106.12556
+  doi: null
+  notes: LocUNet localizes a user from RSS measurements from several base stations together with estimated pathloss
+    radio maps.
+tasks:
+- task: radio-map-estimation
+  scope: Predict pathloss/RSS radio maps from urban map geometry and transmitter information.
+  inputs:
+  - scene-geometry
+  - position
+  targets:
+  - radio-map
+  evidence:
+  - dataset-paper
+  - official-radiomapseer
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - urban
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+- task: localization
+  scope: RSS-based urban localization using user RSS measurements together with estimated pathloss radio maps as
+    spatial reference.
+  inputs:
+  - rss
+  - radio-map
+  targets:
+  - position
+  evidence:
+  - dataset-paper
+  - locunet-paper
+  notes: The RSS measurement is the user observation; the radio maps provide the spatial propagation reference.
+    The two are not interchangeable inputs.
+  context:
+    environments:
+    - outdoor
+    - urban
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: RadioMapSeer is simulation-based; results obtained on its generated urban maps should not be interpreted
+    as direct validation on measured radio environments.
+  evidence:
+  - dataset-paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: true

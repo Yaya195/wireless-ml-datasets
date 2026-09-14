@@ -1,0 +1,114 @@
+id: commercial-wifi-bluetooth-rffi
+name: Real-world Commercial WiFi and Bluetooth RF Fingerprinting Dataset
+aliases: []
+identity:
+  canonical_url: https://doi.org/10.21227/618K-C392
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/618K-C392
+status: verified
+resource_type: dataset
+description: A real-world RF-fingerprinting dataset for commercial Wi-Fi/Bluetooth combo chipsets, captured from
+  two laptops and eight commercial devices with a USRP X300.
+released:
+  year: 2022
+  notes: Published on IEEE DataPort in 2022 and documented in IEEE Communications Magazine.
+origin:
+  type: measurement
+  notes: Over-the-air captures of commercial off-the-shelf Wi-Fi/Bluetooth combo emitters.
+modalities:
+- iq
+technologies:
+- wifi
+- ble
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 2.414 GHz capture center
+    center_ghz: 2.414
+    min_ghz: null
+    max_ghz: null
+  notes: The receiver records 66.67 MHz of spectrum centered at 2.414 GHz.
+environments:
+- laboratory
+mobility:
+  type: static
+  notes: Controlled RF fingerprinting captures.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- device-id
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: 10
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Two laptops plus eight commercial Wi-Fi/Bluetooth combo-chip devices.
+access:
+  status: restricted
+  url: https://doi.org/10.21227/618K-C392
+  notes: IEEE DataPort lists this as a non-open dataset; subscription/institutional access may be required.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No dataset-specific public license was confirmed.
+official_resources:
+  homepage: https://www.androcs.com/wp/tech/ai-machine-learning-innovation-lab/
+  repository: null
+  documentation: https://www.androcs.com/wp/tech/ai-machine-learning-innovation-lab/
+  loader: null
+references:
+- id: lab-page
+  type: official-page
+  title: ANDRO AI Innovation Lab RF Datasets
+  url: https://www.androcs.com/wp/tech/ai-machine-learning-innovation-lab/
+  doi: null
+  notes: null
+- id: dataport
+  type: data-host
+  title: Real-world Commercial WiFi and Bluetooth Dataset for RF Fingerprinting
+  url: https://doi.org/10.21227/618K-C392
+  doi: 10.21227/618K-C392
+  notes: null
+- id: paper
+  type: paper
+  title: Bluetooth and WiFi Dataset for Real World RF Fingerprinting of Commercial Devices
+  url: https://doi.org/10.1109/MCOM.001.2200725
+  doi: 10.1109/MCOM.001.2200725
+  notes: null
+tasks:
+- task: rf-fingerprinting
+  scope: Identify commercial Wi-Fi/Bluetooth combo-chip devices from over-the-air RF fingerprints.
+  inputs:
+  - iq
+  targets:
+  - device-id
+  evidence:
+  - lab-page
+  - dataport
+  - paper
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: static
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The DataPort release is not listed as open access, so reproducibility may depend on institutional access.
+  evidence:
+  - dataport
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

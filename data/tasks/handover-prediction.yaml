@@ -1,0 +1,12 @@
+id: handover-prediction
+name: "Handover Prediction"
+category: network-intelligence
+description: >-
+  Predict handover events, target cells, or handover-related outcomes from radio, mobility, and network measurements.
+aliases:
+  - "handoff prediction"
+status: active
+related_tasks:
+  - mobility-prediction
+  - blockage-prediction
+notes: null

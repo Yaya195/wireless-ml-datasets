@@ -1,0 +1,105 @@
+id: wisig
+name: WiSig
+aliases:
+- WiFi Signal Dataset
+identity:
+  canonical_url: https://cores.ee.ucla.edu/downloads/datasets/wisig/
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A large-scale Wi-Fi RF-fingerprinting dataset with 10 million packets from 174 off-the-shelf transmitters
+  captured by 41 USRP receivers over four capture sessions spanning a month.
+released:
+  year: 2022
+  notes: The peer-reviewed WiSig dataset paper was published in IEEE Access in February 2022.
+origin:
+  type: measurement
+  notes: Real over-the-air Wi-Fi captures collected on the ORBIT testbed.
+modalities:
+- iq
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: Wi-Fi captures are sub-6-GHz; the catalogue does not assign a single center frequency across the whole
+    resource.
+environments:
+- laboratory
+mobility:
+  type: static
+  notes: The benchmark studies transmitter/receiver/channel variation across locations and days rather than mobile
+    trajectories.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- device-id
+scale:
+  samples: 10000000
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: 174
+  sites: null
+  duration_hours: null
+  size_gb: 76.9
+  notes: Processed Full WiSig is approximately 76.9 GB; raw WiSig is much larger.
+access:
+  status: open
+  url: https://cores.ee.ucla.edu/downloads/datasets/wisig/
+  notes: Raw, processed, and smaller prepackaged subsets are publicly available.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A dataset-specific license was not confirmed from the verified project page.
+official_resources:
+  homepage: https://cores.ee.ucla.edu/downloads/datasets/wisig/
+  repository: https://github.com/WiSig-dataset
+  documentation: https://cores.ee.ucla.edu/downloads/datasets/wisig/
+  loader: null
+references:
+- id: official-page
+  type: official-page
+  title: 'WiSig: RF Fingerprinting Dataset'
+  url: https://cores.ee.ucla.edu/downloads/datasets/wisig/
+  doi: null
+  notes: null
+- id: access-paper
+  type: paper
+  title: 'WiSig: A Large-Scale WiFi Signal Dataset for Receiver and Channel Agnostic RF Fingerprinting'
+  url: https://doi.org/10.1109/ACCESS.2022.3154790
+  doi: 10.1109/ACCESS.2022.3154790
+  notes: null
+tasks:
+- task: rf-fingerprinting
+  scope: Identify Wi-Fi transmitters from RF fingerprints while studying receiver-, channel-, and day-induced domain
+    shifts.
+  inputs:
+  - iq
+  targets:
+  - device-id
+  evidence:
+  - official-page
+  - access-paper
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: static
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: Receiver and capture-day changes materially affect fingerprinting performance; experimental splits should
+    preserve those domain-shift factors.
+  evidence:
+  - access-paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

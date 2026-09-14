@@ -1,0 +1,34 @@
+id: wirelessbench
+name: WirelessBench
+resource_kind: benchmark-dataset
+description: A tolerance-aware, tool-integrated benchmark for LLM agents in wireless
+  network intelligence, spanning wireless calculations, network-slicing resource allocation,
+  and proactive service decisions under mobility.
+provider: WirelessBench authors
+url: https://wirelessbench.github.io/
+wireless_relevance: wireless-specific
+access: open
+collections:
+- llm-foundation-model-resources
+search_guidance: Use for wireless-agent reasoning and tool use; its network-slicing
+  component directly exercises resource-allocation decisions.
+task_links:
+- task: resource-allocation
+  scope: Evaluate LLM-agent decisions for 5G network-slicing resource allocation.
+  evidence:
+  - official
+references:
+- id: official
+  title: WirelessBench — Project Page
+  url: https://wirelessbench.github.io/
+  doi: null
+  notes: null
+- id: repo
+  title: WirelessBench — Official Repository
+  url: https://github.com/jwentong/WirelessBench
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

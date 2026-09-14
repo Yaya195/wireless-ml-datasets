@@ -1,0 +1,24 @@
+id: kaggle-datasets
+name: Kaggle Datasets & Competitions
+resource_kind: data-portal
+description: A data-science platform hosting public datasets and competition benchmarks,
+  including important wireless and indoor-localization resources such as Microsoft
+  Indoor Location & Navigation.
+provider: Kaggle
+url: https://www.kaggle.com/datasets
+wireless_relevance: general
+access: registration
+collections: []
+search_guidance: Search datasets and competitions separately; competition data may
+  require accepting rules or account-based access even when the metadata page is public.
+task_links: []
+references:
+- id: official
+  title: Kaggle Datasets
+  url: https://www.kaggle.com/datasets
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

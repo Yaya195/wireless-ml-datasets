@@ -1,0 +1,98 @@
+id: deeprem
+name: DeepREM Urban REM Dataset
+aliases:
+- DeepREM
+identity:
+  canonical_url: https://zenodo.org/records/7839447
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.7839447
+status: verified
+resource_type: dataset
+description: An urban radio-environment-map dataset generated from topography, building vector data, and intelligent
+  ray tracing across multiple Colombian and U.S. cities, released for deep-learning REM estimation from sparse measurements.
+released:
+  year: 2023
+  notes: The current Zenodo release was created in April 2023.
+origin:
+  type: ray-tracing
+  notes: Urban coverage maps generated with topographic/building information and intelligent ray tracing.
+modalities:
+- radio-map
+- scene-geometry
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The verified dataset landing page does not establish one carrier for the full collection.
+environments:
+- outdoor
+- urban
+mobility:
+  type: not-applicable
+  notes: Static urban radio environment maps.
+temporal_structure: snapshot
+formats: []
+ground_truth:
+- radio-map
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 0.883
+  notes: The main urban REM archive is about 830 MB plus test data; the second release adds 400 maps across four
+    additional city areas.
+access:
+  status: open
+  url: https://zenodo.org/records/7839447
+  notes: The urban REM dataset and test data are publicly downloadable from Zenodo.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The Zenodo record does not expose a populated license value.
+official_resources:
+  homepage: https://zenodo.org/records/7839447
+  repository: null
+  documentation: https://zenodo.org/records/7839447
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: 'DeepREM: Deep-Learning-Based Radio Environment Map Estimation from Sparse Measurements'
+  url: https://zenodo.org/records/7839447
+  doi: 10.5281/zenodo.7839447
+  notes: null
+tasks:
+- task: radio-map-estimation
+  scope: Estimate complete urban radio environment maps from sparse radio-map observations and spatial context.
+  inputs:
+  - radio-map
+  - scene-geometry
+  targets:
+  - radio-map
+  evidence:
+  - zenodo-record
+  notes: The release accompanies U-Net and CGAN methods for REM reconstruction from sparse measurements.
+  context:
+    environments:
+    - outdoor
+    - urban
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: DeepREM maps are ray-tracing-based urban simulations rather than measured drive-test radio maps.
+  evidence:
+  - zenodo-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

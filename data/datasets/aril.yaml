@@ -1,0 +1,113 @@
+id: aril
+name: ARIL
+aliases: []
+identity:
+  canonical_url: https://github.com/geekfeiw/ARIL
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: Wi-Fi CSI fingerprints collected with Ettus N210 hardware for the joint tasks of six-class human activity recognition
+  and 16-location indoor localization.
+released:
+  year: 2019
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations:
+- siso
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+mobility:
+  type: mixed
+  notes: Human motion is present for the activity task; the localization output is one of 16 indoor locations.
+temporal_structure: sequence
+formats:
+- mat
+ground_truth:
+- activity-label
+- position
+scale:
+  samples: 1394
+  sequences: null
+  scenarios: 16
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The paper reports more than 1,400 CSI fingerprints, six activities and 16 locations.
+access:
+  status: open
+  url: https://github.com/geekfeiw/ARIL
+  notes: Data download links and code are provided in the public project repository.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: null
+official_resources:
+  homepage: https://github.com/geekfeiw/ARIL
+  repository: https://github.com/geekfeiw/ARIL
+  documentation: https://github.com/geekfeiw/ARIL
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: 'ARIL: Joint Activity Recognition and Indoor Localization with WiFi Fingerprints'
+  url: https://github.com/geekfeiw/ARIL
+  doi: null
+  notes: null
+- id: access-paper
+  type: paper
+  title: Joint Activity Recognition and Indoor Localization With WiFi Fingerprints
+  url: https://doi.org/10.1109/ACCESS.2019.2923743
+  doi: 10.1109/ACCESS.2019.2923743
+  notes: null
+tasks:
+- task: human-activity-recognition
+  scope: Recognize one of six human activities from Wi-Fi CSI fingerprints.
+  inputs:
+  - wifi-csi
+  targets:
+  - activity-label
+  evidence:
+  - official-repo
+  - access-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes: []
+- task: localization
+  scope: Classify the indoor location associated with Wi-Fi CSI fingerprints.
+  inputs:
+  - wifi-csi
+  targets:
+  - position
+  evidence:
+  - official-repo
+  - access-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: static
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

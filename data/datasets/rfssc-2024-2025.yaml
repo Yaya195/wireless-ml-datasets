@@ -1,0 +1,113 @@
+id: rfssc-2024-2025
+name: First RF Spectrum-Sharing Challenge Dataset
+aliases:
+- RFSSC
+- RFSSC 2024-2025
+identity:
+  canonical_url: https://www.genesys-lab.org/radio-frequency-spectrum-sharing
+  version: 2024-2025
+  external_ids:
+  - scheme: doi
+    value: 10.18738/T8/VQZPCN
+status: verified
+resource_type: dataset
+description: A synthetic complex-baseband RF-scene dataset from the first Radio-Frequency Spectrum-Sharing Challenge,
+  with exemplar/test I/Q scenes and ground-truth time-frequency spectral-occupancy matrices.
+released:
+  year: 2025
+  notes: The challenge ran during 2024-2025; the official page states the winner was announced on January 30, 2025
+    and publishes the challenge data and truth.
+origin:
+  type: synthetic
+  notes: Radar and communication signals were independently simulated in MATLAB and C and assembled into controlled
+    RF scenes.
+modalities:
+- iq
+- spectrum
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-applicable
+  regimes: []
+  bands: []
+  notes: The released signals/scenes are complex baseband sampled at 50 MHz rather than tied to a specified RF carrier
+    band.
+environments:
+- not-applicable
+mobility:
+  type: not-applicable
+  notes: null
+temporal_structure: sequence
+formats:
+- sigmf
+- mat
+- txt
+ground_truth:
+- spectrum-occupancy
+- modulation-label
+scale:
+  samples: null
+  sequences: 9
+  scenarios: 9
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The release includes three one-second exemplar scenes and six ten-second challenge test scenes, plus exemplar
+    signals and 45 occupancy/ability-to-transmit truth matrices.
+access:
+  status: open
+  url: https://doi.org/10.18738/T8/VQZPCN
+  notes: The official GENESYS page links the challenge description, exemplar signals/scenes, and test scenes to
+    a Texas Data Repository Dataverse record.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A standard dataset license was not confirmed from the official release page during verification.
+official_resources:
+  homepage: https://www.genesys-lab.org/radio-frequency-spectrum-sharing
+  repository: null
+  documentation: https://www.genesys-lab.org/radio-frequency-spectrum-sharing
+  loader: null
+references:
+- id: official-rfssc
+  type: official-page
+  title: Dataset for the First Radio-Frequency Spectrum-Sharing Challenge
+  url: https://www.genesys-lab.org/radio-frequency-spectrum-sharing
+  doi: null
+  notes: null
+- id: rfssc-dataverse
+  type: data-host
+  title: RFSSC challenge data in Texas Data Repository
+  url: https://doi.org/10.18738/T8/VQZPCN
+  doi: 10.18738/T8/VQZPCN
+  notes: null
+tasks:
+- task: spectrum-sensing
+  scope: Infer time-frequency spectral occupancy of primary, secondary, and urgent-user signals from complex RF
+    scenes.
+  inputs:
+  - iq
+  targets:
+  - spectrum-occupancy
+  evidence:
+  - official-rfssc
+  notes: The challenge output uses user-class-specific binary spectral-occupancy matrices rather than only isolated-signal
+    labels.
+  context:
+    environments:
+    - not-applicable
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: The first RFSSC release is fully synthetic and baseband; it is valuable for controlled RF scene analysis
+    but does not represent measured propagation or hardware impairments.
+  evidence:
+  - official-rfssc
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

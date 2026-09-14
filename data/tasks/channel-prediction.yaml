@@ -1,0 +1,11 @@
+id: channel-prediction
+name: "Channel Prediction"
+category: channel-csi
+description: >-
+  Predict future wireless channel states or channel parameters from past and/or current observations.
+aliases: []
+status: active
+related_tasks:
+  - channel-estimation
+  - channel-extrapolation
+notes: null

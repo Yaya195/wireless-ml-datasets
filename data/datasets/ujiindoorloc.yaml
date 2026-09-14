@@ -1,0 +1,103 @@
+id: ujiindoorloc
+name: UJIIndoorLoc
+aliases: []
+identity:
+  canonical_url: https://archive.ics.uci.edu/dataset/310/ujiindoorloc
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.24432/C5MS59
+  - scheme: uci
+    value: '310'
+status: verified
+resource_type: dataset
+description: A multi-building, multi-floor Wi-Fi fingerprint dataset collected at Universitat Jaume I for indoor
+  localization using WLAN received signal strength measurements.
+released:
+  year: 2014
+  notes: The data were collected in 2013 and donated to the UCI repository in 2014.
+origin:
+  type: measurement
+  notes: Wi-Fi RSSI fingerprints were measured with multiple Android devices and users.
+modalities:
+- wifi-rssi
+- position
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  bands: []
+  notes: The UCI dataset page does not specify carrier band information.
+  regimes: []
+environments:
+- indoor
+- campus
+mobility:
+  type: static
+  notes: Records are Wi-Fi fingerprints captured at labeled indoor locations rather than continuous trajectories.
+temporal_structure: snapshot
+formats:
+- csv
+ground_truth:
+- position
+- floor
+- building
+- user-id
+- device-id
+- timestamp
+scale:
+  samples: 21048
+  sequences: null
+  scenarios: null
+  participants: 20
+  devices: 25
+  sites: 3
+  duration_hours: null
+  size_gb: null
+  notes: 19,937 training/reference records and 1,111 validation/test records; 520 detected WAP features.
+access:
+  status: open
+  url: https://archive.ics.uci.edu/dataset/310/ujiindoorloc
+  notes: Directly downloadable from the UCI Machine Learning Repository.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://archive.ics.uci.edu/dataset/310/ujiindoorloc
+  repository: null
+  documentation: https://archive.ics.uci.edu/dataset/310/ujiindoorloc
+  loader: https://archive.ics.uci.edu/dataset/310/ujiindoorloc
+references:
+- id: uci
+  type: data-host
+  title: UJIIndoorLoc — UCI Machine Learning Repository
+  url: https://archive.ics.uci.edu/dataset/310/ujiindoorloc
+  doi: 10.24432/C5MS59
+  notes: null
+tasks:
+- task: localization
+  scope: Indoor multi-building, multi-floor Wi-Fi fingerprint localization.
+  inputs:
+  - wifi-rssi
+  targets:
+  - position
+  - floor
+  - building
+  evidence:
+  - uci
+  notes: null
+  context:
+    environments:
+    - indoor
+    - campus
+    mobility: static
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: true

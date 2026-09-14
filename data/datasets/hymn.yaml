@@ -1,0 +1,136 @@
+id: hymn
+name: 'HYMN: Hybrid Indoor and Indoor-Outdoor Positioning Multi-Technology Dataset'
+aliases:
+- HYbrid Multi-technology Navigation Dataset
+- HYMN Dataset
+identity:
+  canonical_url: https://github.com/TUD-ITVS/HYMN-dataset
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.17979434
+status: verified
+resource_type: dataset
+description: A synchronized multi-technology positioning dataset spanning indoor and indoor-outdoor conditions, with UWB,
+  BLE, Wi-Fi, 5G NR, and GNSS observations aligned to reference coordinates for seamless localization and cross-technology
+  fusion research.
+released:
+  year: 2026
+  notes: Published in IEEE Data Descriptions in 2026 with an open Zenodo data release.
+origin:
+  type: measurement
+  notes: A mobile measurement plate was moved between reference points in an industrial hall/indoor-outdoor setting and held
+    stationary while all positioning systems recorded in parallel.
+modalities:
+- range
+- snr
+- gnss
+- position
+technologies:
+- wifi
+- ble
+- uwb
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: Frequency depends on the positioning technology; the dataset combines Wi-Fi, BLE, UWB, 5G NR, and GNSS observations.
+environments:
+- indoor
+- outdoor
+- industrial
+mobility:
+  type: static
+  notes: The measurement platform is moved manually between reference points and remains stationary for approximately three
+    minutes at each point.
+temporal_structure: snapshot
+formats:
+- csv
+- parquet
+- pickle
+- rinex
+ground_truth:
+- position
+- timestamp
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: 1
+  duration_hours: null
+  size_gb: null
+  notes: Measurements are synchronized across five positioning systems using common point identifiers; exact total sample
+    count is technology-dependent.
+access:
+  status: open
+  url: https://github.com/TUD-ITVS/HYMN-dataset
+  notes: The repository contains the processed/reference data and links the open dataset release.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: The dataset is CC BY 4.0; accompanying code is MIT licensed.
+official_resources:
+  homepage: https://github.com/TUD-ITVS/HYMN-dataset
+  repository: https://github.com/TUD-ITVS/HYMN-dataset
+  documentation: https://github.com/TUD-ITVS/HYMN-dataset
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: HYMN dataset — official repository
+  url: https://github.com/TUD-ITVS/HYMN-dataset
+  doi: null
+  notes: Official data, preprocessing, examples, and licensing.
+- id: data-paper
+  type: paper
+  title: 'Descriptor: A Hybrid Indoor and Indoor–Outdoor Positioning Multitechnology Dataset (HYMN)'
+  url: https://doi.org/10.1109/IEEEDATA.2026.3691044
+  doi: 10.1109/IEEEDATA.2026.3691044
+  notes: IEEE Data Descriptions paper documenting synchronized UWB, BLE, Wi-Fi, 5G NR, and GNSS measurements for localization.
+- id: zenodo
+  type: data-host
+  title: HYMN dataset release on Zenodo
+  url: https://doi.org/10.5281/zenodo.17979434
+  doi: 10.5281/zenodo.17979434
+  notes: null
+tasks:
+- task: localization
+  scope: Seamless indoor and indoor-outdoor positioning and cross-technology localization/fusion using synchronized terrestrial
+    radio and GNSS observations.
+  inputs:
+  - range
+  - snr
+  - gnss
+  targets:
+  - position
+  evidence:
+  - official-repo
+  - data-paper
+  notes: Despite “Navigation” in the HYMN acronym, the documented benchmark scope is localization/positioning rather than
+    route or action selection.
+  context:
+    environments:
+    - indoor
+    - outdoor
+    - industrial
+    mobility: static
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: HYMN expands to “HYbrid Multi-technology Navigation”, but its published task evidence is localization and seamless
+    positioning; do not infer a radio-assisted-navigation mapping from the name alone.
+  evidence:
+  - data-paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: false

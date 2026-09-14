@@ -1,0 +1,102 @@
+id: oracle-rf-fingerprinting
+name: ORACLE RF Fingerprinting Datasets
+aliases:
+- ORACLE
+identity:
+  canonical_url: https://www.genesys-lab.org/oracle
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-family
+description: A pair of RF-fingerprinting datasets built from USRP X310 transmitters, including over-the-air raw
+  I/Q recordings and controlled over-the-cable IQ-imbalance recordings.
+released:
+  year: 2019
+  notes: Released with the ORACLE RF-fingerprinting work published at IEEE INFOCOM 2019.
+origin:
+  type: measurement
+  notes: Signals were captured from physical USRP radios using a USRP B210 receiver.
+modalities:
+- iq
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 2.45 GHz
+    center_ghz: 2.45
+    min_ghz: null
+    max_ghz: null
+  notes: The over-the-air Wi-Fi recordings use a 2.45 GHz center frequency and 5 MS/s sampling rate.
+environments:
+- unknown
+mobility:
+  type: static
+  notes: Transmitters and receiver are measured at controlled separations; the dataset is not a mobility-trace collection.
+temporal_structure: sequence
+formats:
+- sigmf
+ground_truth:
+- device-id
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: 16
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The over-the-air dataset contains recordings from 16 bit-similar USRP X310 radios, with more than 20 million
+    samples collected per radio.
+access:
+  status: open
+  url: https://www.genesys-lab.org/oracle
+  notes: Dataset download links are provided on the official GENESYS page.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No standard dataset license was confirmed on the official release page; citation requirements are stated.
+official_resources:
+  homepage: https://www.genesys-lab.org/oracle
+  repository: null
+  documentation: https://www.genesys-lab.org/oracle
+  loader: null
+references:
+- id: official-oracle
+  type: official-page
+  title: Datasets for RF Fingerprinting of Bit-similar USRP X310 Radios
+  url: https://www.genesys-lab.org/oracle
+  doi: null
+  notes: null
+tasks:
+- task: rf-fingerprinting
+  scope: Identify individual bit-similar USRP X310 transmitters from their physical-layer I/Q signatures.
+  inputs:
+  - iq
+  targets:
+  - device-id
+  evidence:
+  - official-oracle
+  notes: null
+  context:
+    environments:
+    - unknown
+    mobility: static
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The official ORACLE page releases both over-the-air raw-I/Q data and over-the-cable controlled-impairment
+    data; experiments should state which subset is used because their channel conditions differ fundamentally.
+  evidence:
+  - official-oracle
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: true

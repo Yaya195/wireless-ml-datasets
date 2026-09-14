@@ -1,0 +1,37 @@
+name: Report a metadata correction
+description: Report incorrect, outdated, ambiguous, or missing metadata in an existing record.
+title: "[Correction]: "
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Dataset record
+      description: Dataset ID, catalogue page, or exact dataset name.
+      placeholder: ujiindoorloc
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current metadata
+      description: What is currently incorrect or misleading?
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: What should the catalogue say instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting source
+      description: Provide an authoritative source supporting the correction.
+      placeholder: https://...
+    validations:
+      required: true

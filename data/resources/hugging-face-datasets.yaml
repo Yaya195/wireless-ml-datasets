@@ -1,0 +1,25 @@
+id: hugging-face-datasets
+name: Hugging Face Datasets Hub
+resource_kind: data-portal
+description: A versioned AI dataset hub with searchable dataset cards, viewers, metadata,
+  programmatic loading, and a rapidly growing collection of telecom, wireless, and
+  foundation-model resources.
+provider: Hugging Face
+url: https://huggingface.co/datasets
+wireless_relevance: general
+access: mixed
+collections: []
+search_guidance: Filter by task and search telecom/wireless keywords; inspect dataset
+  cards, licenses, gating, and source provenance before treating a hosted copy as
+  canonical.
+task_links: []
+references:
+- id: official
+  title: Hugging Face — Datasets Overview
+  url: https://huggingface.co/docs/hub/datasets-overview
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,116 @@
+id: nist-adapshare
+name: NIST AdapShare Dataset
+aliases:
+- AdapShare
+identity:
+  canonical_url: https://data.nist.gov/od/id/mds2-3613
+  version: null
+  external_ids:
+  - scheme: other
+    value: ark:/88434/mds2-3613
+status: verified
+resource_type: dataset
+description: A NIST dataset and code release for reinforcement-learning-based dynamic spectrum/resource sharing
+  between LTE and 5G NR in an O-RAN-compatible architecture.
+released:
+  year: 2024
+  notes: The NIST dataset was first published in November 2024 for the 2025 IEEE CCNC work.
+origin:
+  type: hybrid
+  notes: The project combines real LTE scheduling measurements collected at NIST with modeled/synthetic NR demand
+    for RL-based dynamic spectrum sharing.
+modalities:
+- network-kpi
+- traffic
+technologies:
+- lte
+- 5g-nr
+generation_contexts:
+- 4g
+- 5g
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: LTE Band 4 downlink around 2115 MHz
+    center_ghz: 2.115
+    min_ghz: null
+    max_ghz: null
+  notes: The documented real LTE scheduling data were collected from downlink traffic around 2115 MHz; the broader
+    sharing study includes LTE and NR.
+environments:
+- campus
+mobility:
+  type: not-reported
+  notes: Mobility is not the central dimension of the released resource-allocation data.
+temporal_structure: sequence
+formats:
+- csv
+ground_truth: []
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The public release contains data and code used for the AdapShare evaluation; raw LTE scheduling logs include
+    per-subframe allocation and control information.
+access:
+  status: open
+  url: https://data.nist.gov/od/id/mds2-3613
+  notes: NIST provides a ZIP containing the AdapShare data and processing code.
+license:
+  status: known
+  name: NIST Open License
+  url: https://www.nist.gov/open/license
+  notes: null
+official_resources:
+  homepage: https://data.nist.gov/od/id/mds2-3613
+  repository: https://github.com/usnistgov/AdapShare-An-RL-Based-Dynamic-Spectrum-Sharing-Solution-for-O-RAN
+  documentation: https://catalog.data.gov/dataset/adapshare-an-rl-based-dynamic-spectrum-sharing-solution-for-o-ran
+  loader: null
+references:
+- id: nist-record
+  type: data-host
+  title: 'AdapShare: An RL-Based Dynamic Spectrum Sharing Solution for O-RAN'
+  url: https://data.nist.gov/od/id/mds2-3613
+  doi: null
+  notes: null
+- id: official-repo
+  type: repository
+  title: AdapShare code and data collection documentation
+  url: https://github.com/usnistgov/AdapShare-An-RL-Based-Dynamic-Spectrum-Sharing-Solution-for-O-RAN
+  doi: null
+  notes: null
+tasks:
+- task: resource-allocation
+  scope: Learn dynamic LTE/NR spectrum-resource allocation policies from time-varying demand and scheduling state.
+  inputs:
+  - network-kpi
+  - traffic
+  targets: []
+  evidence:
+  - nist-record
+  - official-repo
+  notes: The released study formulates dynamic spectrum sharing as an RL control problem rather than supervised
+    prediction of a fixed label.
+  context:
+    environments:
+    - campus
+    mobility: not-reported
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: AdapShare combines measured LTE scheduling information with modeled/synthetic components for LTE/NR sharing;
+    it should therefore be treated as a hybrid rather than purely field-measured dataset.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

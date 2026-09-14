@@ -1,0 +1,19 @@
+id: traffic-prediction
+name: Traffic Prediction
+category: network-intelligence
+description: Predict future communication traffic volume, demand, or load from historical network observations and
+  contextual information.
+aliases:
+- network traffic forecasting
+- load prediction
+status: active
+related_tasks:
+- resource-allocation
+notes: null
+comparison_fields:
+- inputs
+- targets
+- origin
+- environments
+- temporal-structure
+- access

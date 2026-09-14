@@ -1,0 +1,107 @@
+id: lte-handover-urban-bangladesh
+name: Drive-Test-Based LTE Handover Dataset for Urban Bangladesh
+aliases:
+- Drive-Test-Based LTE Handover Dataset for Cellular Mobility Studies in Urban Bangladesh
+identity:
+  canonical_url: https://data.mendeley.com/datasets/n2pvmtyn2j
+  version: '1'
+  external_ids:
+  - scheme: doi
+    value: 10.17632/n2pvmtyn2j.1
+status: verified
+resource_type: dataset
+description: A real LTE drive-test dataset from Dhaka containing handover-labeled radio measurements, Layer-3 events,
+  UE velocity, cell IDs, and GPS information in raw and ML-ready forms.
+released:
+  year: 2025
+  notes: Version 1 was published on 21 July 2025.
+origin:
+  type: measurement
+  notes: Three real-network drive-test sessions over a 13 km urban route in Dhaka, Bangladesh.
+modalities:
+- network-kpi
+- mobility-trace
+- position
+technologies:
+- lte
+generation_contexts:
+- 4g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The Mendeley record focuses on handover/mobility measurements rather than a single reported carrier band.
+environments:
+- outdoor
+- urban
+- vehicular
+mobility:
+  type: mobile
+  notes: Measurements were collected during vehicle drive tests and include UE velocity and GPS.
+temporal_structure: trajectory
+formats:
+- csv
+ground_truth:
+- handover-event
+- position
+scale:
+  samples: null
+  sequences: 3
+  scenarios: null
+  participants: null
+  devices: null
+  sites: 1
+  duration_hours: null
+  size_gb: 0.024
+  notes: Three drive-test sessions cover a 13 km route; the distributed archive is approximately 24 MB.
+access:
+  status: open
+  url: https://data.mendeley.com/datasets/n2pvmtyn2j
+  notes: The dataset is publicly downloadable from Mendeley Data.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://data.mendeley.com/datasets/n2pvmtyn2j
+  repository: null
+  documentation: https://data.mendeley.com/datasets/n2pvmtyn2j
+  loader: null
+references:
+- id: mendeley-record
+  type: data-host
+  title: Drive-Test-Based LTE Handover Dataset for Cellular Mobility Studies in Urban Bangladesh
+  url: https://data.mendeley.com/datasets/n2pvmtyn2j
+  doi: 10.17632/n2pvmtyn2j.1
+  notes: null
+tasks:
+- task: handover-prediction
+  scope: Predict LTE handover events from time-varying radio quality, cell identity, velocity, GPS, and signaling
+    information.
+  inputs:
+  - network-kpi
+  - mobility-trace
+  - position
+  targets:
+  - handover-event
+  evidence:
+  - mendeley-record
+  notes: The processed data apply a 320 ms Time-to-Trigger logic to refine handover labeling for ML use.
+  context:
+    environments:
+    - outdoor
+    - urban
+    - vehicular
+    mobility: mobile
+    frequency_regimes: []
+caveats:
+- text: The measurements come from three sessions on one urban route and one regional LTE deployment; cross-operator
+    and cross-city generalization should be evaluated separately.
+  evidence:
+  - mendeley-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

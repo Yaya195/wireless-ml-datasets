@@ -1,0 +1,112 @@
+id: 3gpp-r4-113-csi-compression
+name: 3GPP R4-113 NR AI/ML CSI Compression Datasets
+aliases:
+- 3GPP R4-113 CSI Compression Datasets
+identity:
+  canonical_url: https://www.3gpp.org/ftp/tsg_ran/WG4_Radio/Data_sharing/NR_AIML_air/CSI_compression/Datasets/R4_113
+  version: R4-113
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: Official 3GPP RAN4 shared NR AI/ML CSI-compression datasets contributed by Nokia, OPPO, and CAT/CATT
+  for learned CSI compression and reconstruction studies.
+released:
+  year: 2025
+  notes: The public R4-113 dataset directory is cited by 2025–2026 3GPP-compliant CSI-feedback studies.
+origin:
+  type: unknown
+  notes: Vendor-specific generation/acquisition methodology was not established from the verified public directory
+    metadata.
+modalities:
+- channel-matrix
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations:
+- massive-mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: No single verified carrier/band is assigned at collection level.
+environments:
+- unknown
+mobility:
+  type: unknown
+  notes: null
+temporal_structure: unknown
+formats:
+- npy
+ground_truth:
+- channel
+scale:
+  samples: 1300000
+  sequences: null
+  scenarios: 3
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Publicly documented files contain approximately 600k Nokia, 600k OPPO, and 100k CAT/CATT CSI samples.
+access:
+  status: open
+  url: https://www.3gpp.org/ftp/tsg_ran/WG4_Radio/Data_sharing/NR_AIML_air/CSI_compression/Datasets/R4_113
+  notes: The resource is distributed through 3GPP's public data-sharing FTP directory.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No standalone dataset license was confirmed from the public directory.
+official_resources:
+  homepage: https://www.3gpp.org/ftp/tsg_ran/WG4_Radio/Data_sharing/NR_AIML_air/CSI_compression/Datasets/R4_113
+  repository: null
+  documentation: null
+  loader: null
+references:
+- id: official-3gpp-directory
+  type: official-page
+  title: 3GPP NR AI/ML Air Interface CSI Compression Datasets (R4-113)
+  url: https://www.3gpp.org/ftp/tsg_ran/WG4_Radio/Data_sharing/NR_AIML_air/CSI_compression/Datasets/R4_113
+  doi: null
+  notes: null
+- id: cpc-3gpp-repo
+  type: repository
+  title: CPC-based neural CSI compression using the official 3GPP R4-113 datasets
+  url: https://github.com/AhmedRadwan02/cpc-3gpp
+  doi: null
+  notes: Documents the Nokia, OPPO, and CAT/CATT files and their sample counts.
+- id: cpc-paper
+  type: paper
+  title: Contrastive Predictive Coding with Compression for Enhanced Channel State Feedback in Wireless Networks
+  url: https://arxiv.org/abs/2607.05419
+  doi: 10.48550/arXiv.2607.05419
+  notes: null
+tasks:
+- task: csi-feedback
+  scope: Train and evaluate learned CSI compression/reconstruction methods for NR channel-state feedback.
+  inputs:
+  - channel-matrix
+  targets:
+  - channel
+  evidence:
+  - official-3gpp-directory
+  - cpc-3gpp-repo
+  - cpc-paper
+  notes: null
+  context:
+    environments:
+    - unknown
+    mobility: unknown
+    frequency_regimes: []
+caveats:
+- text: The three vendor-contributed datasets should not be assumed to share identical propagation, generation,
+    or domain characteristics; cross-vendor evaluation is itself a distribution-shift question.
+  evidence:
+  - cpc-3gpp-repo
+  - cpc-paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

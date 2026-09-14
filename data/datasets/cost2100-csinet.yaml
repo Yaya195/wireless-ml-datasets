@@ -1,0 +1,102 @@
+id: cost2100-csinet
+name: COST2100 CsiNet CSI-Feedback Dataset
+aliases:
+- CsiNet COST2100 Data
+identity:
+  canonical_url: https://github.com/sydney222/Python_CsiNet
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: Preprocessed COST2100 indoor and outdoor massive-MIMO channel matrices released with the original CsiNet implementation
+  for learning compact CSI feedback and reconstruction.
+released:
+  year: 2018
+  notes: null
+origin:
+  type: simulation
+  notes: Channel realizations are generated from the COST2100 geometry-based stochastic channel model.
+modalities:
+- channel-matrix
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+- outdoor
+mobility:
+  type: configurable
+  notes: null
+temporal_structure: snapshot
+formats:
+- mat
+ground_truth:
+- channel
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: null
+access:
+  status: open
+  url: https://github.com/sydney222/Python_CsiNet
+  notes: The original CsiNet repository provides the maintained download link for the preprocessed data.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: null
+official_resources:
+  homepage: https://github.com/sydney222/Python_CsiNet
+  repository: https://github.com/sydney222/Python_CsiNet
+  documentation: https://github.com/sydney222/Python_CsiNet
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: 'Python_CsiNet: original code and COST2100 data preparation'
+  url: https://github.com/sydney222/Python_CsiNet
+  doi: null
+  notes: null
+- id: csinet-paper
+  type: paper
+  title: Deep Learning for Massive MIMO CSI Feedback
+  url: https://ieeexplore.ieee.org/document/8322184
+  doi: null
+  notes: null
+tasks:
+- task: csi-feedback
+  scope: Compress and reconstruct downlink massive-MIMO CSI using the CsiNet/CS-CsiNet benchmark data.
+  inputs:
+  - channel-matrix
+  targets:
+  - channel
+  evidence:
+  - official-repo
+  - csinet-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - outdoor
+    mobility: configurable
+    frequency_regimes: []
+caveats:
+- text: The benchmark is model-generated rather than over-the-air measured; indoor and outdoor subsets correspond to COST2100
+    scenarios.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,137 @@
+id: telecomts
+name: TelecomTS
+aliases:
+- TelecomTS Multi-Modal Observability Dataset
+identity:
+  canonical_url: https://huggingface.co/datasets/AliMaatouk/TelecomTS
+  version: null
+  external_ids:
+  - scheme: huggingface
+    value: AliMaatouk/TelecomTS
+status: verified
+resource_type: dataset
+description: A large-scale multi-modal 5G observability dataset combining network KPI time series with natural-language descriptions, labels, anomaly metadata, troubleshooting context, and millions of question-answer instances for time-series and language reasoning.
+released:
+  year: 2025
+  notes: Publicly released with the TelecomTS work and hosted on Hugging Face.
+origin:
+  type: hybrid
+  notes: Data come from a real 5G telecommunications testbed and include ten synthetic anomaly types plus one real over-the-air jamming anomaly.
+modalities:
+- network-kpi
+- text
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The public dataset description does not define one catalogue-wide carrier frequency.
+environments:
+- laboratory
+mobility:
+  type: mixed
+  notes: Mobility is included as contextual metadata and varies across samples.
+temporal_structure: sequence
+formats:
+- jsonl
+- parquet
+ground_truth:
+- anomaly-label
+- application-label
+scale:
+  samples: 32000
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 1.27
+  notes: The official repository reports about 32,000 time-series samples, 18 channels, 11 anomaly types, and 2,210,185 Q&A instances.
+access:
+  status: open
+  url: https://huggingface.co/datasets/AliMaatouk/TelecomTS
+  notes: Public Hugging Face dataset with programmatic loading via the datasets library.
+license:
+  status: known
+  name: MIT
+  url: https://opensource.org/license/mit/
+  notes: The official Hugging Face dataset card reports the MIT license.
+official_resources:
+  homepage: https://huggingface.co/datasets/AliMaatouk/TelecomTS
+  repository: https://github.com/Ali-maatouk/TelecomTS
+  documentation: https://github.com/Ali-maatouk/TelecomTS
+  loader: https://huggingface.co/datasets/AliMaatouk/TelecomTS
+references:
+- id: official-repo
+  type: repository
+  title: TelecomTS — Official Repository
+  url: https://github.com/Ali-maatouk/TelecomTS
+  doi: null
+  notes: Documents the KPI, anomaly, Q&A, root-cause, and forecasting tasks.
+- id: hf-card
+  type: data-host
+  title: TelecomTS — Hugging Face Dataset
+  url: https://huggingface.co/datasets/AliMaatouk/TelecomTS
+  doi: null
+  notes: Public dataset host.
+- id: paper
+  type: paper
+  title: 'TelecomTS: A Multi-Modal Observability Dataset for Time Series and Language Analysis'
+  url: https://arxiv.org/abs/2510.06063
+  doi: null
+  notes: Dataset paper.
+tasks:
+- task: network-anomaly-detection
+  scope: Detect anomalous operating periods from multi-layer 5G KPI time series and contextual observability data.
+  inputs:
+  - network-kpi
+  targets:
+  - anomaly-label
+  evidence:
+  - official-repo
+  - paper
+  notes: The dataset explicitly supports binary anomaly detection and anomaly-duration localization.
+  context:
+    environments:
+    - laboratory
+    mobility: mixed
+    frequency_regimes: []
+- task: network-fault-diagnosis
+  scope: Identify the root cause of 5G network anomalies from KPI time series, contextual metadata, and troubleshooting information.
+  inputs:
+  - network-kpi
+  - text
+  targets:
+  - anomaly-label
+  evidence:
+  - official-repo
+  - paper
+  notes: Root-cause analysis is an explicit multi-class downstream task; natural-language Q&A also supports multimodal diagnostic reasoning.
+  context:
+    environments:
+    - laboratory
+    mobility: mixed
+    frequency_regimes: []
+collections:
+- llm-foundation-model-resources
+caveats:
+- text: The phrase "anomaly duration localization" refers to temporal sequence labeling of an anomaly interval, not spatial wireless localization; do not map this record to the localization task on that basis.
+  evidence:
+  - official-repo
+  - hf-card
+- text: The application label is contextual metadata used in descriptions and Q&A; it is not by itself evidence of a demonstrated traffic-classification benchmark, so no traffic-classification mapping is asserted.
+  evidence:
+  - official-repo
+  - hf-card
+- text: The anomaly corpus mixes synthetic fault types with one real over-the-air jamming anomaly, so results should distinguish controlled anomaly generation from naturally occurring field failures.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

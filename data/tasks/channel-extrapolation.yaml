@@ -1,0 +1,12 @@
+id: channel-extrapolation
+name: "Channel Extrapolation"
+category: channel-csi
+description: >-
+  Infer channel information at unobserved frequencies, antennas, spatial locations, or related channel domains from observed channel data.
+aliases:
+  - "channel inference"
+status: active
+related_tasks:
+  - channel-estimation
+  - channel-prediction
+notes: null

@@ -1,0 +1,96 @@
+id: genesys-rf-fingerprinting-augmentation
+name: GENESYS Channel-Resilient RF Fingerprinting Datasets
+aliases:
+- Data Augmentation RF Fingerprinting Dataset
+identity:
+  canonical_url: https://genesys-lab.org/dataaugmentation
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-family
+description: Three simulated RF-fingerprinting datasets (TxData, Day1, Day2) built from virtual 802.11a radios with
+  controlled I/Q imbalance and channel/SNR variation for channel-resilient fingerprinting research.
+released:
+  year: 2020
+  notes: Released with the 2020 IEEE Communications Magazine work on channel-resilient RF fingerprinting.
+origin:
+  type: simulation
+  notes: MATLAB-generated radios with controlled amplitude/phase imbalance and WLAN TGn channel realizations.
+modalities:
+- iq
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: 802.11a waveform generation is used; no single center frequency is assigned in the catalogue.
+environments:
+- not-applicable
+mobility:
+  type: not-applicable
+  notes: null
+temporal_structure: sequence
+formats:
+- sigmf
+ground_truth:
+- device-id
+- snr
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: 10
+  sites: null
+  duration_hours: null
+  size_gb: 92.0
+  notes: TxData is ~2 GB; Day1 and Day2 are ~45 GB each.
+access:
+  status: open
+  url: https://genesys-lab.org/dataaugmentation
+  notes: Download links for all dataset parts are provided on the official GENESYS page.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No standalone dataset license was confirmed on the official release page.
+official_resources:
+  homepage: https://genesys-lab.org/dataaugmentation
+  repository: null
+  documentation: https://genesys-lab.org/dataaugmentation
+  loader: null
+references:
+- id: official-page
+  type: official-page
+  title: MATLAB Simulated Datasets for Channel-Resilient RF Fingerprinting
+  url: https://genesys-lab.org/dataaugmentation
+  doi: null
+  notes: null
+tasks:
+- task: rf-fingerprinting
+  scope: Identify virtual radios from hardware-impairment fingerprints under controlled channel and SNR shifts.
+  inputs:
+  - iq
+  targets:
+  - device-id
+  evidence:
+  - official-page
+  notes: null
+  context:
+    environments:
+    - not-applicable
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: These are MATLAB-simulated virtual-radio fingerprints rather than captures from physical transmitters.
+  evidence:
+  - official-page
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

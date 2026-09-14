@@ -1,0 +1,142 @@
+id: csi-bench
+name: CSI-Bench
+aliases:
+- CSI-Bench Real WiFi Sensing Benchmark
+identity:
+  canonical_url: https://github.com/guozhen-jenn-zhu/CSI-Bench-Real-WiFi-Sensing-Benchmark
+  version: Kaggle v12
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: A large-scale in-the-wild Wi-Fi CSI benchmark spanning multiple sensing tasks, devices, users, and
+  environments, with standardized splits for in-distribution and cross-device/environment/user evaluation.
+released:
+  year: 2025
+  notes: Accepted and presented at NeurIPS 2025; the maintained repository points to Kaggle Version 12 as the current
+    corrected release.
+origin:
+  type: measurement
+  notes: Real Wi-Fi CSI collected across real-world sensing settings, users, devices, and environments.
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: varies
+  regimes: []
+  bands: []
+  notes: Individual recordings encode frequency in filenames; the benchmark spans multiple acquisition configurations.
+environments:
+- indoor
+- residential
+mobility:
+  type: not-applicable
+  notes: Human motion/state is the sensing subject rather than wireless-node mobility.
+temporal_structure: sequence
+formats:
+- h5
+- csv
+- json
+ground_truth:
+- activity-label
+- respiratory-motion
+- position
+- user-id
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The benchmark includes task-specific collections for fall detection, breathing, localization, motion-source
+    recognition, human activity recognition, human identification, and proximity recognition.
+access:
+  status: registration
+  url: https://www.kaggle.com/datasets/guozhenzhu/csi-bench
+  notes: The maintained project instructs users to download the current dataset from Kaggle.
+license:
+  status: known
+  name: CC BY-NC 4.0
+  url: https://creativecommons.org/licenses/by-nc/4.0/
+  notes: The official repository states Attribution-NonCommercial 4.0 International.
+official_resources:
+  homepage: https://github.com/guozhen-jenn-zhu/CSI-Bench-Real-WiFi-Sensing-Benchmark
+  repository: https://github.com/guozhen-jenn-zhu/CSI-Bench-Real-WiFi-Sensing-Benchmark
+  documentation: https://github.com/guozhen-jenn-zhu/CSI-Bench-Real-WiFi-Sensing-Benchmark
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: CSI-Bench Real WiFi Sensing Benchmark
+  url: https://github.com/guozhen-jenn-zhu/CSI-Bench-Real-WiFi-Sensing-Benchmark
+  doi: null
+  notes: null
+- id: paper
+  type: paper
+  title: 'CSI-Bench: A Large-Scale In-the-Wild Dataset for Multi-Task WiFi Sensing'
+  url: https://arxiv.org/abs/2505.21866
+  doi: 10.48550/arXiv.2505.21866
+  notes: null
+tasks:
+- task: human-activity-recognition
+  scope: Classify human activities from Wi-Fi CSI under in-distribution and cross-device/environment/user evaluation.
+  inputs:
+  - wifi-csi
+  targets:
+  - activity-label
+  evidence:
+  - official-repo
+  - paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - residential
+    mobility: not-applicable
+    frequency_regimes: []
+- task: vital-sign-sensing
+  scope: Detect breathing-related states from Wi-Fi CSI using the benchmark's breathing-detection subset.
+  inputs:
+  - wifi-csi
+  targets:
+  - respiratory-motion
+  evidence:
+  - official-repo
+  - paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - residential
+    mobility: not-applicable
+    frequency_regimes: []
+- task: localization
+  scope: Estimate labeled indoor location from Wi-Fi CSI using the benchmark's localization subset.
+  inputs:
+  - wifi-csi
+  targets:
+  - position
+  evidence:
+  - official-repo
+  - paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - residential
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: CSI-Bench has undergone post-publication data corrections; use the maintained current release (Kaggle Version
+    12 at verification time) rather than earlier copies.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

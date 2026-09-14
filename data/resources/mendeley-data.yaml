@@ -1,0 +1,24 @@
+id: mendeley-data
+name: Mendeley Data
+resource_kind: data-portal
+description: A general research-data repository that provides searchable datasets,
+  DOI-based citation, versioning, and long-term archival, and hosts many wireless
+  measurement and ML datasets.
+provider: Elsevier / Digital Commons Data
+url: https://data.mendeley.com/
+wireless_relevance: general
+access: mixed
+collections: []
+search_guidance: Search by wireless task, technology, and signal modality; check versions
+  and related-paper metadata to avoid duplicate or derivative records.
+task_links: []
+references:
+- id: official
+  title: Mendeley Data
+  url: https://data.mendeley.com/
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

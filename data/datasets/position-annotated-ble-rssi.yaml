@@ -1,0 +1,129 @@
+id: position-annotated-ble-rssi
+name: Position-Annotated BLE RSSI Dataset
+aliases: []
+identity:
+  canonical_url: https://github.com/philotuxo/Position-Annotated-BLE-RSSI-Dataset
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: BLE RSSI fingerprints and trajectories precisely annotated with AR/camera-based ground-truth positions,
+  including stationary fingerprints, tracks, occupancy information, and precomputed radio-map grids.
+released:
+  year: 2022
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- rss
+- position
+- radio-map
+technologies:
+- ble
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+- office
+mobility:
+  type: mixed
+  notes: null
+temporal_structure: trajectory
+formats: []
+ground_truth:
+- position
+- radio-map
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: null
+access:
+  status: open
+  url: https://github.com/philotuxo/Position-Annotated-BLE-RSSI-Dataset
+  notes: Public GitHub data repository.
+license:
+  status: known
+  name: CC0 1.0
+  url: https://creativecommons.org/publicdomain/zero/1.0/
+  notes: null
+official_resources:
+  homepage: https://github.com/philotuxo/Position-Annotated-BLE-RSSI-Dataset
+  repository: https://github.com/philotuxo/Position-Annotated-BLE-RSSI-Dataset
+  documentation: https://github.com/philotuxo/Position-Annotated-BLE-RSSI-Dataset
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: Position Annotated BLE RSSI Dataset for Indoor Localization
+  url: https://github.com/philotuxo/Position-Annotated-BLE-RSSI-Dataset
+  doi: null
+  notes: null
+- id: pmc-paper
+  type: paper
+  title: An indoor localization dataset and data collection framework with high precision position annotation
+  url: https://doi.org/10.1016/j.pmcj.2022.101554
+  doi: 10.1016/j.pmcj.2022.101554
+  notes: null
+- id: radio-map-paper
+  type: paper
+  title: Radio map estimation with neural networks and active learning for indoor localization
+  url: https://ceur-ws.org/Vol-2498/short4.pdf
+  doi: null
+  notes: Uses the dataset to infer probabilistic radio-frequency maps with neural networks and active learning.
+tasks:
+- task: localization
+  scope: Evaluate BLE indoor localization and tracking using accurately position-annotated RSSI trajectories and
+    fingerprints.
+  inputs:
+  - rss
+  targets:
+  - position
+  evidence:
+  - official-repo
+  - pmc-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - office
+    mobility: mixed
+    frequency_regimes: []
+- task: radio-map-estimation
+  scope: Estimate probabilistic BLE RSSI radio maps from sparsely sampled stationary fingerprints.
+  inputs:
+  - rss
+  - position
+  targets:
+  - radio-map
+  evidence:
+  - official-repo
+  - radio-map-paper
+  notes: The official repository distributes fingerprint histograms and grid radio-map products and points to neural-network
+    radio-map estimation work.
+  context:
+    environments:
+    - indoor
+    - office
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: The release mixes stationary fingerprints, trajectories, occupancy maps, and precomputed radio-map grids;
+    experiments should state which subset is used.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

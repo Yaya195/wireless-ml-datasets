@@ -1,0 +1,30 @@
+id: ipin-competitions
+name: IPIN Indoor Localization Competitions
+resource_kind: benchmark-platform
+description: A long-running indoor positioning benchmark program providing competition
+  datasets, evaluation procedures, and blind test protocols across smartphone, inertial,
+  CIR, 5G, and other localization tracks.
+provider: International Conference on Indoor Positioning and Indoor Navigation (IPIN)
+url: https://www.ipin-conference.org/resources.html
+wireless_relevance: wireless-specific
+access: open
+collections: []
+search_guidance: Use the competition resources page to choose a year and sensing track
+  matching your localization setting; several released datasets are archived on stable
+  repositories such as Zenodo.
+task_links:
+- task: localization
+  scope: Benchmark indoor positioning and navigation methods on shared competition
+    data and standardized evaluation protocols.
+  evidence:
+  - official
+references:
+- id: official
+  title: IPIN — Datasets and Competition Resources
+  url: https://www.ipin-conference.org/resources.html
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

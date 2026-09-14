@@ -1,0 +1,112 @@
+id: rf-jamming-spectral-scan
+name: RF Jamming Dataset
+aliases:
+- 'RF Jamming Dataset: A Wireless Spectral Scan Approach for Malicious Interference Detection'
+identity:
+  canonical_url: https://github.com/abubakar-sani/CCA_classifiers
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: An experimentally measured wireless spectral-scan dataset and testbed release for machine-learning-based
+  detection and characterization of malicious RF jamming/interference.
+released:
+  year: 2024
+  notes: The peer-reviewed dataset paper was published in IEEE Communications Magazine in 2024.
+origin:
+  type: measurement
+  notes: Measured spectral scans from wireless network interfaces under controlled RF jamming generated with JamRF.
+modalities:
+- spectrum
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 2.4 GHz Wi-Fi band
+    center_ghz: null
+    min_ghz: 2.4
+    max_ghz: 2.5
+  - label: 5 GHz Wi-Fi band
+    center_ghz: null
+    min_ghz: 5.0
+    max_ghz: 5.9
+  notes: Published reuse descriptions identify the released WLAN spectral-scan data across the 2.4 and 5 GHz bands.
+environments:
+- laboratory
+mobility:
+  type: not-applicable
+  notes: null
+temporal_structure: sequence
+formats:
+- csv
+ground_truth:
+- interference-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The public repository includes measured/preprocessed data, train/test splits, and reference models.
+access:
+  status: open
+  url: https://github.com/abubakar-sani/CCA_classifiers
+  notes: The dataset and associated preprocessing/training code are available in the public repository.
+license:
+  status: known
+  name: MIT License
+  url: https://opensource.org/license/mit
+  notes: The public repository is distributed under the MIT License.
+official_resources:
+  homepage: https://github.com/abubakar-sani/CCA_classifiers
+  repository: https://github.com/abubakar-sani/CCA_classifiers
+  documentation: https://github.com/abubakar-sani/CCA_classifiers
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: RF Jamming Dataset repository
+  url: https://github.com/abubakar-sani/CCA_classifiers
+  doi: null
+  notes: null
+- id: commag-paper
+  type: paper
+  title: 'RF Jamming Dataset: A Wireless Spectral Scan Approach for Malicious Interference Detection'
+  url: https://doi.org/10.1109/MCOM.003.2300483
+  doi: 10.1109/MCOM.003.2300483
+  notes: null
+tasks:
+- task: interference-classification
+  scope: Detect or identify malicious RF jamming/interference conditions from measured spectral scans.
+  inputs:
+  - spectrum
+  targets:
+  - interference-label
+  evidence:
+  - official-repo
+  - commag-paper
+  notes: The associated work demonstrates ML-based jamming detection with experimentally measured data.
+  context:
+    environments:
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The dataset is collected under controlled jamming scenarios; deployment performance against previously unseen
+    interferers, hardware, or ambient RF conditions requires separate evaluation.
+  evidence:
+  - official-repo
+  - commag-paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

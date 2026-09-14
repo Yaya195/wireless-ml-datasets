@@ -1,0 +1,23 @@
+id: localization
+name: Localization
+category: localization-mapping
+description: Estimate the position or location of a wireless device, user, transmitter, receiver, or target from
+  wireless and/or auxiliary observations.
+aliases:
+- positioning
+- wireless localization
+- radio localization
+status: active
+related_tasks:
+- cooperative-localization
+- device-free-localization
+- radio-slam
+notes: null
+comparison_fields:
+- inputs
+- targets
+- origin
+- environments
+- mobility
+- temporal-structure
+- access

@@ -1,0 +1,12 @@
+id: csi-feedback
+name: "CSI Feedback"
+category: channel-csi
+description: >-
+  Represent, compress, encode, or reconstruct channel state information for feedback from a receiver to a transmitter.
+aliases:
+  - "CSI compression"
+  - "CSI reconstruction for feedback"
+status: active
+related_tasks:
+  - channel-estimation
+notes: null

@@ -1,0 +1,106 @@
+id: wifi-spectral-jam
+name: WiFiSpectralJam
+aliases:
+- WiFiSpectralJam RF Jamming Dataset
+identity:
+  canonical_url: https://www.kaggle.com/datasets/daniaherzalla/radio-frequency-jamming/data
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A large commodity-Wi-Fi spectral-scan dataset with benign background, RF-chamber floor, and controlled
+  jamming captures across active/passive scanning in the 2.4 and 5 GHz bands.
+released:
+  year: 2026
+  notes: The dataset paper and public release appeared in August 2026.
+origin:
+  type: measurement
+  notes: Real ath10k spectral scans with controlled HackRF One jamming and benign captures.
+modalities:
+- spectrum
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 2.4 GHz Wi-Fi band
+    center_ghz: 2.4
+    min_ghz: null
+    max_ghz: null
+  - label: 5 GHz Wi-Fi band
+    center_ghz: 5.0
+    min_ghz: null
+    max_ghz: null
+  notes: null
+environments:
+- laboratory
+- unknown
+mobility:
+  type: not-applicable
+  notes: The study concerns RF interference conditions rather than node mobility.
+temporal_structure: sequence
+formats:
+- csv
+ground_truth:
+- interference-label
+scale:
+  samples: 522771130
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 14.52
+  notes: The release contains 96,090 CSV files and over 522 million ordered spectral observations.
+access:
+  status: registration
+  url: https://www.kaggle.com/datasets/daniaherzalla/radio-frequency-jamming/data
+  notes: Publicly available through Kaggle with an account.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A dataset-specific license was not confirmed from the verified sources.
+official_resources:
+  homepage: https://www.kaggle.com/datasets/daniaherzalla/radio-frequency-jamming/data
+  repository: null
+  documentation: https://arxiv.org/abs/2608.15728
+  loader: null
+references:
+- id: paper
+  type: paper
+  title: 'WiFiSpectralJam: A Large-Scale Open Wi-Fi Spectral Scan Dataset with Controlled RF Jamming'
+  url: https://arxiv.org/abs/2608.15728
+  doi: null
+  notes: null
+tasks:
+- task: interference-classification
+  scope: Detect and characterize controlled RF-jamming/interference conditions from commodity-NIC spectral scans.
+  inputs:
+  - spectrum
+  targets:
+  - interference-label
+  evidence:
+  - paper
+  notes: null
+  context:
+    environments:
+    - laboratory
+    - unknown
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: Jamming is deliberately injected under controlled conditions; unseen jammer hardware and ambient RF domains
+    remain separate generalization questions.
+  evidence:
+  - paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

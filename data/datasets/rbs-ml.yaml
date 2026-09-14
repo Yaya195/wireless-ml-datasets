@@ -1,0 +1,113 @@
+id: rbs-ml
+name: RBS-ML Datasets for 5G Rogue Base Station Detection
+aliases: []
+identity:
+  canonical_url: https://github.com/mohammadmsaedi/RBS-ML
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: Synthetic 5G vehicular received-signal-strength sequences containing legitimate and rogue base stations, released
+  with ML-ready CSV files for rogue-base-station detection.
+released:
+  year: 2025
+  notes: null
+origin:
+  type: simulation
+  notes: null
+modalities:
+- rss
+- mobility-trace
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: null
+environments:
+- outdoor
+- vehicular
+mobility:
+  type: mobile
+  notes: null
+temporal_structure: sequence
+formats:
+- csv
+ground_truth:
+- anomaly-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: null
+access:
+  status: open
+  url: https://github.com/mohammadmsaedi/RBS-ML
+  notes: The repository includes Dataset_RBS.zip and simulation code.
+license:
+  status: known
+  name: Academic/research use only
+  url: null
+  notes: Repository states that commercial use requires prior written consent.
+official_resources:
+  homepage: https://github.com/mohammadmsaedi/RBS-ML
+  repository: https://github.com/mohammadmsaedi/RBS-ML
+  documentation: https://github.com/mohammadmsaedi/RBS-ML
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: 'RBS-ML: datasets for 5G Rogue Base Station Detection'
+  url: https://github.com/mohammadmsaedi/RBS-ML
+  doi: null
+  notes: null
+- id: dataset-record
+  type: data-host
+  title: RBS-MLP Datasets for 5G Rogue Base Station Detection
+  url: https://openaccess.city.ac.uk/id/eprint/36127/
+  doi: null
+  notes: null
+- id: cns-paper
+  type: paper
+  title: Generation of realistic signal strength measurements for a 5G Rogue Base Station attack scenario
+  url: https://doi.org/10.1109/CNS48642.2020.9162275
+  doi: 10.1109/CNS48642.2020.9162275
+  notes: null
+tasks:
+- task: network-anomaly-detection
+  scope: Detect rogue 5G base stations from temporal received-signal-strength patterns in vehicular scenarios.
+  inputs:
+  - rss
+  - mobility-trace
+  targets:
+  - anomaly-label
+  evidence:
+  - official-repo
+  - dataset-record
+  notes: null
+  context:
+    environments:
+    - vehicular
+    - outdoor
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The distributed ML data are synthetically generated from a vehicular radio simulation rather than captured from a
+    live rogue-cell deployment.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

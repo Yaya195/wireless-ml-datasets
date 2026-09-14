@@ -1,0 +1,101 @@
+id: openireland-oran-mobility
+name: Mobility Dataset from a 7.2 O-RAN Deployment
+aliases: []
+identity:
+  canonical_url: https://data.mendeley.com/datasets/khxgr6m8wz/1
+  version: '1'
+  external_ids:
+  - scheme: doi
+    value: 10.17632/khxgr6m8wz.1
+status: verified
+resource_type: dataset
+description: Commercial-grade 7.2 O-RAN measurements from four base stations containing RSRP, RSRQ, SINR and roughly 2,300
+  observed handover events, used for ML-based handover prediction.
+released:
+  year: 2024
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- network-kpi
+- mobility-trace
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- laboratory
+mobility:
+  type: mobile
+  notes: null
+temporal_structure: sequence
+formats:
+- txt
+ground_truth:
+- handover-event
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: 4
+  duration_hours: null
+  size_gb: null
+  notes: The release reports about 2,300 handover events across measurements from four base stations.
+access:
+  status: open
+  url: https://data.mendeley.com/datasets/khxgr6m8wz/1
+  notes: Public Mendeley Data release.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://data.mendeley.com/datasets/khxgr6m8wz/1
+  repository: null
+  documentation: null
+  loader: null
+references:
+- id: mendeley
+  type: data-host
+  title: Mobility Dataset from a 7.2 O-RAN deployment
+  url: https://data.mendeley.com/datasets/khxgr6m8wz/1
+  doi: 10.17632/khxgr6m8wz.1
+  notes: null
+- id: tnsm-paper
+  type: paper
+  title: ML-Based Handover Prediction Over a Real O-RAN Deployment Using RAN Intelligent Controller
+  url: https://doi.org/10.1109/TNSM.2024.3468910
+  doi: 10.1109/TNSM.2024.3468910
+  notes: null
+tasks:
+- task: handover-prediction
+  scope: Predict upcoming handover events from sequential RAN radio-quality measurements.
+  inputs:
+  - network-kpi
+  - mobility-trace
+  targets:
+  - handover-event
+  evidence:
+  - mendeley
+  - tnsm-paper
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: mobile
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

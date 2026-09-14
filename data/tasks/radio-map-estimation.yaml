@@ -1,0 +1,14 @@
+id: radio-map-estimation
+name: "Radio Map Estimation"
+category: localization-mapping
+description: >-
+  Construct, complete, interpolate, or predict spatial maps of radio measurements or channel-related quantities over an environment.
+aliases:
+  - "radio map construction"
+  - "radio map reconstruction"
+status: active
+related_tasks:
+  - localization
+  - channel-charting
+  - radio-slam
+notes: null

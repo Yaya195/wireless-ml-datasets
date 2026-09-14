@@ -1,0 +1,20 @@
+[project]
+name = "ml4wirelesscom"
+version = "0.1.0"
+description = "A task-oriented guide to datasets for machine learning in wireless communications."
+requires-python = ">=3.11"
+dependencies = [
+    "PyYAML>=6.0,<7",
+    "jsonschema>=4.23,<5",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8,<9",
+    "ruff>=0.8",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "--basetemp=.pytest_tmp"

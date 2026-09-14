@@ -1,0 +1,131 @@
+id: nist-lte-wifi-coexistence
+name: NIST LTE and Wi-Fi Coexistence Measurement Data
+aliases:
+- LTE and Wi-Fi coexistence measurement data
+identity:
+  canonical_url: https://data.nist.gov/od/id/mds2-2789
+  version: null
+  external_ids:
+  - scheme: other
+    value: ark:/88434/mds2-2789
+status: verified
+resource_type: dataset
+description: A hardware measurement dataset with LTE and Wi-Fi coexistence experiments, including received complex
+  I/Q samples, system metadata, SINR/power settings, and network performance KPIs.
+released:
+  year: 2022
+  notes: Published through the NIST data repository in December 2022.
+origin:
+  type: measurement
+  notes: LTE links were emulated with USRP B210/srsRAN and Wi-Fi links with commercial development boards; received
+    signals were recorded as baseband I/Q.
+modalities:
+- iq
+- network-kpi
+- spectrum
+technologies:
+- lte
+- wifi
+generation_contexts:
+- 4g
+radio_configurations: []
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: The experiments cover LTE/Wi-Fi coexistence in sub-6-GHz bands; consult the NIST README for exact setup-specific
+    frequencies.
+environments:
+- laboratory
+mobility:
+  type: static
+  notes: Controlled coexistence measurements were collected in fixed experimental setups.
+temporal_structure: sequence
+formats:
+- binary
+- csv
+ground_truth:
+- signal-class
+- spectrum-occupancy
+- snr
+scale:
+  samples: null
+  sequences: null
+  scenarios: 3
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: 'The NIST description identifies three main coexistence cases: one LTE link, two LTE links, and one LTE
+    plus one Wi-Fi link.'
+access:
+  status: open
+  url: https://data.nist.gov/od/id/mds2-2789
+  notes: The NIST landing page provides the dataset ZIP and README directly.
+license:
+  status: known
+  name: NIST Open License
+  url: https://www.nist.gov/open/license
+  notes: null
+official_resources:
+  homepage: https://data.nist.gov/od/id/mds2-2789
+  repository: null
+  documentation: https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data
+  loader: null
+references:
+- id: nist-record
+  type: data-host
+  title: LTE and Wi-Fi coexistence measurement data
+  url: https://data.nist.gov/od/id/mds2-2789
+  doi: null
+  notes: null
+- id: data-gov
+  type: documentation
+  title: NIST LTE and Wi-Fi coexistence measurement data metadata
+  url: https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data
+  doi: null
+  notes: null
+tasks:
+- task: spectrum-sensing
+  scope: Use received baseband I/Q and experiment metadata to study occupancy/coexistence detection under LTE and
+    Wi-Fi activity.
+  inputs:
+  - iq
+  targets:
+  - spectrum-occupancy
+  evidence:
+  - data-gov
+  notes: The NIST metadata explicitly identifies spectrum sensing as a supported research use; occupancy labels
+    are scenario-level rather than dense time-frequency masks.
+  context:
+    environments:
+    - laboratory
+    mobility: static
+    frequency_regimes:
+    - sub-6-ghz
+- task: signal-classification
+  scope: Classify received RF observations according to the active LTE/Wi-Fi signal configuration.
+  inputs:
+  - iq
+  targets:
+  - signal-class
+  evidence:
+  - data-gov
+  notes: The NIST metadata explicitly lists signal classification as a supported research use.
+  context:
+    environments:
+    - laboratory
+    mobility: static
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The dataset is a controlled coexistence measurement campaign with a small number of configured link cases;
+    it should not be interpreted as a broad survey of arbitrary real-world LTE/Wi-Fi deployments.
+  evidence:
+  - data-gov
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

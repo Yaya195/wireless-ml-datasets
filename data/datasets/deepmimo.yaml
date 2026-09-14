@@ -1,0 +1,195 @@
+id: deepmimo
+name: DeepMIMO
+aliases: []
+identity:
+  canonical_url: https://www.deepmimo.net/
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: A public toolchain and database of site-specific wireless ray-tracing scenarios used to derive channel and propagation
+  data for AI/ML research.
+released:
+  year: 2019
+  notes: Original DeepMIMO publication; the collection and toolchain have evolved substantially through later versions.
+origin:
+  type: ray-tracing
+  notes: Scenarios are produced by supported propagation ray tracers and distributed in the DeepMIMO format.
+modalities:
+- channel-matrix
+- path-parameters
+- position
+- scene-geometry
+technologies:
+- 6g
+generation_contexts:
+- 6g
+radio_configurations:
+- massive-mimo
+- mimo
+frequency:
+  status: varies
+  bands: []
+  notes: Frequency coverage is scenario-dependent; the current database API exposes band filters.
+  regimes:
+  - mmwave
+  - sub-6-ghz
+  - sub-thz
+environments:
+- indoor
+- outdoor
+mobility:
+  type: configurable
+  notes: The current framework supports both static and dynamic scenarios.
+temporal_structure: configurable
+formats:
+- mat
+- json
+ground_truth:
+- position
+- channel
+- path-parameters
+- scene-geometry
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The current DeepMIMO database advertises 200+ scenarios and is growing.
+access:
+  status: open
+  url: https://www.deepmimo.net/
+  notes: Scenarios can be searched and downloaded through the public DeepMIMO package/database API.
+license:
+  status: varies
+  name: null
+  url: null
+  notes: The software repository is Apache-2.0; scenario/data licensing should be checked at the scenario/source level.
+official_resources:
+  homepage: https://www.deepmimo.net/
+  repository: https://github.com/DeepMIMO/DeepMIMO
+  documentation: https://www.deepmimo.net/docs/
+  loader: https://www.deepmimo.net/docs/quickstart.html
+references:
+- id: official-repo
+  type: repository
+  title: DeepMIMO unified repository
+  url: https://github.com/DeepMIMO/DeepMIMO
+  doi: null
+  notes: The current DeepMIMO project explicitly positions the database/toolchain as bridging ray tracers with 5G/6G simulators.
+- id: database-docs
+  type: documentation
+  title: DeepMIMO Database API
+  url: https://www.deepmimo.net/docs/api/database.html
+  doi: null
+  notes: null
+- id: deepmimo-paper
+  type: paper
+  title: 'DeepMIMO: A Generic Deep Learning Dataset for Millimeter Wave and Massive MIMO Applications'
+  url: https://arxiv.org/abs/1902.06435
+  doi: null
+  notes: null
+- id: dyloc-localization
+  type: paper
+  title: 'DyLoc: Dynamic Localization for Massive MIMO Using Predictive Recurrent Neural Networks'
+  url: https://doi.org/10.1109/INFOCOM42981.2021.9488913
+  doi: 10.1109/INFOCOM42981.2021.9488913
+  notes: IEEE INFOCOM 2021 study that explicitly uses DeepMIMO to generate geo-tagged CSI datasets for indoor and outdoor
+    localization.
+- id: wideband-channel-estimation
+  type: paper
+  title: Model-Data Hybrid-Driven Wideband Channel Estimation for Beamspace Massive MIMO Systems
+  url: https://doi.org/10.3390/e28020154
+  doi: 10.3390/e28020154
+  notes: Peer-reviewed 2026 study that evaluates wideband beamspace channel estimation on DeepMIMO ray-traced channel realizations.
+- id: maintainer-radio-slam
+  type: other
+  title: UQAM seminar on AI-native wireless systems, localization, and Radio SLAM
+  url: https://evenements.uqam.ca/evenements/yaya-etiabi-ai-aided-and-ai-oriented-integrated-sensing-communication-and-computing/34058
+  doi: null
+  notes: Public seminar page documenting the catalogue maintainer's Radio-SLAM research; use of DeepMIMO in the associated
+    Radio-SLAM experimental workflow is directly confirmed by the maintainer.
+tasks:
+- task: beam-prediction
+  scope: Scenario and configuration dependent; the original DeepMIMO work demonstrates a mmWave beam-prediction application.
+  inputs:
+  - channel-matrix
+  targets:
+  - beam-index
+  evidence:
+  - deepmimo-paper
+  notes: null
+  context:
+    frequency_regimes:
+    - mmwave
+- task: localization
+  scope: Dynamic massive-MIMO localization from DeepMIMO-generated geo-tagged CSI/angle-delay representations.
+  inputs:
+  - channel-matrix
+  targets:
+  - position
+  evidence:
+  - dyloc-localization
+  notes: DyLoc explicitly uses DeepMIMO to generate geo-tagged CSI datasets for localization in indoor and outdoor dynamic
+    scenarios.
+  context:
+    environments:
+    - indoor
+    - outdoor
+    mobility: mobile
+    frequency_regimes:
+    - mmwave
+- task: channel-estimation
+  scope: Evaluate learned wideband/beamspace massive-MIMO channel estimators using realistic DeepMIMO ray-traced channel realizations.
+  inputs:
+  - channel-matrix
+  targets:
+  - channel
+  evidence:
+  - wideband-channel-estimation
+  notes: The cited study generates DeepMIMO channel realizations and derives beamspace measurements for channel-estimation
+    evaluation.
+  context:
+    environments:
+    - outdoor
+    mobility: static
+    frequency_regimes:
+    - mmwave
+- task: radio-slam
+  scope: Evaluate radio-geometric SLAM from ray-traced multipath delay/angle observations, receiver/transmitter positions,
+    and interaction-point geometry generated from DeepMIMO scenarios.
+  inputs:
+  - path-parameters
+  - scene-geometry
+  targets:
+  - position
+  - scene-geometry
+  evaluation_reference:
+  - position
+  - scene-geometry
+  evidence:
+  - official-repo
+  - database-docs
+  - maintainer-radio-slam
+  notes: This mapping is based on documented DeepMIMO geometry plus maintainer-confirmed use in Radio-SLAM experiments; DeepMIMO
+    is also broadly SLAM-capable because it exposes AoA/AoD, delays, interaction types/points, and scene geometry.
+  context:
+    mobility: configurable
+    frequency_regimes:
+    - mmwave
+    - sub-thz
+caveats:
+- text: DeepMIMO is a collection/toolchain rather than one fixed dataset; scenario and generation choices materially determine
+    the resulting data.
+  evidence:
+  - official-repo
+  - database-docs
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: true

@@ -1,0 +1,148 @@
+id: microsoft-indoor-location-competition-2
+name: Microsoft Indoor Location Competition 2.0 Dataset
+aliases:
+- Indoor Location & Navigation
+- Indoor Location Competition 2.0
+identity:
+  canonical_url: https://www.microsoft.com/en-us/research/publication/indoor-location-competition-2-0-dataset/
+  version: null
+  external_ids:
+  - scheme: kaggle
+    value: indoor-location-navigation
+status: verified
+resource_type: dataset
+description: A large-scale multi-building indoor localization benchmark containing smartphone Wi-Fi scans, Bluetooth iBeacon
+  observations, inertial and geomagnetic measurements, floor plans, and waypoint ground truth collected across hundreds of
+  buildings.
+released:
+  year: 2021
+  notes: Released for Microsoft Indoor Location Competition 2.0 / Kaggle Indoor Location & Navigation.
+origin:
+  type: measurement
+  notes: Real Android smartphone traces collected by site surveyors walking indoor paths.
+modalities:
+- wifi-rssi
+- rss
+- imu
+- geomagnetic
+- position
+- scene-geometry
+technologies:
+- wifi
+- ble
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: Wi-Fi scan records include per-access-point frequency and Bluetooth iBeacon measurements operate in the 2.4 GHz ISM
+    band; the resource spans many buildings and deployments.
+environments:
+- indoor
+mobility:
+  type: mobile
+  notes: Each trace is a pedestrian path between surveyed waypoints.
+temporal_structure: trajectory
+formats:
+- txt
+- json
+- geojson
+- png
+ground_truth:
+- position
+- floor
+- scene-geometry
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: 204
+  duration_hours: null
+  size_gb: 60.0
+  notes: The ACM MobiCom 2023 competition analysis reports a 60 GB training dataset collected from 204 diverse buildings.
+access:
+  status: registration
+  url: https://www.kaggle.com/c/indoor-location-navigation/data
+  notes: The full competition dataset is distributed through Kaggle; a public GitHub repository provides sample traces, format
+    documentation, and processing code.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The sample-code repository is MIT licensed, but a dataset-wide license for the full Kaggle data was not confirmed
+    from the official sources checked.
+official_resources:
+  homepage: https://www.microsoft.com/en-us/research/publication/indoor-location-competition-2-0-dataset/
+  repository: https://github.com/location-competition/indoor-location-competition-20
+  documentation: https://github.com/location-competition/indoor-location-competition-20
+  loader: https://www.kaggle.com/c/indoor-location-navigation/data
+references:
+- id: microsoft
+  type: documentation
+  title: Indoor Location Competition 2.0 Dataset — Microsoft Research
+  url: https://www.microsoft.com/en-us/research/publication/indoor-location-competition-2-0-dataset/
+  doi: null
+  notes: Official Microsoft dataset description and access page.
+- id: official-repo
+  type: repository
+  title: Indoor Location Competition 2.0 — Sample Data and Code
+  url: https://github.com/location-competition/indoor-location-competition-20
+  doi: null
+  notes: Official sample-data repository documenting the trace format, sensors, floor plans, and waypoint labels.
+- id: kaggle
+  type: challenge
+  title: Indoor Location & Navigation — Kaggle
+  url: https://www.kaggle.com/c/indoor-location-navigation
+  doi: null
+  notes: Competition and full-data access page.
+- id: mobicom-paper
+  type: paper
+  title: 'The Wisdom of 1,170 Teams: Lessons and Experiences from a Large Indoor Localization Competition'
+  url: https://doi.org/10.1145/3570361.3592507
+  doi: 10.1145/3570361.3592507
+  notes: ACM MobiCom 2023 analysis of the competition; reports 60 GB of data from 204 buildings.
+tasks:
+- task: localization
+  scope: Multi-building indoor pedestrian localization and floor estimation from smartphone radio, inertial, geomagnetic,
+    and map observations.
+  inputs:
+  - wifi-rssi
+  - rss
+  - imu
+  - geomagnetic
+  - scene-geometry
+  targets:
+  - position
+  - floor
+  evidence:
+  - microsoft
+  - official-repo
+  - kaggle
+  - mobicom-paper
+  notes: The benchmark was explicitly released for indoor location and navigation and includes waypoint ground truth.
+  context:
+    environments:
+    - indoor
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: Full-data access is mediated through Kaggle, while the GitHub repository contains only sample traces and supporting
+    code.
+  evidence:
+  - microsoft
+  - official-repo
+- text: The competition title uses “Navigation”, but the released benchmark is evaluated as indoor location/floor prediction;
+    do not infer a radio-assisted-navigation task mapping without a demonstrated path, waypoint, or action-selection use.
+  evidence:
+  - microsoft
+  - kaggle
+  - mobicom-paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

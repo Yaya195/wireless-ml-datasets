@@ -1,0 +1,12 @@
+id: beam-selection
+name: "Beam Selection"
+category: beam-management
+description: >-
+  Select one or more suitable transmit or receive beams from a predefined or learned beam set using currently available observations.
+aliases:
+  - "beam recommendation"
+status: active
+related_tasks:
+  - beam-prediction
+  - beam-tracking
+notes: null

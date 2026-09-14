@@ -1,0 +1,107 @@
+id: wifine
+name: WiFine
+aliases:
+- Finer-level Sequential WiFi-based Indoor Localization Dataset
+identity:
+  canonical_url: https://huggingface.co/datasets/issai/WiFine
+  version: null
+  external_ids:
+  - scheme: huggingface
+    value: issai/WiFine
+status: verified
+resource_type: dataset
+description: A sequential Wi-Fi RSS indoor-localization dataset with 290 trajectories collected over three floors
+  of Nazarbayev University's C4 building, with fine-grained 3D position coordinates.
+released:
+  year: 2021
+  notes: The dataset accompanies the 2021 IEEE/SICE SII work and is currently maintained on Hugging Face.
+origin:
+  type: measurement
+  notes: Real Wi-Fi RSS measurements collected along walking trajectories in a university building.
+modalities:
+- wifi-rssi
+- position
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The public dataset card does not establish one collection-wide carrier value.
+environments:
+- indoor
+- campus
+mobility:
+  type: mobile
+  notes: Measurements follow pedestrian trajectories.
+temporal_structure: trajectory
+formats:
+- csv
+ground_truth:
+- position
+- floor
+scale:
+  samples: 25790
+  sequences: 290
+  scenarios: null
+  participants: null
+  devices: null
+  sites: 1
+  duration_hours: 42.14
+  size_gb: null
+  notes: Three floors, 436 WAPs, 9,564 m² and about 42.8 km of total trajectories.
+access:
+  status: open
+  url: https://huggingface.co/datasets/issai/WiFine
+  notes: Public Hugging Face dataset.
+license:
+  status: known
+  name: MIT License
+  url: https://opensource.org/license/mit
+  notes: null
+official_resources:
+  homepage: https://huggingface.co/datasets/issai/WiFine
+  repository: https://github.com/IS2AI/WiFine
+  documentation: https://huggingface.co/datasets/issai/WiFine
+  loader: https://huggingface.co/datasets/issai/WiFine
+references:
+- id: hf-card
+  type: data-host
+  title: WiFine
+  url: https://huggingface.co/datasets/issai/WiFine
+  doi: null
+  notes: null
+- id: paper
+  type: paper
+  title: Finer-level Sequential WiFi-based Indoor Localization
+  url: https://ieeexplore.ieee.org/document/9382623
+  doi: 10.1109/SII46433.2021.9382623
+  notes: null
+tasks:
+- task: localization
+  scope: Estimate sequential indoor 3D position from Wi-Fi RSS fingerprints along trajectories.
+  inputs:
+  - wifi-rssi
+  targets:
+  - position
+  evidence:
+  - hf-card
+  - paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - campus
+    mobility: mobile
+    frequency_regimes: []
+caveats:
+- text: All trajectories come from one three-floor university building, so cross-building generalization is not
+    directly represented.
+  evidence:
+  - hf-card
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,107 @@
+id: radiomap3dseer
+name: RadioMap3DSeer
+aliases: []
+identity:
+  canonical_url: https://radiomapchallenge.github.io/dataset.html
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A 3D-aware urban pathloss radio-map dataset extending the RadioMapSeer setting with varying building
+  heights and rooftop transmitter elevations, used in the ICASSP 2023 Pathloss Radio Map Prediction Challenge.
+relations:
+  parent: radiomapseer
+  supersedes: []
+  derived_from: []
+released:
+  year: 2022
+  notes: Publicly released before the ICASSP 2023 Pathloss Radio Map Prediction Challenge.
+origin:
+  type: ray-tracing
+  notes: Generated over realistic city maps using propagation simulation with 3D building/transmitter information.
+modalities:
+- scene-geometry
+- radio-map
+- position
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 3.5 GHz
+    center_ghz: 3.5
+    min_ghz: null
+    max_ghz: null
+  notes: Published descriptions of RadioMap3DSeer use a 3.5 GHz carrier.
+environments:
+- outdoor
+- urban
+mobility:
+  type: not-applicable
+  notes: Static spatial radio maps.
+temporal_structure: snapshot
+formats:
+- png
+ground_truth:
+- radio-map
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The challenge uses 256×256 radio-map images paired with 3D-aware building/transmitter representations.
+access:
+  status: registration
+  url: https://radiomapchallenge.github.io/dataset.html
+  notes: The official challenge page links the dataset through IEEE DataPort and an alternative download.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No standalone dataset license was confirmed from the challenge landing page.
+official_resources:
+  homepage: https://radiomapchallenge.github.io/dataset.html
+  repository: null
+  documentation: https://radiomapchallenge.github.io/dataset.html
+  loader: null
+references:
+- id: challenge-page
+  type: official-page
+  title: The First Pathloss Radio Map Prediction Challenge - Dataset
+  url: https://radiomapchallenge.github.io/dataset.html
+  doi: null
+  notes: null
+tasks:
+- task: radio-map-estimation
+  scope: Predict 3D-aware urban pathloss radio maps from building geometry and transmitter information.
+  inputs:
+  - scene-geometry
+  - position
+  targets:
+  - radio-map
+  evidence:
+  - challenge-page
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - urban
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: RadioMap3DSeer is a simulation-based extension of the RadioMapSeer setting; it should be treated as a distinct
+    related dataset rather than as measured field data.
+  evidence:
+  - challenge-page
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,104 @@
+id: eflash-smart-v2x
+name: e-FLASH V2X Beam-Selection Dataset
+aliases:
+- SMART Sim2Real mmWave Beam Selection Dataset
+identity:
+  canonical_url: https://genesys-lab.org/smart
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A real-world multimodal V2X dataset with synchronized LiDAR, camera, GPS and wireless-connectivity
+  data across LOS and several NLOS obstacle scenarios for mmWave beam selection and sim-to-real learning.
+released:
+  year: 2025
+  notes: Released with the SMART sim-to-real mmWave beam-selection work.
+origin:
+  type: measurement
+  notes: Real-world e-FLASH measurements captured in diverse mmWave V2X scenarios.
+modalities:
+- lidar
+- camera
+- position
+- beam-power
+technologies: []
+generation_contexts:
+- 5g
+radio_configurations:
+- phased-array
+frequency:
+  status: known
+  regimes:
+  - mmwave
+  bands: []
+  notes: The project explicitly targets mmWave V2X beam selection.
+environments:
+- outdoor
+- vehicular
+mobility:
+  type: mixed
+  notes: Scenarios include LOS, pedestrians, static cars and moving-car obstacles.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- beam-index
+- beam-power
+scale:
+  samples: 10853
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 22.0
+  notes: The real-world e-FLASH component contains 10,853 processed samples.
+access:
+  status: open
+  url: https://genesys-lab.org/smart
+  notes: The GENESYS project page provides dataset and code links.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A dataset-specific license was not confirmed on the project page.
+official_resources:
+  homepage: https://genesys-lab.org/smart
+  repository: https://github.com/genesys-neu/FLASH-MAML
+  documentation: https://genesys-lab.org/smart
+  loader: null
+references:
+- id: project
+  type: official-page
+  title: 'SMART: Sim2Real Meta-Learning-based Training for mmWave Beam Selection in V2X Networks'
+  url: https://genesys-lab.org/smart
+  doi: null
+  notes: null
+tasks:
+- task: beam-selection
+  scope: Select mmWave V2X beams from synchronized LiDAR, camera, GPS and wireless-connectivity observations.
+  inputs:
+  - lidar
+  - camera
+  - position
+  - beam-power
+  targets:
+  - beam-index
+  evidence:
+  - project
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - vehicular
+    mobility: mixed
+    frequency_regimes:
+    - mmwave
+caveats:
+- text: The SMART framework also uses synthetic S-FLASH data; this record describes the real-world e-FLASH component.
+  evidence:
+  - project
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

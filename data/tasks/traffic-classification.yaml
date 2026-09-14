@@ -1,0 +1,21 @@
+id: traffic-classification
+name: Traffic Classification
+category: network-intelligence
+description: Classify network traffic, applications, or service types from packet-level observations, RAN KPIs,
+  or related network measurements.
+aliases:
+- network traffic classification
+- application classification
+status: active
+related_tasks:
+- traffic-prediction
+- network-anomaly-detection
+notes: This task concerns network/application traffic rather than RF waveform or modulation classification.
+comparison_fields:
+- inputs
+- targets
+- origin
+- environments
+- mobility
+- temporal-structure
+- access

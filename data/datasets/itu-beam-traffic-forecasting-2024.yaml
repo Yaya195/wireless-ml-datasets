@@ -1,0 +1,108 @@
+id: itu-beam-traffic-forecasting-2024
+name: ITU Spatio-Temporal Beam-Level Traffic Forecasting Dataset
+aliases:
+- Spatio-Temporal Beam-Level Traffic Forecasting Challenge Dataset
+identity:
+  canonical_url: https://zindi.africa/competitions/spatio-temporal-beam-level-traffic-forecasting-challenge
+  version: '2024'
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A beam-level cellular traffic time-series dataset released for the ITU 2024 forecasting challenge,
+  containing hourly throughput volume, throughput time, PRB utilization, and user-count signals across gNodeBs,
+  cells, and beams.
+released:
+  year: 2024
+  notes: The challenge opened on 24 July 2024 and closed on 11 October 2024.
+origin:
+  type: unknown
+  notes: The challenge describes real-world traffic scenarios but the verified public landing page does not document
+    the acquisition pipeline in enough detail to classify origin more specifically.
+modalities:
+- traffic
+- network-kpi
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations:
+- phased-array
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The forecasting resource is indexed by beam/cell/gNodeB rather than a documented catalogue-wide carrier.
+environments:
+- unknown
+mobility:
+  type: unknown
+  notes: Mobility is implicit in aggregate traffic, not directly labeled as a dataset variable.
+temporal_structure: sequence
+formats:
+- csv
+ground_truth:
+- traffic-volume
+scale:
+  samples: 2419200
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: 30
+  duration_hours: null
+  size_gb: null
+  notes: Training covers five weeks of hourly observations across 30 gNodeBs × 3 cells × 32 beams (2,880 beam series).
+access:
+  status: registration
+  url: https://zindi.africa/competitions/spatio-temporal-beam-level-traffic-forecasting-challenge
+  notes: Access is through the Zindi challenge platform and requires accepting the challenge terms.
+license:
+  status: known
+  name: CC BY-SA 4.0
+  url: https://creativecommons.org/licenses/by-sa/4.0/
+  notes: The challenge rules permit commercial, non-commercial, research, and educational use under CC BY-SA 4.0.
+official_resources:
+  homepage: https://zindi.africa/competitions/spatio-temporal-beam-level-traffic-forecasting-challenge
+  repository: null
+  documentation: https://zindi.africa/competitions/spatio-temporal-beam-level-traffic-forecasting-challenge
+  loader: null
+references:
+- id: zindi-challenge
+  type: challenge
+  title: Spatio-Temporal Beam-Level Traffic Forecasting Challenge by ITU
+  url: https://zindi.africa/competitions/spatio-temporal-beam-level-traffic-forecasting-challenge
+  doi: null
+  notes: null
+- id: itu-review
+  type: official-page
+  title: 'The 5th edition of the ITU AI/ML in 5G Challenge: A year of competitions in review'
+  url: https://aiforgood.itu.int/the-5th-edition-of-the-itu-ai-ml-in-5g-challenge-a-year-of-competitions-in-review/
+  doi: null
+  notes: null
+tasks:
+- task: traffic-prediction
+  scope: Forecast future hourly downlink throughput volume at beam level from historical throughput volume/time,
+    PRB utilization, and user-count time series.
+  inputs:
+  - traffic
+  - network-kpi
+  targets:
+  - traffic-volume
+  evidence:
+  - zindi-challenge
+  - itu-review
+  notes: The challenge predicts DLThpVol for both near-term and longer-horizon target weeks.
+  context:
+    environments:
+    - unknown
+    mobility: unknown
+    frequency_regimes: []
+caveats:
+- text: The challenge supplies five weeks of training data and asks for weeks 6 and 11; evaluation therefore includes
+    a substantial long-horizon extrapolation gap.
+  evidence:
+  - zindi-challenge
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

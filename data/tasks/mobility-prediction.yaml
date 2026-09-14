@@ -1,0 +1,11 @@
+id: mobility-prediction
+name: "Mobility Prediction"
+category: network-intelligence
+description: >-
+  Predict future user, device, or node mobility states relevant to wireless network operation.
+aliases:
+  - "trajectory prediction"
+status: active
+related_tasks:
+  - handover-prediction
+notes: null

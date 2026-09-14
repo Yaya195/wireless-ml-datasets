@@ -1,0 +1,114 @@
+id: subghz-device-free-localization
+name: Sub-GHz Device-Free Localization Dataset
+aliases:
+- Device-Free Localization & Identification Using Sub-GHz Passive Radio Mapping
+identity:
+  canonical_url: https://zenodo.org/records/3941249
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.3941249
+status: verified
+resource_type: dataset
+description: A passive/device-free RSS dataset from 15 sub-GHz transceivers in a furnished office, with six human
+  participants observed at 15 possible locations on 433 MHz and 868 MHz links.
+released:
+  year: 2020
+  notes: Published on Zenodo in July 2020.
+origin:
+  type: measurement
+  notes: Real RSS measurements from 15 transceivers installed in a ~42 m² office.
+modalities:
+- rss
+- position
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-ghz
+  bands:
+  - label: 433 MHz
+    center_ghz: 0.433
+    min_ghz: null
+    max_ghz: null
+  - label: 868 MHz
+    center_ghz: 0.868
+    min_ghz: null
+    max_ghz: null
+  notes: Measurements use DASH7 links at 433 and 868 MHz.
+environments:
+- indoor
+- office
+mobility:
+  type: not-applicable
+  notes: Participants are stationary at labeled positions for the localization measurements.
+temporal_structure: snapshot
+formats:
+- csv
+ground_truth:
+- position
+- user-id
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: 6
+  devices: 15
+  sites: null
+  duration_hours: null
+  size_gb: 0.011
+  notes: Six people × 15 possible locations, measured over 15 transceiver links.
+access:
+  status: open
+  url: https://zenodo.org/records/3941249
+  notes: Public Zenodo download.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No explicit dataset license was confirmed from the verified record.
+official_resources:
+  homepage: https://zenodo.org/records/3941249
+  repository: null
+  documentation: https://zenodo.org/records/3941249
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: Device-Free Localization & Identification Using Sub-GHz Passive Radio Mapping
+  url: https://zenodo.org/records/3941249
+  doi: 10.5281/zenodo.3941249
+  notes: null
+tasks:
+- task: device-free-localization
+  scope: Estimate a stationary person's location from passive changes in sub-GHz RSS links without requiring a carried
+    device.
+  inputs:
+  - rss
+  targets:
+  - position
+  evidence:
+  - zenodo-record
+  notes: null
+  context:
+    environments:
+    - indoor
+    - office
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-ghz
+caveats:
+- text: The dataset covers a single office and stationary participants at predefined locations; it is not a continuous
+    tracking dataset.
+  evidence:
+  - zenodo-record
+- text: The source title uses “passive radio mapping” for fingerprint-based device-free localization; this does
+    not establish a radio-map-estimation task.
+  evidence:
+  - zenodo-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

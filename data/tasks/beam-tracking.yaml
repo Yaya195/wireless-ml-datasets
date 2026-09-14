@@ -1,0 +1,18 @@
+id: beam-tracking
+name: Beam Tracking
+category: beam-management
+description: Maintain or predict beam alignment over time for mobile users, devices, or access points.
+aliases: []
+status: active
+related_tasks:
+- beam-prediction
+- beam-selection
+notes: null
+comparison_fields:
+- inputs
+- targets
+- origin
+- frequency-regimes
+- mobility
+- environments
+- access

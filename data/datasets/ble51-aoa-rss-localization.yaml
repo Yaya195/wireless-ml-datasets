@@ -1,0 +1,98 @@
+id: ble51-aoa-rss-localization
+name: Experimental Bluetooth 5.1 AoA and RSS Indoor Localization Dataset
+aliases: []
+identity:
+  canonical_url: https://zenodo.org/records/18833426
+  version: v1
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.18833426
+status: verified
+resource_type: dataset
+description: Bluetooth 5.1 measurements from nine indoor anchors and two tags with synchronized RSS, AoA azimuth/elevation
+  and accurate ground truth across calibration, static, and mobility scenarios.
+released:
+  year: 2026
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- rss
+- path-parameters
+- position
+technologies:
+- ble
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+mobility:
+  type: mixed
+  notes: null
+temporal_structure: mixed
+formats: []
+ground_truth:
+- position
+- timestamp
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: 2
+  sites: 9
+  duration_hours: null
+  size_gb: 0.095
+  notes: Nine anchors, two tags, 187 calibration points, 36 static points and three mobility paths are documented.
+access:
+  status: open
+  url: https://zenodo.org/records/18833426
+  notes: Open Zenodo dataset.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: null
+official_resources:
+  homepage: https://zenodo.org/records/18833426
+  repository: null
+  documentation: https://zenodo.org/records/18833426
+  loader: null
+references:
+- id: zenodo
+  type: data-host
+  title: An Experimental Dataset for Indoor Localization Using Angle of Arrival and RSS Measurements
+  url: https://zenodo.org/records/18833426
+  doi: 10.5281/zenodo.18833426
+  notes: null
+tasks:
+- task: localization
+  scope: Estimate indoor tag position from Bluetooth 5.1 RSS and AoA observations.
+  inputs:
+  - rss
+  - path-parameters
+  targets:
+  - position
+  evidence:
+  - zenodo
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: mixed
+    frequency_regimes: []
+caveats:
+- text: The Zenodo record currently lists a paper as under review and does not expose a populated license value; the dataset
+    itself is open.
+  evidence:
+  - zenodo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,20 @@
+id: blockage-prediction
+name: Blockage Prediction
+category: beam-management
+description: Predict future blockage or link-state degradation affecting a wireless link from radio and/or auxiliary
+  observations.
+aliases:
+- link blockage prediction
+status: active
+related_tasks:
+- beam-prediction
+- handover-prediction
+notes: null
+comparison_fields:
+- inputs
+- targets
+- origin
+- frequency-regimes
+- mobility
+- environments
+- access

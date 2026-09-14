@@ -1,0 +1,103 @@
+id: cell-free-massive-mimo-power-control-fivecomm
+name: Dataset for Power Control in Cell-Free Massive MIMO
+aliases: []
+identity:
+  canonical_url: https://zenodo.org/records/10691343
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.10691343
+status: verified
+resource_type: dataset
+description: A simulated cell-free massive-MIMO dataset spanning 12 scenarios and three power-control objectives,
+  with large-scale fading coefficients, optimized uplink power coefficients, and spectral-efficiency outputs.
+released:
+  year: 2024
+  notes: The Zenodo record was created on 22 February 2024.
+origin:
+  type: simulation
+  notes: Generated from a customized cell-free massive-MIMO MATLAB simulation codebase.
+modalities:
+- channel-matrix
+technologies: []
+generation_contexts: []
+radio_configurations:
+- massive-mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: No single carrier/frequency regime is assigned at catalogue level.
+environments:
+- unknown
+mobility:
+  type: not-applicable
+  notes: Each setup is a simulated network realization rather than a mobility trace.
+temporal_structure: snapshot
+formats:
+- mat
+ground_truth:
+- power-allocation
+scale:
+  samples: 240000
+  sequences: null
+  scenarios: 12
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 2.3
+  notes: Each of 12 scenarios contains 20,000 independently simulated setups.
+access:
+  status: open
+  url: https://zenodo.org/records/10691343
+  notes: Scenario archives and setup metadata are directly downloadable from Zenodo.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No explicit license value was confirmed on the verified Zenodo record.
+official_resources:
+  homepage: https://zenodo.org/records/10691343
+  repository: https://github.com/Fivecomm/cell-free-power-control-DNN
+  documentation: https://zenodo.org/records/10691343
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: Dataset for Power Control in Cell-Free Massive MIMO
+  url: https://zenodo.org/records/10691343
+  doi: 10.5281/zenodo.10691343
+  notes: null
+- id: pimrc-paper
+  type: paper
+  title: A Flexible Low-Complexity DNN Solution for Power Control in Cell-Free Massive MIMO
+  url: https://doi.org/10.1109/PIMRC59610.2024.10817537
+  doi: 10.1109/PIMRC59610.2024.10817537
+  notes: null
+tasks:
+- task: power-control
+  scope: Learn uplink power-control coefficients from large-scale fading and interference-related channel statistics
+    under max-min, sum-SE, and fractional-power-control objectives.
+  inputs:
+  - channel-matrix
+  targets:
+  - power-allocation
+  evidence:
+  - zenodo-record
+  - pimrc-paper
+  notes: null
+  context:
+    environments:
+    - unknown
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: The resource is fully simulation-based and contains several distinct power-control objectives; comparisons
+    should state the scenario and objective used.
+  evidence:
+  - zenodo-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

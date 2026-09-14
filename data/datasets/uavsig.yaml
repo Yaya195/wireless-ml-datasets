@@ -1,0 +1,107 @@
+id: uavsig
+name: UAVSig
+aliases:
+- UAV Signal Dataset
+identity:
+  canonical_url: https://dataverse.ucla.edu/dataset.xhtml?persistentId=doi:10.25346/S6/LVRRAE
+  version: '3.0'
+  external_ids:
+  - scheme: doi
+    value: 10.25346/S6/LVRRAE
+status: verified
+resource_type: dataset
+description: A measured RF dataset of drones and remote controllers collected for RF fingerprinting and device identification,
+  distributed with raw captures, labels, metadata, and download tooling.
+released:
+  year: 2024
+  notes: Version 3.0 of the UCLA Dataverse dataset was released in 2024.
+origin:
+  type: measurement
+  notes: Real over-the-air RF captures from multiple drones and remote controllers.
+modalities:
+- iq
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: Capture parameters vary by device/session; see dataset documentation.
+environments:
+- outdoor
+- laboratory
+mobility:
+  type: mixed
+  notes: The collection includes practical drone/controller captures rather than a single controlled mobility regime.
+temporal_structure: sequence
+formats:
+- mat
+- json
+ground_truth:
+- device-id
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The Dataverse release contains hundreds of capture files plus metadata and helper scripts.
+access:
+  status: open
+  url: https://dataverse.ucla.edu/dataset.xhtml?persistentId=doi:10.25346/S6/LVRRAE
+  notes: Publicly available through UCLA Dataverse.
+license:
+  status: known
+  name: CC0 1.0
+  url: https://creativecommons.org/publicdomain/zero/1.0/
+  notes: null
+official_resources:
+  homepage: https://cores.ee.ucla.edu/downloads/datasets/uavsig/
+  repository: null
+  documentation: https://cores.ee.ucla.edu/downloads/datasets/uavsig/
+  loader: null
+references:
+- id: dataverse
+  type: data-host
+  title: 'UAVSig: Drone RF Signal Detection and Fingerprinting Dataset'
+  url: https://dataverse.ucla.edu/dataset.xhtml?persistentId=doi:10.25346/S6/LVRRAE
+  doi: 10.25346/S6/LVRRAE
+  notes: null
+- id: official-page
+  type: official-page
+  title: UAVSig
+  url: https://cores.ee.ucla.edu/downloads/datasets/uavsig/
+  doi: null
+  notes: null
+tasks:
+- task: rf-fingerprinting
+  scope: Identify individual drones and remote controllers from their measured RF fingerprints.
+  inputs:
+  - iq
+  targets:
+  - device-id
+  evidence:
+  - dataverse
+  - official-page
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - laboratory
+    mobility: mixed
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The authors report random gaps in some raw-IQ capture segments caused by receiver sample drops; labels remain
+    aligned to the received signals.
+  evidence:
+  - official-page
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

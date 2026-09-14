@@ -1,0 +1,159 @@
+id: tampere-60ghz-radio-slam
+name: 'Millimeter-Wave Radio SLAM: 60 GHz Indoor Sensing Dataset'
+aliases:
+- Tampere 60 GHz Radio SLAM Dataset
+identity:
+  canonical_url: https://ieee-dataport.org/open-access/millimeter-wave-radio-slam-60-ghz-indoor-sensing-dataset
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/xskh-dk87
+status: verified
+resource_type: dataset
+description: A measured 60 GHz indoor bistatic sensing dataset based on 5G NR positioning reference signals, providing raw
+  I/Q data, estimated multipath parameters, receiver trajectory information, and an environment map for radio positioning
+  and SLAM.
+released:
+  year: 2024
+  notes: The dataset was made openly available through IEEE DataPort in 2024.
+origin:
+  type: measurement
+  notes: Indoor 60 GHz measurement campaign at Tampere University using beamformed PRS-based bistatic sensing.
+modalities:
+- iq
+- path-parameters
+- position
+- scene-geometry
+technologies:
+- 5g-nr
+- 6g
+generation_contexts:
+- 5g
+- 6g
+radio_configurations:
+- phased-array
+frequency:
+  status: known
+  regimes:
+  - mmwave
+  bands:
+  - label: 60 GHz
+    center_ghz: 60.0
+    min_ghz: null
+    max_ghz: null
+  notes: The measurement campaign operates at 60 GHz.
+environments:
+- indoor
+- campus
+mobility:
+  type: mobile
+  notes: Measurements follow a receiver trajectory while the transmitter remains stationary.
+temporal_structure: trajectory
+formats: []
+ground_truth:
+- position
+- path-parameters
+- scene-geometry
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: 1
+  duration_hours: null
+  size_gb: 128.8
+  notes: Six raw-I/Q archives total approximately 128.8 GB, excluding small postprocessed/support files.
+access:
+  status: registration
+  url: https://ieee-dataport.org/open-access/millimeter-wave-radio-slam-60-ghz-indoor-sensing-dataset
+  notes: The dataset is open access, but IEEE DataPort requires a free login to download the files.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The associated paper is CC BY 4.0, but a dataset-specific license was not separately confirmed.
+official_resources:
+  homepage: https://research.tuni.fi/wireless/news/millimeter-wave-radio-slam-60-ghz-indoor-sensing-dataset/
+  repository: null
+  documentation: https://researchportal.tuni.fi/en/datasets/millimeter-wave-radio-slam-60-ghz-indoor-sensing-dataset/
+  loader: null
+references:
+- id: tampere-dataset-page
+  type: official-page
+  title: 'Millimeter-Wave Radio SLAM: 60 GHz Indoor Sensing Dataset'
+  url: https://researchportal.tuni.fi/en/datasets/millimeter-wave-radio-slam-60-ghz-indoor-sensing-dataset/
+  doi: 10.21227/xskh-dk87
+  notes: null
+- id: twrc-announcement
+  type: official-page
+  title: Tampere Wireless Research Center dataset announcement
+  url: https://research.tuni.fi/wireless/news/millimeter-wave-radio-slam-60-ghz-indoor-sensing-dataset/
+  doi: null
+  notes: null
+- id: jsac-paper
+  type: paper
+  title: 'Millimeter-Wave Radio SLAM: End-to-End Processing Methods and Experimental Validation'
+  url: https://doi.org/10.1109/JSAC.2024.3413995
+  doi: 10.1109/JSAC.2024.3413995
+  notes: null
+- id: ieee-dataport-record
+  type: data-host
+  title: 'Millimeter-Wave Radio SLAM: 60 GHz Indoor Sensing Dataset'
+  url: https://ieee-dataport.org/open-access/millimeter-wave-radio-slam-60-ghz-indoor-sensing-dataset
+  doi: 10.21227/xskh-dk87
+  notes: Canonical IEEE DataPort record; its dataset keywords include both 5G and 6G while the measurement waveform is 5G-NR
+    PRS.
+tasks:
+- task: radio-slam
+  scope: Jointly recover receiver state and multipath/environment landmarks from raw I/Q or estimated radio-path parameters
+    in a measured indoor mmWave environment.
+  inputs:
+  - iq
+  - path-parameters
+  targets:
+  - position
+  - scene-geometry
+  evaluation_reference:
+  - position
+  - scene-geometry
+  evidence:
+  - tampere-dataset-page
+  - twrc-announcement
+  - jsac-paper
+  notes: The dataset additionally provides an environment map for evaluating mapping outputs; position is recorded as an evaluation
+    reference rather than redefining SLAM as coordinate regression.
+  context:
+    environments:
+    - indoor
+    - campus
+    mobility: mobile
+    frequency_regimes:
+    - mmwave
+- task: localization
+  scope: Estimate receiver position from 60 GHz PRS measurements and/or estimated multipath parameters.
+  inputs:
+  - iq
+  - path-parameters
+  targets:
+  - position
+  evidence:
+  - tampere-dataset-page
+  - twrc-announcement
+  notes: null
+  context:
+    environments:
+    - indoor
+    - campus
+    mobility: mobile
+    frequency_regimes:
+    - mmwave
+caveats:
+- text: The measurement campaign is a single indoor 60 GHz environment with a specific trajectory and hardware setup; generalization
+    to other sites and radio front ends must be evaluated separately.
+  evidence:
+  - tampere-dataset-page
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

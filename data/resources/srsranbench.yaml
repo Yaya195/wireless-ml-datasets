@@ -1,0 +1,29 @@
+id: srsranbench
+name: srsRANBench
+resource_kind: benchmark-dataset
+description: A 1,502-sample benchmark for evaluating LLM code understanding and generation
+  capabilities over the srsRAN 5G codebase.
+provider: NextG Lab / ORANSight authors
+url: https://huggingface.co/datasets/prnshv/srsRANBench
+wireless_relevance: telecom-specific
+access: open
+collections:
+- llm-foundation-model-resources
+search_guidance: Use for telecom software/code reasoning around an open-source 5G
+  RAN implementation.
+task_links: []
+references:
+- id: official
+  title: srsRANBench — Hugging Face Dataset
+  url: https://huggingface.co/datasets/prnshv/srsRANBench
+  doi: null
+  notes: null
+- id: repo
+  title: srsRANBench — Official Repository
+  url: https://github.com/prnshv/srsRANBench
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

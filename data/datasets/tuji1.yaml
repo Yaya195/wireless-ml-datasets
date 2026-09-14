@@ -1,0 +1,100 @@
+id: tuji1
+name: TUJI1
+aliases: []
+identity:
+  canonical_url: https://zenodo.org/records/7641701
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.7641701
+status: verified
+resource_type: dataset
+description: A dense multi-device Wi-Fi RSSI fingerprinting dataset for indoor localization, with raw and formatted measurements,
+  map coordinates, and data from multiple commercial devices.
+released:
+  year: 2024
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- wifi-rssi
+- position
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+mobility:
+  type: static
+  notes: null
+temporal_structure: snapshot
+formats:
+- mat
+- xlsx
+ground_truth:
+- position
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 0.594
+  notes: Zenodo distributes roughly 594 MB including raw measurements and formatted subsets.
+access:
+  status: open
+  url: https://zenodo.org/records/7641701
+  notes: Public Zenodo release.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: null
+official_resources:
+  homepage: https://zenodo.org/records/7641701
+  repository: null
+  documentation: https://doi.org/10.1016/j.dib.2024.110356
+  loader: null
+references:
+- id: zenodo
+  type: data-host
+  title: Supplementary materials for TUJI1 Dataset
+  url: https://zenodo.org/records/7641701
+  doi: 10.5281/zenodo.7641701
+  notes: null
+- id: data-paper
+  type: paper
+  title: 'TUJI1 Dataset: Multi-device dataset for indoor localization with high measurement density'
+  url: https://doi.org/10.1016/j.dib.2024.110356
+  doi: 10.1016/j.dib.2024.110356
+  notes: null
+tasks:
+- task: localization
+  scope: Estimate indoor position from dense multi-device Wi-Fi RSSI fingerprints.
+  inputs:
+  - wifi-rssi
+  targets:
+  - position
+  evidence:
+  - zenodo
+  - data-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: static
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

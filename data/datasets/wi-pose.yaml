@@ -1,0 +1,108 @@
+id: wi-pose
+name: Wi-Pose
+aliases:
+- Wi-Pose Dataset
+identity:
+  canonical_url: https://github.com/NjtechCVLab/Wi-PoseDataset
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A public 5 GHz Wi-Fi CSI human-pose dataset with 166,600 packets, 18-keypoint pose annotations, 12
+  actions, and 12 volunteers.
+released:
+  year: 2022
+  notes: The public dataset URL was documented as accessed in October 2022 in the associated pose-estimation work.
+origin:
+  type: measurement
+  notes: Real 5 GHz Wi-Fi CSI collected synchronously with camera-derived AlphaPose annotations.
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations:
+- mimo
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 5 GHz Wi-Fi
+    center_ghz: 5.0
+    min_ghz: null
+    max_ghz: null
+  notes: null
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: Human pose/motion is the sensing target.
+temporal_structure: sequence
+formats:
+- mat
+ground_truth:
+- pose
+scale:
+  samples: 166600
+  sequences: null
+  scenarios: null
+  participants: 12
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Twelve volunteers perform 12 actions; pose annotations contain 18 skeleton points.
+access:
+  status: open
+  url: https://github.com/NjtechCVLab/Wi-PoseDataset
+  notes: The official repository provides Google Drive and Baidu download links.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No explicit dataset license was confirmed from the official repository.
+official_resources:
+  homepage: https://github.com/NjtechCVLab/Wi-PoseDataset
+  repository: https://github.com/NjtechCVLab/Wi-PoseDataset
+  documentation: https://github.com/NjtechCVLab/Wi-PoseDataset
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: Wi-Pose Dataset
+  url: https://github.com/NjtechCVLab/Wi-PoseDataset
+  doi: null
+  notes: null
+- id: csi-former
+  type: paper
+  title: 'CSI-Former: Pay More Attention to Pose Estimation with WiFi'
+  url: https://doi.org/10.3390/e25010020
+  doi: 10.3390/e25010020
+  notes: null
+tasks:
+- task: pose-estimation
+  scope: Estimate 18-point human body pose from 5 GHz Wi-Fi CSI.
+  inputs:
+  - wifi-csi
+  targets:
+  - pose
+  evidence:
+  - official-repo
+  - csi-former
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: Public Wi-Pose omits participant images for privacy; the released pose labels are camera-derived skeleton
+    annotations.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

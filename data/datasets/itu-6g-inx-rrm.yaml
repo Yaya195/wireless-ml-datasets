@@ -1,0 +1,134 @@
+id: itu-6g-inx-rrm
+name: Simulated CSI for 6G In-Factory Subnetworks
+aliases:
+- ITU Radio Resource Management for 6G In-X Subnetworks Dataset
+identity:
+  canonical_url: https://zenodo.org/records/10908382
+  version: v1
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.10908382
+status: verified
+resource_type: dataset
+description: A simulated dense industrial In-X subnetwork CSI dataset released for the ITU AI/ML challenge on joint
+  sub-band and transmit-power allocation.
+released:
+  year: 2024
+  notes: Version v1 was published on 2 April 2024.
+origin:
+  type: simulation
+  notes: Generated from a simulated in-factory network model; the generation scripts and parameter overview are
+    distributed with the data.
+modalities:
+- channel-matrix
+- position
+technologies:
+- 6g
+generation_contexts:
+- 6g
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 6 GHz
+    center_ghz: 6.0
+    min_ghz: null
+    max_ghz: null
+  notes: The challenge setup uses a 6 GHz carrier and 10 MHz system bandwidth.
+environments:
+- indoor
+- industrial
+mobility:
+  type: configurable
+  notes: The challenge considers dense In-X networks that may be static or mobile; each released snapshot contains
+    instantaneous channel/network state.
+temporal_structure: snapshot
+formats:
+- npy
+ground_truth: []
+scale:
+  samples: 200000
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: 20
+  sites: null
+  duration_hours: null
+  size_gb: 2.5
+  notes: The challenge dataset contains 200,000 snapshots for 20 in-factory subnetworks and four sub-bands.
+access:
+  status: open
+  url: https://zenodo.org/records/10908382
+  notes: The dataset archive and generation scripts are openly downloadable from Zenodo.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The verified Zenodo record does not expose a populated license value.
+official_resources:
+  homepage: https://zenodo.org/records/10908382
+  repository: https://github.com/ITU-AI-ML-in-5G-Challenge/Challenge_Archive/tree/main/2024/Radio%20Resource%20Management%20%28RRM%29%20for%206G%20in-X%20Subnetworks%20%5Bxtended%5D
+  documentation: https://github.com/ITU-AI-ML-in-5G-Challenge/Challenge_Archive/blob/main/2024/Radio%20Resource%20Management%20%28RRM%29%20for%206G%20in-X%20Subnetworks%20%5Bxtended%5D/Readme.md
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: Simulated Channel state information for In-factory Subnetworks
+  url: https://zenodo.org/records/10908382
+  doi: 10.5281/zenodo.10908382
+  notes: null
+- id: itu-challenge
+  type: challenge
+  title: AI/ML for Radio Resource Management in Hyper-Dense In-X Subnetworks
+  url: https://github.com/ITU-AI-ML-in-5G-Challenge/Challenge_Archive/blob/main/2024/Radio%20Resource%20Management%20%28RRM%29%20for%206G%20in-X%20Subnetworks%20%5Bxtended%5D/Readme.md
+  doi: null
+  notes: null
+tasks:
+- task: power-control
+  scope: Determine transmit-power levels jointly with frequency-resource decisions for dense 6G In-X subnetworks
+    from channel/network state.
+  inputs:
+  - channel-matrix
+  - position
+  targets: []
+  evidence:
+  - zenodo-record
+  - itu-challenge
+  notes: This is an optimization/control formulation; no fixed supervised power label is treated as intrinsic ground
+    truth.
+  context:
+    environments:
+    - indoor
+    - industrial
+    mobility: configurable
+    frequency_regimes:
+    - sub-6-ghz
+- task: resource-allocation
+  scope: Perform joint sub-band and power allocation to maximize network spectral efficiency under interference
+    constraints.
+  inputs:
+  - channel-matrix
+  - position
+  targets: []
+  evidence:
+  - itu-challenge
+  notes: null
+  context:
+    environments:
+    - indoor
+    - industrial
+    mobility: configurable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The dataset is simulated and challenge-specific; its operational constraints should be preserved when comparing
+    learned RRM policies.
+  evidence:
+  - zenodo-record
+  - itu-challenge
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

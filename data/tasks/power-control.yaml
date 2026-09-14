@@ -1,0 +1,19 @@
+id: power-control
+name: Power Control
+category: network-intelligence
+description: Determine transmit-power decisions for wireless links or users from channel, interference, and network
+  state information.
+aliases:
+- power allocation
+status: active
+related_tasks:
+- resource-allocation
+notes: null
+comparison_fields:
+- inputs
+- targets
+- origin
+- frequency-regimes
+- environments
+- mobility
+- access

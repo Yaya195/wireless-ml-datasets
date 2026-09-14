@@ -1,0 +1,98 @@
+id: renew-indoor-mobility-massive-mimo
+name: RENEW Indoor Mobility Channel Measurement for Massive MIMO
+aliases: []
+identity:
+  canonical_url: https://renew-wireless.org/dataset-indoor-channel.html
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: Six measured indoor massive-MIMO channel datasets from a 64-antenna RENEW base station and seven clients,
+  collected specifically to train/evaluate deep-RL user scheduling under LoS/NLoS and mobility.
+released:
+  year: 2022
+  notes: Measurements were collected on 20 November 2022.
+origin:
+  type: measurement
+  notes: Real uplink pilot measurements collected on the Rice University campus.
+modalities:
+- channel-matrix
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations:
+- massive-mimo
+frequency:
+  status: not-reported
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: The uplink pilots use an 802.11 LTS OFDM structure; no single carrier is recorded here.
+environments:
+- indoor
+- campus
+mobility:
+  type: mixed
+  notes: Six clients are static and one robot-mounted client moves at 0.5, 1, or 2 m/s.
+temporal_structure: sequence
+formats:
+- hdf5
+ground_truth: []
+scale:
+  samples: null
+  sequences: 6
+  scenarios: null
+  participants: null
+  devices: 7
+  sites: null
+  duration_hours: null
+  size_gb: 33.5
+  notes: Six LoS/NLoS mobility datasets total roughly 33.5 GB.
+access:
+  status: open
+  url: https://renew-wireless.org/dataset-indoor-channel.html
+  notes: Dataset files are accessible from the official RENEW page subject to its data-use terms.
+license:
+  status: known
+  name: RENEW Data Copyright and License Agreement
+  url: https://renew-wireless.org/dataset-indoor-channel.html
+  notes: Non-exclusive, non-transferable use is granted for commercial, educational, and research purposes; redistribution
+    requires written permission.
+official_resources:
+  homepage: https://renew-wireless.org/dataset-indoor-channel.html
+  repository: https://github.com/renew-wireless/RENEWLab
+  documentation: https://renew-wireless.org/dataset-indoor-channel.html
+  loader: null
+references:
+- id: official-page
+  type: official-page
+  title: Indoor Mobility Channel Measurement for Massive MIMO
+  url: https://renew-wireless.org/dataset-indoor-channel.html
+  doi: null
+  notes: null
+tasks:
+- task: user-scheduling
+  scope: Learn/evaluate massive-MIMO user scheduling policies from measured multi-user CSI under mobility and LoS/NLoS
+    variation.
+  inputs:
+  - channel-matrix
+  targets: []
+  evidence:
+  - official-page
+  notes: The official dataset page states that the data were collected to train a deep-RL user scheduler.
+  context:
+    environments:
+    - indoor
+    - campus
+    mobility: mixed
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: One of the seven users is mobile while the remaining users are fixed; this structure should be preserved
+    when interpreting mobility robustness.
+  evidence:
+  - official-page
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

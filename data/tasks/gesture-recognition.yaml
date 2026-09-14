@@ -1,0 +1,18 @@
+id: gesture-recognition
+name: Gesture Recognition
+category: wireless-sensing
+description: Recognize human gestures or fine-grained motion patterns from wireless sensing measurements.
+aliases: []
+status: active
+related_tasks:
+- human-activity-recognition
+notes: null
+comparison_fields:
+- inputs
+- targets
+- origin
+- environments
+- scale-participants
+- scale-samples
+- temporal-structure
+- access

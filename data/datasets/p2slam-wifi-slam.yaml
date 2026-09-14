@@ -1,0 +1,145 @@
+id: p2slam-wifi-slam
+name: P2SLAM Wi-Fi SLAM Dataset Collection
+aliases:
+- P²SLAM Dataset
+- P2SLAM Dataset
+identity:
+  canonical_url: https://wcsng.ucsd.edu/p2slam/
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: A real-world indoor robotics dataset collection for bearing-based Wi-Fi SLAM, combining reciprocal Wi-Fi CSI/RSSI
+  with robot odometry, IMU, camera, LiDAR, AP geometry, and Cartographer-derived pose ground truth across multiple trajectories
+  and environments.
+released:
+  year: 2022
+  notes: Released with the IEEE Robotics and Automation Letters P2SLAM study; a later WAIS release adds an additional Wi-Fi-assisted
+    SLAM dataset to the same project lineage.
+origin:
+  type: measurement
+  notes: Measurements were collected using a Turtlebot2 with reciprocal Wi-Fi channel sensing and synchronized robotics sensors
+    in two indoor environments at UC San Diego.
+modalities:
+- wifi-csi
+- rss
+- odometry
+- imu
+- camera
+- lidar
+- position
+- scene-geometry
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations:
+- mimo
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: Wi-Fi channel 36
+    center_ghz: 5.18
+    min_ghz: null
+    max_ghz: null
+  notes: The P2SLAM paper reports IEEE 802.11ac channel 36 with 80 MHz bandwidth.
+environments:
+- indoor
+- office
+mobility:
+  type: mobile
+  notes: The robot traverses long indoor trajectories; the original three datasets cover approximately 333 m, 495 m, and 400
+    m paths.
+temporal_structure: trajectory
+formats:
+- mat
+- rosbag
+ground_truth:
+- position
+- orientation
+- velocity
+- scene-geometry
+scale:
+  samples: null
+  sequences: 3
+  scenarios: 3
+  participants: null
+  devices: null
+  sites: 2
+  duration_hours: null
+  size_gb: 19.6
+  notes: The original P2SLAM page distributes three trajectory datasets totaling about 19.6 GB; WAIS later adds another dataset
+    to the project lineage.
+access:
+  status: registration
+  url: https://wcsng.ucsd.edu/p2slam/
+  notes: Dataset access is provided after completing a brief Google Form; download instructions are then sent by email.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A dataset-specific reusable-data license was not confirmed on the project page.
+official_resources:
+  homepage: https://wcsng.ucsd.edu/p2slam/
+  repository: null
+  documentation: https://wcsng.ucsd.edu/p2slam/
+  loader: null
+references:
+- id: project-page
+  type: official-page
+  title: 'P2SLAM: Bearing based WiFi SLAM for Indoor Robots'
+  url: https://wcsng.ucsd.edu/p2slam/
+  doi: null
+  notes: Official project and dataset documentation, including file structure, AP geometry, ground-truth robot pose, and access
+    instructions.
+- id: p2slam-paper
+  type: paper
+  title: 'P2SLAM: Bearing Based WiFi SLAM for Indoor Robots'
+  url: https://doi.org/10.1109/LRA.2022.3144796
+  doi: 10.1109/LRA.2022.3144796
+  notes: The paper jointly optimizes robot poses and Wi-Fi AP poses in GraphSLAM using reciprocal Wi-Fi bearing measurements
+    and odometry.
+- id: wais-extension
+  type: official-page
+  title: 'WAIS: Leveraging WiFi for Resource-Efficient SLAM'
+  url: https://wcsng.ucsd.edu/wais/
+  doi: null
+  notes: Later project page announcing an additional stereo-camera/IMU/LiDAR/odometry/Wi-Fi dataset added to P2SLAM.
+tasks:
+- task: radio-slam
+  scope: Estimate the robot trajectory and Wi-Fi AP landmark poses from reciprocal Wi-Fi channel-derived bearings fused with
+    odometry in an indoor GraphSLAM system.
+  inputs:
+  - wifi-csi
+  - odometry
+  targets:
+  - position
+  - orientation
+  - scene-geometry
+  evaluation_reference:
+  - position
+  - orientation
+  - scene-geometry
+  evidence:
+  - project-page
+  - p2slam-paper
+  notes: 'This is a direct SLAM dataset: P2SLAM treats both robot poses and previously unknown Wi-Fi AP poses as optimization
+    variables.'
+  context:
+    environments:
+    - indoor
+    - office
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: Access requires a registration form, and the project distributes a collection of multiple trajectories rather than
+    a single fixed train/test benchmark.
+  evidence:
+  - project-page
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: false

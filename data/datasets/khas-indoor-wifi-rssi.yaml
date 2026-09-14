@@ -1,0 +1,93 @@
+id: khas-indoor-wifi-rssi
+name: Indoor Environment WiFi-RSSI Data Set
+aliases: []
+identity:
+  canonical_url: https://data.mendeley.com/datasets/dh7j28t5kg/2
+  version: '2'
+  external_ids:
+  - scheme: doi
+    value: 10.17632/dh7j28t5kg.2
+status: verified
+resource_type: dataset
+description: Wi-Fi RSSI fingerprint measurements from two indoor test beds at Kadir Has University, collected on dense spatial
+  grids for indoor position estimation.
+released:
+  year: 2021
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- wifi-rssi
+- position
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+mobility:
+  type: static
+  notes: null
+temporal_structure: snapshot
+formats:
+- xml
+- mat
+ground_truth:
+- position
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: null
+access:
+  status: open
+  url: https://data.mendeley.com/datasets/dh7j28t5kg/2
+  notes: Public Mendeley Data release.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://data.mendeley.com/datasets/dh7j28t5kg/2
+  repository: null
+  documentation: null
+  loader: null
+references:
+- id: mendeley
+  type: data-host
+  title: Indoor Environment WIFI-RSSI Data Set
+  url: https://data.mendeley.com/datasets/dh7j28t5kg/2
+  doi: 10.17632/dh7j28t5kg.2
+  notes: null
+tasks:
+- task: localization
+  scope: Estimate indoor position from Wi-Fi RSSI measurements collected on calibrated spatial grids.
+  inputs:
+  - wifi-rssi
+  targets:
+  - position
+  evidence:
+  - mendeley
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: static
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

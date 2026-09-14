@@ -1,0 +1,94 @@
+id: radioml-2016-10a
+name: RadioML 2016.10A
+aliases:
+- RML2016.10A
+identity:
+  canonical_url: https://opendata.deepsig.io/datasets/2016.10/RML2016.10a.tar.bz2
+  version: 2016.10A
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A historical synthetic automatic-modulation-recognition dataset generated with GNU Radio, containing
+  11 analog/digital modulation classes under varying SNR.
+released:
+  year: 2016
+  notes: DeepSig identifies this as the cleaner normalized successor to RadioML 2016.04C.
+origin:
+  type: synthetic
+  notes: Synthetic complex-baseband waveforms generated with GNU Radio.
+modalities:
+- iq
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-applicable
+  regimes: []
+  bands: []
+  notes: The release contains complex-baseband synthetic waveforms rather than one RF carrier.
+environments:
+- not-applicable
+mobility:
+  type: not-applicable
+  notes: null
+temporal_structure: sequence
+formats:
+- pkl
+ground_truth:
+- modulation-label
+- snr
+scale:
+  samples: 220000
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: 220,000 examples are commonly documented for the 11-class, variable-SNR release.
+access:
+  status: registration
+  url: https://opendata.deepsig.io/datasets/2016.10/RML2016.10a.tar.bz2
+  notes: DeepSig currently screens historical dataset downloads through a contact-information form.
+license:
+  status: known
+  name: CC BY-NC-SA 4.0
+  url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  notes: DeepSig states that datasets on its public dataset page use CC BY-NC-SA 4.0.
+official_resources:
+  homepage: null
+  repository: https://github.com/radioML/dataset
+  documentation: https://www.deepsig.ai/datasets/
+  loader: null
+references:
+- id: deepsig-page
+  type: official-page
+  title: DeepSig Datasets
+  url: https://www.deepsig.ai/datasets/
+  doi: null
+  notes: null
+tasks:
+- task: modulation-recognition
+  scope: Classify one of 11 modulation classes from complex I/Q samples across varying SNR.
+  inputs:
+  - iq
+  targets:
+  - modulation-label
+  evidence:
+  - deepsig-page
+  notes: null
+  context:
+    environments:
+    - not-applicable
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: DeepSig explicitly marks this as an old academic dataset with known errata and recommends newer real over-the-air
+    data for new work.
+  evidence:
+  - deepsig-page
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

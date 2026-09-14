@@ -1,0 +1,101 @@
+id: wifi-csi-rss-presence-movement
+name: Wi-Fi CSI and RSS Human Presence and Movement Dataset
+aliases:
+- A Wi-Fi Channel State Information (CSI) and Received Signal Strength (RSS) data-set for human presence and movement
+  detection
+identity:
+  canonical_url: https://zenodo.org/records/3677366
+  version: 0.2.2
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.3677366
+status: verified
+resource_type: dataset
+description: A 28 GB measured Wi-Fi dataset containing antenna-wise CSI and RSS traces with annotations for human
+  presence and movement sensing.
+released:
+  year: 2020
+  notes: Version 0.2.2 was published on 19 February 2020.
+origin:
+  type: measurement
+  notes: CSI and RSS were captured using the Intel CSI Tool in indoor room experiments.
+modalities:
+- wifi-csi
+- rss
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: A single catalogue-wide carrier/band was not verified from the Zenodo landing page.
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: Human movement/presence is the sensing subject rather than transmitter/receiver mobility.
+temporal_structure: sequence
+formats:
+- json
+- csv
+ground_truth:
+- presence-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 28.0
+  notes: Zenodo distributes paired compressed CSI JSON and RSS CSV files plus annotations.
+access:
+  status: open
+  url: https://zenodo.org/records/3677366
+  notes: All dataset files are publicly downloadable from Zenodo.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The current Zenodo record does not expose a populated license value.
+official_resources:
+  homepage: https://zenodo.org/records/3677366
+  repository: null
+  documentation: https://zenodo.org/records/3677366
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: A Wi-Fi CSI and RSS data-set for human presence and movement detection
+  url: https://zenodo.org/records/3677366
+  doi: 10.5281/zenodo.3677366
+  notes: null
+tasks:
+- task: presence-detection
+  scope: Detect human presence and movement state from annotated Wi-Fi CSI and/or RSS traces.
+  inputs:
+  - wifi-csi
+  - rss
+  targets:
+  - presence-label
+  evidence:
+  - zenodo-record
+  notes: The release title and metadata explicitly identify human presence and movement detection as the sensing
+    use.
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: The accompanying publication cited by the record uses RSS for movement detection; the Zenodo release also
+    provides CSI, but experiments should state which representation is used.
+  evidence:
+  - zenodo-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

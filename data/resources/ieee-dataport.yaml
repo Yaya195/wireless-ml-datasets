@@ -1,0 +1,25 @@
+id: ieee-dataport
+name: IEEE DataPort
+resource_kind: data-portal
+description: IEEE research-data platform for searching, storing, and managing curated
+  datasets across engineering and scientific categories, including communications,
+  wireless networking, signal processing, and AI.
+provider: IEEE
+url: https://ieee-dataport.org/
+wireless_relevance: general
+access: registration
+collections: []
+search_guidance: Search with the wireless task name plus modality or technology, then
+  verify each candidate against its dataset paper/documentation before adding it to
+  this catalogue.
+task_links: []
+references:
+- id: official
+  title: IEEE DataPort — Search, Store, & Manage Research Data
+  url: https://info.ieee-dataport.org/home
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

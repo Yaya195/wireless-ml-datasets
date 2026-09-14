@@ -1,0 +1,109 @@
+id: mobrffi
+name: MobRFFI
+aliases:
+- 'MobRFFI: A WiFi RF Fingerprinting Dataset with Granular Multi-Receiver Signal Capture'
+identity:
+  canonical_url: https://doi.org/10.21227/XYAV-RH42
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/XYAV-RH42
+status: verified
+resource_type: dataset
+description: A multi-receiver Wi-Fi RF-fingerprinting dataset collected on the ORBIT testbed across separate days
+  for device fingerprinting and re-identification under receiver and temporal variation.
+released:
+  year: 2025
+  notes: Indexed as an IEEE DataPort dataset in 2025; underlying captures were collected in 2024.
+origin:
+  type: measurement
+  notes: Real Wi-Fi transmissions captured simultaneously by multiple USRP receivers.
+modalities:
+- iq
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 2.462 GHz Wi-Fi channel 11
+    center_ghz: 2.462
+    min_ghz: null
+    max_ghz: null
+  notes: The associated work documents 25 Msps captures on Wi-Fi channel 11.
+environments:
+- laboratory
+mobility:
+  type: static
+  notes: Testbed transmitters/receivers are used to study multi-receiver and multi-day domain variation.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- device-id
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The release spans multiple simultaneous receivers and separate collection days; a reduced onboarding subset
+    is also provided.
+access:
+  status: restricted
+  url: https://doi.org/10.21227/XYAV-RH42
+  notes: IEEE DataPort lists the artifact as non-open; subscription/institutional access may be required.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No public dataset license was confirmed.
+official_resources:
+  homepage: https://arxiv.org/abs/2503.02156
+  repository: null
+  documentation: https://arxiv.org/abs/2503.02156
+  loader: null
+references:
+- id: dataport
+  type: data-host
+  title: 'MobRFFI: A WiFi RF Fingerprinting Dataset with Granular Multi-Receiver Signal Capture'
+  url: https://doi.org/10.21227/XYAV-RH42
+  doi: 10.21227/XYAV-RH42
+  notes: null
+- id: paper
+  type: paper
+  title: 'MobRFFI: Non-cooperative Device Re-identification for Mobility Intelligence'
+  url: https://arxiv.org/abs/2503.02156
+  doi: 10.48550/arXiv.2503.02156
+  notes: null
+tasks:
+- task: rf-fingerprinting
+  scope: Fingerprint and re-identify Wi-Fi emitters across multiple receivers and collection days.
+  inputs:
+  - iq
+  targets:
+  - device-id
+  evidence:
+  - dataport
+  - paper
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: static
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The full DataPort artifact is large and non-open, which may limit accessibility despite the public paper
+    and tooling.
+  evidence:
+  - dataport
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

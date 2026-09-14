@@ -1,0 +1,30 @@
+id: telemath
+name: TeleMath
+resource_kind: benchmark-dataset
+description: A 500-problem benchmark for numerical mathematical reasoning in telecommunications,
+  spanning signal processing, networking, optimization, and performance-analysis topics.
+provider: NetOp Team, Huawei Paris Research Center
+url: https://huggingface.co/datasets/netop/TeleMath
+wireless_relevance: telecom-specific
+access: open
+collections:
+- llm-foundation-model-resources
+search_guidance: Use for telecom mathematical reasoning; it is a model-evaluation
+  benchmark, not a raw wireless measurement dataset.
+task_links: []
+references:
+- id: official
+  title: TeleMath — Hugging Face Dataset
+  url: https://huggingface.co/datasets/netop/TeleMath
+  doi: null
+  notes: null
+- id: paper
+  title: 'TeleMath: A Benchmark for Large Language Models in Telecom Mathematical
+    Problem Solving'
+  url: https://arxiv.org/abs/2506.10674
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

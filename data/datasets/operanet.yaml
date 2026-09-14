@@ -1,0 +1,146 @@
+id: operanet
+name: OPERAnet
+aliases:
+- OPERAnet Multimodal Activity Recognition Dataset
+identity:
+  canonical_url: https://springernature.figshare.com/collections/A_Comprehensive_Multimodal_Activity_Recognition_Dataset_Acquired_from_Radio_Frequency_and_Vision-Based_Sensors/5551209
+  version: '1'
+  external_ids:
+  - scheme: doi
+    value: 10.6084/m9.figshare.c.5551209.v1
+status: verified
+resource_type: dataset
+description: A synchronized multimodal passive-sensing dataset with Wi-Fi CSI, UWB, passive Wi-Fi radar, and vision/infrared
+  measurements from six participants performing six activities across two indoor rooms.
+released:
+  year: 2022
+  notes: The Figshare collection was publicly posted in 2022.
+origin:
+  type: measurement
+  notes: Real synchronized RF and vision/infrared measurements collected in two rooms.
+modalities:
+- wifi-csi
+- cir
+- position
+technologies:
+- wifi
+- uwb
+generation_contexts: []
+radio_configurations:
+- mimo
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: Wi-Fi and UWB sensing modalities use different radio configurations.
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: Human activity is the sensing target.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- activity-label
+- position
+scale:
+  samples: null
+  sequences: null
+  scenarios: 2
+  participants: 6
+  devices: null
+  sites: null
+  duration_hours: 8.0
+  size_gb: null
+  notes: Approximately eight hours of annotated measurements across two rooms and six activities.
+access:
+  status: open
+  url: https://springernature.figshare.com/collections/A_Comprehensive_Multimodal_Activity_Recognition_Dataset_Acquired_from_Radio_Frequency_and_Vision-Based_Sensors/5551209
+  notes: The collection and loading/analysis scripts are publicly available through Figshare.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A collection-wide dataset license was not independently confirmed from the verified landing page.
+official_resources:
+  homepage: https://springernature.figshare.com/collections/A_Comprehensive_Multimodal_Activity_Recognition_Dataset_Acquired_from_Radio_Frequency_and_Vision-Based_Sensors/5551209
+  repository: null
+  documentation: https://doi.org/10.1038/s41597-022-01573-2
+  loader: null
+references:
+- id: figshare
+  type: data-host
+  title: A Comprehensive Multimodal Activity Recognition Dataset Acquired from Radio Frequency and Vision-Based
+    Sensors
+  url: https://springernature.figshare.com/collections/A_Comprehensive_Multimodal_Activity_Recognition_Dataset_Acquired_from_Radio_Frequency_and_Vision-Based_Sensors/5551209
+  doi: 10.6084/m9.figshare.c.5551209.v1
+  notes: null
+- id: descriptor
+  type: paper
+  title: OPERAnet, a multimodal activity recognition dataset acquired from radio frequency and vision-based sensors
+  url: https://doi.org/10.1038/s41597-022-01573-2
+  doi: 10.1038/s41597-022-01573-2
+  notes: null
+tasks:
+- task: human-activity-recognition
+  scope: Recognize six indoor human activities from Wi-Fi CSI and/or UWB channel measurements.
+  inputs:
+  - wifi-csi
+  - cir
+  targets:
+  - activity-label
+  evidence:
+  - figshare
+  - descriptor
+  notes: The synchronized collection also contains dedicated CSI localization experiments, represented separately
+    below.
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+- task: device-free-localization
+  scope: Localize a passive human target from dedicated Wi-Fi CSI experiments with static positions and short walking
+    trajectories.
+  inputs:
+  - wifi-csi
+  targets:
+  - position
+  evidence:
+  - descriptor
+  notes: Experiments exp035–exp048 are explicitly described as device-free static/dynamic target-localization experiments
+    with UWB-tag ground truth.
+  context:
+    environments:
+    - indoor
+    mobility: mixed
+    frequency_regimes:
+    - sub-6-ghz
+- task: localization
+  scope: Device-to-device CSI localization using dedicated transmitter/receiver placement experiments with ground-truth
+    coordinates.
+  inputs:
+  - wifi-csi
+  targets:
+  - position
+  evidence:
+  - descriptor
+  notes: Experiments exp049–exp054 are explicitly documented as device-to-device localization experiments.
+  context:
+    environments:
+    - indoor
+    mobility: static
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The six-participant/two-room collection is multimodal; wireless-only studies should state which RF modality
+    is used.
+  evidence:
+  - figshare
+  - descriptor
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

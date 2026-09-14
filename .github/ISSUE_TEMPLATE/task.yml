@@ -1,0 +1,52 @@
+name: Propose a wireless task
+description: Propose a missing wireless research task for the task ontology.
+title: "[Task]: "
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Task name
+      placeholder: Example wireless research task
+    validations:
+      required: true
+
+  - type: textarea
+    id: definition
+    attributes:
+      label: Task definition
+      description: Define the wireless research problem independently of any specific ML model.
+    validations:
+      required: true
+
+  - type: textarea
+    id: distinction
+    attributes:
+      label: Why existing tasks are insufficient
+      description: Explain why this is not already covered by an existing task or alias.
+    validations:
+      required: true
+
+  - type: textarea
+    id: datasets
+    attributes:
+      label: Reusable dataset examples
+      description: Link at least one real reusable dataset that supports the proposed task.
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Task evidence
+      description: Provide papers, documentation, or dataset pages showing the task is a recognizable wireless research problem.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: This is a wireless research task, not a generic ML formulation such as classification, regression, or clustering.
+          required: true

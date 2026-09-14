@@ -1,0 +1,25 @@
+id: openml
+name: OpenML
+resource_kind: data-portal
+description: An open machine-learning platform for datasets, standardized tasks, experiment
+  runs, and curated benchmark suites with APIs, metadata, and reproducible train-test
+  splits.
+provider: OpenML
+url: https://www.openml.org/
+wireless_relevance: general
+access: mixed
+collections: []
+search_guidance: Useful when a wireless dataset has been mirrored into OpenML or when
+  standardized ML task definitions and benchmark suites are more important than domain-specific
+  hosting.
+task_links: []
+references:
+- id: official
+  title: OpenML Benchmarking Suites
+  url: https://docs.openml.org/benchmark/
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

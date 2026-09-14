@@ -1,0 +1,11 @@
+id: network-anomaly-detection
+name: "Network Anomaly Detection"
+category: network-intelligence
+description: >-
+  Detect anomalous behavior, measurements, events, or operating conditions in wireless networks from network data.
+aliases:
+  - "wireless network anomaly detection"
+status: active
+related_tasks:
+  - network-fault-diagnosis
+notes: null

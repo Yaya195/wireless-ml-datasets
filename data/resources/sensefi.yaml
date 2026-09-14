@@ -1,0 +1,34 @@
+id: sensefi
+name: SenseFi
+resource_kind: benchmark-framework
+description: An open-source PyTorch benchmark and library for Wi-Fi CSI human sensing
+  that standardizes training and evaluation across multiple public CSI datasets and
+  model families.
+provider: SenseFi authors
+url: https://github.com/xyanchen/WiFi-CSI-Sensing-Benchmark
+wireless_relevance: wireless-specific
+access: open
+collections: []
+search_guidance: Use when you want a reproducible Wi-Fi CSI sensing benchmark pipeline
+  rather than another dataset list.
+task_links:
+- task: human-activity-recognition
+  scope: Benchmark deep-learning models for Wi-Fi CSI human activity recognition across
+    public sensing datasets.
+  evidence:
+  - official
+references:
+- id: official
+  title: SenseFi — Official Repository
+  url: https://github.com/xyanchen/WiFi-CSI-Sensing-Benchmark
+  doi: null
+  notes: null
+- id: paper
+  title: 'SenseFi: A Library and Benchmark on Deep-Learning-Empowered WiFi Human Sensing'
+  url: https://doi.org/10.1016/j.patter.2023.100703
+  doi: 10.1016/j.patter.2023.100703
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

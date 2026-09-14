@@ -1,0 +1,91 @@
+id: radioml-2018-01a
+name: RadioML 2018.01A
+aliases:
+- RADIOML 2018.01A
+identity:
+  canonical_url: https://opendata.deepsig.io/datasets/2018.01/2018.01.OSC.0001_1024x2M.h5.tar.gz
+  version: 2018.01A
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A historical DeepSig synthetic radio dataset containing complex I/Q examples across 24 digital and
+  analog modulation types with simulated channel effects.
+released:
+  year: 2017
+  notes: The current DeepSig dataset page labels it RADIOML 2018.01A and states that it is from 2017.
+origin:
+  type: synthetic
+  notes: Generated data with simulated channel effects rather than over-the-air measurements.
+modalities:
+- iq
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-applicable
+  bands: []
+  notes: The public dataset is represented as complex baseband I/Q examples rather than a site-specific carrier-frequency
+    dataset.
+  regimes: []
+environments:
+- not-applicable
+mobility:
+  type: not-applicable
+  notes: null
+temporal_structure: sequence
+formats:
+- hdf5
+ground_truth:
+- modulation-label
+- snr
+scale:
+  samples: 2000000
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Each example contains 1,024 complex samples; 24 digital and analog modulation types are represented.
+access:
+  status: registration
+  url: https://opendata.deepsig.io/datasets/2018.01/2018.01.OSC.0001_1024x2M.h5.tar.gz
+  notes: DeepSig currently screens historical dataset downloads through a contact-information form.
+license:
+  status: known
+  name: CC BY-NC-SA 4.0
+  url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  notes: DeepSig states that all datasets on its public datasets page use this license.
+official_resources:
+  homepage: null
+  repository: null
+  documentation: https://www.deepsig.ai/datasets/
+  loader: null
+references:
+- id: deepsig-datasets
+  type: official-page
+  title: DeepSig Datasets
+  url: https://www.deepsig.ai/datasets/
+  doi: null
+  notes: null
+tasks:
+- task: modulation-recognition
+  scope: Classification of the modulation type from complex I/Q signal examples.
+  inputs:
+  - iq
+  targets:
+  - modulation-label
+  evidence:
+  - deepsig-datasets
+  notes: null
+caveats:
+- text: DeepSig now labels these open datasets as historical, notes known errata, and does not recommend them as
+    current supported data.
+  evidence:
+  - deepsig-datasets
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: true

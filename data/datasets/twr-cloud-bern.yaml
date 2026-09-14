@@ -1,0 +1,103 @@
+id: twr-cloud-bern
+name: TWR-CLOUD-Bern
+aliases:
+- Two-Way-Ranging-based Cooperative Localization with an Open UWB Dataset from Bern-University
+identity:
+  canonical_url: https://zenodo.org/records/20277908
+  version: '5'
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.20277908
+status: verified
+resource_type: dataset
+description: An open UWB two-way-ranging dataset for cooperative localization, collected with 40 Qorvo DWM3001C
+  nodes over 12 scans at the University of Bern and distributed with official evaluation scenarios and scoring tools.
+released:
+  year: 2026
+  notes: Version 5 was published on 19 May 2026; earlier versions of the dataset were released previously.
+origin:
+  type: measurement
+  notes: Real node-to-node UWB time-of-flight/range measurements with ground-truth node coordinates.
+modalities:
+- range
+- position
+technologies:
+- uwb
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The verified catalogue sources do not establish one collection-wide channel/frequency value.
+environments:
+- indoor
+- campus
+mobility:
+  type: unknown
+  notes: The dataset is organized into scans and evaluation scenarios; no single mobility label is assigned at catalogue
+    level.
+temporal_structure: unknown
+formats:
+- json
+- pkl
+- las
+ground_truth:
+- position
+scale:
+  samples: null
+  sequences: null
+  scenarios: 12
+  participants: null
+  devices: 40
+  sites: 1
+  duration_hours: null
+  size_gb: 29.8
+  notes: Twelve scans cover more than 500 m²; eleven support model development and one is held out for evaluation.
+access:
+  status: open
+  url: https://zenodo.org/records/20277908
+  notes: Files, parsers, benchmark scenarios, and the official scorer are directly downloadable from Zenodo.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No explicit dataset license was confirmed in the verified record metadata.
+official_resources:
+  homepage: https://twr-cloud.inf.unibe.ch
+  repository: null
+  documentation: https://twr-cloud.inf.unibe.ch
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: TWR-CLOUD-Bern, Version 5
+  url: https://zenodo.org/records/20277908
+  doi: 10.5281/zenodo.20277908
+  notes: null
+tasks:
+- task: cooperative-localization
+  scope: Estimate node positions from inter-node UWB two-way-ranging measurements under anchor-free, anchor-aided,
+    or anchor-only evaluation modes.
+  inputs:
+  - range
+  targets:
+  - position
+  evidence:
+  - zenodo-record
+  notes: null
+  context:
+    environments:
+    - indoor
+    - campus
+    mobility: unknown
+    frequency_regimes: []
+caveats:
+- text: The release includes several evaluation modes and an official held-out scan; results should state the selected
+    scenario/mode rather than treating all scans as one interchangeable split.
+  evidence:
+  - zenodo-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

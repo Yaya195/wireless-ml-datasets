@@ -1,0 +1,19 @@
+id: channel-charting
+name: Channel Charting
+category: channel-csi
+description: Learn a low-dimensional representation of channel observations that preserves relevant radio-geometric
+  neighborhood structure.
+aliases: []
+status: active
+related_tasks:
+- localization
+- radio-map-estimation
+notes: null
+comparison_fields:
+- inputs
+- evaluation-reference
+- origin
+- frequency-regimes
+- environments
+- mobility
+- access

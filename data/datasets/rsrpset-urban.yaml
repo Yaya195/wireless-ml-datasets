@@ -1,0 +1,108 @@
+id: rsrpset-urban
+name: RSRPSet_urban
+aliases:
+- 'RSRPSet urban: Radio map in dense urban'
+identity:
+  canonical_url: https://doi.org/10.21227/VMW5-C226
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/VMW5-C226
+status: verified
+resource_type: dataset
+description: A measured dense-urban RSRP radio-map dataset derived from Huawei-provided field measurements, with
+  hundreds of thousands of receiving locations across roughly 180 communication cells.
+released:
+  year: 2022
+  notes: Published on IEEE DataPort in March 2022.
+origin:
+  type: measurement
+  notes: Real-world RSRP measurements supplied by Huawei Technologies and structured into cell-level radio maps.
+modalities:
+- radio-map
+- position
+- rss
+technologies: []
+generation_contexts:
+- 4g
+- 5g
+radio_configurations: []
+frequency:
+  status: varies
+  regimes: []
+  bands: []
+  notes: The measured urban cells span multiple radio conditions; one catalogue-wide carrier is not assigned.
+environments:
+- outdoor
+- urban
+mobility:
+  type: not-applicable
+  notes: Static spatial RSRP measurements.
+temporal_structure: snapshot
+formats: []
+ground_truth:
+- radio-map
+scale:
+  samples: 415244
+  sequences: null
+  scenarios: 181
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Published summaries report 415,244 receiving locations in approximately 181 dense urban cells.
+access:
+  status: restricted
+  url: https://doi.org/10.21227/VMW5-C226
+  notes: IEEE DataPort indexes the artifact as non-open; access may require a subscription.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No public dataset license was confirmed.
+official_resources:
+  homepage: https://github.com/ZhengSaber/Cell-Level-RSRP-Estimation
+  repository: https://github.com/ZhengSaber/Cell-Level-RSRP-Estimation
+  documentation: https://github.com/ZhengSaber/Cell-Level-RSRP-Estimation
+  loader: null
+references:
+- id: repo
+  type: repository
+  title: Cell-Level RSRP Estimation
+  url: https://github.com/ZhengSaber/Cell-Level-RSRP-Estimation
+  doi: null
+  notes: null
+- id: dataport
+  type: data-host
+  title: 'RSRPSet_urban: Radio map in dense urban'
+  url: https://doi.org/10.21227/VMW5-C226
+  doi: 10.21227/VMW5-C226
+  notes: null
+tasks:
+- task: radio-map-estimation
+  scope: Estimate dense-urban cell-level RSRP radio maps from sparse measured radio observations and spatial context.
+  inputs:
+  - radio-map
+  - position
+  targets:
+  - radio-map
+  evidence:
+  - repo
+  - dataport
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - urban
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: The resource contains measured cell-level RSRP values rather than raw PHY channel measurements.
+  evidence:
+  - repo
+  - dataport
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

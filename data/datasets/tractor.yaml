@@ -1,0 +1,112 @@
+id: tractor
+name: TRACTOR Open RAN Traffic Dataset
+aliases:
+- TRACTOR
+identity:
+  canonical_url: https://genesys-lab.org/tractor
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A public 5G/Open-RAN traffic dataset containing real smartphone packet traces and Colosseum-derived
+  O-RAN KPI logs for traffic-slice/application classification.
+released:
+  year: 2024
+  notes: Released with the IEEE ICC 2024 TRACTOR paper.
+origin:
+  type: hybrid
+  notes: Real 5G smartphone traffic is captured and then replayed/processed in an O-RAN/Colosseum setup to collect
+    KPIs.
+modalities:
+- packet-trace
+- network-kpi
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The classification resource is represented at packet/KPI level rather than by one RF carrier.
+environments:
+- indoor
+- outdoor
+- campus
+- residential
+mobility:
+  type: mixed
+  notes: Traffic traces include stationary and walking captures across multiple locations.
+temporal_structure: sequence
+formats:
+- pcap
+- csv
+ground_truth:
+- application-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: 7.45
+  size_gb: null
+  notes: The official description reports 447 minutes of real 5G user traffic.
+access:
+  status: open
+  url: https://github.com/genesys-neu/TRACTOR
+  notes: Raw 5G traces and O-RAN KPI logs are in the public repository.
+license:
+  status: known
+  name: MIT License
+  url: https://opensource.org/license/mit
+  notes: The public repository is MIT licensed.
+official_resources:
+  homepage: https://genesys-lab.org/tractor
+  repository: https://github.com/genesys-neu/TRACTOR
+  documentation: https://genesys-lab.org/tractor
+  loader: null
+references:
+- id: official-page
+  type: official-page
+  title: 'TRACTOR: Traffic Analysis and Classification Tool for Open RAN'
+  url: https://genesys-lab.org/tractor
+  doi: null
+  notes: null
+- id: repo
+  type: repository
+  title: TRACTOR repository
+  url: https://github.com/genesys-neu/TRACTOR
+  doi: null
+  notes: null
+tasks:
+- task: traffic-classification
+  scope: Classify network traffic/slice type from packet traces or O-RAN KPI time series.
+  inputs:
+  - packet-trace
+  - network-kpi
+  targets:
+  - application-label
+  evidence:
+  - official-page
+  - repo
+  notes: null
+  context:
+    environments:
+    - indoor
+    - outdoor
+    - campus
+    - residential
+    mobility: mixed
+    frequency_regimes: []
+caveats:
+- text: TRACTOR exposes both packet-level and KPI-level representations; experiments should state which processing
+    stage is used.
+  evidence:
+  - official-page
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

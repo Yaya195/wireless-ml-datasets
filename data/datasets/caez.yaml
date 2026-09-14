@@ -1,0 +1,157 @@
+id: caez
+name: CAEZ
+aliases:
+- CSI Acquisition at ETH Zurich
+identity:
+  canonical_url: https://iip.ethz.ch/datasets/caez.html
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: A real-world CSI collection from ETH Zurich 5G NR and distributed Wi-Fi testbeds, including position-tagged
+  indoor, outdoor, hallway, and multi-campaign measurements.
+released:
+  year: 2024
+  notes: The CAEZ-WIFI testbed publication appeared in 2024; CAEZ-5G and additional campaigns were released subsequently.
+origin:
+  type: measurement
+  notes: Real CSI measurements from 5G NR and Wi-Fi testbeds at ETH Zurich.
+modalities:
+- channel-matrix
+- position
+technologies:
+- wifi
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations:
+- mimo
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 3.45 GHz (5G NR n78)
+    center_ghz: 3.45
+    min_ghz: null
+    max_ghz: null
+  - label: 5 GHz Wi-Fi
+    center_ghz: null
+    min_ghz: null
+    max_ghz: null
+  notes: CAEZ-5G uses 100 MHz of the Swiss private 5G n78 band centered at 3.45 GHz; CAEZ-WIFI uses active 5 GHz
+    Wi-Fi networks.
+environments:
+- indoor
+- outdoor
+- campus
+- office
+mobility:
+  type: mobile
+  notes: Most position-tagged campaigns use robot-mounted UEs following controlled or waypoint trajectories.
+temporal_structure: trajectory
+formats:
+- tar-zst
+- tar-gz
+ground_truth:
+- position
+- device-id
+- timestamp
+scale:
+  samples: null
+  sequences: null
+  scenarios: 6
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The official collection currently lists four CAEZ-5G datasets and two CAEZ-WIFI datasets.
+access:
+  status: open
+  url: https://iip.ethz.ch/datasets/caez.html
+  notes: Direct download links are provided on the official CAEZ page.
+license:
+  status: known
+  name: CAEZ Dataset License v1.0
+  url: https://iip.ethz.ch/datasets/caez/caez-dataset-license.html
+  notes: Permits commercial and non-commercial use and derivative works with attribution; redistribution of the
+    original dataset is prohibited.
+official_resources:
+  homepage: https://iip.ethz.ch/datasets/caez.html
+  repository: null
+  documentation: https://iip.ethz.ch/datasets/caez.html
+  loader: null
+references:
+- id: official-caez
+  type: official-page
+  title: 'CAEZ: CSI Acquisition at ETH Zurich'
+  url: https://iip.ethz.ch/datasets/caez.html
+  doi: null
+  notes: null
+- id: caez-5g-paper
+  type: paper
+  title: CSI-Based User Positioning, Channel Charting, and Device Classification with an NVIDIA 5G Testbed
+  url: https://arxiv.org/abs/2512.10809
+  doi: null
+  notes: null
+- id: caez-wifi-paper
+  type: paper
+  title: A Software-Defined and Distributed Wi-Fi Channel-State Information Acquisition Testbed
+  url: https://arxiv.org/abs/2412.07588
+  doi: null
+  notes: null
+tasks:
+- task: localization
+  scope: Multiple CAEZ-5G and CAEZ-WIFI campaigns provide CSI aligned with ground-truth UE positions for neural
+    positioning.
+  inputs:
+  - channel-matrix
+  targets:
+  - position
+  evidence:
+  - official-caez
+  - caez-5g-paper
+  - caez-wifi-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - outdoor
+    - campus
+    - office
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+- task: channel-charting
+  scope: CAEZ explicitly supports channel charting, including charting in real-world coordinates for position-tagged
+    CSI.
+  inputs:
+  - channel-matrix
+  targets: []
+  evidence:
+  - official-caez
+  - caez-5g-paper
+  notes: Position labels are geometric reference/evaluation information for the learned chart; position is not an
+    intrinsic channel-charting output.
+  context:
+    environments:
+    - indoor
+    - outdoor
+    - campus
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+  evaluation_reference:
+  - position
+caveats:
+- text: CAEZ combines distinct 5G NR and Wi-Fi campaigns with different hardware, bandwidths, positioning systems,
+    and acquisition protocols; users should select the appropriate sub-dataset rather than treating the collection
+    as homogeneous.
+  evidence:
+  - official-caez
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: true

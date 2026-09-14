@@ -1,0 +1,109 @@
+id: exposing-the-csi
+name: Exposing the CSI
+aliases:
+- Exposing the CSI Dataset
+identity:
+  canonical_url: https://github.com/ansresearch/exposing-the-csi
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: A measured 802.11ax CSI activity-recognition dataset with 12 activities, seven scenarios, three participants/environments,
+  three synchronized Wi-Fi receivers, and anonymized video-derived reference keypoints.
+released:
+  year: 2023
+  notes: Released with the IEEE PerCom 2023 study.
+origin:
+  type: measurement
+  notes: Real indoor CSI measurements collected with 160 MHz 802.11ax devices and multiple synchronized receivers.
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations:
+- mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The verified project page states 160 MHz 802.11ax acquisition but no single catalogue-wide center frequency.
+environments:
+- indoor
+- laboratory
+- office
+mobility:
+  type: not-applicable
+  notes: Human activities are the sensing target rather than network-node mobility.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- activity-label
+- pose
+scale:
+  samples: null
+  sequences: null
+  scenarios: 7
+  participants: 3
+  devices: null
+  sites: null
+  duration_hours: 1.87
+  size_gb: 77.0
+  notes: Each scenario contains 12 activities recorded for 80 seconds; scenario archives are approximately 11 GB
+    each.
+access:
+  status: open
+  url: https://github.com/ansresearch/exposing-the-csi
+  notes: The official repository links seven scenario-specific Zenodo records.
+license:
+  status: varies
+  name: null
+  url: null
+  notes: Scenario-specific Zenodo releases should be checked individually; collection-wide licensing is not assumed
+    uniform.
+official_resources:
+  homepage: https://github.com/ansresearch/exposing-the-csi
+  repository: https://github.com/ansresearch/exposing-the-csi
+  documentation: https://github.com/ansresearch/exposing-the-csi
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: Exposing the CSI dataset and resources
+  url: https://github.com/ansresearch/exposing-the-csi
+  doi: null
+  notes: null
+- id: percom-paper
+  type: paper
+  title: 'Exposing the CSI: A Systematic Investigation of CSI-based Wi-Fi Sensing Capabilities and Limitations'
+  url: https://doi.org/10.1109/PERCOM56429.2023.10099368
+  doi: 10.1109/PERCOM56429.2023.10099368
+  notes: null
+tasks:
+- task: human-activity-recognition
+  scope: Recognize 12 indoor human activities from multi-receiver 802.11ax CSI sequences.
+  inputs:
+  - wifi-csi
+  targets:
+  - activity-label
+  evidence:
+  - official-repo
+  - percom-paper
+  notes: Reference video keypoints are provided as auxiliary ground truth, but this catalogue mapping does not relabel
+    the dataset as a wireless pose-estimation benchmark.
+  context:
+    environments:
+    - indoor
+    - laboratory
+    - office
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: Seven scenarios differ by participant, environment, and collection day; cross-scenario evaluation should
+    preserve those domain-shift distinctions.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,11 @@
+id: device-free-localization
+name: "Device-Free Localization"
+category: localization-mapping
+description: >-
+  Estimate the location of a person or object that does not carry or actively operate the wireless device producing the measurements.
+aliases: []
+status: active
+related_tasks:
+  - localization
+  - presence-detection
+notes: null

@@ -1,0 +1,103 @@
+id: ku-leuven-26ghz-blockage
+name: 26 GHz Communication Channel Dataset for Domain Shift Invariant Blockage Prediction
+aliases: []
+identity:
+  canonical_url: https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/UBHZKF
+  version: '2.0'
+  external_ids:
+  - scheme: doi
+    value: 10.48804/UBHZKF
+status: verified
+resource_type: dataset
+description: A measured 26 GHz OFDM CSI dataset covering multiple human blockage activities, collected on the KU
+  Leuven mmWave/Massive-MIMO testbed for blockage prediction and domain-shift research.
+released:
+  year: 2023
+  notes: 'KU Leuven RDR publication date: 7 February 2023.'
+origin:
+  type: measurement
+  notes: Real 26 GHz communication-channel CSI under controlled human-blockage activities.
+modalities:
+- channel-matrix
+technologies: []
+generation_contexts:
+- 5g
+radio_configurations:
+- phased-array
+frequency:
+  status: known
+  regimes:
+  - mmwave
+  bands:
+  - label: 26 GHz
+    center_ghz: 26.0
+    min_ghz: null
+    max_ghz: null
+  notes: null
+environments:
+- indoor
+- laboratory
+mobility:
+  type: not-applicable
+  notes: Human blockage activity is the target phenomenon.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- blockage-status
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 12.7
+  notes: KU Leuven RDR reports a 12.7 GB downloadable dataset.
+access:
+  status: open
+  url: https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/UBHZKF
+  notes: The dataset is publicly accessible through KU Leuven RDR.
+license:
+  status: known
+  name: CC BY-NC 4.0
+  url: https://creativecommons.org/licenses/by-nc/4.0/
+  notes: null
+official_resources:
+  homepage: https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/UBHZKF
+  repository: null
+  documentation: https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/UBHZKF
+  loader: null
+references:
+- id: rdr-record
+  type: data-host
+  title: 26 GHz Communication Channel Dataset for Domain Shift Invariant Blockage Prediction
+  url: https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/UBHZKF
+  doi: 10.48804/UBHZKF
+  notes: null
+tasks:
+- task: blockage-prediction
+  scope: Predict human-induced mmWave blockage conditions from measured 26 GHz OFDM channel-state information.
+  inputs:
+  - channel-matrix
+  targets:
+  - blockage-status
+  evidence:
+  - rdr-record
+  notes: null
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes:
+    - mmwave
+caveats:
+- text: The measurements focus on controlled human blockage in one mmWave testbed; cross-environment and cross-radio
+    generalization remain separate questions.
+  evidence:
+  - rdr-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

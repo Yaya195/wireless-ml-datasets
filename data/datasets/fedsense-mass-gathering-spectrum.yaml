@@ -1,0 +1,110 @@
+id: fedsense-mass-gathering-spectrum
+name: FedSENSE Mass-Gathering RF Spectrum Dataset
+aliases:
+- A Real-World Multi-Band RF Dataset from a Mass-Gathering Event
+identity:
+  canonical_url: https://doi.org/10.21227/F2RV-MS26
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/F2RV-MS26
+status: verified
+resource_type: dataset
+description: A real multi-band RF spectrum-sensing dataset recorded during a large Montréal fireworks event, with
+  92,843 labeled frames across seven bands and raw I/Q for selected bands.
+released:
+  year: 2026
+  notes: Recorded on 6 August 2026 and released through IEEE DataPort.
+origin:
+  type: measurement
+  notes: Real RF spectrum measurements from a crowd of roughly 100,000 people; no synthetic noise/channel injection.
+modalities:
+- spectrum
+- iq
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: The acquisition sweeps 43 tiles across seven RF bands using a USRP B205mini-i.
+environments:
+- outdoor
+- urban
+mobility:
+  type: not-applicable
+  notes: Fixed receiver performs tiled spectrum monitoring.
+temporal_structure: sequence
+formats:
+- sigmf
+- hdf5
+- mat
+ground_truth:
+- spectrum-occupancy
+scale:
+  samples: 92843
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: 0.85
+  size_gb: null
+  notes: 51-minute event recording with 11.18% occupied-frame prior.
+access:
+  status: registration
+  url: https://doi.org/10.21227/F2RV-MS26
+  notes: IEEE DataPort release; account access may be required.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://github.com/atikmahabub42/FedSense
+  repository: https://github.com/atikmahabub42/FedSense
+  documentation: https://github.com/atikmahabub42/FedSense
+  loader: null
+references:
+- id: repo
+  type: repository
+  title: FedSENSE
+  url: https://github.com/atikmahabub42/FedSense
+  doi: null
+  notes: null
+- id: dataport
+  type: data-host
+  title: A Real-World Multi-Band RF Dataset from a Mass-Gathering Event for Spectrum Analysis Framework
+  url: https://doi.org/10.21227/F2RV-MS26
+  doi: 10.21227/F2RV-MS26
+  notes: null
+tasks:
+- task: spectrum-sensing
+  scope: Detect occupied versus unoccupied RF frames in real multi-band mass-gathering spectrum measurements.
+  inputs:
+  - spectrum
+  - iq
+  targets:
+  - spectrum-occupancy
+  evidence:
+  - repo
+  - dataport
+  notes: The authors explicitly note that occupancy labels are energy-detector proxies, not protocol-verified truth.
+  context:
+    environments:
+    - outdoor
+    - urban
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: Labels are energy-detector proxies and the corpus covers one site, one evening and one receiver; the repository
+    explicitly documents these limitations.
+  evidence:
+  - repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

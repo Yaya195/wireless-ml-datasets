@@ -1,0 +1,78 @@
+name: Suggest a dataset
+description: Suggest a reusable dataset, dataset family, or dataset collection for the catalogue.
+title: "[Dataset]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a resource. Please provide authoritative sources where possible.
+        A paper or simulator alone is not treated as a dataset unless reusable data are available.
+
+  - type: input
+    id: name
+    attributes:
+      label: Dataset name
+      placeholder: Official dataset/resource name
+    validations:
+      required: true
+
+  - type: input
+    id: official_url
+    attributes:
+      label: Official dataset or access URL
+      description: Prefer the dataset-specific official landing page, repository, DOI, or data-host record.
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Wireless research task(s)
+      description: Which wireless tasks does the resource demonstrably support?
+      placeholder: |
+        - channel estimation
+        - localization
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence for the task mapping
+      description: Link documentation, papers, challenge pages, or official examples showing the claimed uses.
+      placeholder: |
+        https://...
+        Brief explanation of what this source demonstrates.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: access
+    attributes:
+      label: Access
+      options:
+        - Open
+        - Registration required
+        - Available on request
+        - Restricted
+        - Unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: identity
+    attributes:
+      label: Identity / duplicate notes
+      description: Mention known aliases, versions, parent collections, DOI/data-host identifiers, or similar existing catalogue entries.
+      placeholder: Optional but useful for avoiding duplicate records.
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I checked the existing catalogue for the same resource or an obvious alias.
+          required: true
+        - label: The suggested task names are wireless research tasks, not generic ML formulations such as classification/regression.
+          required: true

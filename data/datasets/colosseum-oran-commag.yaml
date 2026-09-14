@@ -1,0 +1,108 @@
+id: colosseum-oran-commag
+name: Colosseum O-RAN COMMAG Dataset
+aliases: []
+identity:
+  canonical_url: https://github.com/wineslab/colosseum-oran-commag-dataset
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: An O-RAN/Colosseum dataset of per-slice RAN measurements collected under different scheduling policies,
+  resource-block allocations, traffic classes, RF conditions, and UE mobility settings.
+released:
+  year: 2021
+  notes: Released with the 2021 IEEE Communications Magazine O-RAN data-driven networking study.
+origin:
+  type: hybrid
+  notes: Data were collected from experiments running cellular stacks over the Colosseum large-scale wireless network
+    emulator.
+modalities:
+- network-kpi
+- traffic
+technologies:
+- lte
+generation_contexts:
+- 4g
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The public repository describes a 3 MHz / 15-PRB experimental cellular setup but does not expose one canonical
+    RF carrier for the collection.
+environments:
+- laboratory
+mobility:
+  type: mixed
+  notes: Experiments include static UEs and slow mobility at 3 m/s.
+temporal_structure: sequence
+formats:
+- csv
+ground_truth: []
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: 40
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The documented setup includes 4 base stations, 40 UEs, 3 slices, 3 scheduler families, and multiple RBG
+    allocations.
+access:
+  status: open
+  url: https://github.com/wineslab/colosseum-oran-commag-dataset
+  notes: CSV datasets and trained example agents are included in the public GitHub repository.
+license:
+  status: known
+  name: GNU GPL v3
+  url: https://www.gnu.org/licenses/gpl-3.0.html
+  notes: The public repository includes a GPL-3.0 license file covering the released repository.
+official_resources:
+  homepage: https://github.com/wineslab/colosseum-oran-commag-dataset
+  repository: https://github.com/wineslab/colosseum-oran-commag-dataset
+  documentation: https://github.com/wineslab/colosseum-oran-commag-dataset
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: Colosseum O-RAN COMMAG Dataset
+  url: https://github.com/wineslab/colosseum-oran-commag-dataset
+  doi: null
+  notes: null
+- id: commag-paper
+  type: paper
+  title: Intelligence and Learning in O-RAN for Data-driven NextG Cellular Networks
+  url: https://ieeexplore.ieee.org/document/9627832
+  doi: 10.1109/MCOM.101.2001120
+  notes: null
+tasks:
+- task: resource-allocation
+  scope: Learn or evaluate dynamic per-slice radio-resource decisions from RAN state under varying scheduler and
+    RBG configurations.
+  inputs:
+  - network-kpi
+  - traffic
+  targets: []
+  evidence:
+  - official-repo
+  - commag-paper
+  notes: The released PPO agents use RAN measurements to select actions that optimize slice-specific throughput
+    or latency objectives.
+  context:
+    environments:
+    - laboratory
+    mobility: mixed
+    frequency_regimes: []
+caveats:
+- text: The dataset is produced on the Colosseum wireless network emulator; it provides controlled, repeatable RAN
+    experiments but is not equivalent to a commercial-network field trace.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: true

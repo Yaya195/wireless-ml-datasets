@@ -1,0 +1,144 @@
+id: uwb-noncooperative-contextual-sensing
+name: UWB Non-Cooperative Contextual Sensing Dataset
+aliases:
+- A Comprehensive Ultra-Wideband (UWB) Dataset for Non-Cooperative Contextual Sensing
+identity:
+  canonical_url: https://figshare.com/collections/A_Comprehensive_Ultra-Wideband_UWB_Dataset_for_Non-Cooperative_Contextual_Sensing/6078021
+  version: '1'
+  external_ids:
+  - scheme: doi
+    value: 10.6084/m9.figshare.c.6078021.v1
+status: verified
+resource_type: dataset
+description: A measured residential UWB CIR dataset for passive/device-free localization and human activity recognition,
+  with background/no-target data, activity labels, and ground-truth target coordinates.
+released:
+  year: 2022
+  notes: The Figshare collection was posted on 21 October 2022.
+origin:
+  type: measurement
+  notes: Real multistatic UWB CIR measurements collected in four furnished residential rooms and a corridor.
+modalities:
+- cir
+- position
+technologies:
+- uwb
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The catalogue does not assign a single band without carrying over hardware-specific configuration details
+    from the descriptor.
+environments:
+- indoor
+- residential
+mobility:
+  type: not-applicable
+  notes: The UWB nodes are fixed; human target motion is the sensing subject rather than network-node mobility.
+temporal_structure: sequence
+formats:
+- mat
+- csv
+ground_truth:
+- position
+- activity-label
+- presence-label
+scale:
+  samples: 3000000
+  sequences: null
+  scenarios: null
+  participants: 1
+  devices: null
+  sites: 1
+  duration_hours: 1.6
+  size_gb: null
+  notes: Approximately three million annotated points across walking, sitting, standing, no-activity, and empty-room/background
+    periods.
+access:
+  status: open
+  url: https://figshare.com/collections/A_Comprehensive_Ultra-Wideband_UWB_Dataset_for_Non-Cooperative_Contextual_Sensing/6078021
+  notes: MAT and CSV versions plus example MATLAB code are publicly downloadable from Figshare.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A dataset-specific license was not confirmed from the verified Figshare collection metadata.
+official_resources:
+  homepage: https://figshare.com/collections/A_Comprehensive_Ultra-Wideband_UWB_Dataset_for_Non-Cooperative_Contextual_Sensing/6078021
+  repository: null
+  documentation: https://doi.org/10.1038/s41597-022-01776-7
+  loader: null
+references:
+- id: figshare-collection
+  type: data-host
+  title: A Comprehensive Ultra-Wideband (UWB) Dataset for Non-Cooperative Contextual Sensing
+  url: https://figshare.com/collections/A_Comprehensive_Ultra-Wideband_UWB_Dataset_for_Non-Cooperative_Contextual_Sensing/6078021
+  doi: 10.6084/m9.figshare.c.6078021.v1
+  notes: null
+- id: scientific-data-paper
+  type: paper
+  title: A comprehensive ultra-wideband dataset for non-cooperative contextual sensing
+  url: https://doi.org/10.1038/s41597-022-01776-7
+  doi: 10.1038/s41597-022-01776-7
+  notes: null
+tasks:
+- task: device-free-localization
+  scope: Passively estimate the position of a human target from multistatic UWB CIR measurements.
+  inputs:
+  - cir
+  targets:
+  - position
+  evidence:
+  - figshare-collection
+  - scientific-data-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - residential
+    mobility: not-applicable
+    frequency_regimes: []
+- task: human-activity-recognition
+  scope: Recognize walking, sitting, standing, and no-activity states from UWB CIR sequences.
+  inputs:
+  - cir
+  targets:
+  - activity-label
+  evidence:
+  - figshare-collection
+  - scientific-data-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - residential
+    mobility: not-applicable
+    frequency_regimes: []
+- task: presence-detection
+  scope: Distinguish target-present conditions from empty-room/background measurements using changes in the UWB
+    CIR.
+  inputs:
+  - cir
+  targets:
+  - presence-label
+  evidence:
+  - scientific-data-paper
+  notes: Presence is encoded by the separate background/no-target and target-present recordings; the descriptor
+    explicitly discusses using their CIR difference to detect an immobile target.
+  context:
+    environments:
+    - indoor
+    - residential
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: The study contains one participant in one residence; activity and passive-localization results should not
+    be interpreted as broad cross-person or cross-home generalization.
+  evidence:
+  - scientific-data-paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

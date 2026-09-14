@@ -1,0 +1,123 @@
+id: cttc-indoor-wireless-channel-measurements
+name: CTTC Indoor Wireless Channel Measurements
+aliases:
+- Datasets of Indoor Wireless Channel Measurements for Machine Learning Applications
+identity:
+  canonical_url: https://zenodo.org/records/4895133
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.4895133
+status: verified
+resource_type: dataset
+description: Measured raw-I/Q point-to-point indoor wireless channel data at 433 MHz, 708 MHz, and 2.45 GHz with
+  QPSK/Gaussian excitation and several SNR conditions, released for machine-learning channel modeling and estimation
+  research.
+released:
+  year: 2021
+  notes: The Zenodo dataset was created in June 2021.
+origin:
+  type: measurement
+  notes: Static laboratory over-the-air point-to-point channel measurements.
+modalities:
+- iq
+technologies: []
+generation_contexts: []
+radio_configurations:
+- siso
+frequency:
+  status: known
+  regimes:
+  - sub-ghz
+  - sub-6-ghz
+  bands:
+  - label: 433 MHz
+    center_ghz: 0.433
+    min_ghz: null
+    max_ghz: null
+  - label: 708 MHz
+    center_ghz: 0.708
+    min_ghz: null
+    max_ghz: null
+  - label: 2.45 GHz
+    center_ghz: 2.45
+    min_ghz: null
+    max_ghz: null
+  notes: null
+environments:
+- indoor
+- laboratory
+mobility:
+  type: static
+  notes: Static laboratory channel.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- channel
+- snr
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 3.8
+  notes: Multiple frequency/SNR/waveform archives total approximately 3.8 GB.
+access:
+  status: open
+  url: https://zenodo.org/records/4895133
+  notes: Public Zenodo download.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No explicit dataset license was confirmed from the verified Zenodo page.
+official_resources:
+  homepage: https://aristides.cttc.es/index.php/services
+  repository: null
+  documentation: https://zenodo.org/records/4895133
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: Datasets of Indoor Wireless Channel Measurements for Machine Learning Applications
+  url: https://zenodo.org/records/4895133
+  doi: 10.5281/zenodo.4895133
+  notes: null
+- id: cttc-page
+  type: official-page
+  title: ARISTIDES Datasets
+  url: https://aristides.cttc.es/index.php/services
+  doi: null
+  notes: null
+tasks:
+- task: channel-estimation
+  scope: Develop/evaluate data-driven channel estimation and channel-model learning from measured transmitted/received
+    I/Q sequences.
+  inputs:
+  - iq
+  targets:
+  - channel
+  evidence:
+  - zenodo-record
+  - cttc-page
+  notes: The dataset metadata explicitly lists Channel Estimation among its intended ML research uses.
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: static
+    frequency_regimes:
+    - sub-ghz
+    - sub-6-ghz
+caveats:
+- text: The measurements are static point-to-point laboratory channels rather than multi-user or mobile channel
+    traces.
+  evidence:
+  - zenodo-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,109 @@
+id: signfi
+name: SignFi
+aliases: []
+identity:
+  canonical_url: https://yongsen.github.io/SignFi/
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: A Wi-Fi CSI dataset collection for sign-language and gesture recognition, with segmented CSI traces
+  and gesture labels from laboratory and home environments.
+released:
+  year: 2018
+  notes: Released with the 2018 ACM IMWUT SignFi paper.
+origin:
+  type: measurement
+  notes: CSI traces were collected using an 802.11n CSI Tool in laboratory and home environments.
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The official dataset page identifies 802.11n CSI acquisition but does not state a single collection-wide
+    carrier frequency.
+environments:
+- indoor
+- laboratory
+- residential
+mobility:
+  type: not-applicable
+  notes: The task concerns human gesture motion rather than transmitter/receiver mobility trajectories.
+temporal_structure: sequence
+formats:
+- mat
+- csv
+ground_truth:
+- gesture-label
+- user-id
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The release includes 276-sign one-user lab/home subsets and a 150-sign lab subset with five users; counts
+    differ by file and uplink/downlink variant.
+access:
+  status: open
+  url: https://yongsen.github.io/SignFi/
+  notes: Dataset files are linked from the official project page subject to the stated terms of use.
+license:
+  status: known
+  name: SignFi Dataset Terms of Use
+  url: https://github.com/yongsen/SignFi
+  notes: Non-exclusive, non-transferable, revocable use is granted for non-commercial educational and research purposes;
+    redistribution is prohibited without prior approval.
+official_resources:
+  homepage: https://yongsen.github.io/SignFi/
+  repository: https://github.com/yongsen/SignFi
+  documentation: https://github.com/yongsen/SignFi
+  loader: null
+references:
+- id: official-signfi
+  type: official-page
+  title: 'SignFi: Sign Language Recognition using WiFi and Convolutional Neural Networks'
+  url: https://yongsen.github.io/SignFi/
+  doi: null
+  notes: null
+- id: signfi-paper
+  type: paper
+  title: 'SignFi: Sign Language Recognition Using WiFi'
+  url: https://doi.org/10.1145/3191755
+  doi: 10.1145/3191755
+  notes: null
+tasks:
+- task: gesture-recognition
+  scope: Recognize sign-language gestures from segmented Wi-Fi CSI sequences.
+  inputs:
+  - wifi-csi
+  targets:
+  - gesture-label
+  evidence:
+  - official-signfi
+  - signfi-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - laboratory
+    - residential
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: SignFi's custom terms restrict the dataset to non-commercial educational/research use and prohibit redistribution
+    without prior approval; downstream users should review the full terms before use.
+  evidence:
+  - official-signfi
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

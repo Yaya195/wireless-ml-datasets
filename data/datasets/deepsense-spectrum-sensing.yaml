@@ -1,0 +1,102 @@
+id: deepsense-spectrum-sensing
+name: DeepSense Spectrum-Sensing Datasets
+aliases: []
+identity:
+  canonical_url: https://github.com/wineslab/deepsense-spectrum-sensing-datasets
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: A two-part spectrum-sensing collection containing real over-the-air IEEE 802.11 a/g I/Q captures and simulated
+  LTE-M uplink I/Q data with occupancy labels for wideband sensing.
+released:
+  year: 2021
+  notes: null
+origin:
+  type: hybrid
+  notes: null
+modalities:
+- iq
+- spectrum
+technologies:
+- wifi
+- lte
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: The real Wi-Fi collection spans four 5-MHz subchannels over a 20-MHz observation bandwidth; LTE-M is simulated over
+    10 MHz.
+environments:
+- laboratory
+mobility:
+  type: not-applicable
+  notes: null
+temporal_structure: sequence
+formats:
+- bin
+- h5
+ground_truth:
+- spectrum-occupancy
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: null
+access:
+  status: open
+  url: https://github.com/wineslab/deepsense-spectrum-sensing-datasets
+  notes: Dataset links, preprocessing code and examples are provided in the public repository.
+license:
+  status: known
+  name: MIT
+  url: https://opensource.org/license/mit
+  notes: null
+official_resources:
+  homepage: https://github.com/wineslab/deepsense-spectrum-sensing-datasets
+  repository: https://github.com/wineslab/deepsense-spectrum-sensing-datasets
+  documentation: https://github.com/wineslab/deepsense-spectrum-sensing-datasets
+  loader: null
+references:
+- id: official-repo
+  type: repository
+  title: DeepSense spectrum sensing datasets
+  url: https://github.com/wineslab/deepsense-spectrum-sensing-datasets
+  doi: null
+  notes: null
+- id: infocom-paper
+  type: paper
+  title: 'DeepSense: Fast Wideband Spectrum Sensing Through Real-Time In-the-Loop Deep Learning'
+  url: https://doi.org/10.1109/INFOCOM42981.2021.9488764
+  doi: 10.1109/INFOCOM42981.2021.9488764
+  notes: null
+tasks:
+- task: spectrum-sensing
+  scope: Infer occupied sub-bands from wideband I/Q observations in Wi-Fi and LTE-M experiments.
+  inputs:
+  - iq
+  targets:
+  - spectrum-occupancy
+  evidence:
+  - official-repo
+  - infocom-paper
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

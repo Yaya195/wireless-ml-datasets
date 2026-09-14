@@ -1,0 +1,40 @@
+id: torchsig
+name: TorchSig
+resource_kind: benchmark-framework
+description: An open-source RF machine-learning toolkit for generating standardized
+  narrowband and wideband communication-signal datasets, applying signal-domain transforms,
+  and benchmarking signal-classification and detection models.
+provider: TorchDSP
+url: https://github.com/TorchDSP/torchsig
+wireless_relevance: wireless-specific
+access: open
+collections: []
+search_guidance: Use to generate reproducible RFML datasets and baselines; current
+  releases replace the legacy fixed Sig53/WidebandSig53 naming with configurable Narrowband/Wideband
+  datasets.
+task_links:
+- task: modulation-recognition
+  scope: Generate and evaluate synthetic communication-signal datasets for modulation
+    and RF signal classification.
+  evidence:
+  - official
+- task: signal-classification
+  scope: Generate narrowband/wideband RF signal datasets for classification, detection,
+    and recognition benchmarks.
+  evidence:
+  - official
+references:
+- id: official
+  title: TorchSig — Official Repository
+  url: https://github.com/TorchDSP/torchsig
+  doi: null
+  notes: null
+- id: docs
+  title: TorchSig Documentation
+  url: https://torchsig.readthedocs.io/latest/
+  doi: null
+  notes: null
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

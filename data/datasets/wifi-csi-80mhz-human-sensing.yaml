@@ -1,0 +1,108 @@
+id: wifi-csi-80mhz-human-sensing
+name: 80 MHz Wi-Fi CSI Human Sensing Dataset
+aliases:
+- A CSI Dataset for Wireless Human Sensing on 80 MHz Wi-Fi Channels
+identity:
+  canonical_url: https://doi.org/10.21227/XBHV-F125
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/XBHV-F125
+status: verified
+resource_type: dataset
+description: A 23.6 GB IEEE 802.11ac CSI human-sensing dataset collected over 80 MHz channels from 13 subjects across
+  different environments, days, and Wi-Fi hardware.
+released:
+  year: 2023
+  notes: Released through IEEE DataPort with the September 2023 IEEE Communications Magazine dataset paper.
+origin:
+  type: measurement
+  notes: Real 802.11ac CSI measurements including multi-environment and semi-anechoic campaigns.
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes:
+  - sub-6-ghz
+  bands: []
+  notes: The paper establishes 80 MHz 802.11ac acquisition; one center frequency is not assigned at catalogue level.
+environments:
+- indoor
+- laboratory
+mobility:
+  type: not-applicable
+  notes: Human movement/activity is the sensing subject.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- activity-label
+- user-id
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: 13
+  devices: null
+  sites: null
+  duration_hours: 13.0
+  size_gb: 23.6
+  notes: The paper reports more than thirteen hours of CSI data.
+access:
+  status: registration
+  url: https://doi.org/10.21227/XBHV-F125
+  notes: IEEE DataPort dataset; account access may be required.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The paper is open-access, but a dataset-specific license was not independently confirmed.
+official_resources:
+  homepage: https://ieeexplore.ieee.org/document/10144501
+  repository: null
+  documentation: https://ieeexplore.ieee.org/document/10144501
+  loader: null
+references:
+- id: dataport
+  type: data-host
+  title: A CSI Dataset for Wireless Human Sensing on 80 MHz Wi-Fi Channels
+  url: https://doi.org/10.21227/XBHV-F125
+  doi: 10.21227/XBHV-F125
+  notes: null
+- id: paper
+  type: paper
+  title: A CSI Dataset for Wireless Human Sensing on 80 MHz Wi-Fi Channels
+  url: https://ieeexplore.ieee.org/document/10144501
+  doi: 10.1109/MCOM.005.2200720
+  notes: null
+tasks:
+- task: human-activity-recognition
+  scope: Recognize human activities from 80 MHz 802.11ac CSI under substantial person, environment, day, and hardware
+    diversity.
+  inputs:
+  - wifi-csi
+  targets:
+  - activity-label
+  evidence:
+  - paper
+  - dataport
+  notes: null
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: The dataset also supports identity recognition and people counting, but those tasks are outside the current
+    launch ontology.
+  evidence:
+  - paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

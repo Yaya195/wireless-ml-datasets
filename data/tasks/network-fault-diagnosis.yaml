@@ -1,0 +1,12 @@
+id: network-fault-diagnosis
+name: "Network Fault Diagnosis"
+category: network-intelligence
+description: >-
+  Identify, classify, or localize faults and failure causes in wireless network infrastructure or operation from observed network data.
+aliases:
+  - "fault detection"
+  - "fault classification"
+status: active
+related_tasks:
+  - network-anomaly-detection
+notes: null

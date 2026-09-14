@@ -1,0 +1,107 @@
+id: itu-massive-mimo-user-scheduling-2024
+name: ITU 2024 Massive-MIMO Multi-User Scheduling Datasets
+aliases:
+- Multi-User Beamforming Scheduling Challenge Datasets
+identity:
+  canonical_url: https://github.com/ITU-AI-ML-in-5G-Challenge/Challenge_Archive/blob/main/2024/Optimal%20Multi-user%20scheduling%20in%20massive%20MIMO%20mobile%20channels/Readme.md
+  version: '2024'
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: 'Two massive-MIMO channel datasets released for the ITU 2024 multi-user beamforming scheduling challenge:
+  a low-mobility dataset derived from RENEW measurements and a high-mobility QuaDRiGa/3GPP UMi dataset.'
+released:
+  year: 2024
+  notes: Released for the fifth ITU AI/ML in 5G Challenge in 2024.
+origin:
+  type: hybrid
+  notes: The low-mobility dataset is derived from real RENEW measurements; the high-mobility dataset is generated
+    with QuaDRiGa.
+modalities:
+- channel-matrix
+technologies: []
+generation_contexts:
+- 5g
+radio_configurations:
+- massive-mimo
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The challenge documents 52 data-carrying subcarriers and a 20 MHz high-mobility channel, but no single
+    collection-wide carrier is assigned.
+environments:
+- outdoor
+- campus
+- urban
+mobility:
+  type: mixed
+  notes: One dataset emulates low mobility within Rice University measurement clusters; the second models all-mobile
+    users with average speed 2.8 m/s.
+temporal_structure: sequence
+formats: []
+ground_truth: []
+scale:
+  samples: null
+  sequences: 2
+  scenarios: null
+  participants: null
+  devices: 64
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Both datasets contain 64 users; the low-mobility set provides 52 subcarriers over 500 frames.
+access:
+  status: open
+  url: https://github.com/ITU-AI-ML-in-5G-Challenge/Challenge_Archive/blob/main/2024/Optimal%20Multi-user%20scheduling%20in%20massive%20MIMO%20mobile%20channels/Readme.md
+  notes: The official challenge archive links the two downloadable datasets.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: No collection-wide dataset license was confirmed from the challenge archive.
+official_resources:
+  homepage: https://github.com/ITU-AI-ML-in-5G-Challenge/Challenge_Archive/blob/main/2024/Optimal%20Multi-user%20scheduling%20in%20massive%20MIMO%20mobile%20channels/Readme.md
+  repository: https://github.com/ITU-AI-ML-in-5G-Challenge/Challenge_Archive
+  documentation: https://github.com/ITU-AI-ML-in-5G-Challenge/Challenge_Archive/blob/main/2024/Optimal%20Multi-user%20scheduling%20in%20massive%20MIMO%20mobile%20channels/Readme.md
+  loader: null
+references:
+- id: itu-challenge
+  type: challenge
+  title: Multi-User Beamforming Scheduling Challenge
+  url: https://github.com/ITU-AI-ML-in-5G-Challenge/Challenge_Archive/blob/main/2024/Optimal%20Multi-user%20scheduling%20in%20massive%20MIMO%20mobile%20channels/Readme.md
+  doi: null
+  notes: null
+- id: smart-scheduler-paper
+  type: paper
+  title: A Deep Reinforcement Learning-Based Resource Scheduler for Massive MIMO Networks
+  url: https://doi.org/10.1109/TMLCN.2023.3310140
+  doi: 10.1109/TMLCN.2023.3310140
+  notes: Baseline scheduling reference cited by the challenge.
+tasks:
+- task: user-scheduling
+  scope: Select groups of users per time-frequency resource from massive-MIMO channel estimates to maximize rate
+    while maintaining fairness under mobility.
+  inputs:
+  - channel-matrix
+  targets: []
+  evidence:
+  - itu-challenge
+  - smart-scheduler-paper
+  notes: Scheduling is formulated as a sequential control/optimization problem rather than fixed-label prediction.
+  context:
+    environments:
+    - outdoor
+    - campus
+    - urban
+    mobility: mixed
+    frequency_regimes: []
+caveats:
+- text: The two challenge datasets have different provenance and mobility regimes; their results should not be pooled
+    without preserving the low-/high-mobility distinction.
+  evidence:
+  - itu-challenge
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

@@ -1,0 +1,124 @@
+id: mm-fi
+name: MM-Fi
+aliases:
+- MMFi
+identity:
+  canonical_url: https://ntu-aiot-lab.github.io/mm-fi
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A multimodal non-intrusive human-sensing dataset with more than 320,000 synchronized frames from 40
+  participants in four environments, including Wi-Fi CSI, mmWave, LiDAR, depth/infrared, and pose/action annotations.
+released:
+  year: 2023
+  notes: Published in the NeurIPS 2023 Datasets and Benchmarks Track.
+origin:
+  type: measurement
+  notes: Synchronized measurements collected from multiple sensing modalities across four physical environments.
+modalities:
+- wifi-csi
+- radar
+- lidar
+- camera
+- position
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: varies
+  regimes: []
+  bands: []
+  notes: Wireless modalities use distinct Wi-Fi/mmWave configurations; no single catalogue-wide band is assigned.
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: Human motion/pose is the sensing subject.
+temporal_structure: sequence
+formats:
+- csv
+ground_truth:
+- pose
+- activity-label
+- position
+scale:
+  samples: 320000
+  sequences: null
+  scenarios: 4
+  participants: 40
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The dataset contains over 320k synchronized frames, 40 subjects, four environmental domains, and 27 actions.
+access:
+  status: open
+  url: https://ntu-aiot-lab.github.io/mm-fi
+  notes: The official project/toolbox provides public Google Drive and Baidu download links.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A dataset-specific license was not confirmed on the verified project/repository pages.
+official_resources:
+  homepage: https://ntu-aiot-lab.github.io/mm-fi
+  repository: https://github.com/ybhbingo/MMFi_dataset
+  documentation: https://github.com/ybhbingo/MMFi_dataset
+  loader: https://github.com/ybhbingo/MMFi_dataset
+references:
+- id: official-repo
+  type: repository
+  title: Toolbox for MM-Fi Dataset
+  url: https://github.com/ybhbingo/MMFi_dataset
+  doi: null
+  notes: null
+- id: neurips-paper
+  type: paper
+  title: 'MM-Fi: Multi-Modal Non-Intrusive 4D Human Dataset for Versatile Wireless Sensing'
+  url: https://openreview.net/forum?id=1uAsASS1th
+  doi: null
+  notes: null
+tasks:
+- task: pose-estimation
+  scope: Estimate 2D/3D human pose from wireless sensing modalities such as Wi-Fi CSI and mmWave.
+  inputs:
+  - wifi-csi
+  - radar
+  targets:
+  - pose
+  evidence:
+  - official-repo
+  - neurips-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes: []
+- task: human-activity-recognition
+  scope: Recognize 27 daily and rehabilitation activities from wireless sensing modalities.
+  inputs:
+  - wifi-csi
+  - radar
+  targets:
+  - activity-label
+  evidence:
+  - official-repo
+  - neurips-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: MM-Fi is multimodal and some raw visual modalities are restricted for privacy; wireless-only experiments
+    should explicitly state which public modalities are used.
+  evidence:
+  - official-repo
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

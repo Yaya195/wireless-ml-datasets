@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:wireless-ml-data-hub:schema:task",
+  "title": "Wireless ML Data Hub Wireless Task",
+  "description": "Schema for a wireless communications research task used to organize dataset discovery.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "category",
+    "description",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 2,
+      "description": "Stable immutable slug used for references and URLs."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Canonical human-readable wireless task name."
+    },
+    "category": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "ID from data/task-categories.yaml. Cross-file validation is performed by scripts/validate.py."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20,
+      "description": "Short domain-level definition of the wireless task, independent of any particular ML method."
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 2
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "candidate",
+        "deprecated"
+      ],
+      "description": "active: part of the current catalogue taxonomy; candidate: retained for later activation; deprecated: kept for compatibility."
+    },
+    "related_tasks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true,
+      "default": [],
+      "description": "Optional IDs of closely related but distinct wireless tasks."
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Curator note. Not intended to define the task."
+    },
+    "comparison_fields": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "inputs",
+          "targets",
+          "evaluation-reference",
+          "origin",
+          "frequency-regimes",
+          "environments",
+          "mobility",
+          "access",
+          "temporal-structure",
+          "scale-samples",
+          "scale-participants"
+        ]
+      },
+      "uniqueItems": true,
+      "description": "Optional task-page comparison columns. The generator uses a generic default when omitted."
+    }
+  }
+}

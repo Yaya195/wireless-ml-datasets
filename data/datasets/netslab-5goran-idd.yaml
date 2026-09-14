@@ -1,0 +1,108 @@
+id: netslab-5goran-idd
+name: NetsLab-5GORAN-IDD
+aliases:
+- 5G Open Radio Access Network Multi-Modal Intrusion Detection Dataset
+identity:
+  canonical_url: https://zenodo.org/records/18923275
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset
+description: A multi-modal 5G O-RAN intrusion/anomaly dataset containing lower-layer radio telemetry and network-layer
+  packet traces for benign traffic plus DoS, DDoS, probe, brute-force, and web attacks.
+released:
+  year: 2025
+  notes: The dataset is documented as available from 2025; the current Zenodo record was updated in 2026.
+origin:
+  type: measurement
+  notes: Real attack/benign traffic and radio telemetry captured on an OpenAirInterface 5G O-RAN testbed.
+modalities:
+- network-kpi
+- packet-trace
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+- laboratory
+mobility:
+  type: not-reported
+  notes: The resource focuses on cyber/network attack conditions.
+temporal_structure: sequence
+formats:
+- csv
+ground_truth:
+- anomaly-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 16.8
+  notes: The release includes benign plus five attack-category folders, lower-layer telemetry, PCAP traffic, and
+    summary databases.
+access:
+  status: open
+  url: https://zenodo.org/records/18923275
+  notes: The current multi-modal release is publicly downloadable from Zenodo.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The Zenodo record does not expose a populated license value.
+official_resources:
+  homepage: https://zenodo.org/records/18923275
+  repository: null
+  documentation: https://zenodo.org/records/18923275
+  loader: null
+references:
+- id: zenodo-record
+  type: data-host
+  title: 5G Open Radio Access Network Multi-Modal Intrusion Detection Dataset (NetsLab-5GORAN-IDD)
+  url: https://zenodo.org/records/18923275
+  doi: null
+  notes: The dataset page cites the descriptor-paper DOI separately; it is not used as dataset identity here.
+- id: descriptor-paper
+  type: paper
+  title: 'Descriptor: 5G Open Radio Access Network Multi-Modal Intrusion Detection Dataset (NetsLab-5GORAN-IDD)'
+  url: https://doi.org/10.1109/IEEEDATA.2025.3614167
+  doi: 10.1109/IEEEDATA.2025.3614167
+  notes: null
+tasks:
+- task: network-anomaly-detection
+  scope: Detect malicious/anomalous 5G O-RAN operating periods from radio telemetry and/or network traffic.
+  inputs:
+  - network-kpi
+  - packet-trace
+  targets:
+  - anomaly-label
+  evidence:
+  - zenodo-record
+  - descriptor-paper
+  notes: Attack categories are treated as malicious network anomalies within the existing catalogue task rather
+    than creating a separate cybersecurity taxonomy.
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: not-reported
+    frequency_regimes: []
+caveats:
+- text: The attacks are generated on a controlled O-RAN testbed; deployment-specific attack distributions and benign
+    traffic can differ materially.
+  evidence:
+  - zenodo-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

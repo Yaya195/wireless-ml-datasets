@@ -1,0 +1,100 @@
+id: manaus-bluetooth-rssi
+name: Indoor Environment Dataset Based on RSSI Collected with Bluetooth Devices
+aliases: []
+identity:
+  canonical_url: https://data.mendeley.com/datasets/3v9mcsvcd2/1
+  version: '1'
+  external_ids:
+  - scheme: doi
+    value: 10.17632/3v9mcsvcd2.1
+status: verified
+resource_type: dataset
+description: Bluetooth RSSI measurements collected at 150 indoor test points with 11 mobile devices and fixed anchor nodes,
+  including position coordinates, room identifiers, and device labels.
+released:
+  year: 2024
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- rss
+- position
+technologies:
+- ble
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- indoor
+mobility:
+  type: static
+  notes: null
+temporal_structure: snapshot
+formats:
+- csv
+ground_truth:
+- position
+- device-id
+scale:
+  samples: null
+  sequences: null
+  scenarios: 150
+  participants: null
+  devices: 11
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: 150 test points and 11 mobile devices are documented in the descriptor.
+access:
+  status: open
+  url: https://data.mendeley.com/datasets/3v9mcsvcd2/1
+  notes: Public Mendeley Data release.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://data.mendeley.com/datasets/3v9mcsvcd2/1
+  repository: null
+  documentation: null
+  loader: null
+references:
+- id: mendeley
+  type: data-host
+  title: Indoor Environment Dataset Based on RSSI Collected with Bluetooth Devices
+  url: https://data.mendeley.com/datasets/3v9mcsvcd2/1
+  doi: 10.17632/3v9mcsvcd2.1
+  notes: null
+- id: data-paper
+  type: paper
+  title: Indoor environment dataset based on RSSI collected with bluetooth devices
+  url: https://www.sciencedirect.com/science/article/pii/S2352340924006590
+  doi: null
+  notes: null
+tasks:
+- task: localization
+  scope: Estimate indoor position/room from Bluetooth RSSI collected across devices and anchors.
+  inputs:
+  - rss
+  targets:
+  - position
+  evidence:
+  - mendeley
+  - data-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: static
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

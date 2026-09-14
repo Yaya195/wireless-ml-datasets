@@ -1,0 +1,102 @@
+id: wireless-sensing-har
+name: Wireless Sensing HAR Dataset
+aliases:
+- Wireless sensing dataset for human activity recognition (HAR)
+identity:
+  canonical_url: https://figshare.com/articles/dataset/Wireless_sensing_dataset_for_human_activity_recognition_HAR_/20444538
+  version: '1'
+  external_ids:
+  - scheme: doi
+    value: 10.6084/m9.figshare.20444538.v1
+status: verified
+resource_type: dataset
+description: A measured wireless-sensing dataset containing Wi-Fi CSI and UWB channel impulse-response recordings
+  for human activity recognition across multiple indoor rooms.
+released:
+  year: 2022
+  notes: Version 1 was posted on Figshare in August 2022.
+origin:
+  type: measurement
+  notes: Real Wi-Fi CSI and UWB CIR measurements were collected for contactless human-activity sensing.
+modalities:
+- wifi-csi
+- cir
+technologies:
+- wifi
+- uwb
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: Exact acquisition parameters are documented in the dataset README rather than represented as one collection-wide
+    band here.
+environments:
+- indoor
+- residential
+mobility:
+  type: not-applicable
+  notes: Human motion is the sensing target; transmitter/receiver mobility is not the research task.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- activity-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: 7.97
+  notes: The Figshare release is approximately 7.97 GB; Wi-Fi CSI is provided across three rooms and UWB CIR in
+    one room.
+access:
+  status: open
+  url: https://figshare.com/articles/dataset/Wireless_sensing_dataset_for_human_activity_recognition_HAR_/20444538
+  notes: Files are directly downloadable from Figshare.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://figshare.com/articles/dataset/Wireless_sensing_dataset_for_human_activity_recognition_HAR_/20444538
+  repository: null
+  documentation: https://figshare.com/articles/dataset/Wireless_sensing_dataset_for_human_activity_recognition_HAR_/20444538
+  loader: null
+references:
+- id: figshare-record
+  type: data-host
+  title: Wireless sensing dataset for human activity recognition (HAR)
+  url: https://figshare.com/articles/dataset/Wireless_sensing_dataset_for_human_activity_recognition_HAR_/20444538
+  doi: 10.6084/m9.figshare.20444538.v1
+  notes: null
+tasks:
+- task: human-activity-recognition
+  scope: Classify human activities from Wi-Fi CSI and/or UWB CIR sequences.
+  inputs:
+  - wifi-csi
+  - cir
+  targets:
+  - activity-label
+  evidence:
+  - figshare-record
+  notes: null
+  context:
+    environments:
+    - indoor
+    - residential
+    mobility: not-applicable
+    frequency_regimes: []
+caveats:
+- text: Wi-Fi CSI and UWB CIR subsets were collected in different room configurations; cross-modality or cross-room
+    comparisons should account for these acquisition differences.
+  evidence:
+  - figshare-record
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

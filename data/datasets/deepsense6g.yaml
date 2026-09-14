@@ -1,0 +1,179 @@
+id: deepsense6g
+name: DeepSense 6G
+aliases:
+- DeepSense6G
+identity:
+  canonical_url: https://www.deepsense6g.net/
+  version: null
+  external_ids: []
+status: verified
+resource_type: dataset-collection
+description: A large-scale real-world multimodal sensing and communication dataset organized into scenarios that
+  combine wireless measurements with sensors such as camera, LiDAR, radar, and position.
+released:
+  year: 2022
+  notes: Dataset project introduced before the 2023 IEEE Communications Magazine article.
+origin:
+  type: measurement
+  notes: Collected with real-world communication and sensing testbeds across multiple scenarios.
+modalities:
+- position
+- camera
+- lidar
+- radar
+- beam-power
+technologies:
+- 6g
+generation_contexts:
+- 6g
+radio_configurations:
+- phased-array
+frequency:
+  status: varies
+  bands: []
+  notes: Frequency and hardware depend on scenario/task; several beam-related tasks use mmWave measurements.
+  regimes: []
+environments:
+- indoor
+- outdoor
+- urban
+- parking-lot
+- vehicular
+mobility:
+  type: mixed
+  notes: The collection includes vehicles, drones, robots, humans, and other scenario types.
+temporal_structure: mixed
+formats:
+- csv
+- jpg
+- txt
+- various
+ground_truth:
+- position
+- beam-index
+- beam-power
+- blockage-status
+- timestamp
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The project currently advertises 30+ scenarios collected at several locations.
+access:
+  status: registration
+  url: https://www.deepsense6g.net/
+  notes: Task/scenario downloads are publicly described; some current download links require sign-in.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The public pages provide citation requirements; a single collection-wide dataset license was not clearly
+    identified during verification.
+official_resources:
+  homepage: https://www.deepsense6g.net/
+  repository: null
+  documentation: https://deepsense6g.net/ml-tasks
+  loader: null
+references:
+- id: homepage
+  type: official-page
+  title: DeepSense 6G
+  url: https://www.deepsense6g.net/
+  doi: null
+  notes: null
+- id: ml-tasks
+  type: official-page
+  title: DeepSense 6G ML Tasks
+  url: https://deepsense6g.net/ml-tasks
+  doi: null
+  notes: null
+- id: vision-beam
+  type: challenge
+  title: Vision-Aided Beam Prediction
+  url: https://www.deepsense6g.net/vision-aided-beam-prediction/
+  doi: null
+  notes: null
+- id: blockage
+  type: challenge
+  title: Radar-Aided Blockage Prediction
+  url: https://www.deepsense6g.net/radar-aided-blockage-prediction/
+  doi: 10.1109/ICC45855.2022.9838438
+  notes: null
+- id: beam-tracking
+  type: official-page
+  title: V2V Beam Tracking Task
+  url: https://www.deepsense6g.net/v2v-beam-tracking-task/
+  doi: null
+  notes: null
+tasks:
+- task: beam-prediction
+  scope: Task-specific scenario subsets; official variants include vision-, position-, LiDAR-, radar-, and multimodal-aided
+    beam prediction.
+  inputs:
+  - position
+  - camera
+  - lidar
+  - radar
+  targets:
+  - beam-index
+  evidence:
+  - ml-tasks
+  - vision-beam
+  notes: Available input modality depends on the selected DeepSense6G task subset.
+  context:
+    environments:
+    - outdoor
+    - urban
+    mobility: mobile
+    frequency_regimes:
+    - mmwave
+- task: blockage-prediction
+  scope: Task-specific scenario subsets with sequential sensing or wireless observations and future blockage labels.
+  inputs:
+  - radar
+  - beam-power
+  targets:
+  - blockage-status
+  evidence:
+  - blockage
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - urban
+    mobility: mobile
+    frequency_regimes:
+    - mmwave
+- task: beam-tracking
+  scope: V2V beam-tracking development data using vehicle position and visual information in task-specific scenarios.
+  inputs:
+  - position
+  - camera
+  targets:
+  - beam-index
+  evidence:
+  - beam-tracking
+  notes: null
+  context:
+    environments:
+    - outdoor
+    - vehicular
+    mobility: mobile
+    frequency_regimes:
+    - mmwave
+caveats:
+- text: DeepSense6G is scenario- and task-oriented; modalities, frequencies, labels, and download requirements vary
+    across subsets.
+  evidence:
+  - homepage
+  - ml-tasks
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
+featured: true

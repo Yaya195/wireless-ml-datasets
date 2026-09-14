@@ -1,0 +1,110 @@
+id: multiband-dynamic-channel-measurements
+name: Multi-Band Dynamic Channel Prediction Dataset
+aliases:
+- Multi-Band Measurements for Deep Learning-Based Dynamic Channel Prediction and Simulation
+identity:
+  canonical_url: https://doi.org/10.21227/3TPP-J394
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.21227/3TPP-J394
+status: verified
+resource_type: dataset
+description: A measured multi-band wireless-channel dataset collected with a dedicated testbed at sub-6-GHz and
+  mmWave frequencies for dynamic channel prediction and learned channel simulation.
+released:
+  year: 2023
+  notes: Released through IEEE DataPort with the 2023 IEEE Communications Magazine dataset paper.
+origin:
+  type: measurement
+  notes: Real multi-band channel measurements designed for high-mobility/private-network research.
+modalities:
+- cir
+- channel-matrix
+technologies: []
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: varies
+  regimes:
+  - sub-6-ghz
+  - mmwave
+  bands: []
+  notes: The paper explicitly describes measurements at sub-6-GHz and mmWave bands.
+environments:
+- industrial
+- unknown
+mobility:
+  type: mobile
+  notes: The work targets dynamic/high-mobility channel behavior.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- channel
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: The public dataset supports channel impulse-response forecasting and synthetic channel generation.
+access:
+  status: registration
+  url: https://doi.org/10.21227/3TPP-J394
+  notes: The paper describes the IEEE DataPort artifact as a public dataset; account access may be required.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: A dataset-specific license was not independently confirmed.
+official_resources:
+  homepage: https://doi.org/10.21227/3TPP-J394
+  repository: null
+  documentation: https://re.public.polimi.it/handle/11311/1255397
+  loader: null
+references:
+- id: dataport
+  type: data-host
+  title: Multi-Band Measurements for Deep Learning-Based Dynamic Channel Prediction and Simulation
+  url: https://doi.org/10.21227/3TPP-J394
+  doi: 10.21227/3TPP-J394
+  notes: null
+- id: paper
+  type: paper
+  title: Multi-Band Measurements for Deep Learning-Based Dynamic Channel Prediction and Simulation
+  url: https://doi.org/10.1109/MCOM.003.2200718
+  doi: 10.1109/MCOM.003.2200718
+  notes: null
+tasks:
+- task: channel-prediction
+  scope: Forecast future dynamic channel impulse responses from measured multi-band channel histories.
+  inputs:
+  - cir
+  - channel-matrix
+  targets:
+  - channel
+  evidence:
+  - dataport
+  - paper
+  notes: null
+  context:
+    environments:
+    - industrial
+    - unknown
+    mobility: mobile
+    frequency_regimes:
+    - sub-6-ghz
+    - mmwave
+caveats:
+- text: The same resource also supports learned channel simulation; that is not represented as a separate wireless
+    task in the current ontology.
+  evidence:
+  - paper
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null

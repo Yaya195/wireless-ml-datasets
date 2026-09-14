@@ -1,0 +1,117 @@
+id: openireland-ran-security
+name: OpenIreland RAN Performance Measurements for Security Threats
+aliases: []
+identity:
+  canonical_url: https://data.mendeley.com/datasets/t2rzh9y4mp/1
+  version: '1'
+  external_ids:
+  - scheme: doi
+    value: 10.17632/t2rzh9y4mp.1
+status: verified
+resource_type: dataset
+description: Open-RAN performance measurements from the OpenIreland testbed spanning benign application traffic,
+  multiple attack classes, and static/pedestrian/vehicle mobility conditions.
+released:
+  year: 2024
+  notes: null
+origin:
+  type: measurement
+  notes: null
+modalities:
+- network-kpi
+- traffic
+technologies: []
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- laboratory
+mobility:
+  type: mixed
+  notes: The release includes static, pedestrian, train, car and bus mobility patterns.
+temporal_structure: sequence
+formats: []
+ground_truth:
+- anomaly-label
+- application-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: null
+access:
+  status: open
+  url: https://data.mendeley.com/datasets/t2rzh9y4mp/1
+  notes: Public Mendeley Data release.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: null
+official_resources:
+  homepage: https://data.mendeley.com/datasets/t2rzh9y4mp/1
+  repository: null
+  documentation: null
+  loader: null
+references:
+- id: mendeley
+  type: data-host
+  title: RAN Performance measurements for security threats
+  url: https://data.mendeley.com/datasets/t2rzh9y4mp/1
+  doi: 10.17632/t2rzh9y4mp.1
+  notes: null
+- id: data-paper
+  type: paper
+  title: Performance measurement dataset for open RAN with user mobility and security threats
+  url: https://doi.org/10.1016/j.comnet.2024.110710
+  doi: 10.1016/j.comnet.2024.110710
+  notes: null
+tasks:
+- task: network-anomaly-detection
+  scope: Detect malicious RAN traffic/operating conditions from Open-RAN performance measurements.
+  inputs:
+  - network-kpi
+  - traffic
+  targets:
+  - anomaly-label
+  evidence:
+  - mendeley
+  - data-paper
+  notes: null
+  context:
+    environments:
+    - laboratory
+    mobility: mixed
+    frequency_regimes: []
+- task: traffic-classification
+  scope: Classify benign application and malicious service-level traffic classes from Open-RAN KPI measurements.
+  inputs:
+  - network-kpi
+  - traffic
+  targets:
+  - application-label
+  evidence:
+  - data-paper
+  - mendeley
+  notes: The data paper explicitly reports traffic classification from RAN KPIs for benign classes (Web, VoIP, IoT,
+    video) and attack traffic.
+  context:
+    environments:
+    - laboratory
+    mobility: mixed
+    frequency_regimes: []
+caveats: []
+verification:
+  last_checked: '2026-09-14'
+  checked_by: maintainer
+  notes: null
