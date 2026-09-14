@@ -76,8 +76,8 @@ references:
 - id: twc-paper
   type: paper
   title: Learning-Based Downlink Power Allocation in Cell-Free Massive MIMO Systems
-  url: https://doi.org/10.1109/TWC.2022.3213840
-  doi: 10.1109/TWC.2022.3213840
+  url: https://doi.org/10.1109/TWC.2022.3192203
+  doi: 10.1109/TWC.2022.3192203
   notes: null
 tasks:
 - task: power-control

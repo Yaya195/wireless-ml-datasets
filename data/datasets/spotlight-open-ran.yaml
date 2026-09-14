@@ -74,8 +74,8 @@ references:
 - id: mobicom-paper
   type: paper
   title: 'SpotLight: Accurate, Explainable and Efficient Anomaly Detection for Open RAN'
-  url: https://doi.org/10.1145/3636534.364938
-  doi: 10.1145/3636534.364938
+  url: https://doi.org/10.1145/3636534.3649380
+  doi: 10.1145/3636534.3649380
   notes: null
 tasks:
 - task: network-anomaly-detection

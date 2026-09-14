@@ -66,7 +66,7 @@ Individual recordings encode frequency in filenames; the benchmark spans multipl
 
 ## Resources
 
-- [Dataset access](https://www.kaggle.com/datasets/guozhenzhu/csi-bench)
+- [Dataset access](https://www.kaggle.com/datasets/guozhenjennzhu/csi-bench)
 - [Official homepage](https://github.com/guozhen-jenn-zhu/CSI-Bench-Real-WiFi-Sensing-Benchmark)
 
 ## Caveats

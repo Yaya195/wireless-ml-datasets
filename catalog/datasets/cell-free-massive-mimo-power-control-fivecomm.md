@@ -57,7 +57,7 @@ No single carrier/frequency regime is assigned at catalogue level.
 ## References
 
 - [Dataset for Power Control in Cell-Free Massive MIMO](https://zenodo.org/records/10691343)
-- [A Flexible Low-Complexity DNN Solution for Power Control in Cell-Free Massive MIMO](https://doi.org/10.1109/PIMRC59610.2024.10817537)
+- [A Flexible Low-Complexity DNN Solution for Power Control in Cell-Free Massive MIMO](https://doi.org/10.1109/PIMRC59610.2024.10817296)
 
 ## Metadata verification
 

@@ -60,7 +60,7 @@ Scheduling is formulated as a sequential control/optimization problem rather tha
 ## References
 
 - [Multi-User Beamforming Scheduling Challenge](https://github.com/ITU-AI-ML-in-5G-Challenge/Challenge_Archive/blob/main/2024/Optimal%20Multi-user%20scheduling%20in%20massive%20MIMO%20mobile%20channels/Readme.md)
-- [A Deep Reinforcement Learning-Based Resource Scheduler for Massive MIMO Networks](https://doi.org/10.1109/TMLCN.2023.3310140)
+- [A Deep Reinforcement Learning-Based Resource Scheduler for Massive MIMO Networks](https://doi.org/10.1109/TMLCN.2023.3313988)
 
 ## Metadata verification
 

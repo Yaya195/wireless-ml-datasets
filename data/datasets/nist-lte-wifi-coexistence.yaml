@@ -3,7 +3,7 @@ name: NIST LTE and Wi-Fi Coexistence Measurement Data
 aliases:
 - LTE and Wi-Fi coexistence measurement data
 identity:
-  canonical_url: https://data.nist.gov/od/id/mds2-2789
+  canonical_url: https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data
   version: null
   external_ids:
   - scheme: other
@@ -62,7 +62,7 @@ scale:
     plus one Wi-Fi link.'
 access:
   status: open
-  url: https://data.nist.gov/od/id/mds2-2789
+  url: https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data
   notes: The NIST landing page provides the dataset ZIP and README directly.
 license:
   status: known
@@ -70,7 +70,7 @@ license:
   url: https://www.nist.gov/open/license
   notes: null
 official_resources:
-  homepage: https://data.nist.gov/od/id/mds2-2789
+  homepage: https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data
   repository: null
   documentation: https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data
   loader: null
@@ -78,7 +78,7 @@ references:
 - id: nist-record
   type: data-host
   title: LTE and Wi-Fi coexistence measurement data
-  url: https://data.nist.gov/od/id/mds2-2789
+  url: https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data
   doi: null
   notes: null
 - id: data-gov

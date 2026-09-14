@@ -69,7 +69,7 @@ SpotLight explicitly includes an explainability/root-cause phase that identifies
 ## References
 
 - [SpotLight Dataset](https://github.com/netsys-edinburgh/SpotLight)
-- [SpotLight: Accurate, Explainable and Efficient Anomaly Detection for Open RAN](https://doi.org/10.1145/3636534.364938)
+- [SpotLight: Accurate, Explainable and Efficient Anomaly Detection for Open RAN](https://doi.org/10.1145/3636534.3649380)
 
 ## Metadata verification
 

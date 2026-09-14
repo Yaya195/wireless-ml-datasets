@@ -56,7 +56,7 @@ No single catalogue-wide carrier value is recorded here.
 ## References
 
 - [Datasets associated with Learning-Based Downlink Power Allocation in Cell-Free Massive MIMO Systems](https://zenodo.org/records/7524622)
-- [Learning-Based Downlink Power Allocation in Cell-Free Massive MIMO Systems](https://doi.org/10.1109/TWC.2022.3213840)
+- [Learning-Based Downlink Power Allocation in Cell-Free Massive MIMO Systems](https://doi.org/10.1109/TWC.2022.3192203)
 
 ## Metadata verification
 

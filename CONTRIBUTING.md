@@ -203,6 +203,26 @@ All commands should pass.
 
 `build.py --check` is non-mutating and verifies that committed generated files match the YAML source of truth.
 
+## External link checks
+
+External resources change independently of this repository, so network checks are kept separate from the deterministic pull-request checks. A scheduled GitHub Actions workflow checks catalogue links weekly and can also be run manually.
+
+To run the same check locally:
+
+```powershell
+uv run python scripts/check_links.py
+```
+
+The checker treats confirmed `404` and `410` responses as broken links. Access restrictions, rate limits, bot protection, server failures, TLS/DNS failures, and timeouts are reported as warnings by default because they do not prove that a resource is unavailable to a normal browser. Use `--strict` only when you deliberately want warnings to fail the command.
+
+For a network-free inspection of the URLs discovered from structured metadata:
+
+```powershell
+uv run python scripts/check_links.py --list-only
+```
+
+When a scheduled check reports a failure, verify the resource manually before changing catalogue metadata. Prefer an updated authoritative URL over removing evidence merely because an old landing page moved.
+
 ## Pull-request expectations
 
 A dataset PR should:

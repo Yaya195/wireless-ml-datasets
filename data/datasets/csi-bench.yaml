@@ -57,7 +57,7 @@ scale:
     recognition, human activity recognition, human identification, and proximity recognition.
 access:
   status: registration
-  url: https://www.kaggle.com/datasets/guozhenzhu/csi-bench
+  url: https://www.kaggle.com/datasets/guozhenjennzhu/csi-bench
   notes: The maintained project instructs users to download the current dataset from Kaggle.
 license:
   status: known

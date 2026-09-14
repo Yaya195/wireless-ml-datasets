@@ -75,8 +75,8 @@ references:
 - id: smart-scheduler-paper
   type: paper
   title: A Deep Reinforcement Learning-Based Resource Scheduler for Massive MIMO Networks
-  url: https://doi.org/10.1109/TMLCN.2023.3310140
-  doi: 10.1109/TMLCN.2023.3310140
+  url: https://doi.org/10.1109/TMLCN.2023.3313988
+  doi: 10.1109/TMLCN.2023.3313988
   notes: Baseline scheduling reference cited by the challenge.
 tasks:
 - task: user-scheduling

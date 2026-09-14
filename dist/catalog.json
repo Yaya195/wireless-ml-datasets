@@ -2098,8 +2098,8 @@
           "id": "pimrc-paper",
           "type": "paper",
           "title": "A Flexible Low-Complexity DNN Solution for Power Control in Cell-Free Massive MIMO",
-          "url": "https://doi.org/10.1109/PIMRC59610.2024.10817537",
-          "doi": "10.1109/PIMRC59610.2024.10817537",
+          "url": "https://doi.org/10.1109/PIMRC59610.2024.10817296",
+          "doi": "10.1109/PIMRC59610.2024.10817296",
           "notes": null
         }
       ],
@@ -3148,7 +3148,7 @@
       },
       "access": {
         "status": "registration",
-        "url": "https://www.kaggle.com/datasets/guozhenzhu/csi-bench",
+        "url": "https://www.kaggle.com/datasets/guozhenjennzhu/csi-bench",
         "notes": "The maintained project instructs users to download the current dataset from Kaggle."
       },
       "license": {
@@ -6715,8 +6715,8 @@
           "id": "smart-scheduler-paper",
           "type": "paper",
           "title": "A Deep Reinforcement Learning-Based Resource Scheduler for Massive MIMO Networks",
-          "url": "https://doi.org/10.1109/TMLCN.2023.3310140",
-          "doi": "10.1109/TMLCN.2023.3310140",
+          "url": "https://doi.org/10.1109/TMLCN.2023.3313988",
+          "doi": "10.1109/TMLCN.2023.3313988",
           "notes": "Baseline scheduling reference cited by the challenge."
         }
       ],
@@ -6978,8 +6978,8 @@
           "id": "twc-paper",
           "type": "paper",
           "title": "Learning-Based Downlink Power Allocation in Cell-Free Massive MIMO Systems",
-          "url": "https://doi.org/10.1109/TWC.2022.3213840",
-          "doi": "10.1109/TWC.2022.3213840",
+          "url": "https://doi.org/10.1109/TWC.2022.3192203",
+          "doi": "10.1109/TWC.2022.3192203",
           "notes": null
         }
       ],
@@ -9251,7 +9251,7 @@
         "LTE and Wi-Fi coexistence measurement data"
       ],
       "identity": {
-        "canonical_url": "https://data.nist.gov/od/id/mds2-2789",
+        "canonical_url": "https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data",
         "version": null,
         "external_ids": [
           {
@@ -9322,7 +9322,7 @@
       },
       "access": {
         "status": "open",
-        "url": "https://data.nist.gov/od/id/mds2-2789",
+        "url": "https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data",
         "notes": "The NIST landing page provides the dataset ZIP and README directly."
       },
       "license": {
@@ -9332,7 +9332,7 @@
         "notes": null
       },
       "official_resources": {
-        "homepage": "https://data.nist.gov/od/id/mds2-2789",
+        "homepage": "https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data",
         "repository": null,
         "documentation": "https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data",
         "loader": null
@@ -9342,7 +9342,7 @@
           "id": "nist-record",
           "type": "data-host",
           "title": "LTE and Wi-Fi coexistence measurement data",
-          "url": "https://data.nist.gov/od/id/mds2-2789",
+          "url": "https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data",
           "doi": null,
           "notes": null
         },
@@ -13123,8 +13123,8 @@
           "id": "mobicom-paper",
           "type": "paper",
           "title": "SpotLight: Accurate, Explainable and Efficient Anomaly Detection for Open RAN",
-          "url": "https://doi.org/10.1145/3636534.364938",
-          "doi": "10.1145/3636534.364938",
+          "url": "https://doi.org/10.1145/3636534.3649380",
+          "doi": "10.1145/3636534.3649380",
           "notes": null
         }
       ],
@@ -17207,7 +17207,7 @@
           "type": "paper",
           "title": "Finer-level Sequential WiFi-based Indoor Localization",
           "url": "https://ieeexplore.ieee.org/document/9382623",
-          "doi": "10.1109/SII46433.2021.9382623",
+          "doi": "10.1109/IEEECONF49454.2021.9382623",
           "notes": null
         }
       ],

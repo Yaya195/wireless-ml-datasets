@@ -72,8 +72,8 @@ references:
 - id: pimrc-paper
   type: paper
   title: A Flexible Low-Complexity DNN Solution for Power Control in Cell-Free Massive MIMO
-  url: https://doi.org/10.1109/PIMRC59610.2024.10817537
-  doi: 10.1109/PIMRC59610.2024.10817537
+  url: https://doi.org/10.1109/PIMRC59610.2024.10817296
+  doi: 10.1109/PIMRC59610.2024.10817296
   notes: null
 tasks:
 - task: power-control

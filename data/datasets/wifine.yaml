@@ -77,7 +77,7 @@ references:
   type: paper
   title: Finer-level Sequential WiFi-based Indoor Localization
   url: https://ieeexplore.ieee.org/document/9382623
-  doi: 10.1109/SII46433.2021.9382623
+  doi: 10.1109/IEEECONF49454.2021.9382623
   notes: null
 tasks:
 - task: localization

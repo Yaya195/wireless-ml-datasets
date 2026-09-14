@@ -61,8 +61,7 @@ The NIST metadata explicitly lists signal classification as a supported research
 
 ## Resources
 
-- [Dataset access](https://data.nist.gov/od/id/mds2-2789)
-- [Documentation](https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data)
+- [Dataset access](https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data)
 
 ## Caveats
 
@@ -70,7 +69,7 @@ The NIST metadata explicitly lists signal classification as a supported research
 
 ## References
 
-- [LTE and Wi-Fi coexistence measurement data](https://data.nist.gov/od/id/mds2-2789)
+- [LTE and Wi-Fi coexistence measurement data](https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data)
 - [NIST LTE and Wi-Fi coexistence measurement data metadata](https://catalog.data.gov/dataset/lte-and-wi-fi-coexistence-measurement-data)
 
 ## Metadata verification
