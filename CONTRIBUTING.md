@@ -14,6 +14,23 @@ You can:
 
 A task in this project is a wireless research problem such as `beam-prediction`, `localization`, `radio-slam`, `radio-assisted-navigation`, or `spectrum-sensing`. It is not a generic ML formulation such as classification or regression.
 
+## Contribution workflow
+
+Changes to `main` are made through pull requests.
+
+For repository changes:
+
+1. create a branch from the latest `main`;
+2. make and validate your changes locally;
+3. push the branch and open a pull request;
+4. wait for the required `validate` CI check to pass;
+5. obtain at least one approving review;
+6. resolve any review conversations before merging.
+
+Pull requests are squash-merged into `main`. Direct pushes and force-pushes to `main` are not permitted.
+
+After a pull request is merged, its branch may be deleted automatically.
+
 ## Development setup
 
 The project uses `uv`.
