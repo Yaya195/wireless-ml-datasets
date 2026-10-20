@@ -1,0 +1,117 @@
+id: wifi-har-los-nlos
+name: Wi-Fi HAR in LOS and NLOS Indoor Environments
+aliases:
+- A dataset for Wi-Fi-based human activity recognition in line-of-sight and non-line-of-sight indoor environments
+identity:
+  canonical_url: https://data.mendeley.com/datasets/v38wjmz6f6/2
+  version: '2'
+  external_ids:
+  - scheme: doi
+    value: 10.17632/v38wjmz6f6.2
+status: verified
+resource_type: dataset
+description: A measured Wi-Fi CSI/RSSI human-activity dataset collected from 30 participants across three indoor environments spanning line-of-sight and non-line-of-sight conditions.
+released:
+  year: 2021
+  notes: Version 2 was published in February 2021; the original dataset and data article were published in 2020.
+origin:
+  type: measurement
+  notes: Intel 5300 NICs captured CSI and RSSI for five activities across three indoor environments.
+modalities:
+- wifi-csi
+- wifi-rssi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 2.4 GHz Wi-Fi channel 3
+    center_ghz: null
+    min_ghz: null
+    max_ghz: null
+  notes: The acquisition used 20 MHz bandwidth and a sampling rate of 320 packets per second.
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: Human motion is the sensing target; transmitter and receiver mobility are not the task.
+temporal_structure: sequence
+formats:
+- csv
+- dat
+- mat
+ground_truth:
+- activity-label
+scale:
+  samples: null
+  sequences: 3000
+  scenarios: 3
+  participants: 30
+  devices: null
+  sites: 3
+  duration_hours: null
+  size_gb: null
+  notes: In each environment, ten participants performed five activities with twenty trials per activity, for 3,000 trials overall.
+access:
+  status: open
+  url: https://data.mendeley.com/datasets/v38wjmz6f6/2
+  notes: Version 2 is publicly available from Mendeley Data; an author repository also provides MAT and DAT representations.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: Mendeley Data reports Creative Commons Attribution 4.0 International for version 2.
+official_resources:
+  homepage: https://data.mendeley.com/datasets/v38wjmz6f6/2
+  repository: https://github.com/lcsig/Dataset-for-Wi-Fi-based-human-activity-recognition-in-LOS-and-NLOS-indoor-environments
+  documentation: https://doi.org/10.1016/j.dib.2020.106534
+  loader: null
+references:
+- id: mendeley
+  type: data-host
+  title: A dataset for Wi-Fi-based human activity recognition in line-of-sight and non-line-of-sight indoor environments
+  url: https://data.mendeley.com/datasets/v38wjmz6f6/2
+  doi: 10.17632/v38wjmz6f6.2
+  notes: Version 2 dataset record.
+- id: data-paper
+  type: paper
+  title: A dataset for Wi-Fi-based human activity recognition in line-of-sight and non-line-of-sight indoor environments
+  url: https://doi.org/10.1016/j.dib.2020.106534
+  doi: 10.1016/j.dib.2020.106534
+  notes: Documents the acquisition protocol, LOS/NLOS conditions, and HAR use.
+- id: author-repo
+  type: repository
+  title: Dataset for Wi-Fi-based human activity recognition in LOS and NLOS indoor environments
+  url: https://github.com/lcsig/Dataset-for-Wi-Fi-based-human-activity-recognition-in-LOS-and-NLOS-indoor-environments
+  doi: null
+  notes: Provides supporting code plus MAT and DAT representations.
+tasks:
+- task: human-activity-recognition
+  scope: Recognize five human activities from Wi-Fi CSI and RSSI across LOS and NLOS indoor environments.
+  inputs:
+  - wifi-csi
+  - wifi-rssi
+  targets:
+  - activity-label
+  evidence:
+  - mendeley
+  - data-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats:
+- text: LOS was used in the first two environments and NLOS in the third, so propagation condition and collection environment are not independently varied.
+  evidence:
+  - data-paper
+verification:
+  last_checked: '2026-10-20'
+  checked_by: maintainer
+  notes: null
