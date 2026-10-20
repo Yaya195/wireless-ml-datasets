@@ -2,7 +2,7 @@
 
 # Wi-Fi
 
-Core datasets tagged with **Wi-Fi**: **43**
+Core datasets tagged with **Wi-Fi**: **45**
 
 Technology tags support secondary discovery and filtering. Dataset↔Task mappings remain the evidence-backed primary organization.
 
@@ -36,12 +36,14 @@ Technology tags support secondary discovery and filtering. Dataset↔Task mappin
 | [RENEW Indoor Mobility Channel Measurement for Massive MIMO](../datasets/renew-indoor-mobility-massive-mimo.md) | [User Scheduling](../tasks/user-scheduling.md) | Measurement | Sub-6 GHz | Open |
 | [RF Jamming Dataset](../datasets/rf-jamming-spectral-scan.md) | [Interference Classification](../tasks/interference-classification.md) | Measurement | Sub-6 GHz | Open |
 | [RSSI Dataset for Indoor Localization Fingerprinting](../datasets/spachos-rssi-localization.md) | [Localization](../tasks/localization.md) | Measurement | Sub-6 GHz | Open |
+| [SHD-HAR](../datasets/shd-har.md) | [Human Activity Recognition](../tasks/human-activity-recognition.md) | Measurement | Sub-6 GHz | Open |
 | [SignFi](../datasets/signfi.md) | [Gesture Recognition](../tasks/gesture-recognition.md) | Measurement | — | Open |
 | [TUJI1](../datasets/tuji1.md) | [Localization](../tasks/localization.md) | Measurement | — | Open |
 | [UJIIndoorLoc](../datasets/ujiindoorloc.md) | [Localization](../tasks/localization.md) | Measurement | — | Open |
 | [UT-HAR](../datasets/ut-har.md) | [Human Activity Recognition](../tasks/human-activity-recognition.md) | Measurement | — | Open |
 | [UTHAMO](../datasets/uthamo.md) | [Gesture Recognition](../tasks/gesture-recognition.md) | Measurement | Sub-6 GHz | Registration required |
 | [Wi-Fi CSI and RSS Human Presence and Movement Dataset](../datasets/wifi-csi-rss-presence-movement.md) | [Presence Detection](../tasks/presence-detection.md) | Measurement | — | Open |
+| [Wi-Fi HAR in LOS and NLOS Indoor Environments](../datasets/wifi-har-los-nlos.md) | [Human Activity Recognition](../tasks/human-activity-recognition.md) | Measurement | Sub-6 GHz | Open |
 | [Wi-Pose](../datasets/wi-pose.md) | [Pose Estimation](../tasks/pose-estimation.md) | Measurement | Sub-6 GHz | Open |
 | [WiAR](../datasets/wiar.md) | [Human Activity Recognition](../tasks/human-activity-recognition.md) | Measurement | — | Open |
 | [Widar3.0](../datasets/widar3.md) | [Gesture Recognition](../tasks/gesture-recognition.md) | Measurement | — | Open |

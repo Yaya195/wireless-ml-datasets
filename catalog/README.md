@@ -4,7 +4,7 @@
 
 Start from the wireless problem you want to study, then compare the curated datasets that support it.
 
-**Datasets:** 111 · **Populated tasks:** 34
+**Datasets:** 116 · **Populated tasks:** 34
 
 [Browse all datasets](datasets.md) · [Browse by wireless technology](technologies.md) · [Supporting resources](resources.md) · [Machine-readable catalogue](../dist/catalog.json)
 
@@ -33,7 +33,7 @@ Wireless positioning, cooperative localization, radio mapping, and radio-based S
 
 - [Cooperative Localization](tasks/cooperative-localization.md) — 2 datasets
 - [Device-Free Localization](tasks/device-free-localization.md) — 5 datasets
-- [Localization](tasks/localization.md) — 28 datasets
+- [Localization](tasks/localization.md) — 29 datasets
 - [Radio Map Estimation](tasks/radio-map-estimation.md) — 6 datasets
 - [Radio SLAM](tasks/radio-slam.md) — 3 datasets
 - [Radio-Assisted Navigation](tasks/radio-assisted-navigation.md) — 1 dataset
@@ -44,7 +44,7 @@ Wireless signal understanding, identification, sensing of spectrum occupancy, an
 
 - [Interference Classification](tasks/interference-classification.md) — 2 datasets
 - [Modulation Recognition](tasks/modulation-recognition.md) — 4 datasets
-- [RF Fingerprinting](tasks/rf-fingerprinting.md) — 7 datasets
+- [RF Fingerprinting](tasks/rf-fingerprinting.md) — 8 datasets
 - [Signal Classification](tasks/signal-classification.md) — 5 datasets
 - [Spectrum Sensing](tasks/spectrum-sensing.md) — 5 datasets
 
@@ -53,7 +53,7 @@ Wireless signal understanding, identification, sensing of spectrum occupancy, an
 Tasks that infer human, physiological, or environmental states from wireless measurements.
 
 - [Gesture Recognition](tasks/gesture-recognition.md) — 4 datasets
-- [Human Activity Recognition](tasks/human-activity-recognition.md) — 15 datasets
+- [Human Activity Recognition](tasks/human-activity-recognition.md) — 17 datasets
 - [Pose Estimation](tasks/pose-estimation.md) — 3 datasets
 - [Presence Detection](tasks/presence-detection.md) — 3 datasets
 - [Vital Sign Sensing](tasks/vital-sign-sensing.md) — 3 datasets
@@ -64,7 +64,7 @@ Data-driven prediction, diagnosis, and control tasks at network and RAN level.
 
 - [Handover Prediction](tasks/handover-prediction.md) — 2 datasets
 - [Mobility Prediction](tasks/mobility-prediction.md) — 1 dataset
-- [Network Anomaly Detection](tasks/network-anomaly-detection.md) — 8 datasets
+- [Network Anomaly Detection](tasks/network-anomaly-detection.md) — 9 datasets
 - [Network Fault Diagnosis](tasks/network-fault-diagnosis.md) — 3 datasets
 - [Power Control](tasks/power-control.md) — 3 datasets
 - [Resource Allocation](tasks/resource-allocation.md) — 4 datasets

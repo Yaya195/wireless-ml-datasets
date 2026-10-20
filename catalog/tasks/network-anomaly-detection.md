@@ -6,11 +6,12 @@ Detect anomalous behavior, measurements, events, or operating conditions in wire
 
 **Aliases:** wireless network anomaly detection
 
-**Datasets in catalogue:** 8
+**Datasets in catalogue:** 9
 
 | Dataset | Inputs | Targets | Origin | Environment | Mobility | Access |
 |---|---|---|---|---|---|---|
 | [5G Security and Resource Allocation Dataset](../datasets/tuc-5g-security.md) | Packet trace, Network KPI | Anomaly label | Hybrid | Laboratory | Not reported | Open |
+| [5G-NIDD](../datasets/5g-nidd.md) | Packet trace | Anomaly label | Measurement | Laboratory | Not reported | Open |
 | [BubbleRAN Persistent-Interference Anomaly Dataset](../datasets/bubbleran-persistent-interference.md) | Network KPI | Anomaly label | Measurement | Indoor, Laboratory | Not reported | Open |
 | [NetsLab-5GORAN-IDD](../datasets/netslab-5goran-idd.md) | Network KPI, Packet trace | Anomaly label | Measurement | Indoor, Laboratory | Not reported | Open |
 | [NIST Radio Access Network Anomalous State Detection Dataset](../datasets/nist-ran-anomalous-state.md) | Network KPI | Anomaly label | Measurement | Laboratory | Not reported | Open |

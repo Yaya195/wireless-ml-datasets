@@ -809,6 +809,160 @@
       }
     },
     {
+      "id": "5g-nidd",
+      "name": "5G-NIDD",
+      "aliases": [
+        "5G Wireless Network Intrusion Detection Dataset"
+      ],
+      "identity": {
+        "canonical_url": "https://doi.org/10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361",
+        "version": null,
+        "external_ids": [
+          {
+            "scheme": "doi",
+            "value": "10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.21227/xtep-hv36"
+          }
+        ]
+      },
+      "status": "verified",
+      "resource_type": "dataset",
+      "description": "A fully labelled intrusion-detection dataset collected on the University of Oulu 5G Test Network, with benign traffic and multiple DoS and port-scan attacks.",
+      "released": {
+        "year": 2022,
+        "notes": "The dataset was released in 2022; a descriptor paper was published in 2025."
+      },
+      "origin": {
+        "type": "measurement",
+        "notes": "Network traffic was captured from a functional 5G test network with two base stations, benign 5G users, and attacker nodes."
+      },
+      "modalities": [
+        "packet-trace"
+      ],
+      "technologies": [
+        "5g-nr"
+      ],
+      "generation_contexts": [
+        "5g"
+      ],
+      "radio_configurations": [],
+      "frequency": {
+        "status": "not-reported",
+        "regimes": [],
+        "bands": [],
+        "notes": null
+      },
+      "environments": [
+        "laboratory"
+      ],
+      "mobility": {
+        "type": "not-reported",
+        "notes": "The dataset focuses on network intrusion scenarios rather than user-mobility characterization."
+      },
+      "temporal_structure": "sequence",
+      "formats": [
+        "pcapng",
+        "csv"
+      ],
+      "ground_truth": [
+        "anomaly-label"
+      ],
+      "scale": {
+        "samples": null,
+        "sequences": null,
+        "scenarios": 8,
+        "participants": null,
+        "devices": null,
+        "sites": null,
+        "duration_hours": null,
+        "size_gb": null,
+        "notes": "Eight documented attack scenarios cover five DoS variants and three port scans, in addition to benign traffic."
+      },
+      "access": {
+        "status": "open",
+        "url": "https://doi.org/10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361",
+        "notes": "A public copy is available through Fairdata; IEEE DataPort provides an additional dataset record."
+      },
+      "license": {
+        "status": "known",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "notes": "The Fairdata record reports Creative Commons Attribution 4.0 International."
+      },
+      "official_resources": {
+        "homepage": "https://doi.org/10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361",
+        "repository": "https://github.com/yushan1986/5g-nidd",
+        "documentation": "https://doi.org/10.21227/xtep-hv36",
+        "loader": null
+      },
+      "references": [
+        {
+          "id": "fairdata",
+          "type": "data-host",
+          "title": "5G-NIDD",
+          "url": "https://doi.org/10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361",
+          "doi": "10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361",
+          "notes": "Public dataset record."
+        },
+        {
+          "id": "ieee-dataport",
+          "type": "data-host",
+          "title": "5G-NIDD: A Comprehensive Network Intrusion Detection Dataset Generated over 5G Wireless Network",
+          "url": "https://doi.org/10.21227/xtep-hv36",
+          "doi": "10.21227/xtep-hv36",
+          "notes": "Documents the testbed, attack scenarios, and pcapng-to-CSV processing chain."
+        },
+        {
+          "id": "descriptor-paper",
+          "type": "paper",
+          "title": "Descriptor: 5G Wireless Network Intrusion Detection Dataset (5G-NIDD)",
+          "url": "https://doi.org/10.1109/IEEEDATA.2025.3592888",
+          "doi": "10.1109/IEEEDATA.2025.3592888",
+          "notes": null
+        }
+      ],
+      "tasks": [
+        {
+          "task": "network-anomaly-detection",
+          "scope": "Detect malicious or anomalous 5G network traffic across documented DoS and port-scan scenarios.",
+          "inputs": [
+            "packet-trace"
+          ],
+          "targets": [
+            "anomaly-label"
+          ],
+          "evidence": [
+            "ieee-dataport",
+            "descriptor-paper"
+          ],
+          "notes": "Intrusion detection is represented under the existing network-anomaly-detection task.",
+          "context": {
+            "environments": [
+              "laboratory"
+            ],
+            "mobility": "not-reported",
+            "frequency_regimes": []
+          }
+        }
+      ],
+      "caveats": [
+        {
+          "text": "The attack traffic was generated on a controlled 5G test network, so deployment-specific benign and malicious traffic distributions may differ.",
+          "evidence": [
+            "ieee-dataport"
+          ]
+        }
+      ],
+      "verification": {
+        "last_checked": "2026-10-20",
+        "checked_by": "maintainer",
+        "notes": null
+      }
+    },
+    {
       "id": "aril",
       "name": "ARIL",
       "aliases": [],
@@ -2578,6 +2732,147 @@
       ],
       "verification": {
         "last_checked": "2026-09-14",
+        "checked_by": "maintainer",
+        "notes": null
+      }
+    },
+    {
+      "id": "commrad-rf",
+      "name": "CommRad RF",
+      "aliases": [
+        "CommRad RF communication radio dataset"
+      ],
+      "identity": {
+        "canonical_url": "https://zenodo.org/records/14192970",
+        "version": null,
+        "external_ids": [
+          {
+            "scheme": "doi",
+            "value": "10.5281/zenodo.14192970"
+          }
+        ]
+      },
+      "status": "verified",
+      "resource_type": "dataset",
+      "description": "A measured baseband RF dataset containing communication-radio signals from 27 handheld radios, collected for RF fingerprinting, identification, and classification.",
+      "released": {
+        "year": 2024,
+        "notes": "The current Zenodo release was published in November 2024; the dataset article appeared in 2025."
+      },
+      "origin": {
+        "type": "measurement",
+        "notes": "Signals were captured from communication radios in an indoor multipath environment using a wideband receiver."
+      },
+      "modalities": [
+        "iq"
+      ],
+      "technologies": [],
+      "generation_contexts": [],
+      "radio_configurations": [],
+      "frequency": {
+        "status": "known",
+        "regimes": [
+          "sub-ghz"
+        ],
+        "bands": [
+          {
+            "label": "136-174 MHz",
+            "center_ghz": null,
+            "min_ghz": 0.136,
+            "max_ghz": 0.174
+          }
+        ],
+        "notes": "The data article reports 136-174 MHz, 25 kHz channel bandwidth, and a 50 kS/s I/Q rate."
+      },
+      "environments": [
+        "indoor"
+      ],
+      "mobility": {
+        "type": "not-applicable",
+        "notes": "The emitters are communication radios recorded for device-specific RF signatures."
+      },
+      "temporal_structure": "sequence",
+      "formats": [
+        "wav"
+      ],
+      "ground_truth": [
+        "device-id"
+      ],
+      "scale": {
+        "samples": null,
+        "sequences": null,
+        "scenarios": null,
+        "participants": null,
+        "devices": 27,
+        "sites": null,
+        "duration_hours": null,
+        "size_gb": 2.0,
+        "notes": "The release contains more than 2,700 recorded RF signals from 27 radios."
+      },
+      "access": {
+        "status": "open",
+        "url": "https://zenodo.org/records/14192970",
+        "notes": "The archive is publicly downloadable from Zenodo."
+      },
+      "license": {
+        "status": "not-reported",
+        "name": null,
+        "url": null,
+        "notes": "The article is open access under CC BY-NC 4.0, but the Zenodo dataset page does not expose a populated dataset-license value."
+      },
+      "official_resources": {
+        "homepage": "https://zenodo.org/records/14192970",
+        "repository": null,
+        "documentation": "https://doi.org/10.1016/j.dib.2025.111387",
+        "loader": null
+      },
+      "references": [
+        {
+          "id": "zenodo",
+          "type": "data-host",
+          "title": "CommRad RF: A dataset of communication radio signals for detection, identification and classification",
+          "url": "https://zenodo.org/records/14192970",
+          "doi": "10.5281/zenodo.14192970",
+          "notes": null
+        },
+        {
+          "id": "data-paper",
+          "type": "paper",
+          "title": "CommRad RF: A dataset of communication radio signals for detection, identification and classification",
+          "url": "https://doi.org/10.1016/j.dib.2025.111387",
+          "doi": "10.1016/j.dib.2025.111387",
+          "notes": "Documents RF fingerprinting motivation, acquisition, and device labels."
+        }
+      ],
+      "tasks": [
+        {
+          "task": "rf-fingerprinting",
+          "scope": "Identify communication-radio emitters from device-specific baseband I/Q signal fingerprints.",
+          "inputs": [
+            "iq"
+          ],
+          "targets": [
+            "device-id"
+          ],
+          "evidence": [
+            "zenodo",
+            "data-paper"
+          ],
+          "notes": "The dataset article explicitly positions the recordings for RF fingerprinting and emitter identification.",
+          "context": {
+            "environments": [
+              "indoor"
+            ],
+            "mobility": "not-applicable",
+            "frequency_regimes": [
+              "sub-ghz"
+            ]
+          }
+        }
+      ],
+      "caveats": [],
+      "verification": {
+        "last_checked": "2026-10-20",
         "checked_by": "maintainer",
         "notes": null
       }
@@ -12588,6 +12883,298 @@
       }
     },
     {
+      "id": "shd-har",
+      "name": "SHD-HAR",
+      "aliases": [
+        "Spatially-diverse High-dimensional CSI Dataset for Human Activity Recognition"
+      ],
+      "identity": {
+        "canonical_url": "https://zenodo.org/records/11201414",
+        "version": null,
+        "external_ids": [
+          {
+            "scheme": "doi",
+            "value": "10.5281/zenodo.11201414"
+          }
+        ]
+      },
+      "status": "verified",
+      "resource_type": "dataset",
+      "description": "A high-dimensional Wi-Fi CSI human-activity dataset collected synchronously from two diagonal ESP32 transceiver paths across ten macro- and micro-movements.",
+      "released": {
+        "year": 2024,
+        "notes": "The dataset and accompanying Data in Brief article were released in 2024."
+      },
+      "origin": {
+        "type": "measurement",
+        "notes": "Four ESP32-S3 devices formed two spatially diverse transmitter-receiver paths in a controlled indoor environment."
+      },
+      "modalities": [
+        "wifi-csi"
+      ],
+      "technologies": [
+        "wifi"
+      ],
+      "generation_contexts": [],
+      "radio_configurations": [],
+      "frequency": {
+        "status": "known",
+        "regimes": [
+          "sub-6-ghz"
+        ],
+        "bands": [
+          {
+            "label": "2.4 GHz Wi-Fi channel 11",
+            "center_ghz": null,
+            "min_ghz": null,
+            "max_ghz": null
+          }
+        ],
+        "notes": "IEEE 802.11n channel 11 with 20 MHz bandwidth is documented by the data article."
+      },
+      "environments": [
+        "indoor",
+        "laboratory"
+      ],
+      "mobility": {
+        "type": "not-applicable",
+        "notes": "Human motion is the sensing target; radio-node mobility is not the task."
+      },
+      "temporal_structure": "sequence",
+      "formats": [
+        "csv"
+      ],
+      "ground_truth": [
+        "activity-label"
+      ],
+      "scale": {
+        "samples": null,
+        "sequences": null,
+        "scenarios": 1,
+        "participants": 6,
+        "devices": 4,
+        "sites": 1,
+        "duration_hours": null,
+        "size_gb": null,
+        "notes": "Ten activities were recorded from six participants with approximately 1,200 samples per activity and 300-450 packets per sample."
+      },
+      "access": {
+        "status": "open",
+        "url": "https://zenodo.org/records/11201414",
+        "notes": "The dataset is publicly archived on Zenodo."
+      },
+      "license": {
+        "status": "not-reported",
+        "name": null,
+        "url": null,
+        "notes": "The paper is CC BY, but a separate dataset-license value is not recorded here without explicit dataset-level confirmation."
+      },
+      "official_resources": {
+        "homepage": "https://zenodo.org/records/11201414",
+        "repository": null,
+        "documentation": "https://doi.org/10.1016/j.dib.2024.110673",
+        "loader": null
+      },
+      "references": [
+        {
+          "id": "zenodo",
+          "type": "data-host",
+          "title": "Spatially-diverse High-dimensional Channel State Information (CSI) based Dataset for Human Activity Recognition (HAR)",
+          "url": "https://zenodo.org/records/11201414",
+          "doi": "10.5281/zenodo.11201414",
+          "notes": null
+        },
+        {
+          "id": "data-paper",
+          "type": "paper",
+          "title": "A high-dimensional, multi-transceiver channel state information dataset for enhanced human activity recognition",
+          "url": "https://doi.org/10.1016/j.dib.2024.110673",
+          "doi": "10.1016/j.dib.2024.110673",
+          "notes": "Documents the HAR task, acquisition geometry, participants, activities, and CSI structure."
+        }
+      ],
+      "tasks": [
+        {
+          "task": "human-activity-recognition",
+          "scope": "Recognize ten macro- and micro-movement activities from synchronized spatially diverse Wi-Fi CSI measurements.",
+          "inputs": [
+            "wifi-csi"
+          ],
+          "targets": [
+            "activity-label"
+          ],
+          "evidence": [
+            "zenodo",
+            "data-paper"
+          ],
+          "notes": null,
+          "context": {
+            "environments": [
+              "indoor",
+              "laboratory"
+            ],
+            "mobility": "not-applicable",
+            "frequency_regimes": [
+              "sub-6-ghz"
+            ]
+          }
+        }
+      ],
+      "caveats": [],
+      "verification": {
+        "last_checked": "2026-10-20",
+        "checked_by": "maintainer",
+        "notes": null
+      }
+    },
+    {
+      "id": "sigfox-lorawan-fingerprint-localization",
+      "name": "Sigfox and LoRaWAN Datasets for Fingerprint Localization in Large Urban and Rural Areas",
+      "aliases": [
+        "Sigfox and LoRaWAN fingerprint localization datasets"
+      ],
+      "identity": {
+        "canonical_url": "https://zenodo.org/records/3904158",
+        "version": "1.3",
+        "external_ids": [
+          {
+            "scheme": "doi",
+            "value": "10.5281/zenodo.3904158"
+          }
+        ]
+      },
+      "status": "verified",
+      "resource_type": "dataset-collection",
+      "description": "A measured LPWAN collection with Sigfox and LoRaWAN gateway RSSI plus GPS-labelled uplink messages for fingerprint localization in large urban and rural areas.",
+      "released": {
+        "year": 2019,
+        "notes": "Version 1.3 updates the LoRaWAN subset and preserves the Sigfox subsets from earlier releases."
+      },
+      "origin": {
+        "type": "measurement",
+        "notes": "GPS-equipped devices periodically transmitted uplinks during measurement campaigns in and around Antwerp, Belgium."
+      },
+      "modalities": [
+        "rss",
+        "snr",
+        "position"
+      ],
+      "technologies": [
+        "lorawan",
+        "sigfox"
+      ],
+      "generation_contexts": [],
+      "radio_configurations": [],
+      "frequency": {
+        "status": "not-reported",
+        "regimes": [],
+        "bands": [],
+        "notes": "The release identifies the LPWAN technologies but does not provide one collection-wide carrier specification."
+      },
+      "environments": [
+        "outdoor",
+        "urban",
+        "rural"
+      ],
+      "mobility": {
+        "type": "mobile",
+        "notes": "GPS-equipped devices periodically recorded location while collecting uplink measurements."
+      },
+      "temporal_structure": "sequence",
+      "formats": [
+        "csv",
+        "json"
+      ],
+      "ground_truth": [
+        "position"
+      ],
+      "scale": {
+        "samples": 170446,
+        "sequences": null,
+        "scenarios": 3,
+        "participants": null,
+        "devices": null,
+        "sites": null,
+        "duration_hours": null,
+        "size_gb": null,
+        "notes": "Version 1.3 contains 130,430 LoRaWAN urban messages, 14,378 Sigfox urban messages, and 25,638 Sigfox rural messages."
+      },
+      "access": {
+        "status": "open",
+        "url": "https://zenodo.org/records/3904158",
+        "notes": "Version 1.3 is publicly downloadable from Zenodo."
+      },
+      "license": {
+        "status": "known",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "notes": "The dataset descriptor identifies the dataset license as CC BY."
+      },
+      "official_resources": {
+        "homepage": "https://zenodo.org/records/3904158",
+        "repository": null,
+        "documentation": "https://doi.org/10.3390/data3020013",
+        "loader": null
+      },
+      "references": [
+        {
+          "id": "zenodo",
+          "type": "data-host",
+          "title": "Sigfox and LoRaWAN Datasets for Fingerprint Localization in Large Urban and Rural Areas",
+          "url": "https://zenodo.org/records/3904158",
+          "doi": "10.5281/zenodo.3904158",
+          "notes": "Version 1.3 dataset record."
+        },
+        {
+          "id": "descriptor-paper",
+          "type": "paper",
+          "title": "Sigfox and LoRaWAN Datasets for Fingerprint Localization in Large Urban and Rural Areas",
+          "url": "https://doi.org/10.3390/data3020013",
+          "doi": "10.3390/data3020013",
+          "notes": "Documents the collection methodology and fingerprint-localization benchmark."
+        }
+      ],
+      "tasks": [
+        {
+          "task": "localization",
+          "scope": "Estimate outdoor device position from LPWAN gateway RSSI fingerprints and associated network measurements.",
+          "inputs": [
+            "rss"
+          ],
+          "targets": [
+            "position"
+          ],
+          "evidence": [
+            "zenodo",
+            "descriptor-paper"
+          ],
+          "notes": "Version 1.3 also exposes timing metadata for the LoRaWAN subset, but no additional task mapping is inferred from availability alone.",
+          "context": {
+            "environments": [
+              "outdoor",
+              "urban",
+              "rural"
+            ],
+            "mobility": "mobile",
+            "frequency_regimes": []
+          }
+        }
+      ],
+      "caveats": [
+        {
+          "text": "Version 1.3 updates only the LoRaWAN subset; the two Sigfox subsets remain unchanged from earlier releases.",
+          "evidence": [
+            "zenodo"
+          ]
+        }
+      ],
+      "verification": {
+        "last_checked": "2026-10-20",
+        "checked_by": "maintainer",
+        "notes": null
+      }
+    },
+    {
       "id": "signfi",
       "name": "SignFi",
       "aliases": [],
@@ -16964,6 +17551,168 @@
       }
     },
     {
+      "id": "wifi-har-los-nlos",
+      "name": "Wi-Fi HAR in LOS and NLOS Indoor Environments",
+      "aliases": [
+        "A dataset for Wi-Fi-based human activity recognition in line-of-sight and non-line-of-sight indoor environments"
+      ],
+      "identity": {
+        "canonical_url": "https://data.mendeley.com/datasets/v38wjmz6f6/2",
+        "version": "2",
+        "external_ids": [
+          {
+            "scheme": "doi",
+            "value": "10.17632/v38wjmz6f6.2"
+          }
+        ]
+      },
+      "status": "verified",
+      "resource_type": "dataset",
+      "description": "A measured Wi-Fi CSI/RSSI human-activity dataset collected from 30 participants across three indoor environments spanning line-of-sight and non-line-of-sight conditions.",
+      "released": {
+        "year": 2021,
+        "notes": "Version 2 was published in February 2021; the original dataset and data article were published in 2020."
+      },
+      "origin": {
+        "type": "measurement",
+        "notes": "Intel 5300 NICs captured CSI and RSSI for five activities across three indoor environments."
+      },
+      "modalities": [
+        "wifi-csi",
+        "wifi-rssi"
+      ],
+      "technologies": [
+        "wifi"
+      ],
+      "generation_contexts": [],
+      "radio_configurations": [],
+      "frequency": {
+        "status": "known",
+        "regimes": [
+          "sub-6-ghz"
+        ],
+        "bands": [
+          {
+            "label": "2.4 GHz Wi-Fi channel 3",
+            "center_ghz": null,
+            "min_ghz": null,
+            "max_ghz": null
+          }
+        ],
+        "notes": "The acquisition used 20 MHz bandwidth and a sampling rate of 320 packets per second."
+      },
+      "environments": [
+        "indoor"
+      ],
+      "mobility": {
+        "type": "not-applicable",
+        "notes": "Human motion is the sensing target; transmitter and receiver mobility are not the task."
+      },
+      "temporal_structure": "sequence",
+      "formats": [
+        "csv",
+        "dat",
+        "mat"
+      ],
+      "ground_truth": [
+        "activity-label"
+      ],
+      "scale": {
+        "samples": null,
+        "sequences": 3000,
+        "scenarios": 3,
+        "participants": 30,
+        "devices": null,
+        "sites": 3,
+        "duration_hours": null,
+        "size_gb": null,
+        "notes": "In each environment, ten participants performed five activities with twenty trials per activity, for 3,000 trials overall."
+      },
+      "access": {
+        "status": "open",
+        "url": "https://data.mendeley.com/datasets/v38wjmz6f6/2",
+        "notes": "Version 2 is publicly available from Mendeley Data; an author repository also provides MAT and DAT representations."
+      },
+      "license": {
+        "status": "known",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "notes": "Mendeley Data reports Creative Commons Attribution 4.0 International for version 2."
+      },
+      "official_resources": {
+        "homepage": "https://data.mendeley.com/datasets/v38wjmz6f6/2",
+        "repository": "https://github.com/lcsig/Dataset-for-Wi-Fi-based-human-activity-recognition-in-LOS-and-NLOS-indoor-environments",
+        "documentation": "https://doi.org/10.1016/j.dib.2020.106534",
+        "loader": null
+      },
+      "references": [
+        {
+          "id": "mendeley",
+          "type": "data-host",
+          "title": "A dataset for Wi-Fi-based human activity recognition in line-of-sight and non-line-of-sight indoor environments",
+          "url": "https://data.mendeley.com/datasets/v38wjmz6f6/2",
+          "doi": "10.17632/v38wjmz6f6.2",
+          "notes": "Version 2 dataset record."
+        },
+        {
+          "id": "data-paper",
+          "type": "paper",
+          "title": "A dataset for Wi-Fi-based human activity recognition in line-of-sight and non-line-of-sight indoor environments",
+          "url": "https://doi.org/10.1016/j.dib.2020.106534",
+          "doi": "10.1016/j.dib.2020.106534",
+          "notes": "Documents the acquisition protocol, LOS/NLOS conditions, and HAR use."
+        },
+        {
+          "id": "author-repo",
+          "type": "repository",
+          "title": "Dataset for Wi-Fi-based human activity recognition in LOS and NLOS indoor environments",
+          "url": "https://github.com/lcsig/Dataset-for-Wi-Fi-based-human-activity-recognition-in-LOS-and-NLOS-indoor-environments",
+          "doi": null,
+          "notes": "Provides supporting code plus MAT and DAT representations."
+        }
+      ],
+      "tasks": [
+        {
+          "task": "human-activity-recognition",
+          "scope": "Recognize five human activities from Wi-Fi CSI and RSSI across LOS and NLOS indoor environments.",
+          "inputs": [
+            "wifi-csi",
+            "wifi-rssi"
+          ],
+          "targets": [
+            "activity-label"
+          ],
+          "evidence": [
+            "mendeley",
+            "data-paper"
+          ],
+          "notes": null,
+          "context": {
+            "environments": [
+              "indoor"
+            ],
+            "mobility": "not-applicable",
+            "frequency_regimes": [
+              "sub-6-ghz"
+            ]
+          }
+        }
+      ],
+      "caveats": [
+        {
+          "text": "LOS was used in the first two environments and NLOS in the third, so propagation condition and collection environment are not independently varied.",
+          "evidence": [
+            "data-paper"
+          ]
+        }
+      ],
+      "verification": {
+        "last_checked": "2026-10-20",
+        "checked_by": "maintainer",
+        "notes": null
+      }
+    },
+    {
       "id": "wifi-spectral-jam",
       "name": "WiFiSpectralJam",
       "aliases": [
@@ -18380,7 +19129,7 @@
     {
       "id": "wifi",
       "name": "Wi-Fi",
-      "dataset_count": 43,
+      "dataset_count": 45,
       "dataset_ids": [
         "aril",
         "caez",
@@ -18408,6 +19157,7 @@
         "ra-cd-wifi-navigation",
         "renew-indoor-mobility-massive-mimo",
         "rf-jamming-spectral-scan",
+        "shd-har",
         "signfi",
         "spachos-rssi-localization",
         "tuji1",
@@ -18420,6 +19170,7 @@
         "widar3",
         "wifi-csi-80mhz-human-sensing",
         "wifi-csi-rss-presence-movement",
+        "wifi-har-los-nlos",
         "wifi-spectral-jam",
         "wifine",
         "wimans",
@@ -18475,9 +19226,10 @@
     {
       "id": "5g-nr",
       "name": "5G NR",
-      "dataset_count": 19,
+      "dataset_count": 20,
       "dataset_ids": [
         "3gpp-r4-113-csi-compression",
+        "5g-nidd",
         "bubbleran-persistent-interference",
         "caez",
         "converge-icassp2026",
@@ -18517,9 +19269,18 @@
     {
       "id": "lorawan",
       "name": "LoRaWAN",
+      "dataset_count": 2,
+      "dataset_ids": [
+        "sigfox-lorawan-fingerprint-localization",
+        "spectrumhive-iot-iq"
+      ]
+    },
+    {
+      "id": "sigfox",
+      "name": "Sigfox",
       "dataset_count": 1,
       "dataset_ids": [
-        "spectrumhive-iot-iq"
+        "sigfox-lorawan-fingerprint-localization"
       ]
     },
     {
@@ -18671,6 +19432,10 @@
       {
         "id": "lorawan",
         "name": "LoRaWAN"
+      },
+      {
+        "id": "sigfox",
+        "name": "Sigfox"
       },
       {
         "id": "zigbee",

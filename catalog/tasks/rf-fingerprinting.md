@@ -6,10 +6,11 @@ Identify or authenticate wireless transmitters or devices using distinctive char
 
 **Aliases:** radio-frequency fingerprinting, specific emitter identification
 
-**Datasets in catalogue:** 7
+**Datasets in catalogue:** 8
 
 | Dataset | Inputs | Targets | Origin | Environment | Mobility | Access |
 |---|---|---|---|---|---|---|
+| [CommRad RF](../datasets/commrad-rf.md) | I/Q samples | Device ID | Measurement | Indoor | Not applicable | Open |
 | [GENESYS Channel-Resilient RF Fingerprinting Datasets](../datasets/genesys-rf-fingerprinting-augmentation.md)<br><sub>Family</sub> | I/Q samples | Device ID | Simulation | Not applicable | Not applicable | Open |
 | [LoRa Sensor RF Fingerprinting Dataset](../datasets/bristol-lora-rf-fingerprinting.md) | I/Q samples | Device ID | Measurement | Laboratory | Static | Open |
 | [MobRFFI](../datasets/mobrffi.md) | I/Q samples | Device ID | Measurement | Laboratory | Static | Restricted |

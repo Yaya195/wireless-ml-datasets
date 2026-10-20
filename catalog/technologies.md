@@ -6,11 +6,12 @@ Technology is a secondary discovery axis; wireless research task remains the pri
 
 | Technology | Core datasets |
 |---|---:|
-| [5G NR](technologies/5g-nr.md) | 19 |
+| [5G NR](technologies/5g-nr.md) | 20 |
 | [6G](technologies/6g.md) | 9 |
 | [BLE](technologies/ble.md) | 11 |
-| [LoRaWAN](technologies/lorawan.md) | 1 |
+| [LoRaWAN](technologies/lorawan.md) | 2 |
 | [LTE](technologies/lte.md) | 8 |
+| [Sigfox](technologies/sigfox.md) | 1 |
 | [UWB](technologies/uwb.md) | 5 |
-| [Wi-Fi](technologies/wifi.md) | 43 |
+| [Wi-Fi](technologies/wifi.md) | 45 |
 | [Zigbee](technologies/zigbee.md) | 1 |

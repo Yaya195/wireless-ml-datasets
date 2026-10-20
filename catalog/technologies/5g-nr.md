@@ -2,7 +2,7 @@
 
 # 5G NR
 
-Core datasets tagged with **5G NR**: **19**
+Core datasets tagged with **5G NR**: **20**
 
 Technology tags support secondary discovery and filtering. Dataset↔Task mappings remain the evidence-backed primary organization.
 
@@ -10,6 +10,7 @@ Technology tags support secondary discovery and filtering. Dataset↔Task mappin
 |---|---|---|---|---|
 | [3GPP R4-113 NR AI/ML CSI Compression Datasets](../datasets/3gpp-r4-113-csi-compression.md) | [CSI Feedback](../tasks/csi-feedback.md) | Unknown | — | Open |
 | [5G Security and Resource Allocation Dataset](../datasets/tuc-5g-security.md) | [Network Anomaly Detection](../tasks/network-anomaly-detection.md) | Hybrid | — | Open |
+| [5G-NIDD](../datasets/5g-nidd.md) | [Network Anomaly Detection](../tasks/network-anomaly-detection.md) | Measurement | — | Open |
 | [BubbleRAN Persistent-Interference Anomaly Dataset](../datasets/bubbleran-persistent-interference.md) | [Network Anomaly Detection](../tasks/network-anomaly-detection.md) | Measurement | — | Open |
 | [CAEZ](../datasets/caez.md) | [Localization](../tasks/localization.md) · [Channel Charting](../tasks/channel-charting.md) | Measurement | Sub-6 GHz | Open |
 | [CONVERGE ICASSP 2026 Multimodal 6G Dataset](../datasets/converge-icassp2026.md) | [Blockage Prediction](../tasks/blockage-prediction.md) · [Localization](../tasks/localization.md) · [Channel Prediction](../tasks/channel-prediction.md) | Measurement | mmWave | Open |
