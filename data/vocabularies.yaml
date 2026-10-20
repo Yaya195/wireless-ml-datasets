@@ -69,6 +69,8 @@ technologies:
   name: 6G
 - id: lorawan
   name: LoRaWAN
+- id: sigfox
+  name: Sigfox
 - id: zigbee
   name: Zigbee
 - id: c-v2x
