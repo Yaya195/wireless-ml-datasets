@@ -1,0 +1,106 @@
+id: shd-har
+name: SHD-HAR
+aliases:
+- Spatially-diverse High-dimensional CSI Dataset for Human Activity Recognition
+identity:
+  canonical_url: https://zenodo.org/records/11201414
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.11201414
+status: verified
+resource_type: dataset
+description: A high-dimensional Wi-Fi CSI human-activity dataset collected synchronously from two diagonal ESP32 transceiver paths across ten macro- and micro-movements.
+released:
+  year: 2024
+  notes: The dataset and accompanying Data in Brief article were released in 2024.
+origin:
+  type: measurement
+  notes: Four ESP32-S3 devices formed two spatially diverse transmitter-receiver paths in a controlled indoor environment.
+modalities:
+- wifi-csi
+technologies:
+- wifi
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-6-ghz
+  bands:
+  - label: 2.4 GHz Wi-Fi channel 11
+    center_ghz: null
+    min_ghz: null
+    max_ghz: null
+  notes: IEEE 802.11n channel 11 with 20 MHz bandwidth is documented by the data article.
+environments:
+- indoor
+- laboratory
+mobility:
+  type: not-applicable
+  notes: Human motion is the sensing target; radio-node mobility is not the task.
+temporal_structure: sequence
+formats:
+- csv
+ground_truth:
+- activity-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: 1
+  participants: 6
+  devices: 4
+  sites: 1
+  duration_hours: null
+  size_gb: null
+  notes: Ten activities were recorded from six participants with approximately 1,200 samples per activity and 300-450 packets per sample.
+access:
+  status: open
+  url: https://zenodo.org/records/11201414
+  notes: The dataset is publicly archived on Zenodo.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The paper is CC BY, but a separate dataset-license value is not recorded here without explicit dataset-level confirmation.
+official_resources:
+  homepage: https://zenodo.org/records/11201414
+  repository: null
+  documentation: https://doi.org/10.1016/j.dib.2024.110673
+  loader: null
+references:
+- id: zenodo
+  type: data-host
+  title: Spatially-diverse High-dimensional Channel State Information (CSI) based Dataset for Human Activity Recognition (HAR)
+  url: https://zenodo.org/records/11201414
+  doi: 10.5281/zenodo.11201414
+  notes: null
+- id: data-paper
+  type: paper
+  title: A high-dimensional, multi-transceiver channel state information dataset for enhanced human activity recognition
+  url: https://doi.org/10.1016/j.dib.2024.110673
+  doi: 10.1016/j.dib.2024.110673
+  notes: Documents the HAR task, acquisition geometry, participants, activities, and CSI structure.
+tasks:
+- task: human-activity-recognition
+  scope: Recognize ten macro- and micro-movement activities from synchronized spatially diverse Wi-Fi CSI measurements.
+  inputs:
+  - wifi-csi
+  targets:
+  - activity-label
+  evidence:
+  - zenodo
+  - data-paper
+  notes: null
+  context:
+    environments:
+    - indoor
+    - laboratory
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-6-ghz
+caveats: []
+verification:
+  last_checked: '2026-10-20'
+  checked_by: maintainer
+  notes: null

@@ -2,7 +2,7 @@
 
 # All datasets
 
-Datasets in catalogue: **111**
+Datasets in catalogue: **116**
 
 | Dataset | Wireless tasks | Data | Origin | Environment | Access |
 |---|---|---|---|---|---|
@@ -10,6 +10,7 @@ Datasets in catalogue: **111**
 | [3GPP R4-113 NR AI/ML CSI Compression Datasets](datasets/3gpp-r4-113-csi-compression.md) | [CSI Feedback](tasks/csi-feedback.md) | Channel matrix | Unknown | Unknown | Open |
 | [5G Security and Resource Allocation Dataset](datasets/tuc-5g-security.md) | [Network Anomaly Detection](tasks/network-anomaly-detection.md) | Packet trace, Network KPI | Hybrid | Laboratory | Open |
 | [5G-Enabled Multi-User Presence and Activity Dataset](datasets/glasgow-multiuser-presence-activity.md) | [Presence Detection](tasks/presence-detection.md) · [Human Activity Recognition](tasks/human-activity-recognition.md) | Channel matrix | Measurement | Indoor | Open |
+| [5G-NIDD](datasets/5g-nidd.md) | [Network Anomaly Detection](tasks/network-anomaly-detection.md) | Packet trace | Measurement | Laboratory | Open |
 | [80 MHz Wi-Fi CSI Human Sensing Dataset](datasets/wifi-csi-80mhz-human-sensing.md) | [Human Activity Recognition](tasks/human-activity-recognition.md) | Wi-Fi CSI | Measurement | Indoor, Laboratory | Registration required |
 | [ARIL](datasets/aril.md) | [Human Activity Recognition](tasks/human-activity-recognition.md) · [Localization](tasks/localization.md) | Wi-Fi CSI | Measurement | Indoor | Open |
 | [ARLCL](datasets/arlcl.md) | [Cooperative Localization](tasks/cooperative-localization.md) | RSS, Position | Measurement | Indoor, Campus | Open |
@@ -19,6 +20,7 @@ Datasets in catalogue: **111**
 | [CAEZ](datasets/caez.md) | [Localization](tasks/localization.md) · [Channel Charting](tasks/channel-charting.md) | Channel matrix, Position | Measurement | Indoor, Outdoor, Campus, Office | Open |
 | [ColO-RAN Dataset](datasets/coloran.md) | [Resource Allocation](tasks/resource-allocation.md) · [User Scheduling](tasks/user-scheduling.md) | Network KPI, Traffic | Hybrid | Laboratory | Open |
 | [Colosseum O-RAN COMMAG Dataset](datasets/colosseum-oran-commag.md) | [Resource Allocation](tasks/resource-allocation.md) | Network KPI, Traffic | Hybrid | Laboratory | Open |
+| [CommRad RF](datasets/commrad-rf.md) | [RF Fingerprinting](tasks/rf-fingerprinting.md) | I/Q samples | Measurement | Indoor | Open |
 | [CONVERGE ICASSP 2026 Multimodal 6G Dataset](datasets/converge-icassp2026.md) | [Blockage Prediction](tasks/blockage-prediction.md) · [Localization](tasks/localization.md) · [Channel Prediction](tasks/channel-prediction.md) | Camera, Channel matrix, Network KPI | Measurement | Indoor, Laboratory | Open |
 | [COST2100 CsiNet CSI-Feedback Dataset](datasets/cost2100-csinet.md) | [CSI Feedback](tasks/csi-feedback.md) | Channel matrix | Simulation | Indoor, Outdoor | Open |
 | [CSI-4CAST](datasets/csi-4cast.md) | [Channel Prediction](tasks/channel-prediction.md) | Channel matrix | Simulation | Unknown | Open |
@@ -87,6 +89,8 @@ Datasets in catalogue: **111**
 | [RF Jamming Dataset](datasets/rf-jamming-spectral-scan.md) | [Interference Classification](tasks/interference-classification.md) | Spectrum | Measurement | Laboratory | Open |
 | [RSRPSet_urban](datasets/rsrpset-urban.md) | [Radio Map Estimation](tasks/radio-map-estimation.md) | Radio map, Position, RSS | Measurement | Outdoor, Urban | Restricted |
 | [RSSI Dataset for Indoor Localization Fingerprinting](datasets/spachos-rssi-localization.md) | [Localization](tasks/localization.md) | RSS, Wi-Fi RSSI, Position | Measurement | Indoor | Open |
+| [SHD-HAR](datasets/shd-har.md) | [Human Activity Recognition](tasks/human-activity-recognition.md) | Wi-Fi CSI | Measurement | Indoor, Laboratory | Open |
+| [Sigfox and LoRaWAN Datasets for Fingerprint Localization in Large Urban and Rural Areas](datasets/sigfox-lorawan-fingerprint-localization.md) | [Localization](tasks/localization.md) | RSS, SNR / signal-quality measurements, Position | Measurement | Outdoor, Urban, Rural | Open |
 | [SignFi](datasets/signfi.md) | [Gesture Recognition](tasks/gesture-recognition.md) | Wi-Fi CSI | Measurement | Indoor, Laboratory, Residential | Open |
 | [Simulated CSI for 6G In-Factory Subnetworks](datasets/itu-6g-inx-rrm.md) | [Power Control](tasks/power-control.md) · [Resource Allocation](tasks/resource-allocation.md) | Channel matrix, Position | Simulation | Indoor, Industrial | Open |
 | [spectrumHive IoT I/Q Dataset](datasets/spectrumhive-iot-iq.md) | [Modulation Recognition](tasks/modulation-recognition.md) · [Signal Classification](tasks/signal-classification.md) · [Spectrum Sensing](tasks/spectrum-sensing.md) | I/Q samples | Synthetic | Not applicable | Open |
@@ -108,6 +112,7 @@ Datasets in catalogue: **111**
 | [ViWi](datasets/viwi.md) | [Beam Prediction](tasks/beam-prediction.md) · [Blockage Prediction](tasks/blockage-prediction.md) · [Beam Tracking](tasks/beam-tracking.md) | Channel matrix, Camera, LiDAR, Position, Scene geometry | Ray tracing | Outdoor, Urban, Vehicular | Open |
 | [WAIR-D](datasets/wair-d.md) | [Beam Prediction](tasks/beam-prediction.md) | Channel matrix, Scene geometry, Position, Beam power | Ray tracing | Outdoor, Urban | Open |
 | [Wi-Fi CSI and RSS Human Presence and Movement Dataset](datasets/wifi-csi-rss-presence-movement.md) | [Presence Detection](tasks/presence-detection.md) | Wi-Fi CSI, RSS | Measurement | Indoor | Open |
+| [Wi-Fi HAR in LOS and NLOS Indoor Environments](datasets/wifi-har-los-nlos.md) | [Human Activity Recognition](tasks/human-activity-recognition.md) | Wi-Fi CSI, Wi-Fi RSSI | Measurement | Indoor | Open |
 | [Wi-Pose](datasets/wi-pose.md) | [Pose Estimation](tasks/pose-estimation.md) | Wi-Fi CSI | Measurement | Indoor | Open |
 | [WiAR](datasets/wiar.md) | [Human Activity Recognition](tasks/human-activity-recognition.md) | Wi-Fi CSI, Wi-Fi RSSI | Measurement | Indoor | Open |
 | [Widar3.0](datasets/widar3.md) | [Gesture Recognition](tasks/gesture-recognition.md) | Wi-Fi CSI | Measurement | Indoor | Open |

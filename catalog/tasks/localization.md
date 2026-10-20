@@ -6,7 +6,7 @@ Estimate the position or location of a wireless device, user, transmitter, recei
 
 **Aliases:** positioning, wireless localization, radio localization
 
-**Datasets in catalogue:** 28
+**Datasets in catalogue:** 29
 
 | Dataset | Inputs | Targets | Origin | Environment | Mobility | Temporal structure | Access |
 |---|---|---|---|---|---|---|---|
@@ -34,6 +34,7 @@ Estimate the position or location of a wireless device, user, transmitter, recei
 | [RadioMapSeer](../datasets/radiomapseer.md) | RSS, Radio map | Position | Simulation | Outdoor, Urban | Not applicable | Snapshot | Open |
 | [Raymobtime](../datasets/raymobtime.md)<br><sub>Collection</sub> | Channel matrix | Position | Ray tracing | Outdoor, Urban, Vehicular | Mobile | Sequence | Open |
 | [RSSI Dataset for Indoor Localization Fingerprinting](../datasets/spachos-rssi-localization.md) | RSS, Wi-Fi RSSI | Position | Measurement | Indoor | Static | Snapshot | Open |
+| [Sigfox and LoRaWAN Datasets for Fingerprint Localization in Large Urban and Rural Areas](../datasets/sigfox-lorawan-fingerprint-localization.md)<br><sub>Collection</sub> | RSS | Position | Measurement | Outdoor, Urban, Rural | Mobile | Sequence | Open |
 | [TUJI1](../datasets/tuji1.md) | Wi-Fi RSSI | Position | Measurement | Indoor | Static | Snapshot | Open |
 | [UJIIndoorLoc](../datasets/ujiindoorloc.md) | Wi-Fi RSSI | Position, Floor, Building | Measurement | Indoor, Campus | Static | Snapshot | Open |
 | [Ultra Dense Indoor MaMIMO CSI Dataset](../datasets/ultra-dense-indoor-mamimo-csi.md) | Channel matrix | Position | Measurement | Indoor, Laboratory | Static | Snapshot | Registration required |

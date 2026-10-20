@@ -1,0 +1,111 @@
+id: 5g-nidd
+name: 5G-NIDD
+aliases:
+- 5G Wireless Network Intrusion Detection Dataset
+identity:
+  canonical_url: https://doi.org/10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361
+  - scheme: doi
+    value: 10.21227/xtep-hv36
+status: verified
+resource_type: dataset
+description: A fully labelled intrusion-detection dataset collected on the University of Oulu 5G Test Network, with benign traffic and multiple DoS and port-scan attacks.
+released:
+  year: 2022
+  notes: The dataset was released in 2022; a descriptor paper was published in 2025.
+origin:
+  type: measurement
+  notes: Network traffic was captured from a functional 5G test network with two base stations, benign 5G users, and attacker nodes.
+modalities:
+- packet-trace
+technologies:
+- 5g-nr
+generation_contexts:
+- 5g
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: null
+environments:
+- laboratory
+mobility:
+  type: not-reported
+  notes: The dataset focuses on network intrusion scenarios rather than user-mobility characterization.
+temporal_structure: sequence
+formats:
+- pcapng
+- csv
+ground_truth:
+- anomaly-label
+scale:
+  samples: null
+  sequences: null
+  scenarios: 8
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Eight documented attack scenarios cover five DoS variants and three port scans, in addition to benign traffic.
+access:
+  status: open
+  url: https://doi.org/10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361
+  notes: A public copy is available through Fairdata; IEEE DataPort provides an additional dataset record.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: The Fairdata record reports Creative Commons Attribution 4.0 International.
+official_resources:
+  homepage: https://doi.org/10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361
+  repository: https://github.com/yushan1986/5g-nidd
+  documentation: https://doi.org/10.21227/xtep-hv36
+  loader: null
+references:
+- id: fairdata
+  type: data-host
+  title: 5G-NIDD
+  url: https://doi.org/10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361
+  doi: 10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361
+  notes: Public dataset record.
+- id: ieee-dataport
+  type: data-host
+  title: '5G-NIDD: A Comprehensive Network Intrusion Detection Dataset Generated over 5G Wireless Network'
+  url: https://doi.org/10.21227/xtep-hv36
+  doi: 10.21227/xtep-hv36
+  notes: Documents the testbed, attack scenarios, and pcapng-to-CSV processing chain.
+- id: descriptor-paper
+  type: paper
+  title: 'Descriptor: 5G Wireless Network Intrusion Detection Dataset (5G-NIDD)'
+  url: https://doi.org/10.1109/IEEEDATA.2025.3592888
+  doi: 10.1109/IEEEDATA.2025.3592888
+  notes: null
+tasks:
+- task: network-anomaly-detection
+  scope: Detect malicious or anomalous 5G network traffic across documented DoS and port-scan scenarios.
+  inputs:
+  - packet-trace
+  targets:
+  - anomaly-label
+  evidence:
+  - ieee-dataport
+  - descriptor-paper
+  notes: Intrusion detection is represented under the existing network-anomaly-detection task.
+  context:
+    environments:
+    - laboratory
+    mobility: not-reported
+    frequency_regimes: []
+caveats:
+- text: The attack traffic was generated on a controlled 5G test network, so deployment-specific benign and malicious traffic distributions may differ.
+  evidence:
+  - ieee-dataport
+verification:
+  last_checked: '2026-10-20'
+  checked_by: maintainer
+  notes: null

@@ -6,7 +6,7 @@ Infer human activities or activity classes from wireless measurements such as CS
 
 **Aliases:** HAR
 
-**Datasets in catalogue:** 15
+**Datasets in catalogue:** 17
 
 | Dataset | Inputs | Targets | Origin | Environment | Mobility | Access |
 |---|---|---|---|---|---|---|
@@ -19,8 +19,10 @@ Infer human activities or activity classes from wireless measurements such as CS
 | [MM-Fi](../datasets/mm-fi.md) | Wi-Fi CSI, Radar | Activity label | Measurement | Indoor | Not applicable | Open |
 | [NTU-Fi HAR](../datasets/ntu-fi-har.md) | Wi-Fi CSI | Activity label | Measurement | Indoor | Not applicable | Open |
 | [OPERAnet](../datasets/operanet.md) | Wi-Fi CSI, Channel impulse response | Activity label | Measurement | Indoor | Not applicable | Open |
+| [SHD-HAR](../datasets/shd-har.md) | Wi-Fi CSI | Activity label | Measurement | Indoor, Laboratory | Not applicable | Open |
 | [UT-HAR](../datasets/ut-har.md) | Wi-Fi CSI | Activity label | Measurement | Indoor | Not applicable | Open |
 | [UWB Non-Cooperative Contextual Sensing Dataset](../datasets/uwb-noncooperative-contextual-sensing.md) | Channel impulse response | Activity label | Measurement | Indoor, Residential | Not applicable | Open |
+| [Wi-Fi HAR in LOS and NLOS Indoor Environments](../datasets/wifi-har-los-nlos.md) | Wi-Fi CSI, Wi-Fi RSSI | Activity label | Measurement | Indoor | Not applicable | Open |
 | [WiAR](../datasets/wiar.md) | Wi-Fi CSI, Wi-Fi RSSI | Activity label | Measurement | Indoor | Not applicable | Open |
 | [WiFi CSI Dataset of Common Physical Exercises](../datasets/ucsb-wifi-gym-activity.md) | Wi-Fi CSI | Activity label | Measurement | Indoor, Laboratory | Not applicable | Available on request |
 | [WiMANS](../datasets/wimans.md) | Wi-Fi CSI | Activity label | Measurement | Indoor | Not applicable | Registration required |

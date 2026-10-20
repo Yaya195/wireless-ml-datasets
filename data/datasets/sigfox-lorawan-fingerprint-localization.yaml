@@ -1,0 +1,109 @@
+id: sigfox-lorawan-fingerprint-localization
+name: Sigfox and LoRaWAN Datasets for Fingerprint Localization in Large Urban and Rural Areas
+aliases:
+- Sigfox and LoRaWAN fingerprint localization datasets
+identity:
+  canonical_url: https://zenodo.org/records/3904158
+  version: '1.3'
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.3904158
+status: verified
+resource_type: dataset-collection
+description: A measured LPWAN collection with Sigfox and LoRaWAN gateway RSSI plus GPS-labelled uplink messages for fingerprint localization in large urban and rural areas.
+released:
+  year: 2019
+  notes: Version 1.3 updates the LoRaWAN subset and preserves the Sigfox subsets from earlier releases.
+origin:
+  type: measurement
+  notes: GPS-equipped devices periodically transmitted uplinks during measurement campaigns in and around Antwerp, Belgium.
+modalities:
+- rss
+- snr
+- position
+technologies:
+- lorawan
+- sigfox
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: not-reported
+  regimes: []
+  bands: []
+  notes: The release identifies the LPWAN technologies but does not provide one collection-wide carrier specification.
+environments:
+- outdoor
+- urban
+- rural
+mobility:
+  type: mobile
+  notes: GPS-equipped devices periodically recorded location while collecting uplink measurements.
+temporal_structure: sequence
+formats:
+- csv
+- json
+ground_truth:
+- position
+scale:
+  samples: 170446
+  sequences: null
+  scenarios: 3
+  participants: null
+  devices: null
+  sites: null
+  duration_hours: null
+  size_gb: null
+  notes: Version 1.3 contains 130,430 LoRaWAN urban messages, 14,378 Sigfox urban messages, and 25,638 Sigfox rural messages.
+access:
+  status: open
+  url: https://zenodo.org/records/3904158
+  notes: Version 1.3 is publicly downloadable from Zenodo.
+license:
+  status: known
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: The dataset descriptor identifies the dataset license as CC BY.
+official_resources:
+  homepage: https://zenodo.org/records/3904158
+  repository: null
+  documentation: https://doi.org/10.3390/data3020013
+  loader: null
+references:
+- id: zenodo
+  type: data-host
+  title: Sigfox and LoRaWAN Datasets for Fingerprint Localization in Large Urban and Rural Areas
+  url: https://zenodo.org/records/3904158
+  doi: 10.5281/zenodo.3904158
+  notes: Version 1.3 dataset record.
+- id: descriptor-paper
+  type: paper
+  title: Sigfox and LoRaWAN Datasets for Fingerprint Localization in Large Urban and Rural Areas
+  url: https://doi.org/10.3390/data3020013
+  doi: 10.3390/data3020013
+  notes: Documents the collection methodology and fingerprint-localization benchmark.
+tasks:
+- task: localization
+  scope: Estimate outdoor device position from LPWAN gateway RSSI fingerprints and associated network measurements.
+  inputs:
+  - rss
+  targets:
+  - position
+  evidence:
+  - zenodo
+  - descriptor-paper
+  notes: Version 1.3 also exposes timing metadata for the LoRaWAN subset, but no additional task mapping is inferred from availability alone.
+  context:
+    environments:
+    - outdoor
+    - urban
+    - rural
+    mobility: mobile
+    frequency_regimes: []
+caveats:
+- text: Version 1.3 updates only the LoRaWAN subset; the two Sigfox subsets remain unchanged from earlier releases.
+  evidence:
+  - zenodo
+verification:
+  last_checked: '2026-10-20'
+  checked_by: maintainer
+  notes: null

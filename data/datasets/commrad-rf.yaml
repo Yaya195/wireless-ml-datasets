@@ -1,0 +1,103 @@
+id: commrad-rf
+name: CommRad RF
+aliases:
+- CommRad RF communication radio dataset
+identity:
+  canonical_url: https://zenodo.org/records/14192970
+  version: null
+  external_ids:
+  - scheme: doi
+    value: 10.5281/zenodo.14192970
+status: verified
+resource_type: dataset
+description: A measured baseband RF dataset containing communication-radio signals from 27 handheld radios, collected for RF fingerprinting, identification, and classification.
+released:
+  year: 2024
+  notes: The current Zenodo release was published in November 2024; the dataset article appeared in 2025.
+origin:
+  type: measurement
+  notes: Signals were captured from communication radios in an indoor multipath environment using a wideband receiver.
+modalities:
+- iq
+technologies: []
+generation_contexts: []
+radio_configurations: []
+frequency:
+  status: known
+  regimes:
+  - sub-ghz
+  bands:
+  - label: 136-174 MHz
+    center_ghz: null
+    min_ghz: 0.136
+    max_ghz: 0.174
+  notes: The data article reports 136-174 MHz, 25 kHz channel bandwidth, and a 50 kS/s I/Q rate.
+environments:
+- indoor
+mobility:
+  type: not-applicable
+  notes: The emitters are communication radios recorded for device-specific RF signatures.
+temporal_structure: sequence
+formats:
+- wav
+ground_truth:
+- device-id
+scale:
+  samples: null
+  sequences: null
+  scenarios: null
+  participants: null
+  devices: 27
+  sites: null
+  duration_hours: null
+  size_gb: 2.0
+  notes: The release contains more than 2,700 recorded RF signals from 27 radios.
+access:
+  status: open
+  url: https://zenodo.org/records/14192970
+  notes: The archive is publicly downloadable from Zenodo.
+license:
+  status: not-reported
+  name: null
+  url: null
+  notes: The article is open access under CC BY-NC 4.0, but the Zenodo dataset page does not expose a populated dataset-license value.
+official_resources:
+  homepage: https://zenodo.org/records/14192970
+  repository: null
+  documentation: https://doi.org/10.1016/j.dib.2025.111387
+  loader: null
+references:
+- id: zenodo
+  type: data-host
+  title: 'CommRad RF: A dataset of communication radio signals for detection, identification and classification'
+  url: https://zenodo.org/records/14192970
+  doi: 10.5281/zenodo.14192970
+  notes: null
+- id: data-paper
+  type: paper
+  title: 'CommRad RF: A dataset of communication radio signals for detection, identification and classification'
+  url: https://doi.org/10.1016/j.dib.2025.111387
+  doi: 10.1016/j.dib.2025.111387
+  notes: Documents RF fingerprinting motivation, acquisition, and device labels.
+tasks:
+- task: rf-fingerprinting
+  scope: Identify communication-radio emitters from device-specific baseband I/Q signal fingerprints.
+  inputs:
+  - iq
+  targets:
+  - device-id
+  evidence:
+  - zenodo
+  - data-paper
+  notes: The dataset article explicitly positions the recordings for RF fingerprinting and emitter identification.
+  context:
+    environments:
+    - indoor
+    mobility: not-applicable
+    frequency_regimes:
+    - sub-ghz
+caveats: []
+verification:
+  last_checked: '2026-10-20'
+  checked_by: maintainer
+  notes: null
